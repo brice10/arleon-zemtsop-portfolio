@@ -61,7 +61,7 @@ vercel --prod
 ### Configuration du domaine personnalisé
 
 1. Dans le dashboard Vercel, allez dans Settings > Domains
-2. Ajoutez votre domaine : `arleonzemtsop.dev`
+2. Ajoutez votre domaine : `arleonzemtsop.vercel.app`
 3. Configurez les DNS selon les instructions de Vercel
 
 ## 📝 Ajouter un Article de Blog
