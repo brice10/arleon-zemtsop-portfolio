@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 as a PhD Student | Blog - Arléon Zemtsop</title>
+    <meta name="description" content="My first day as a PhD student at Inria - thrown straight into the deep end presenting at RIC Day!">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230A1628' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' text-anchor='middle'%3E%3Ctspan fill='%23FFFFFF'%3EA%3C/tspan%3E%3Ctspan fill='%23E85D04'%3EZ%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-night': '#0A1628', 'noble-blue': '#1E3A5F', 'night-sky': '#0F2847',
+                        'determination': '#E85D04', 'warm-energy': '#F48C06', 'noble-gold': '#D4A012',
+                        'digital-cyan': '#00D4FF', 'code-green': '#4FFFB0', 'gray-medium': '#6B6B6F',
+                        'gray-light': '#A0A0A5', 'off-white': '#F8F9FA',
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'], 'body': ['Inter', 'sans-serif'],
+                        'accent': ['Playfair Display', 'serif'], 'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0A1628; color: #F8F9FA; }
+        .bg-pattern { background-image: radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(232, 93, 4, 0.08) 0%, transparent 40%); }
+        .prose-custom h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; color: #F8F9FA; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose-custom h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; color: #E85D04; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose-custom p { margin-bottom: 1.25rem; line-height: 1.8; color: #A0A0A5; }
+        .prose-custom strong { color: #F8F9FA; }
+        .prose-custom em { color: #F48C06; }
+        .prose-custom ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+        .prose-custom ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #A0A0A5; }
+        .prose-custom ul li::before { content: '→'; position: absolute; left: 0; color: #E85D04; }
+        .prose-custom a { color: #00D4FF; text-decoration: underline; }
+        .prose-custom a:hover { color: #E85D04; }
+        .prose-custom blockquote { border-left: 3px solid #E85D04; padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: #A0A0A5; background: rgba(232, 93, 4, 0.05); padding: 1.5rem; border-radius: 0 12px 12px 0; }
+        .day-badge {
+            background: linear-gradient(135deg, #E85D04 0%, #F48C06 100%);
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(232, 93, 4, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(232, 93, 4, 0.6); }
+        }
+        .event-card {
+            background: linear-gradient(135deg, rgba(232, 93, 4, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
+            border: 1px solid rgba(232, 93, 4, 0.2);
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-deep-night/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="/" class="font-display font-extrabold text-2xl lg:text-3xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="/" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Accueil</a>
+                    <a href="/pages/about.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">À Propos</a>
+                    <a href="/pages/research.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Recherche</a>
+                    <a href="/pages/projects.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Projets</a>
+                    <a href="/blog/" class="font-body text-sm font-medium text-white py-2">Blog</a>
+                    <a href="/pages/contact.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-24 lg:pt-32 pb-24">
+        <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Back Link -->
+            <a href="/blog/" class="inline-flex items-center gap-2 text-gray-light hover:text-determination mb-8 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Retour au blog
+            </a>
+
+            <!-- Article Header -->
+            <header class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="px-3 py-1 bg-determination/20 rounded-full font-mono text-xs text-determination">PhD Journey</span>
+                    <span class="font-mono text-xs text-gray-medium">Octobre 2024</span>
+                    <span class="font-mono text-xs text-gray-medium">• 4 min read</span>
+                </div>
+                <h1 class="font-display text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-tight mb-6">
+                    🎤 Day 1 as a PhD Student: They Threw Me Straight Into the Deep End!
+                </h1>
+                <p class="font-body text-xl text-gray-light leading-relaxed">
+                    My PhD contract had barely been signed before I was sent on my first mission: presenting at the RIC Day! Talk about a warm welcome... 🔥
+                </p>
+            </header>
+
+            <!-- Day Counter Badge -->
+            <div class="flex justify-center mb-10">
+                <div class="day-badge rounded-2xl px-8 py-4 text-center">
+                    <p class="font-mono text-xs text-white/80 uppercase tracking-widest mb-1">PhD Journey</p>
+                    <p class="font-display text-4xl font-extrabold text-white">DAY 1</p>
+                    <p class="font-mono text-xs text-white/80">of ~1095 days</p>
+                </div>
+            </div>
+
+            <!-- Event Card -->
+            <div class="event-card rounded-2xl p-6 mb-10">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-full bg-determination/20 flex items-center justify-center text-2xl">🎯</div>
+                    <div>
+                        <h3 class="font-display font-bold text-white">RIC Day 2024</h3>
+                        <p class="font-mono text-xs text-determination">Rencontre Inria-Centrale • Lille, France</p>
+                    </div>
+                </div>
+                <p class="text-gray-light text-sm">An annual event where brilliant Master's students hunt for internships and thesis topics... and where researchers like me get to show off their coolest research projects! 🧲</p>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose-custom">
+                <h2>🤯 Wait, What Just Happened?</h2>
+                
+                <p>Picture this: It's my <strong>literal first day</strong> as a PhD student. I'm still trying to figure out where the coffee machine is. My Inria badge is so fresh it practically squeaks. And my supervisors walk up to me with that smile that says <em>"We have a fun surprise for you..."</em></p>
+
+                <p><strong>"Arléon, you're presenting AdaptiFlow at RIC Day. Today."</strong></p>
+
+                <p>😱</p>
+
+                <p>No pressure, right? Just casually explain complex self-adaptive systems to a room full of brilliant students and seasoned researchers. On day one. In a language that's not my mother tongue. Easy peasy! 😅</p>
+
+                <h2>🐸 The Glass Frog Saves the Day</h2>
+
+                <p>Okay, so I had a secret weapon: the <strong>glass frog</strong>.</p>
+
+                <p>To explain why our tech systems need to self-adapt, I used the legendary face-off: 🐸 vs. 🐍 — the ultimate adaptation pro versus the sneaky predator!</p>
+
+                <blockquote>
+                    "When a glass frog senses danger, it doesn't panic. It becomes transparent. It adapts to survive. Our cloud systems should do the same."
+                </blockquote>
+
+                <p>I demonstrated how <strong>AdaptiFlow</strong> brings this natural adaptation behavior to cloud microservices. And you know what? It clicked! ✨</p>
+
+                <h3>Those "Aha!" Moments</h3>
+
+                <p>Seeing those <em>"Aha! ✨"</em> moments in the students' eyes was absolutely priceless. That instant when a complex concept suddenly makes sense. When the analogy lands perfectly. When someone nods and you can see they <em>get it</em>.</p>
+
+                <p>That's the magic of teaching. That's why I do this.</p>
+
+                <h2>🍒 The Cherry on Top</h2>
+
+                <p>But wait, there's more! The day got even better.</p>
+
+                <p>I got to chat with experts like Professor <strong>Philippe Merle</strong> — yes, THE Philippe Merle, creator of the awesome <strong>KubeDiagrams</strong>! Getting to discuss cloud architectures with someone of his caliber? On my first day? Pinch me. 🤩</p>
+            </div>
+
+            <!-- Highlight Box -->
+            <div class="highlight-box rounded-2xl p-6 my-10">
+                <h4 class="font-display font-bold text-white mb-4 flex items-center gap-2">
+                    <span class="text-digital-cyan">💡</span> What I Presented
+                </h4>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <span class="text-determination font-bold">01</span>
+                        <div>
+                            <p class="text-white font-medium">AdaptiFlow Framework</p>
+                            <p class="text-gray-light text-sm">Event-driven autonomy for cloud microservices</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-determination font-bold">02</span>
+                        <div>
+                            <p class="text-white font-medium">MAPE-K Loop Implementation</p>
+                            <p class="text-gray-light text-sm">Monitor, Analyze, Plan, Execute — with Knowledge</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-determination font-bold">03</span>
+                        <div>
+                            <p class="text-white font-medium">Nature-Inspired Adaptation</p>
+                            <p class="text-gray-light text-sm">Learning from the glass frog's survival strategy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>📝 Lessons from Day 1</h2>
+
+                <p>What did I learn from being thrown into the deep end?</p>
+
+                <ul>
+                    <li><strong>Analogies are powerful.</strong> Complex concepts become accessible when you connect them to nature.</li>
+                    <li><strong>Preparation beats perfection.</strong> I wasn't "ready" — but I knew my material well enough to adapt.</li>
+                    <li><strong>The PhD community is welcoming.</strong> Everyone was supportive, curious, and genuinely interested.</li>
+                    <li><strong>Nerves are fuel.</strong> That adrenaline? Channel it into energy and enthusiasm.</li>
+                </ul>
+
+                <h2>🚀 The Journey Begins</h2>
+
+                <p>An inspiring start to say the least!</p>
+
+                <p>This doctoral journey is already off to a thrilling run. If Day 1 is any indication, the next three years are going to be one heck of an adventure. 🎢</p>
+
+                <p>To everyone who attended RIC Day and asked questions, offered encouragement, or simply nodded along — <strong>thank you</strong>. You made my first day unforgettable.</p>
+
+                <p><strong>Let's see what Day 2 brings! 💪</strong></p>
+            </div>
+
+            <!-- Day 1 Stats -->
+            <div class="grid grid-cols-3 gap-4 my-10">
+                <div class="bg-noble-blue/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-determination">1</p>
+                    <p class="font-mono text-xs text-gray-light">Presentation</p>
+                </div>
+                <div class="bg-noble-blue/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-digital-cyan">∞</p>
+                    <p class="font-mono text-xs text-gray-light">Nerves</p>
+                </div>
+                <div class="bg-noble-blue/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-code-green">100%</p>
+                    <p class="font-mono text-xs text-gray-light">Survived</p>
+                </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-12 pt-8 border-t border-white/10">
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#PhDlife</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Day1</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Research</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#INRIA</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#AdaptiFlow</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#RICDay</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Lille</span>
+                </div>
+            </div>
+
+            <!-- Series Navigation -->
+            <div class="mt-10 p-6 bg-gradient-to-br from-determination/10 to-noble-blue/20 rounded-2xl border border-determination/20">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="font-mono text-xs text-determination mb-1">PhD Journey Series</p>
+                        <p class="font-display font-bold text-white">Next: 1 Month, 12 Days</p>
+                    </div>
+                    <a href="/blog/articles/1-month-12-days-phd.html" class="inline-flex items-center gap-2 px-4 py-2 bg-determination/20 hover:bg-determination/30 rounded-lg text-determination text-sm font-medium transition-colors">
+                        Read Next
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Author -->
+            <div class="mt-12 p-6 bg-gradient-to-br from-noble-blue/30 to-night-sky/50 rounded-2xl border border-white/5">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-determination to-warm-energy flex items-center justify-center font-display font-bold text-xl text-white">AZ</div>
+                    <div>
+                        <h4 class="font-display font-bold text-white">Arléon Zemtsop</h4>
+                        <p class="font-body text-sm text-gray-light">PhD Student at Inria Lille / University of Lille • Self-Adaptive Systems</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share -->
+            <div class="mt-8 flex items-center gap-4">
+                <span class="font-mono text-sm text-gray-medium">Partager:</span>
+                <a href="https://www.linkedin.com/in/brice-arl%C3%A9on-zemtsop-ndadji-b258321a4/" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://x.com/ZemtsopArleon" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 bg-deep-night/50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="/" class="font-display font-extrabold text-2xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+            <p class="font-mono text-xs text-gray-medium mt-4">© 2025 ZEMTSOP NDADJI Brice Arléon</p>
+        </div>
+    </footer>
+</body>
+</html>

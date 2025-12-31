@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closing a Chapter: My Gratitude | Blog - Arléon Zemtsop</title>
+    <meta name="description" content="Reflections on my journey as a Research Engineer at Inria Lille - gratitude, lessons learned, and the next chapter.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230A1628' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' text-anchor='middle'%3E%3Ctspan fill='%23FFFFFF'%3EA%3C/tspan%3E%3Ctspan fill='%23E85D04'%3EZ%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-night': '#0A1628', 'noble-blue': '#1E3A5F', 'night-sky': '#0F2847',
+                        'determination': '#E85D04', 'warm-energy': '#F48C06', 'noble-gold': '#D4A012',
+                        'digital-cyan': '#00D4FF', 'code-green': '#4FFFB0', 'gray-medium': '#6B6B6F',
+                        'gray-light': '#A0A0A5', 'off-white': '#F8F9FA',
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'], 'body': ['Inter', 'sans-serif'],
+                        'accent': ['Playfair Display', 'serif'], 'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0A1628; color: #F8F9FA; }
+        .bg-pattern { background-image: radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(212, 160, 18, 0.08) 0%, transparent 40%); }
+        .prose-custom h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; color: #F8F9FA; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose-custom h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; color: #D4A012; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose-custom p { margin-bottom: 1.25rem; line-height: 1.8; color: #A0A0A5; }
+        .prose-custom strong { color: #F8F9FA; }
+        .prose-custom em { color: #D4A012; }
+        .prose-custom ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+        .prose-custom ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #A0A0A5; }
+        .prose-custom ul li::before { content: '✦'; position: absolute; left: 0; color: #D4A012; }
+        .prose-custom blockquote { border-left: 3px solid #D4A012; padding-left: 1.5rem; margin: 1.5rem 0; font-family: 'Playfair Display', serif; font-style: italic; color: #F8F9FA; background: rgba(212, 160, 18, 0.05); padding: 1.5rem; border-radius: 0 12px 12px 0; font-size: 1.1rem; }
+        
+        .chapter-badge {
+            background: linear-gradient(135deg, #D4A012 0%, #F48C06 100%);
+        }
+        
+        .timeline-line {
+            background: linear-gradient(180deg, #D4A012 0%, #1E3A5F 100%);
+        }
+        
+        .timeline-dot {
+            background: #D4A012;
+            box-shadow: 0 0 20px rgba(212, 160, 18, 0.4);
+        }
+        
+        .achievement-card {
+            background: linear-gradient(135deg, rgba(212, 160, 18, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
+            border: 1px solid rgba(212, 160, 18, 0.2);
+        }
+        
+        .lesson-card {
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.4) 0%, rgba(15, 40, 71, 0.6) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .lesson-card:hover {
+            border-color: rgba(212, 160, 18, 0.4);
+            transform: translateY(-4px);
+        }
+        
+        .gratitude-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(30, 58, 95, 0.3) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .quote-highlight {
+            position: relative;
+        }
+        .quote-highlight::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: rgba(212, 160, 18, 0.2);
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-deep-night/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="/" class="font-display font-extrabold text-2xl lg:text-3xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="/" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Accueil</a>
+                    <a href="/pages/about.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">À Propos</a>
+                    <a href="/pages/research.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Recherche</a>
+                    <a href="/pages/projects.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Projets</a>
+                    <a href="/blog/" class="font-body text-sm font-medium text-white py-2">Blog</a>
+                    <a href="/pages/contact.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-24 lg:pt-32 pb-24">
+        <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Back Link -->
+            <a href="/blog/" class="inline-flex items-center gap-2 text-gray-light hover:text-determination mb-8 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Retour au blog
+            </a>
+
+            <!-- Article Header -->
+            <header class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="px-3 py-1 bg-noble-gold/20 rounded-full font-mono text-xs text-noble-gold">Gratitude</span>
+                    <span class="px-3 py-1 bg-digital-cyan/20 rounded-full font-mono text-xs text-digital-cyan">Milestone</span>
+                    <span class="font-mono text-xs text-gray-medium">• Septembre 2024</span>
+                </div>
+                <h1 class="font-display text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-tight mb-6">
+                    🌟 Closing a Chapter: My Gratitude and Lessons Learned
+                </h1>
+                <p class="font-body text-xl text-gray-light leading-relaxed">
+                    Today marks my last day as a Distributed Systems & Middleware Engineer with the Spirals team at Inria. This chapter ends with a heart full of emotions and a mind rich with lessons.
+                </p>
+            </header>
+
+            <!-- Chapter Badge -->
+            <div class="flex justify-center mb-10">
+                <div class="chapter-badge rounded-2xl px-8 py-5 text-center">
+                    <p class="font-mono text-xs text-white/80 uppercase tracking-widest mb-2">Chapter Complete</p>
+                    <p class="font-display text-3xl font-extrabold text-white">1 Year</p>
+                    <p class="font-body text-sm text-white/80">as Research Engineer at Inria Lille</p>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose-custom">
+                <h2>🌍 A Journey Across Worlds</h2>
+
+                <p>A year ago, I arrived from <strong>Cameroon</strong>, stepping into a new world: a new country, a new culture, and the vast, fascinating domain of scientific research.</p>
+
+                <p>The beginning was a challenge—a journey of adaptation not just professionally, but personally. Learning to navigate French bureaucracy. Finding my footing in a research laboratory. Understanding the unwritten rules of academic culture. Building a life from scratch in Lille.</p>
+
+                <blockquote class="quote-highlight">
+                    Every challenge became a lesson. Every struggle became strength. Every doubt became determination.
+                </blockquote>
+            </div>
+
+            <!-- Timeline -->
+            <div class="my-10 relative">
+                <h3 class="font-display font-bold text-white mb-6 text-center">📅 The Year in Milestones</h3>
+                <div class="relative pl-8">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-3 top-0 bottom-0 w-0.5 timeline-line"></div>
+                    
+                    <!-- Milestone 1 -->
+                    <div class="relative mb-8">
+                        <div class="absolute left-[-22px] w-4 h-4 rounded-full timeline-dot"></div>
+                        <div class="bg-noble-blue/20 rounded-lg p-4">
+                            <p class="font-mono text-xs text-noble-gold mb-1">October 2023</p>
+                            <p class="font-display font-bold text-white">Arrived in France</p>
+                            <p class="text-sm text-gray-light">First steps into Inria Lille and the Spirals team</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Milestone 2 -->
+                    <div class="relative mb-8">
+                        <div class="absolute left-[-22px] w-4 h-4 rounded-full timeline-dot"></div>
+                        <div class="bg-noble-blue/20 rounded-lg p-4">
+                            <p class="font-mono text-xs text-noble-gold mb-1">December 2023</p>
+                            <p class="font-display font-bold text-white">First Lines of AdaptiFlow</p>
+                            <p class="text-sm text-gray-light">Started developing the self-adaptive microservices platform</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Milestone 3 -->
+                    <div class="relative mb-8">
+                        <div class="absolute left-[-22px] w-4 h-4 rounded-full timeline-dot"></div>
+                        <div class="bg-noble-blue/20 rounded-lg p-4">
+                            <p class="font-mono text-xs text-noble-gold mb-1">March 2024</p>
+                            <p class="font-display font-bold text-white">Paper Submission</p>
+                            <p class="text-sm text-gray-light">Submitted my first scientific publication</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Milestone 4 -->
+                    <div class="relative mb-8">
+                        <div class="absolute left-[-22px] w-4 h-4 rounded-full timeline-dot"></div>
+                        <div class="bg-noble-blue/20 rounded-lg p-4">
+                            <p class="font-mono text-xs text-noble-gold mb-1">June 2024</p>
+                            <p class="font-display font-bold text-white">Paper Accepted! 🎉</p>
+                            <p class="text-sm text-gray-light">First publication accepted at a scientific conference</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Milestone 5 -->
+                    <div class="relative">
+                        <div class="absolute left-[-22px] w-4 h-4 rounded-full timeline-dot"></div>
+                        <div class="bg-gradient-to-r from-noble-gold/20 to-determination/20 rounded-lg p-4 border border-noble-gold/30">
+                            <p class="font-mono text-xs text-noble-gold mb-1">September 2024</p>
+                            <p class="font-display font-bold text-white">Chapter Closes</p>
+                            <p class="text-sm text-gray-light">Last day as Research Engineer — New chapter awaits</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🤝 The Perfect Team</h2>
+
+                <p>I was incredibly fortunate to join a team with inspiring profiles. Guided step by step, I delved into the fields I am passionate about:</p>
+                <ul>
+                    <li><strong>Distributed Systems</strong> — The art of making many computers work as one</li>
+                    <li><strong>Self-Adaptation</strong> — Building systems that heal and optimize themselves</li>
+                    <li><strong>Cloud Computing</strong> — Harnessing the power of scalable infrastructure</li>
+                    <li><strong>Microservices</strong> — Architecting modular, resilient applications</li>
+                </ul>
+
+                <h2>🔬 A Beautiful Symbiosis</h2>
+
+                <p>This journey revealed a <em>perfect symbiosis</em>: my background in software development, DevOps, and project management beautifully merged with rigorous scientific methodology.</p>
+
+                <p>I grew in ways I hadn't imagined, acquiring:</p>
+            </div>
+
+            <!-- Lessons Learned Cards -->
+            <div class="grid md:grid-cols-3 gap-4 my-8">
+                <div class="lesson-card rounded-xl p-5 text-center">
+                    <div class="text-3xl mb-3">🎯</div>
+                    <h4 class="font-display font-bold text-white mb-2">Methodical Rigor</h4>
+                    <p class="text-sm text-gray-light">The discipline of scientific thinking — hypothesis, experiment, analysis, repeat.</p>
+                </div>
+                <div class="lesson-card rounded-xl p-5 text-center">
+                    <div class="text-3xl mb-3">🙏</div>
+                    <h4 class="font-display font-bold text-white mb-2">Intellectual Humility</h4>
+                    <p class="text-sm text-gray-light">Knowing what you don't know is the first step to wisdom.</p>
+                </div>
+                <div class="lesson-card rounded-xl p-5 text-center">
+                    <div class="text-3xl mb-3">🚀</div>
+                    <h4 class="font-display font-bold text-white mb-2">Greater Autonomy</h4>
+                    <p class="text-sm text-gray-light">The confidence to chart your own course through unknown territory.</p>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🏆 Tangible Outcomes</h2>
+
+                <p>This growth led to tangible outcomes I am proud of:</p>
+            </div>
+
+            <!-- Achievement Cards -->
+            <div class="grid md:grid-cols-2 gap-4 my-8">
+                <div class="achievement-card rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">📄</span>
+                        <h4 class="font-display font-bold text-noble-gold">First Publication</h4>
+                    </div>
+                    <p class="text-gray-light text-sm">My first scientific publication was accepted at a peer-reviewed conference. From idea to paper to acceptance — a complete cycle.</p>
+                </div>
+                <div class="achievement-card rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">⚙️</span>
+                        <h4 class="font-display font-bold text-noble-gold">AdaptiFlow Platform</h4>
+                    </div>
+                    <p class="text-gray-light text-sm">Developed an experimental platform for self-adaptive microservices — the foundation for future research.</p>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>💎 The Key Lessons</h2>
+
+                <p>The lessons I carry forward aren't just technical. They're human:</p>
+
+                <h3>Humility</h3>
+                <p>Research taught me that the more you learn, the more you realize how much remains unknown. Every answer opens ten new questions. And that's beautiful.</p>
+
+                <h3>Perseverance</h3>
+                <p>Papers get rejected. Code breaks. Experiments fail. But each failure is data. Each rejection is feedback. The only true failure is giving up.</p>
+
+                <h3>Resilience</h3>
+                <p>Moving across the world, adapting to a new culture, navigating a new field — it all builds a kind of resilience that no classroom can teach.</p>
+            </div>
+
+            <!-- Gratitude Section -->
+            <div class="gratitude-card rounded-2xl p-6 my-10">
+                <h3 class="font-display font-bold text-white mb-4 flex items-center gap-2">
+                    <span class="text-digital-cyan">💙</span> Deep Gratitude
+                </h3>
+                <p class="text-gray-light mb-4">I am deeply grateful for the trust, guidance, and opportunity provided by:</p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
+                        <span class="text-noble-gold">✦</span>
+                        <p class="text-white">My supervisors and mentors at Inria</p>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
+                        <span class="text-noble-gold">✦</span>
+                        <p class="text-white">The entire Spirals team</p>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
+                        <span class="text-noble-gold">✦</span>
+                        <p class="text-white">University of Lille</p>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
+                        <span class="text-noble-gold">✦</span>
+                        <p class="text-white">Everyone who supported me from Cameroon and beyond</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>📖 Closing Thoughts</h2>
+
+                <p>The engineer I once was leaves not just with new skills, but with a <strong>clarified purpose</strong>.</p>
+
+                <p>I came to France searching for knowledge. I found something more: I found direction. I found passion. I found a community. I found home.</p>
+
+                <blockquote class="quote-highlight">
+                    Some chapters end so that better ones can begin. This isn't goodbye — it's "see you in the next chapter."
+                </blockquote>
+
+                <p><strong>Stay tuned — the next chapter begins now.</strong> 🚀</p>
+            </div>
+
+            <!-- Teaser -->
+            <div class="bg-gradient-to-br from-determination/10 to-warm-energy/10 rounded-2xl p-6 my-10 border border-determination/20 text-center">
+                <p class="font-mono text-xs text-determination uppercase tracking-widest mb-2">Coming Next</p>
+                <p class="font-display font-bold text-xl text-white mb-2">The Engineer is Evolving...</p>
+                <p class="text-gray-light text-sm mb-4">What comes after this chapter closes? Hint: it involves a PhD! 🎓</p>
+                <a href="/blog/articles/engineer-evolving-phd.html" class="inline-flex items-center gap-2 px-5 py-2 bg-determination/20 hover:bg-determination/30 rounded-lg text-determination text-sm font-medium transition-colors">
+                    Read the Announcement
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-12 pt-8 border-t border-white/10">
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Gratitude</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#INRIA</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Spirals</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#ResearchEngineer</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Milestone</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#LessonsLearned</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Cameroon</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#France</span>
+                </div>
+            </div>
+
+            <!-- Series Navigation -->
+            <div class="mt-10 grid md:grid-cols-2 gap-4">
+                <a href="/blog/articles/first-paper-accepted.html" class="p-5 bg-gradient-to-br from-noble-blue/20 to-deep-night rounded-xl border border-white/5 hover:border-noble-gold/30 transition-colors group">
+                    <p class="font-mono text-xs text-gray-medium mb-1">← Related</p>
+                    <p class="font-display font-bold text-white group-hover:text-noble-gold transition-colors">First Paper Accepted!</p>
+                </a>
+                <a href="/blog/articles/engineer-evolving-phd.html" class="p-5 bg-gradient-to-br from-determination/10 to-noble-blue/20 rounded-xl border border-determination/20 hover:border-determination/40 transition-colors group text-right">
+                    <p class="font-mono text-xs text-determination mb-1">Next Chapter →</p>
+                    <p class="font-display font-bold text-white group-hover:text-determination transition-colors">The Engineer is Evolving!</p>
+                </a>
+            </div>
+
+            <!-- Author -->
+            <div class="mt-12 p-6 bg-gradient-to-br from-noble-blue/30 to-night-sky/50 rounded-2xl border border-white/5">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-determination to-warm-energy flex items-center justify-center font-display font-bold text-xl text-white">AZ</div>
+                    <div>
+                        <h4 class="font-display font-bold text-white">Arléon Zemtsop</h4>
+                        <p class="font-body text-sm text-gray-light">Former Research Engineer → Now PhD Student at Inria/University of Lille</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share -->
+            <div class="mt-8 flex items-center gap-4">
+                <span class="font-mono text-sm text-gray-medium">Partager:</span>
+                <a href="https://www.linkedin.com/in/brice-arl%C3%A9on-zemtsop-ndadji-b258321a4/" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://x.com/ZemtsopArleon" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 bg-deep-night/50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="/" class="font-display font-extrabold text-2xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+            <p class="font-mono text-xs text-gray-medium mt-4">© 2025 ZEMTSOP NDADJI Brice Arléon</p>
+        </div>
+    </footer>
+</body>
+</html>

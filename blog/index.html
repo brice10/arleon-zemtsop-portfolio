@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Brice Arléon ZEMTSOP NDADJI</title>
+    <meta name="description" content="Articles sur la recherche, le développement logiciel, les systèmes auto-adaptatifs et le parcours PhD.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230A1628' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' text-anchor='middle'%3E%3Ctspan fill='%23FFFFFF'%3EA%3C/tspan%3E%3Ctspan fill='%23E85D04'%3EZ%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-night': '#0A1628', 'noble-blue': '#1E3A5F', 'night-sky': '#0F2847',
+                        'determination': '#E85D04', 'warm-energy': '#F48C06', 'noble-gold': '#D4A012',
+                        'digital-cyan': '#00D4FF', 'code-green': '#4FFFB0', 'gray-medium': '#6B6B6F',
+                        'gray-light': '#A0A0A5', 'off-white': '#F8F9FA',
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'], 'body': ['Inter', 'sans-serif'],
+                        'accent': ['Playfair Display', 'serif'], 'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0A1628; color: #F8F9FA; }
+        .bg-pattern { background-image: radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(232, 93, 4, 0.08) 0%, transparent 40%); }
+        .gradient-text { background: linear-gradient(135deg, #E85D04 0%, #D4A012 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-text-white { background: linear-gradient(135deg, #FFFFFF 0%, #A0A0A5 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .menu-item::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: linear-gradient(90deg, #E85D04, #00D4FF); transition: all 0.3s; transform: translateX(-50%); }
+        .menu-item:hover::after { width: 100%; }
+        .available-dot { width: 10px; height: 10px; background: #4FFFB0; border-radius: 50%; animation: pulse 2s ease-in-out infinite; box-shadow: 0 0 10px #4FFFB0; }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.2); } }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .article-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .article-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+        .filter-btn.active { background: linear-gradient(135deg, #E85D04, #F48C06); color: white; border-color: transparent; }
+        .filter-btn:hover:not(.active) { border-color: #E85D04; color: #E85D04; }
+        .tab-nav { backdrop-filter: blur(20px); }
+        .tab-item:hover { transform: translateY(-4px); }
+        .tab-item .tab-tooltip { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; }
+        .tab-item:hover .tab-tooltip { opacity: 1; visibility: visible; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-deep-night/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="/" class="font-display font-extrabold text-2xl lg:text-3xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="/" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">Accueil</a>
+                    <a href="/pages/about.html" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">À Propos</a>
+                    <a href="/pages/research.html" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">Recherche</a>
+                    <a href="/pages/projects.html" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">Projets</a>
+                    <a href="/blog/" class="menu-item relative font-body text-sm font-medium text-white py-2">Blog</a>
+                    <a href="/pages/contact.html" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">Contact</a>
+                </nav>
+                <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-code-green/10 border border-code-green/20">
+                    <div class="available-dot"></div>
+                    <span class="font-mono text-xs text-code-green">Disponible</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 z-50 lg:hidden tab-nav bg-deep-night/90 border-t border-white/10">
+        <div class="flex items-center justify-around py-2 px-4">
+            <a href="/" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></a>
+            <a href="/pages/about.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></a>
+            <a href="/pages/research.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></a>
+            <a href="/pages/projects.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></a>
+            <a href="/blog/" class="tab-item flex flex-col items-center gap-1 p-2 text-determination"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg></a>
+            <a href="/pages/contact.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-24 lg:pt-32 pb-24">
+        <!-- Hero -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+            <div class="max-w-3xl reveal">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-0.5 bg-determination"></div>
+                    <span class="font-mono text-sm text-determination tracking-wider uppercase">Blog</span>
+                </div>
+                <h1 class="font-display text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight mb-6">
+                    <span class="gradient-text-white">Réflexions &</span>
+                    <span class="gradient-text"> Partages</span>
+                </h1>
+                <p class="font-body text-lg text-gray-light leading-relaxed">
+                    Mes pensées sur la recherche, le développement logiciel, le parcours PhD et les systèmes auto-adaptatifs. Des articles techniques aux réflexions personnelles.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Filters -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <div class="flex flex-wrap gap-3 reveal" id="filter-container">
+                <button class="filter-btn active px-5 py-2.5 rounded-full border border-white/20 font-mono text-sm transition-all" data-filter="all">Tous</button>
+                <button class="filter-btn px-5 py-2.5 rounded-full border border-white/20 font-mono text-sm text-gray-light transition-all" data-filter="research">Recherche</button>
+                <button class="filter-btn px-5 py-2.5 rounded-full border border-white/20 font-mono text-sm text-gray-light transition-all" data-filter="phd">PhD Journey</button>
+                <button class="filter-btn px-5 py-2.5 rounded-full border border-white/20 font-mono text-sm text-gray-light transition-all" data-filter="tech">Tech & Dev</button>
+                <button class="filter-btn px-5 py-2.5 rounded-full border border-white/20 font-mono text-sm text-gray-light transition-all" data-filter="life">Vie & Intégration</button>
+            </div>
+        </section>
+
+        <!-- Featured Article -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+            <a href="articles/ai-replace-developers.html" class="block bg-gradient-to-br from-determination/10 to-noble-blue/30 border border-determination/20 rounded-2xl overflow-hidden reveal hover:border-determination/40 transition-all" data-category="tech">
+                <div class="grid lg:grid-cols-2 gap-0">
+                    <div class="h-64 lg:h-auto bg-gradient-to-br from-determination/30 to-noble-blue/50 flex items-center justify-center p-8">
+                        <div class="text-center">
+                            <span class="text-6xl mb-4 block">🚨</span>
+                            <span class="font-mono text-sm text-determination">Article à la une</span>
+                        </div>
+                    </div>
+                    <div class="p-8 lg:p-12 flex flex-col justify-center">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-3 py-1 bg-determination/20 rounded-full font-mono text-xs text-determination">Tech & AI</span>
+                            <span class="font-mono text-xs text-gray-medium">Décembre 2025</span>
+                        </div>
+                        <h2 class="font-display text-2xl lg:text-3xl font-bold text-white mb-4">The "AI Will Replace Developers" Prophecy is Failing. Miserably.</h2>
+                        <p class="font-body text-gray-light mb-6 leading-relaxed">Remember the panic? The headlines? We were bombarded with a powerful narrative: LLMs and AI Agents were coming for our jobs. But then… reality hit...</p>
+                        <div class="flex items-center gap-2 text-determination font-medium">
+                            <span>Lire l'article</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>
+        
+        <!-- Articles Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="articles-grid">
+                
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="research">
+                    <a href="articles/natures-adaptation-strategy.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-code-green/20 to-digital-cyan/10 flex items-center justify-center"><span class="text-5xl">🐸</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-code-green/20 rounded font-mono text-xs text-code-green">Recherche</span>
+                                <span class="font-mono text-xs text-gray-medium">2025</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">Nature's Perfect Adaptation Strategy</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">Comment la grenouille de verre nous inspire pour créer des systèmes auto-adaptatifs.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="research phd">
+                    <a href="articles/expert-validates-baby.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-noble-gold/20 to-determination/10 flex items-center justify-center"><span class="text-5xl">🥹</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-noble-gold/20 rounded font-mono text-xs text-noble-gold">DisCoTec 2025</span>
+                                <span class="font-mono text-xs text-gray-medium">2025</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">When an Expert Validates Your "Baby"</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">Quand Eddy Truyen me dit que mon code est "really good"... après 6 mois de travail!</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="phd">
+                    <a href="articles/day-1-phd-student.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-determination/20 to-warm-energy/10 flex items-center justify-center"><span class="text-5xl">🎤</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-determination/20 rounded font-mono text-xs text-determination">PhD Journey</span>
+                                <span class="font-mono text-xs text-gray-medium">2024</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">Day 1 as a PhD Student: Thrown Into the Deep End!</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">Mon contrat PhD à peine signé, je me retrouve à présenter au RIC Day!</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="phd">
+                    <a href="articles/1-month-12-days-phd.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-digital-cyan/20 to-noble-blue/10 flex items-center justify-center"><span class="text-5xl">🎢</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-digital-cyan/20 rounded font-mono text-xs text-digital-cyan">PhD Journey</span>
+                                <span class="font-mono text-xs text-gray-medium">2024</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">1 Month, 12 Days as a PhD Student: A Survival Report</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">L'avalanche de papers, l'humilité face à l'inconnu et la thérapie entre doctorants.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="phd">
+                    <a href="articles/engineer-evolving-phd.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-warm-energy/20 to-determination/10 flex items-center justify-center"><span class="text-5xl">🔥</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-warm-energy/20 rounded font-mono text-xs text-warm-energy">Annonce</span>
+                                <span class="font-mono text-xs text-gray-medium">2024</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">SURPRISE! The Engineer is Evolving!</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">L'ingénieur est de retour chez INRIA... mais cette fois en tant que doctorant!</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="life">
+                    <a href="articles/closing-chapter-engineer.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-noble-blue/30 to-night-sky/20 flex items-center justify-center"><span class="text-5xl">🌟</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-noble-blue/40 rounded font-mono text-xs text-digital-cyan">Gratitude</span>
+                                <span class="font-mono text-xs text-gray-medium">2024</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">Closing a Chapter: My Gratitude and Lessons</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">Mon dernier jour en tant qu'ingénieur à Inria. Une année de transformation.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="research">
+                    <a href="articles/discotec-2025-reflections.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-digital-cyan/20 to-code-green/10 flex items-center justify-center"><span class="text-5xl">🎓</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-digital-cyan/20 rounded font-mono text-xs text-digital-cyan">Conférence</span>
+                                <span class="font-mono text-xs text-gray-medium">2025</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">Reflections on DisCoTec 2025</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">Volunteering, presenting, and connecting à la conférence internationale.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="life">
+                    <a href="articles/french-integration-hacks.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-determination/20 to-noble-gold/10 flex items-center justify-center"><span class="text-5xl">🥋</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-determination/20 rounded font-mono text-xs text-determination">Vie Perso</span>
+                                <span class="font-mono text-xs text-gray-medium">2025</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">How I Hacked My French Integration</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">Judo, musique et aventures outdoor pour transformer le choc culturel.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="research">
+                    <a href="articles/first-paper-accepted.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-code-green/20 to-digital-cyan/10 flex items-center justify-center"><span class="text-5xl">🎉</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-code-green/20 rounded font-mono text-xs text-code-green">Publication</span>
+                                <span class="font-mono text-xs text-gray-medium">2025</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">My First Research Paper Survived Peer Review!</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">AdaptiFlow accepté au WACA 2025! L'histoire derrière 5 mois de travail intense.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="life">
+                    <a href="articles/holidays-cameroon.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-code-green/20 to-warm-energy/10 flex items-center justify-center"><span class="text-5xl">🌴</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-code-green/20 rounded font-mono text-xs text-code-green">Vie Perso</span>
+                                <span class="font-mono text-xs text-gray-medium">2025</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">HOLY(DAYS) IN CAMEROUN</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">Retour aux sources après 5 mois de code intense. Famille, Ndolè, et reset émotionnel.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="tech">
+                    <a href="articles/clean-code-adventure.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-digital-cyan/20 to-noble-blue/10 flex items-center justify-center"><span class="text-5xl">🚀</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-digital-cyan/20 rounded font-mono text-xs text-digital-cyan">Formation</span>
+                                <span class="font-mono text-xs text-gray-medium">2024</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">Two Days of Pure Awesomeness: CLEAN CODE Adventure!</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">Formation Clean Code avec Raphaël Marvie chez INRIA. Une expérience transformative.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="research">
+                    <a href="articles/spirals-seminar.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-noble-gold/20 to-determination/10 flex items-center justify-center"><span class="text-5xl">✨</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-noble-gold/20 rounded font-mono text-xs text-noble-gold">SPIRALS</span>
+                                <span class="font-mono text-xs text-gray-medium">2024</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">Wrapping Up the Year with the SPIRALS Team Seminar</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">Présentation de ma librairie Java pour l'auto-adaptation, développée en 2 mois!</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="life">
+                    <a href="articles/two-months-inria-lessons.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-determination/20 to-warm-energy/10 flex items-center justify-center"><span class="text-5xl">😊</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-determination/20 rounded font-mono text-xs text-determination">Réflexion</span>
+                                <span class="font-mono text-xs text-gray-medium">2024</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">After Two Months at INRIA: Key Lessons Learned</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">YANA, YoSA, SeMBo : les trois leçons qui ont transformé ma façon de travailler.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="research">
+                    <a href="articles/master-thesis-presentation.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-noble-gold/20 to-warm-energy/10 flex items-center justify-center"><span class="text-5xl">🎓</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-noble-gold/20 rounded font-mono text-xs text-noble-gold">Milestone</span>
+                                <span class="font-mono text-xs text-gray-medium">2024</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">Exciting Milestone Achieved!</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">Présentation de ma thèse de Master sur LSAWfP à l'équipe SPIRALS.</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="tech">
+                    <a href="articles/developers-vs-testers.html" class="block">
+                        <div class="h-48 bg-gradient-to-br from-determination/20 to-warm-energy/10 flex items-center justify-center"><span class="text-5xl">😂</span></div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="px-2 py-1 bg-determination/20 rounded font-mono text-xs text-determination">Humour</span>
+                                <span class="font-mono text-xs text-gray-medium">2024</span>
+                            </div>
+                            <h3 class="font-display text-lg font-bold text-white mb-2">6 raisons pour lesquelles les devs détestent les testeurs</h3>
+                            <p class="font-body text-sm text-gray-light line-clamp-3">Un peu d'humour sur la relation amour-haine entre devs et testeurs!</p>
+                        </div>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+        
+        <!-- Newsletter CTA -->
+        <section class="py-24 bg-noble-blue/10 border-y border-white/5">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+                <span class="text-5xl mb-6 block">📬</span>
+                <h2 class="font-display text-3xl font-bold text-white mb-4">Restez informé</h2>
+                <p class="font-body text-gray-light mb-8">Suivez-moi sur LinkedIn pour ne rien manquer de mes prochains articles.</p>
+                <a href="https://www.linkedin.com/in/brice-arl%C3%A9on-zemtsop-ndadji-b258321a4/" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-determination to-warm-energy text-white font-display font-semibold rounded-xl hover:shadow-2xl hover:shadow-determination/30 transition-all">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    Suivre sur LinkedIn
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 bg-deep-night/50 py-12 pb-24 lg:pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="flex flex-col items-center lg:items-start gap-4">
+                    <a href="/" class="font-display font-extrabold text-2xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+                    <p class="font-mono text-xs text-gray-medium">© 2025 ZEMTSOP NDADJI Brice Arléon</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="https://www.linkedin.com/in/brice-arl%C3%A9on-zemtsop-ndadji-b258321a4/" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                    <a href="https://github.com/brice10" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                    <a href="https://x.com/ZemtsopArleon" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach((el, i) => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    setTimeout(() => el.classList.add('active'), i * 30);
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const articleCards = document.querySelectorAll('.article-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                
+                articleCards.forEach(card => {
+                    const categories = card.dataset.category.split(' ');
+                    if (filter === 'all' || categories.includes(filter)) {
+                        card.style.display = 'block';
+                        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => { card.style.display = 'none'; }, 300);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

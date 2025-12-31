@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURPRISE! The Engineer is Evolving! | Blog - Arléon Zemtsop</title>
+    <meta name="description" content="Plot twist announcement: From Research Engineer to PhD Student at Inria Lille and University of Lille!">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230A1628' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' text-anchor='middle'%3E%3Ctspan fill='%23FFFFFF'%3EA%3C/tspan%3E%3Ctspan fill='%23E85D04'%3EZ%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-night': '#0A1628', 'noble-blue': '#1E3A5F', 'night-sky': '#0F2847',
+                        'determination': '#E85D04', 'warm-energy': '#F48C06', 'noble-gold': '#D4A012',
+                        'digital-cyan': '#00D4FF', 'code-green': '#4FFFB0', 'gray-medium': '#6B6B6F',
+                        'gray-light': '#A0A0A5', 'off-white': '#F8F9FA',
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'], 'body': ['Inter', 'sans-serif'],
+                        'accent': ['Playfair Display', 'serif'], 'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0A1628; color: #F8F9FA; }
+        .bg-pattern { background-image: radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(232, 93, 4, 0.15) 0%, transparent 40%); }
+        .prose-custom h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; color: #F8F9FA; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose-custom h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; color: #F48C06; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose-custom p { margin-bottom: 1.25rem; line-height: 1.8; color: #A0A0A5; }
+        .prose-custom strong { color: #F8F9FA; }
+        .prose-custom em { color: #F48C06; }
+        .prose-custom ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+        .prose-custom ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #A0A0A5; }
+        .prose-custom ul li::before { content: '→'; position: absolute; left: 0; color: #F48C06; }
+        .prose-custom blockquote { border-left: 3px solid #F48C06; padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: #A0A0A5; background: rgba(244, 140, 6, 0.05); padding: 1.5rem; border-radius: 0 12px 12px 0; }
+        
+        .announcement-card {
+            background: linear-gradient(135deg, rgba(244, 140, 6, 0.15) 0%, rgba(232, 93, 4, 0.1) 50%, rgba(30, 58, 95, 0.3) 100%);
+            border: 2px solid rgba(244, 140, 6, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        .announcement-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #E85D04, #F48C06, #D4A012, #F48C06, #E85D04);
+            background-size: 400% 400%;
+            border-radius: 18px;
+            z-index: -1;
+            animation: gradient-border 3s ease infinite;
+        }
+        @keyframes gradient-border {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .phoenix-animation {
+            animation: rise 2s ease-out forwards;
+        }
+        @keyframes rise {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        .evolution-arrow {
+            background: linear-gradient(90deg, #1E3A5F, #E85D04, #F48C06);
+        }
+        
+        .sparkle {
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        .topic-card {
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.4) 0%, rgba(15, 40, 71, 0.6) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .topic-card:hover {
+            border-color: rgba(244, 140, 6, 0.4);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-deep-night/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="/" class="font-display font-extrabold text-2xl lg:text-3xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="/" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Accueil</a>
+                    <a href="/pages/about.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">À Propos</a>
+                    <a href="/pages/research.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Recherche</a>
+                    <a href="/pages/projects.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Projets</a>
+                    <a href="/blog/" class="font-body text-sm font-medium text-white py-2">Blog</a>
+                    <a href="/pages/contact.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-24 lg:pt-32 pb-24">
+        <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Back Link -->
+            <a href="/blog/" class="inline-flex items-center gap-2 text-gray-light hover:text-determination mb-8 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Retour au blog
+            </a>
+
+            <!-- Article Header -->
+            <header class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="px-3 py-1 bg-warm-energy/20 rounded-full font-mono text-xs text-warm-energy flex items-center gap-1">
+                        <span class="sparkle">✨</span> Annonce
+                    </span>
+                    <span class="px-3 py-1 bg-determination/20 rounded-full font-mono text-xs text-determination">Plot Twist</span>
+                    <span class="font-mono text-xs text-gray-medium">• Octobre 2024</span>
+                </div>
+                <h1 class="font-display text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-tight mb-6 phoenix-animation">
+                    🔥 SURPRISE! Plot Twist: The Engineer is Evolving! 🔥
+                </h1>
+                <p class="font-body text-xl text-gray-light leading-relaxed">
+                    Remember when I said my time as an engineer was over? Well… I might have been holding back a little secret! 🤫
+                </p>
+            </header>
+
+            <!-- Big Announcement Card -->
+            <div class="announcement-card rounded-2xl p-8 mb-10 text-center">
+                <p class="font-mono text-sm text-warm-energy uppercase tracking-widest mb-4">🎉 Official Announcement 🎉</p>
+                <h2 class="font-display text-2xl lg:text-3xl font-extrabold text-white mb-4">
+                    I'm Now a <span class="text-warm-energy">PhD Student</span>!
+                </h2>
+                <p class="text-gray-light mb-6">at Inria Lille & University of Lille</p>
+                
+                <!-- Evolution Visual -->
+                <div class="flex items-center justify-center gap-4 my-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-full bg-noble-blue/50 flex items-center justify-center text-2xl mb-2">👨‍💻</div>
+                        <p class="font-mono text-xs text-gray-light">Engineer</p>
+                    </div>
+                    <div class="flex-1 max-w-[100px]">
+                        <div class="evolution-arrow h-1 rounded-full"></div>
+                        <p class="font-mono text-xs text-warm-energy mt-2">Evolution!</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-determination to-warm-energy flex items-center justify-center text-2xl mb-2">🎓</div>
+                        <p class="font-mono text-xs text-warm-energy font-bold">PhD Student</p>
+                    </div>
+                </div>
+                
+                <p class="text-sm text-gray-light">
+                    <span class="text-white font-medium">SPIRALS Team</span> • Self-Adaptive Systems • Cloud Computing
+                </p>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose-custom">
+                <h2>🦅 Rising from the Ashes</h2>
+
+                <p>The engineer may be gone, but like a <strong>phoenix rising from the ashes</strong> 🦅✨, I'm thrilled to announce that I'm back at the INRIA Lille laboratories—but this time, with a brand new mission!</p>
+
+                <blockquote>
+                    "Every ending is just a new beginning in disguise. The engineer didn't disappear—he evolved."
+                </blockquote>
+
+                <h2>🏠 Same Home, New Mission</h2>
+
+                <p>Here's the beautiful part: my new boss is the <strong>University of Lille</strong>, but my office is still with the incredible <strong>Spirals team</strong> at Inria. Some things are just too good to leave! 💙</p>
+
+                <p>This means I get the best of both worlds:</p>
+                <ul>
+                    <li>The academic rigor and prestige of University of Lille</li>
+                    <li>The cutting-edge research environment of Inria</li>
+                    <li>The amazing colleagues I've grown to love at Spirals</li>
+                    <li>Access to world-class resources and expertise</li>
+                </ul>
+
+                <h2>🚀 What's Coming Next?</h2>
+
+                <p><strong>Get ready for a new chapter filled with:</strong></p>
+            </div>
+
+            <!-- Research Topics Grid -->
+            <div class="grid md:grid-cols-2 gap-4 my-8">
+                <div class="topic-card rounded-xl p-5">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">🧠</span>
+                        <h4 class="font-display font-bold text-white">Coordination Models</h4>
+                    </div>
+                    <p class="text-sm text-gray-light">Deep dives into how distributed components communicate and synchronize in complex systems.</p>
+                </div>
+                <div class="topic-card rounded-xl p-5">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">🌐</span>
+                        <h4 class="font-display font-bold text-white">Distributed Systems</h4>
+                    </div>
+                    <p class="text-sm text-gray-light">Exploring the challenges and solutions for systems that span multiple machines and locations.</p>
+                </div>
+                <div class="topic-card rounded-xl p-5">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">⚡</span>
+                        <h4 class="font-display font-bold text-white">Self-Adaptation</h4>
+                    </div>
+                    <p class="text-sm text-gray-light">Building systems that can autonomously adjust to changing conditions—like nature's best survivors!</p>
+                </div>
+                <div class="topic-card rounded-xl p-5">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">☁️</span>
+                        <h4 class="font-display font-bold text-white">Cloud Computing</h4>
+                    </div>
+                    <p class="text-sm text-gray-light">Unleashing the power of scalable, on-demand computing resources for modern applications.</p>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>☕ The Real Fuel</h2>
+
+                <p>And of course, there will be lots of coffee… and maybe a few sleepless nights! ☕🌙</p>
+
+                <p>But honestly? I wouldn't have it any other way. The excitement of discovery, the thrill of solving hard problems, the joy of contributing to human knowledge—this is what I signed up for.</p>
+
+                <h2>🙏 Gratitude</h2>
+
+                <p>A huge thank you to:</p>
+                <ul>
+                    <li><strong>My supervisors</strong> for believing in me and offering this opportunity</li>
+                    <li><strong>The Spirals team</strong> for welcoming me back with open arms</li>
+                    <li><strong>Inria and University of Lille</strong> for making this collaboration possible</li>
+                    <li><strong>Everyone who supported me</strong> during my engineering year—your encouragement led me here</li>
+                </ul>
+
+                <h2>🎢 Buckle Up!</h2>
+
+                <p>The adventure continues, and it promises to be even more thrilling than before!</p>
+
+                <p>I'll be documenting this journey right here—the wins, the struggles, the breakthroughs, and yes, the coffee consumption. 😄</p>
+
+                <p><strong>If you're curious about self-adaptive systems, cloud computing, or the PhD life in general, stick around. We're going to have some fun!</strong></p>
+            </div>
+
+            <!-- CTA Box -->
+            <div class="bg-gradient-to-br from-warm-energy/10 to-determination/10 rounded-2xl p-6 my-10 border border-warm-energy/20 text-center">
+                <p class="text-3xl mb-4">🔥🎓🚀</p>
+                <p class="font-display font-bold text-xl text-white mb-2">The PhD Journey Begins!</p>
+                <p class="text-gray-light text-sm mb-4">Follow along for research insights, PhD life updates, and plenty of tech content.</p>
+                <a href="https://www.linkedin.com/in/arl%C3%A9on-zemtsop-b258321a4/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-determination to-warm-energy rounded-lg text-white font-medium hover:opacity-90 transition-opacity">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    Connect on LinkedIn
+                </a>
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-12 pt-8 border-t border-white/10">
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#PhDLife</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#NewBeginnings</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#INRIA</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#UniversitéDeLille</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#SelfAdaptation</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#CloudComputing</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#SPIRALS</span>
+                </div>
+            </div>
+
+            <!-- Series Navigation -->
+            <div class="mt-10 grid md:grid-cols-2 gap-4">
+                <a href="/blog/articles/closing-chapter-engineer.html" class="p-5 bg-gradient-to-br from-noble-blue/20 to-deep-night rounded-xl border border-white/5 hover:border-warm-energy/30 transition-colors group">
+                    <p class="font-mono text-xs text-gray-medium mb-1">← Previous Chapter</p>
+                    <p class="font-display font-bold text-white group-hover:text-warm-energy transition-colors">Closing Chapter: Engineer</p>
+                </a>
+                <a href="/blog/articles/day-1-phd-student.html" class="p-5 bg-gradient-to-br from-determination/10 to-noble-blue/20 rounded-xl border border-determination/20 hover:border-determination/40 transition-colors group text-right">
+                    <p class="font-mono text-xs text-determination mb-1">Next →</p>
+                    <p class="font-display font-bold text-white group-hover:text-determination transition-colors">Day 1 as a PhD Student</p>
+                </a>
+            </div>
+
+            <!-- Author -->
+            <div class="mt-12 p-6 bg-gradient-to-br from-noble-blue/30 to-night-sky/50 rounded-2xl border border-white/5">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-determination to-warm-energy flex items-center justify-center font-display font-bold text-xl text-white">AZ</div>
+                    <div>
+                        <h4 class="font-display font-bold text-white">Arléon Zemtsop</h4>
+                        <p class="font-body text-sm text-gray-light">PhD Student at Inria Lille / University of Lille • The journey begins! 🚀</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share -->
+            <div class="mt-8 flex items-center gap-4">
+                <span class="font-mono text-sm text-gray-medium">Partager:</span>
+                <a href="https://www.linkedin.com/in/brice-arl%C3%A9on-zemtsop-ndadji-b258321a4/" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://x.com/ZemtsopArleon" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 bg-deep-night/50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="/" class="font-display font-extrabold text-2xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+            <p class="font-mono text-xs text-gray-medium mt-4">© 2025 ZEMTSOP NDADJI Brice Arléon</p>
+        </div>
+    </footer>
+</body>
+</html>

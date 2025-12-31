@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exciting Milestone: Master's Thesis Presentation | Blog - Arléon Zemtsop</title>
+    <meta name="description" content="Presenting my master's thesis on Model-Driven Engineering for Workflow Management to the SPIRALS team at INRIA Lille.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230A1628' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' text-anchor='middle'%3E%3Ctspan fill='%23FFFFFF'%3EA%3C/tspan%3E%3Ctspan fill='%23E85D04'%3EZ%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-night': '#0A1628', 'noble-blue': '#1E3A5F', 'night-sky': '#0F2847',
+                        'determination': '#E85D04', 'warm-energy': '#F48C06', 'noble-gold': '#D4A012',
+                        'digital-cyan': '#00D4FF', 'code-green': '#4FFFB0', 'gray-medium': '#6B6B6F',
+                        'gray-light': '#A0A0A5', 'off-white': '#F8F9FA',
+                        'academic-purple': '#6A1B9A', 'academic-indigo': '#303F9F',
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'], 'body': ['Inter', 'sans-serif'],
+                        'accent': ['Playfair Display', 'serif'], 'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0A1628; color: #F8F9FA; }
+        .bg-pattern { background-image: radial-gradient(ellipse at 20% 80%, rgba(106, 27, 154, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(212, 160, 18, 0.08) 0%, transparent 40%); }
+        .prose-custom h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; color: #F8F9FA; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose-custom h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; color: #D4A012; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose-custom p { margin-bottom: 1.25rem; line-height: 1.8; color: #A0A0A5; }
+        .prose-custom strong { color: #F8F9FA; }
+        .prose-custom em { color: #D4A012; }
+        .prose-custom ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+        .prose-custom ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #A0A0A5; }
+        .prose-custom ul li::before { content: '🎓'; position: absolute; left: 0; }
+        .prose-custom blockquote { border-left: 3px solid #D4A012; padding-left: 1.5rem; margin: 1.5rem 0; font-family: 'Playfair Display', serif; font-style: italic; color: #F8F9FA; background: rgba(212, 160, 18, 0.05); padding: 1.5rem; border-radius: 0 12px 12px 0; font-size: 1.1rem; }
+        
+        .graduation-card {
+            background: linear-gradient(135deg, rgba(212, 160, 18, 0.2) 0%, rgba(106, 27, 154, 0.15) 50%, rgba(30, 58, 95, 0.4) 100%);
+            border: 2px solid rgba(212, 160, 18, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        .graduation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #D4A012, #6A1B9A, #D4A012);
+        }
+        .graduation-cap {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .thesis-card {
+            background: linear-gradient(135deg, rgba(106, 27, 154, 0.15) 0%, rgba(30, 58, 95, 0.4) 100%);
+            border: 1px solid rgba(106, 27, 154, 0.3);
+        }
+        
+        .contribution-card {
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.4) 0%, rgba(15, 40, 71, 0.6) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .contribution-card:hover {
+            border-color: rgba(212, 160, 18, 0.4);
+            transform: translateY(-4px);
+        }
+        
+        .expertise-tag {
+            background: rgba(30, 58, 95, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .expertise-tag:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+            background: rgba(0, 212, 255, 0.1);
+        }
+        
+        .gratitude-card {
+            background: linear-gradient(135deg, rgba(79, 255, 176, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
+            border: 1px solid rgba(79, 255, 176, 0.3);
+        }
+        
+        .language-badge {
+            background: linear-gradient(135deg, rgba(232, 93, 4, 0.2) 0%, rgba(244, 140, 6, 0.2) 100%);
+            border: 1px solid rgba(232, 93, 4, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-deep-night/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="/" class="font-display font-extrabold text-2xl lg:text-3xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="/" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Accueil</a>
+                    <a href="/pages/about.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">À Propos</a>
+                    <a href="/pages/research.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Recherche</a>
+                    <a href="/pages/projects.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Projets</a>
+                    <a href="/blog/" class="font-body text-sm font-medium text-white py-2">Blog</a>
+                    <a href="/pages/contact.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-24 lg:pt-32 pb-24">
+        <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Back Link -->
+            <a href="/blog/" class="inline-flex items-center gap-2 text-gray-light hover:text-determination mb-8 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Retour au blog
+            </a>
+
+            <!-- Article Header -->
+            <header class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="px-3 py-1 bg-noble-gold/20 rounded-full font-mono text-xs text-noble-gold">Milestone</span>
+                    <span class="px-3 py-1 bg-academic-purple/20 rounded-full font-mono text-xs text-purple-400">Master's Thesis</span>
+                    <span class="font-mono text-xs text-gray-medium">• 6 min read</span>
+                </div>
+                <h1 class="font-display text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-tight mb-6">
+                    🌟 Exciting Milestone Achieved: Master's Thesis Presentation! 🌟
+                </h1>
+                <p class="font-body text-xl text-gray-light leading-relaxed">
+                    Presenting my research to the brilliant minds at SPIRALS — a defining moment in my academic journey.
+                </p>
+            </header>
+
+            <!-- Graduation Card -->
+            <div class="graduation-card rounded-2xl p-6 mb-10">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                        <p class="font-mono text-xs text-noble-gold uppercase tracking-widest mb-1">Achievement Unlocked</p>
+                        <h2 class="font-display text-2xl font-extrabold text-white mb-2">Master's Thesis Presented! 🎓</h2>
+                        <p class="text-gray-light">To the SPIRALS Team at INRIA Lille</p>
+                    </div>
+                    <div class="text-center graduation-cap">
+                        <p class="text-6xl">🎓</p>
+                        <p class="font-mono text-xs text-gray-light mt-1">2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose-custom">
+                <h2>🎤 The Big Day</h2>
+
+                <p>Today, I had the incredible honor of presenting my master's thesis to my colleagues at the esteemed <strong>SPIRALS team</strong> at INRIA in Lille! 🎓✨</p>
+
+                <p>Standing in front of experts in <strong>Artificial Intelligence</strong>, <strong>Self-adaptation</strong>, <strong>Cloud Computing</strong>, and <strong>Formal Methods</strong> was both nerve-wracking and exhilarating.</p>
+            </div>
+
+            <!-- Language Badge -->
+            <div class="language-badge rounded-xl p-4 my-8 flex items-center gap-4">
+                <div class="text-3xl">🌍</div>
+                <div>
+                    <p class="font-display font-bold text-white">Presented in English</p>
+                    <p class="text-sm text-gray-light">My non-native language — a personal challenge conquered! 💪</p>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <p>In a captivating and fluid presentation delivered in English (not my native language!), I successfully captured the attention of the audience. The questions and discussions that followed were incredibly enriching.</p>
+
+                <h2>📚 The Research</h2>
+            </div>
+
+            <!-- Thesis Card -->
+            <div class="thesis-card rounded-2xl p-6 my-8">
+                <div class="flex items-start gap-4">
+                    <div class="w-14 h-14 rounded-xl bg-academic-purple/20 flex items-center justify-center text-3xl flex-shrink-0">📄</div>
+                    <div>
+                        <p class="font-mono text-xs text-purple-400 mb-2">Master's Thesis</p>
+                        <h3 class="font-display font-bold text-white text-lg mb-3">"Towards a Model-Driven Engineering Approach for Workflow Management in a Web Application"</h3>
+                        <p class="text-gray-light text-sm mb-4">Developing a web application framework that integrates process management using a novel operational process specification language.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-noble-gold/10 rounded text-xs text-noble-gold">MDE</span>
+                            <span class="px-2 py-1 bg-noble-gold/10 rounded text-xs text-noble-gold">Workflow</span>
+                            <span class="px-2 py-1 bg-noble-gold/10 rounded text-xs text-noble-gold">LSAWfP</span>
+                            <span class="px-2 py-1 bg-noble-gold/10 rounded text-xs text-noble-gold">DSL</span>
+                            <span class="px-2 py-1 bg-noble-gold/10 rounded text-xs text-noble-gold">Web Apps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <p>My work focuses on developing a web application framework that integrates business process management using a novel operational process specification language called <strong>LSAWfP</strong> (Language for the Specification of Administrative Workflow Processes).</p>
+
+                <h2>🔬 Key Contributions</h2>
+
+                <p>Here are the main contributions of my research:</p>
+            </div>
+
+            <!-- Contributions -->
+            <div class="space-y-4 my-8">
+                <div class="contribution-card rounded-xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-noble-gold/20 flex items-center justify-center text-xl font-bold text-noble-gold">01</div>
+                        <div>
+                            <h4 class="font-display font-bold text-white mb-2">Software Architecture Proposal</h4>
+                            <p class="text-sm text-gray-light">Proposed a comprehensive software architecture for a web application creation system that includes integrated business process management capabilities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contribution-card rounded-xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-noble-gold/20 flex items-center justify-center text-xl font-bold text-noble-gold">02</div>
+                        <div>
+                            <h4 class="font-display font-bold text-white mb-2">LSAWfP4WEB Language</h4>
+                            <p class="text-sm text-gray-light">Introduced <strong class="text-noble-gold">LSAWfP4WEB</strong>, a new language based on LSAWfP, specifically designed for specifying web-based business processes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contribution-card rounded-xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-noble-gold/20 flex items-center justify-center text-xl font-bold text-noble-gold">03</div>
+                        <div>
+                            <h4 class="font-display font-bold text-white mb-2">Domain Specific Embedded Language (DSEL)</h4>
+                            <p class="text-sm text-gray-light">Developed a JSON-based DSEL for creating, saving, and sharing workflow specifications in a portable and standardized format.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>👥 The Audience</h2>
+
+                <p>What made this presentation special was the caliber of the audience. The SPIRALS team brings together experts in:</p>
+            </div>
+
+            <!-- Expertise Tags -->
+            <div class="flex flex-wrap gap-3 my-8">
+                <span class="expertise-tag rounded-lg px-4 py-2 font-mono text-sm text-gray-light">🤖 Artificial Intelligence</span>
+                <span class="expertise-tag rounded-lg px-4 py-2 font-mono text-sm text-gray-light">🔄 Self-Adaptation</span>
+                <span class="expertise-tag rounded-lg px-4 py-2 font-mono text-sm text-gray-light">☁️ Cloud Computing</span>
+                <span class="expertise-tag rounded-lg px-4 py-2 font-mono text-sm text-gray-light">📐 Formal Methods</span>
+                <span class="expertise-tag rounded-lg px-4 py-2 font-mono text-sm text-gray-light">🔧 Software Engineering</span>
+                <span class="expertise-tag rounded-lg px-4 py-2 font-mono text-sm text-gray-light">🌐 Distributed Systems</span>
+            </div>
+
+            <div class="prose-custom">
+                <p>Their questions and feedback pushed me to think deeper about my work and its potential applications. It was an incredible learning experience!</p>
+
+                <blockquote>
+                    "The best presentations aren't just about sharing your work — they're about sparking conversations and collaborations that push the boundaries of what's possible."
+                </blockquote>
+
+                <h2>🙏 Gratitude</h2>
+
+                <p>This milestone wouldn't have been possible without some incredible people:</p>
+            </div>
+
+            <!-- Gratitude Card -->
+            <div class="gratitude-card rounded-2xl p-6 my-8">
+                <h4 class="font-display font-bold text-white mb-4 flex items-center gap-2">
+                    <span>💚</span> Special Thanks
+                </h4>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <span class="text-xl">🎓</span>
+                        <div>
+                            <p class="text-white font-medium">Zekeng Ndadji Milliam Maxime</p>
+                            <p class="text-gray-light text-sm">For his exceptional supervision during my master's work — his guidance was invaluable</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-xl">🌀</span>
+                        <div>
+                            <p class="text-white font-medium">The SPIRALS Team</p>
+                            <p class="text-gray-light text-sm">For their warm welcome and insightful feedback during the presentation</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-xl">🏫</span>
+                        <div>
+                            <p class="text-white font-medium">University of Dschang</p>
+                            <p class="text-gray-light text-sm">Where this research journey began</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-xl">❤️</span>
+                        <div>
+                            <p class="text-white font-medium">My Family</p>
+                            <p class="text-gray-light text-sm">For their unwavering support throughout this journey</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🚀 What This Means</h2>
+
+                <p>This presentation marked an important transition in my career:</p>
+
+                <ul>
+                    <li>Closing the chapter on my master's research</li>
+                    <li>Introducing myself to the SPIRALS team as a new member</li>
+                    <li>Setting the stage for new research directions</li>
+                    <li>Building connections that would shape my future work</li>
+                </ul>
+
+                <p>Little did I know at this moment that this would be the beginning of an incredible journey — one that would lead to a PhD position, published papers, and research adventures I never imagined!</p>
+
+                <blockquote>
+                    "I am grateful for the opportunity to share my research and collaborate with such brilliant minds at SPIRALS! 🙏💡"
+                </blockquote>
+
+                <p><strong>Here's to new beginnings and endless possibilities!</strong> 🎓✨</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-10">
+                <div class="bg-noble-gold/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-noble-gold">🎓</p>
+                    <p class="font-mono text-xs text-gray-light">Master's Done</p>
+                </div>
+                <div class="bg-academic-purple/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-purple-400">3</p>
+                    <p class="font-mono text-xs text-gray-light">Contributions</p>
+                </div>
+                <div class="bg-determination/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-determination">🌍</p>
+                    <p class="font-mono text-xs text-gray-light">In English!</p>
+                </div>
+                <div class="bg-code-green/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-code-green">∞</p>
+                    <p class="font-mono text-xs text-gray-light">Possibilities</p>
+                </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-12 pt-8 border-t border-white/10">
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#MasterThesis</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Research</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#INRIA</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#SPIRALS</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#MDE</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Workflow</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Milestone</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Cameroon</span>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="mt-10 grid md:grid-cols-2 gap-4">
+                <a href="/blog/articles/two-months-inria-lessons.html" class="p-5 bg-gradient-to-br from-noble-blue/20 to-deep-night rounded-xl border border-white/5 hover:border-noble-gold/30 transition-colors group">
+                    <p class="font-mono text-xs text-gray-medium mb-1">← What Followed</p>
+                    <p class="font-display font-bold text-white group-hover:text-noble-gold transition-colors">Two Months at INRIA</p>
+                </a>
+                <a href="/blog/articles/engineer-evolving-phd.html" class="p-5 bg-gradient-to-br from-noble-gold/10 to-noble-blue/20 rounded-xl border border-noble-gold/20 hover:border-noble-gold/40 transition-colors group text-right">
+                    <p class="font-mono text-xs text-noble-gold mb-1">The Evolution →</p>
+                    <p class="font-display font-bold text-white group-hover:text-noble-gold transition-colors">Engineer Evolving to PhD</p>
+                </a>
+            </div>
+
+            <!-- Author -->
+            <div class="mt-12 p-6 bg-gradient-to-br from-noble-blue/30 to-night-sky/50 rounded-2xl border border-white/5">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-noble-gold to-academic-purple flex items-center justify-center font-display font-bold text-xl text-white">AZ</div>
+                    <div>
+                        <h4 class="font-display font-bold text-white">Arléon Zemtsop</h4>
+                        <p class="font-body text-sm text-gray-light">Research Engineer at INRIA/SPIRALS • Master's Thesis: Defended! 🎓</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share -->
+            <div class="mt-8 flex items-center gap-4">
+                <span class="font-mono text-sm text-gray-medium">Partager:</span>
+                <a href="https://www.linkedin.com/in/brice-arl%C3%A9on-zemtsop-ndadji-b258321a4/" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://x.com/ZemtsopArleon" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 bg-deep-night/50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="/" class="font-display font-extrabold text-2xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+            <p class="font-mono text-xs text-gray-medium mt-4">© 2025 ZEMTSOP NDADJI Brice Arléon</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflections on DisCoTec 2025 | Blog - Arléon Zemtsop</title>
+    <meta name="description" content="My experience at DisCoTec 2025 in Lille - volunteering, presenting AdaptiFlow, and connecting with researchers from around the world.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230A1628' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' text-anchor='middle'%3E%3Ctspan fill='%23FFFFFF'%3EA%3C/tspan%3E%3Ctspan fill='%23E85D04'%3EZ%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-night': '#0A1628', 'noble-blue': '#1E3A5F', 'night-sky': '#0F2847',
+                        'determination': '#E85D04', 'warm-energy': '#F48C06', 'noble-gold': '#D4A012',
+                        'digital-cyan': '#00D4FF', 'code-green': '#4FFFB0', 'gray-medium': '#6B6B6F',
+                        'gray-light': '#A0A0A5', 'off-white': '#F8F9FA',
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'], 'body': ['Inter', 'sans-serif'],
+                        'accent': ['Playfair Display', 'serif'], 'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0A1628; color: #F8F9FA; }
+        .bg-pattern { background-image: radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(0, 212, 255, 0.08) 0%, transparent 40%); }
+        .prose-custom h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; color: #F8F9FA; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose-custom h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; color: #00D4FF; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose-custom p { margin-bottom: 1.25rem; line-height: 1.8; color: #A0A0A5; }
+        .prose-custom strong { color: #F8F9FA; }
+        .prose-custom em { color: #00D4FF; }
+        .prose-custom ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+        .prose-custom ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #A0A0A5; }
+        .prose-custom ul li::before { content: '→'; position: absolute; left: 0; color: #00D4FF; }
+        .prose-custom blockquote { border-left: 3px solid #00D4FF; padding-left: 1.5rem; margin: 1.5rem 0; font-family: 'Playfair Display', serif; font-style: italic; color: #F8F9FA; background: rgba(0, 212, 255, 0.05); padding: 1.5rem; border-radius: 0 12px 12px 0; font-size: 1.1rem; }
+        
+        .conference-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(30, 58, 95, 0.4) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .conference-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00D4FF, #4FFFB0, #00D4FF);
+        }
+        
+        .role-badge {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(79, 255, 176, 0.2) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .paper-card {
+            background: linear-gradient(135deg, rgba(232, 93, 4, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
+            border: 1px solid rgba(232, 93, 4, 0.3);
+        }
+        
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.4) 0%, rgba(15, 40, 71, 0.6) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .highlight-card:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+            transform: translateY(-4px);
+        }
+        
+        .stat-card {
+            background: rgba(30, 58, 95, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .connection-card {
+            background: linear-gradient(135deg, rgba(79, 255, 176, 0.05) 0%, rgba(30, 58, 95, 0.3) 100%);
+            border: 1px solid rgba(79, 255, 176, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-deep-night/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="/" class="font-display font-extrabold text-2xl lg:text-3xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="/" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Accueil</a>
+                    <a href="/pages/about.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">À Propos</a>
+                    <a href="/pages/research.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Recherche</a>
+                    <a href="/pages/projects.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Projets</a>
+                    <a href="/blog/" class="font-body text-sm font-medium text-white py-2">Blog</a>
+                    <a href="/pages/contact.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-24 lg:pt-32 pb-24">
+        <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Back Link -->
+            <a href="/blog/" class="inline-flex items-center gap-2 text-gray-light hover:text-determination mb-8 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Retour au blog
+            </a>
+
+            <!-- Article Header -->
+            <header class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="px-3 py-1 bg-digital-cyan/20 rounded-full font-mono text-xs text-digital-cyan">Conférence</span>
+                    <span class="px-3 py-1 bg-code-green/20 rounded-full font-mono text-xs text-code-green">DisCoTec 2025</span>
+                    <span class="font-mono text-xs text-gray-medium">• Juin 2025</span>
+                </div>
+                <h1 class="font-display text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-tight mb-6">
+                    🎓 Reflections on DisCoTec 2025: Volunteering, Presenting, and Connecting
+                </h1>
+                <p class="font-body text-xl text-gray-light leading-relaxed">
+                    My experience at one of the premier conferences on distributed computing and coordination — from behind the scenes to center stage.
+                </p>
+            </header>
+
+            <!-- Conference Card -->
+            <div class="conference-card rounded-2xl p-6 mb-10">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                        <h2 class="font-display font-extrabold text-2xl text-white mb-2">DisCoTec 2025</h2>
+                        <p class="text-gray-light">19th International Federated Conference on Distributed Computing Techniques</p>
+                        <p class="font-mono text-sm text-digital-cyan mt-2">📍 Lille, France • June 2025</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="role-badge px-3 py-1 rounded-full font-mono text-xs text-digital-cyan">🎤 Speaker</span>
+                        <span class="role-badge px-3 py-1 rounded-full font-mono text-xs text-code-green">🤝 Volunteer</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose-custom">
+                <h2>🌟 A Double Privilege</h2>
+
+                <p>I recently had the incredible privilege of participating in <strong>DisCoTec 2025</strong> right here in Lille — and in not just one, but <em>two</em> capacities:</p>
+
+                <ul>
+                    <li>As a <strong>volunteer</strong> helping organize and run the conference</li>
+                    <li>As a <strong>researcher</strong> presenting my paper at the WACA workshop</li>
+                </ul>
+
+                <p>This dual role gave me a unique perspective on how international research conferences work — both from behind the scenes and from the spotlight of the presentation stage.</p>
+            </div>
+
+            <!-- Paper Presentation Card -->
+            <div class="paper-card rounded-2xl p-6 my-10">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-determination/20 flex items-center justify-center text-2xl flex-shrink-0">📄</div>
+                    <div>
+                        <p class="font-mono text-xs text-determination mb-2">WACA Workshop @ DisCoTec 2025</p>
+                        <h3 class="font-display font-bold text-white text-lg mb-2">AdaptiFlow: An Extensible Framework for Event-Driven Autonomy in Cloud Microservices</h3>
+                        <p class="text-gray-light text-sm">A paper presenting our approach to building self-adaptive microservices using event-driven architecture and the MAPE-K loop.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-determination/10 rounded text-xs text-determination">Self-Adaptation</span>
+                            <span class="px-2 py-1 bg-determination/10 rounded text-xs text-determination">Microservices</span>
+                            <span class="px-2 py-1 bg-determination/10 rounded text-xs text-determination">Event-Driven</span>
+                            <span class="px-2 py-1 bg-determination/10 rounded text-xs text-determination">MAPE-K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🎭 Behind the Scenes</h2>
+
+                <p>Being a volunteer at an academic conference is like being a stagehand at a theater production. You see everything that makes the magic happen:</p>
+
+                <h3>Registration & Welcome</h3>
+                <p>Greeting researchers from around the world as they arrive. Seeing the excitement in their eyes. Helping them navigate the venue. Small interactions that set the tone for the entire conference.</p>
+
+                <h3>Session Management</h3>
+                <p>Making sure presentations run smoothly. Managing Q&A timing. Troubleshooting tech issues. Every smooth talk has a team making it happen behind the curtain.</p>
+
+                <h3>Networking Facilitation</h3>
+                <p>Coffee breaks aren't just about coffee — they're about connections. Helping people find each other. Introducing researchers with common interests. The real magic often happens between sessions.</p>
+
+                <blockquote>
+                    "The best conferences aren't just about the talks — they're about the conversations that happen in the hallways."
+                </blockquote>
+            </div>
+
+            <!-- Conference Highlights -->
+            <div class="my-10">
+                <h3 class="font-display font-bold text-white mb-6 text-center">✨ Conference Highlights</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="highlight-card rounded-xl p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">🧠</span>
+                            <h4 class="font-display font-bold text-white">Autonomous Systems</h4>
+                        </div>
+                        <p class="text-sm text-gray-light">Deep discussions on building systems that can monitor, analyze, and adapt themselves without human intervention.</p>
+                    </div>
+                    <div class="highlight-card rounded-xl p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">🔄</span>
+                            <h4 class="font-display font-bold text-white">Self-Adaptation</h4>
+                        </div>
+                        <p class="text-sm text-gray-light">The latest research on MAPE-K loops, feedback mechanisms, and runtime reconfiguration strategies.</p>
+                    </div>
+                    <div class="highlight-card rounded-xl p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">🌐</span>
+                            <h4 class="font-display font-bold text-white">Distributed Computing</h4>
+                        </div>
+                        <p class="text-sm text-gray-light">Coordination models, consensus algorithms, and the challenges of building reliable distributed systems.</p>
+                    </div>
+                    <div class="highlight-card rounded-xl p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">☁️</span>
+                            <h4 class="font-display font-bold text-white">Cloud Native</h4>
+                        </div>
+                        <p class="text-sm text-gray-light">Kubernetes, microservices, serverless — the practical side of building modern cloud applications.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🎤 The Presentation Experience</h2>
+
+                <p>Stepping up to present my own research was... exhilarating. And terrifying. And deeply rewarding.</p>
+
+                <p>There's something uniquely vulnerable about sharing your work with a room full of experts. Every slide, every word, every diagram represents months of thinking, coding, experimenting, and writing.</p>
+
+                <h3>The Nerves</h3>
+                <p>Heart pounding. Palms sweating. The audience waiting. That moment before you speak feels like standing on the edge of a cliff.</p>
+
+                <h3>The Flow</h3>
+                <p>And then you start talking about something you care deeply about. The nerves transform into energy. The audience becomes collaborators, not judges. Questions become opportunities to dive deeper.</p>
+
+                <h3>The Feedback</h3>
+                <p>The Q&A session was gold. Insightful questions that made me think differently about my own work. Suggestions I hadn't considered. Connections to other research I didn't know about.</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-10">
+                <div class="stat-card rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-digital-cyan">4</p>
+                    <p class="font-mono text-xs text-gray-light">Days</p>
+                </div>
+                <div class="stat-card rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-code-green">50+</p>
+                    <p class="font-mono text-xs text-gray-light">Researchers Met</p>
+                </div>
+                <div class="stat-card rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-determination">1</p>
+                    <p class="font-mono text-xs text-gray-light">Paper Presented</p>
+                </div>
+                <div class="stat-card rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-noble-gold">∞</p>
+                    <p class="font-mono text-xs text-gray-light">Coffee Cups</p>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🤝 The Power of Connection</h2>
+
+                <p>Beyond the formal sessions, the real treasure of DisCoTec was the <strong>people</strong>.</p>
+
+                <p>I had conversations that will shape my research for years to come. Met potential collaborators. Found kindred spirits wrestling with similar problems. Discovered new perspectives that challenged my assumptions.</p>
+            </div>
+
+            <!-- Connection Card -->
+            <div class="connection-card rounded-2xl p-6 my-10">
+                <h4 class="font-display font-bold text-white mb-4 flex items-center gap-2">
+                    <span class="text-code-green">💡</span> Key Takeaways
+                </h4>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <span class="text-code-green font-bold">01</span>
+                        <p class="text-gray-light"><strong class="text-white">Research is collaborative.</strong> The best ideas emerge from conversations, not isolation.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-code-green font-bold">02</span>
+                        <p class="text-gray-light"><strong class="text-white">Volunteering pays dividends.</strong> Helping others connects you to the community in ways attendance alone can't.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-code-green font-bold">03</span>
+                        <p class="text-gray-light"><strong class="text-white">Presenting sharpens thinking.</strong> Preparing to explain your work clarifies your own understanding.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-code-green font-bold">04</span>
+                        <p class="text-gray-light"><strong class="text-white">The field is vibrant.</strong> Self-adaptive systems and distributed computing are more relevant than ever.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🔮 Looking Forward</h2>
+
+                <p>DisCoTec 2025 reinforced something I already believed: <strong>the challenges in building autonomous, resilient systems are exciting</strong>, and we can make meaningful progress through shared knowledge and cooperation.</p>
+
+                <p>To everyone I met at the conference — thank you for the conversations, the questions, the coffee, and the inspiration. See you at the next one! 👋</p>
+
+                <p>And to anyone considering attending or volunteering at an academic conference: <strong>do it</strong>. The experience is invaluable.</p>
+            </div>
+
+            <!-- CTA -->
+            <div class="bg-gradient-to-br from-digital-cyan/10 to-code-green/10 rounded-2xl p-6 my-10 border border-digital-cyan/20 text-center">
+                <p class="font-display font-bold text-xl text-white mb-2">Interested in Self-Adaptive Systems?</p>
+                <p class="text-gray-light text-sm mb-4">I'm always happy to connect with researchers and practitioners working on distributed systems, cloud computing, and autonomic computing.</p>
+                <a href="https://www.linkedin.com/in/arl%C3%A9on-zemtsop-b258321a4/" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-digital-cyan to-code-green rounded-lg text-deep-night font-medium hover:opacity-90 transition-opacity">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    Let's Connect
+                </a>
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-12 pt-8 border-t border-white/10">
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#DisCoTec2025</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#WACA</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#DistributedSystems</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#CloudComputing</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#SelfAdaptation</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#AdaptiFlow</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#AcademicConference</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Lille</span>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="mt-10 grid md:grid-cols-2 gap-4">
+                <a href="/blog/articles/expert-validates-baby.html" class="p-5 bg-gradient-to-br from-noble-blue/20 to-deep-night rounded-xl border border-white/5 hover:border-digital-cyan/30 transition-colors group">
+                    <p class="font-mono text-xs text-gray-medium mb-1">← Related</p>
+                    <p class="font-display font-bold text-white group-hover:text-digital-cyan transition-colors">When an Expert Validates Your Baby</p>
+                </a>
+                <a href="/blog/articles/first-paper-accepted.html" class="p-5 bg-gradient-to-br from-determination/10 to-noble-blue/20 rounded-xl border border-determination/20 hover:border-determination/40 transition-colors group text-right">
+                    <p class="font-mono text-xs text-determination mb-1">Related →</p>
+                    <p class="font-display font-bold text-white group-hover:text-determination transition-colors">First Paper Accepted!</p>
+                </a>
+            </div>
+
+            <!-- Author -->
+            <div class="mt-12 p-6 bg-gradient-to-br from-noble-blue/30 to-night-sky/50 rounded-2xl border border-white/5">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-determination to-warm-energy flex items-center justify-center font-display font-bold text-xl text-white">AZ</div>
+                    <div>
+                        <h4 class="font-display font-bold text-white">Arléon Zemtsop</h4>
+                        <p class="font-body text-sm text-gray-light">PhD Student at Inria Lille / University of Lille • Self-Adaptive Systems Researcher</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share -->
+            <div class="mt-8 flex items-center gap-4">
+                <span class="font-mono text-sm text-gray-medium">Partager:</span>
+                <a href="https://www.linkedin.com/in/brice-arl%C3%A9on-zemtsop-ndadji-b258321a4/" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://x.com/ZemtsopArleon" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 bg-deep-night/50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="/" class="font-display font-extrabold text-2xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+            <p class="font-mono text-xs text-gray-medium mt-4">© 2025 ZEMTSOP NDADJI Brice Arléon</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wrapping Up the Year with the SPIRALS Team Seminar | Blog - Arléon Zemtsop</title>
+    <meta name="description" content="Presenting my first 2 months of work at the SPIRALS team annual seminar - a Java library for self-adaptive microservices!">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230A1628' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' text-anchor='middle'%3E%3Ctspan fill='%23FFFFFF'%3EA%3C/tspan%3E%3Ctspan fill='%23E85D04'%3EZ%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-night': '#0A1628', 'noble-blue': '#1E3A5F', 'night-sky': '#0F2847',
+                        'determination': '#E85D04', 'warm-energy': '#F48C06', 'noble-gold': '#D4A012',
+                        'digital-cyan': '#00D4FF', 'code-green': '#4FFFB0', 'gray-medium': '#6B6B6F',
+                        'gray-light': '#A0A0A5', 'off-white': '#F8F9FA',
+                        'spirals-purple': '#9C27B0', 'spirals-violet': '#7B1FA2',
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'], 'body': ['Inter', 'sans-serif'],
+                        'accent': ['Playfair Display', 'serif'], 'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0A1628; color: #F8F9FA; }
+        .bg-pattern { background-image: radial-gradient(ellipse at 20% 80%, rgba(156, 39, 176, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(212, 160, 18, 0.08) 0%, transparent 40%); }
+        .prose-custom h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; color: #F8F9FA; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose-custom h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; color: #D4A012; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose-custom p { margin-bottom: 1.25rem; line-height: 1.8; color: #A0A0A5; }
+        .prose-custom strong { color: #F8F9FA; }
+        .prose-custom em { color: #D4A012; }
+        .prose-custom ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+        .prose-custom ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #A0A0A5; }
+        .prose-custom ul li::before { content: '🌟'; position: absolute; left: 0; }
+        .prose-custom blockquote { border-left: 3px solid #D4A012; padding-left: 1.5rem; margin: 1.5rem 0; font-family: 'Playfair Display', serif; font-style: italic; color: #F8F9FA; background: rgba(212, 160, 18, 0.05); padding: 1.5rem; border-radius: 0 12px 12px 0; font-size: 1.1rem; }
+        
+        .spirals-card {
+            background: linear-gradient(135deg, rgba(156, 39, 176, 0.15) 0%, rgba(30, 58, 95, 0.4) 100%);
+            border: 2px solid rgba(156, 39, 176, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .spirals-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #9C27B0, #D4A012, #9C27B0);
+        }
+        
+        .spiral-animation {
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .achievement-card {
+            background: linear-gradient(135deg, rgba(212, 160, 18, 0.15) 0%, rgba(30, 58, 95, 0.4) 100%);
+            border: 2px solid rgba(212, 160, 18, 0.4);
+            position: relative;
+        }
+        .achievement-card::after {
+            content: '🏆';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            font-size: 2rem;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid rgba(156, 39, 176, 0.3);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background: #9C27B0;
+            border-radius: 50%;
+        }
+        
+        .team-card {
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.4) 0%, rgba(15, 40, 71, 0.6) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .team-card:hover {
+            border-color: rgba(156, 39, 176, 0.4);
+            transform: translateY(-4px);
+        }
+        
+        .presentation-card {
+            background: linear-gradient(135deg, rgba(79, 255, 176, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
+            border: 1px solid rgba(79, 255, 176, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-deep-night/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="/" class="font-display font-extrabold text-2xl lg:text-3xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="/" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Accueil</a>
+                    <a href="/pages/about.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">À Propos</a>
+                    <a href="/pages/research.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Recherche</a>
+                    <a href="/pages/projects.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Projets</a>
+                    <a href="/blog/" class="font-body text-sm font-medium text-white py-2">Blog</a>
+                    <a href="/pages/contact.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-24 lg:pt-32 pb-24">
+        <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Back Link -->
+            <a href="/blog/" class="inline-flex items-center gap-2 text-gray-light hover:text-determination mb-8 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Retour au blog
+            </a>
+
+            <!-- Article Header -->
+            <header class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="px-3 py-1 bg-spirals-purple/20 rounded-full font-mono text-xs text-spirals-purple">SPIRALS</span>
+                    <span class="px-3 py-1 bg-noble-gold/20 rounded-full font-mono text-xs text-noble-gold">Team Event</span>
+                    <span class="font-mono text-xs text-gray-medium">• 5 min read</span>
+                </div>
+                <h1 class="font-display text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-tight mb-6">
+                    🌟 Wrapping Up the Year at INRIA with the SPIRALS Team Seminar!
+                </h1>
+                <p class="font-body text-xl text-gray-light leading-relaxed">
+                    A fantastic opportunity to showcase exciting work and celebrate our team's achievements.
+                </p>
+            </header>
+
+            <!-- SPIRALS Card -->
+            <div class="spirals-card rounded-2xl p-6 mb-10">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                        <p class="font-mono text-xs text-spirals-purple uppercase tracking-widest mb-1">Annual Event</p>
+                        <h2 class="font-display text-2xl font-extrabold text-white mb-2">SPIRALS Team Seminar</h2>
+                        <p class="text-gray-light">End of Year Celebration & Research Showcase</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="relative w-20 h-20">
+                            <svg viewBox="0 0 100 100" class="w-full h-full spiral-animation">
+                                <path d="M50,10 A40,40 0 1,1 50,90 A30,30 0 1,0 50,30 A20,20 0 1,1 50,70 A10,10 0 1,0 50,50" 
+                                      fill="none" stroke="#9C27B0" stroke-width="3" opacity="0.6"/>
+                            </svg>
+                            <span class="absolute inset-0 flex items-center justify-center text-2xl">🌀</span>
+                        </div>
+                        <p class="font-mono text-xs text-gray-light mt-1">@ INRIA Lille</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose-custom">
+                <h2>🎄 End of Year Traditions</h2>
+
+                <p>As the year comes to a close, our <strong>SPIRALS</strong> team at INRIA held our traditional seminar — a cherished tradition that brings together all team members to showcase their work and celebrate our collective achievements.</p>
+
+                <p>For those who don't know, <strong>SPIRALS</strong> (Self-adaptation for distributed services and large software systems) is a joint research team between INRIA and the University of Lille. We focus on making software systems more autonomous, resilient, and adaptive.</p>
+
+                <blockquote>
+                    "The seminar is more than just presentations — it's a celebration of collaboration, innovation, and the incredible people behind the research."
+                </blockquote>
+
+                <h2>🎤 My First SPIRALS Presentation</h2>
+
+                <p>I was thrilled (and a bit nervous!) to present the projects I've been working on since joining <em>just two months ago</em>. Standing in front of the entire team, including senior researchers and PhD students, was quite the experience!</p>
+            </div>
+
+            <!-- Presentation Card -->
+            <div class="presentation-card rounded-2xl p-6 my-8">
+                <div class="flex items-start gap-4">
+                    <div class="w-14 h-14 rounded-xl bg-code-green/20 flex items-center justify-center text-3xl flex-shrink-0">🎤</div>
+                    <div>
+                        <p class="font-mono text-xs text-code-green mb-2">My Presentation Topic</p>
+                        <h3 class="font-display font-bold text-white text-xl mb-3">Self-Adaptation Library for Cloud Microservices</h3>
+                        <p class="text-gray-light text-sm">A Java Maven library designed to facilitate the self-adaptation of Java-based microservices in the cloud — the early foundations of what would become AdaptiFlow!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievement Card -->
+            <div class="achievement-card rounded-2xl p-6 my-8">
+                <h3 class="font-display font-bold text-white text-lg mb-4">Achievement Unlocked! 🏆</h3>
+                <p class="text-noble-gold text-2xl font-bold mb-2">2 Months → 1 Complete Library</p>
+                <p class="text-gray-light">A Java Maven library for self-adaptive microservices, complete with documentation and working demos.</p>
+            </div>
+
+            <div class="prose-custom">
+                <h2>📚 What I Presented</h2>
+
+                <p>Here's a quick overview of what I showcased to the team:</p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="space-y-6 my-8 pl-4">
+                <div class="timeline-item pb-6">
+                    <h4 class="font-display font-bold text-white mb-2">The Problem Space</h4>
+                    <p class="text-gray-light text-sm">Why do cloud microservices need self-adaptation? The challenges of managing distributed systems at scale.</p>
+                </div>
+                <div class="timeline-item pb-6">
+                    <h4 class="font-display font-bold text-white mb-2">The Architecture</h4>
+                    <p class="text-gray-light text-sm">How the library is structured — perception, logic, and execution layers for autonomous behavior.</p>
+                </div>
+                <div class="timeline-item pb-6">
+                    <h4 class="font-display font-bold text-white mb-2">Live Demo</h4>
+                    <p class="text-gray-light text-sm">A working demonstration with the TeaStore benchmark application showing real-time adaptation.</p>
+                </div>
+                <div class="timeline-item pb-0">
+                    <h4 class="font-display font-bold text-white mb-2">Future Roadmap</h4>
+                    <p class="text-gray-light text-sm">Where we're heading next — more adaptation strategies, better integration, and academic publications.</p>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>👥 The SPIRALS Family</h2>
+
+                <p>What makes SPIRALS special isn't just the research — it's the people. Here's what makes our team awesome:</p>
+            </div>
+
+            <!-- Team Cards -->
+            <div class="grid md:grid-cols-2 gap-4 my-8">
+                <div class="team-card rounded-xl p-5">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">🧠</span>
+                        <h4 class="font-display font-bold text-white">Brilliant Minds</h4>
+                    </div>
+                    <p class="text-sm text-gray-light">Senior researchers with decades of experience in distributed systems and self-adaptation.</p>
+                </div>
+                <div class="team-card rounded-xl p-5">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">🎓</span>
+                        <h4 class="font-display font-bold text-white">PhD Community</h4>
+                    </div>
+                    <p class="text-sm text-gray-light">A supportive group of doctoral students tackling cutting-edge research challenges.</p>
+                </div>
+                <div class="team-card rounded-xl p-5">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">🤝</span>
+                        <h4 class="font-display font-bold text-white">Collaboration Spirit</h4>
+                    </div>
+                    <p class="text-sm text-gray-light">Open doors, shared knowledge, and a culture of helping each other succeed.</p>
+                </div>
+                <div class="team-card rounded-xl p-5">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">☕</span>
+                        <h4 class="font-display font-bold text-white">Coffee Culture</h4>
+                    </div>
+                    <p class="text-sm text-gray-light">The best ideas happen around the coffee machine. It's basically a research requirement! 😄</p>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>💭 Reflections</h2>
+
+                <p>Standing there, presenting my work to the team that welcomed me just two months ago, I felt a mix of pride and gratitude.</p>
+
+                <p>Pride because I had accomplished something meaningful in a short time. Gratitude because I'm surrounded by people who support growth and celebrate each other's wins.</p>
+
+                <blockquote>
+                    "The journey of learning and growing never stops, and I'm eager to keep pushing the boundaries in the days to come!"
+                </blockquote>
+
+                <h2>🚀 Looking Forward</h2>
+
+                <p>This seminar was just the beginning. With the foundation laid, here's what's next:</p>
+
+                <ul>
+                    <li>Refine the library based on team feedback</li>
+                    <li>Start working on the research paper (spoiler: it got accepted! 🎉)</li>
+                    <li>Expand the adaptation strategies</li>
+                    <li>Prepare for the PhD journey ahead</li>
+                </ul>
+
+                <p><strong>Here's to continuous improvement and collaboration! 💪✨</strong></p>
+
+                <p>Thank you, SPIRALS team, for making my first end-of-year seminar so memorable. Can't wait to see what we build together in the coming year!</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-10">
+                <div class="bg-spirals-purple/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-spirals-purple">2</p>
+                    <p class="font-mono text-xs text-gray-light">Months In</p>
+                </div>
+                <div class="bg-noble-gold/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-noble-gold">1</p>
+                    <p class="font-mono text-xs text-gray-light">Library Built</p>
+                </div>
+                <div class="bg-code-green/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-code-green">1st</p>
+                    <p class="font-mono text-xs text-gray-light">Presentation</p>
+                </div>
+                <div class="bg-determination/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-determination">∞</p>
+                    <p class="font-mono text-xs text-gray-light">Motivation</p>
+                </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-12 pt-8 border-t border-white/10">
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#SPIRALS</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#INRIA</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#TeamSeminar</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#SelfAdaptation</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#CloudComputing</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Microservices</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#ResearchLife</span>
+                </div>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="mt-10 grid md:grid-cols-2 gap-4">
+                <a href="/blog/articles/two-months-inria-lessons.html" class="p-5 bg-gradient-to-br from-noble-blue/20 to-deep-night rounded-xl border border-white/5 hover:border-spirals-purple/30 transition-colors group">
+                    <p class="font-mono text-xs text-gray-medium mb-1">← Related</p>
+                    <p class="font-display font-bold text-white group-hover:text-spirals-purple transition-colors">Two Months at INRIA</p>
+                </a>
+                <a href="/blog/articles/first-paper-accepted.html" class="p-5 bg-gradient-to-br from-noble-gold/10 to-noble-blue/20 rounded-xl border border-noble-gold/20 hover:border-noble-gold/40 transition-colors group text-right">
+                    <p class="font-mono text-xs text-noble-gold mb-1">What Came Next →</p>
+                    <p class="font-display font-bold text-white group-hover:text-noble-gold transition-colors">First Paper Accepted!</p>
+                </a>
+            </div>
+
+            <!-- Author -->
+            <div class="mt-12 p-6 bg-gradient-to-br from-noble-blue/30 to-night-sky/50 rounded-2xl border border-white/5">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-spirals-purple to-noble-gold flex items-center justify-center font-display font-bold text-xl text-white">AZ</div>
+                    <div>
+                        <h4 class="font-display font-bold text-white">Arléon Zemtsop</h4>
+                        <p class="font-body text-sm text-gray-light">Research Engineer at INRIA/SPIRALS • Building Self-Adaptive Systems 🌀</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share -->
+            <div class="mt-8 flex items-center gap-4">
+                <span class="font-mono text-sm text-gray-medium">Partager:</span>
+                <a href="https://www.linkedin.com/in/brice-arl%C3%A9on-zemtsop-ndadji-b258321a4/" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://x.com/ZemtsopArleon" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 bg-deep-night/50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="/" class="font-display font-extrabold text-2xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+            <p class="font-mono text-xs text-gray-medium mt-4">© 2025 ZEMTSOP NDADJI Brice Arléon</p>
+        </div>
+    </footer>
+</body>
+</html>

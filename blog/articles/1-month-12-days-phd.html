@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Month, 12 Days as a PhD Student | Blog - Arléon Zemtsop</title>
+    <meta name="description" content="A survival report from 42 days into the PhD journey. Expectations vs reality, paper avalanches, and finding your way.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230A1628' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' text-anchor='middle'%3E%3Ctspan fill='%23FFFFFF'%3EA%3C/tspan%3E%3Ctspan fill='%23E85D04'%3EZ%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-night': '#0A1628', 'noble-blue': '#1E3A5F', 'night-sky': '#0F2847',
+                        'determination': '#E85D04', 'warm-energy': '#F48C06', 'noble-gold': '#D4A012',
+                        'digital-cyan': '#00D4FF', 'code-green': '#4FFFB0', 'gray-medium': '#6B6B6F',
+                        'gray-light': '#A0A0A5', 'off-white': '#F8F9FA',
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'], 'body': ['Inter', 'sans-serif'],
+                        'accent': ['Playfair Display', 'serif'], 'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0A1628; color: #F8F9FA; }
+        .bg-pattern { background-image: radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(232, 93, 4, 0.08) 0%, transparent 40%); }
+        .prose-custom h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; color: #F8F9FA; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose-custom h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; color: #00D4FF; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose-custom p { margin-bottom: 1.25rem; line-height: 1.8; color: #A0A0A5; }
+        .prose-custom strong { color: #F8F9FA; }
+        .prose-custom em { color: #F48C06; }
+        .prose-custom ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+        .prose-custom ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #A0A0A5; }
+        .prose-custom ul li::before { content: '→'; position: absolute; left: 0; color: #00D4FF; }
+        .prose-custom a { color: #00D4FF; text-decoration: underline; }
+        .prose-custom a:hover { color: #E85D04; }
+        .prose-custom blockquote { border-left: 3px solid #00D4FF; padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: #A0A0A5; background: rgba(0, 212, 255, 0.05); padding: 1.5rem; border-radius: 0 12px 12px 0; }
+        .day-counter {
+            background: linear-gradient(135deg, #00D4FF 0%, #1E3A5F 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .day-counter::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s ease-in-out infinite;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        .expectation-card {
+            background: linear-gradient(135deg, rgba(232, 93, 4, 0.1) 0%, rgba(30, 58, 95, 0.2) 100%);
+            border: 1px solid rgba(232, 93, 4, 0.2);
+        }
+        .reality-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(30, 58, 95, 0.2) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        .survival-tip {
+            background: linear-gradient(135deg, rgba(79, 255, 176, 0.1) 0%, rgba(30, 58, 95, 0.2) 100%);
+            border: 1px solid rgba(79, 255, 176, 0.2);
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #00D4FF 0%, #E85D04 100%);
+            height: 4px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-deep-night/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="/" class="font-display font-extrabold text-2xl lg:text-3xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="/" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Accueil</a>
+                    <a href="/pages/about.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">À Propos</a>
+                    <a href="/pages/research.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Recherche</a>
+                    <a href="/pages/projects.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Projets</a>
+                    <a href="/blog/" class="font-body text-sm font-medium text-white py-2">Blog</a>
+                    <a href="/pages/contact.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-24 lg:pt-32 pb-24">
+        <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Back Link -->
+            <a href="/blog/" class="inline-flex items-center gap-2 text-gray-light hover:text-determination mb-8 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Retour au blog
+            </a>
+
+            <!-- Article Header -->
+            <header class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="px-3 py-1 bg-digital-cyan/20 rounded-full font-mono text-xs text-digital-cyan">PhD Journey</span>
+                    <span class="px-3 py-1 bg-determination/20 rounded-full font-mono text-xs text-determination">Survival Report</span>
+                    <span class="font-mono text-xs text-gray-medium">• 6 min read</span>
+                </div>
+                <h1 class="font-display text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-tight mb-6">
+                    🎢 1 Month, 12 Days as a PhD Student: A Survival Report
+                </h1>
+                <p class="font-body text-xl text-gray-light leading-relaxed">
+                    42 days in. Still alive. Mostly caffeinated. Here's what I've learned so far about navigating the beautiful chaos of doctoral research.
+                </p>
+            </header>
+
+            <!-- Day Counter -->
+            <div class="flex justify-center mb-10">
+                <div class="day-counter rounded-2xl px-8 py-6 text-center">
+                    <p class="font-mono text-xs text-white/80 uppercase tracking-widest mb-2">PhD Progress</p>
+                    <div class="flex items-baseline justify-center gap-2">
+                        <span class="font-display text-5xl font-extrabold text-white">42</span>
+                        <span class="font-body text-white/80">days</span>
+                    </div>
+                    <div class="mt-3 w-full bg-white/20 rounded-full h-2">
+                        <div class="progress-bar" style="width: 3.8%;"></div>
+                    </div>
+                    <p class="font-mono text-xs text-white/60 mt-2">~3.8% of the journey</p>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose-custom">
+                <h2>🗺️ Expectation vs. Reality</h2>
+                
+                <p>Let me paint you a picture of what I <em>thought</em> a PhD would look like versus what it <em>actually</em> looks like after 42 days.</p>
+            </div>
+
+            <!-- Expectation vs Reality Cards -->
+            <div class="grid md:grid-cols-2 gap-4 my-8">
+                <div class="expectation-card rounded-xl p-5">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xl">🦄</span>
+                        <h4 class="font-display font-bold text-determination">My Pre-PhD Fantasy</h4>
+                    </div>
+                    <ul class="text-sm text-gray-light space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="text-determination">✗</span>
+                            <span>Supervisors hand me a sacred roadmap 🗺️</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-determination">✗</span>
+                            <span>I swear eternal devotion and follow it blindly</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-determination">✗</span>
+                            <span>Clear milestones, predictable progress</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-determination">✗</span>
+                            <span>Expertise arrives in ~6 months</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="reality-card rounded-xl p-5">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xl">🌊</span>
+                        <h4 class="font-display font-bold text-digital-cyan">The Actual Reality</h4>
+                    </div>
+                    <ul class="text-sm text-gray-light space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="text-digital-cyan">✓</span>
+                            <span>It's YOUR thesis — you define the path</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-digital-cyan">✓</span>
+                            <span>Supervisors are guides 🧘‍♂️, not GPS narrators</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-digital-cyan">✓</span>
+                            <span>Constant pivots, beautiful uncertainty</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-digital-cyan">✓</span>
+                            <span>You become the captain of your own ship ⛵</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <blockquote>
+                    "Your supervisors teach you to be the captain of your own ship. They won't row for you — but they'll make sure you don't sail into a storm unprepared."
+                </blockquote>
+
+                <h2>📚 The Paper Avalanche</h2>
+
+                <p>Week 2. I opened the firehose of scientific publications.</p>
+
+                <p>And I almost drowned. 🤯</p>
+
+                <p>Hundreds of papers. Thousands of citations. Decades of research. Everyone seems to have already thought of everything. Imposter syndrome knocking at the door like <em>"Hey, remember me?"</em></p>
+
+                <h3>The Mindset Shift That Saved Me</h3>
+
+                <p>Here's what changed everything: I stopped seeing the literature as a mountain I'll never climb. Instead, I reframed it:</p>
+
+                <p>Don't say: <strong>"I give up, everything has been done!"</strong></p>
+                <p>Say instead: <strong>"The foundations are laid, and I get to build the walls!"</strong> 🧱✨</p>
+
+                <p>All those papers? They're not competition. They're <em>gifts</em>. Tools. Stepping stones. The giants whose shoulders I get to stand on.</p>
+
+                <h2>🧭 How to Even Start?</h2>
+
+                <p>This was the big question haunting me at 2 AM with a cold cup of coffee. Where do you even <em>begin</em> when the field is so vast?</p>
+            </div>
+
+            <!-- Survival Tips -->
+            <div class="survival-tip rounded-2xl p-6 my-8">
+                <h4 class="font-display font-bold text-code-green mb-4 flex items-center gap-2">
+                    <span>🎯</span> The Secret Formula (So Far)
+                </h4>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-code-green/20 flex items-center justify-center font-mono text-sm text-code-green flex-shrink-0">1</div>
+                        <div>
+                            <p class="text-white font-medium">Define a Grand (Probably Unachievable) First Goal</p>
+                            <p class="text-gray-light text-sm">95% miss it, and that's the point! It gives you direction without pressure.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-code-green/20 flex items-center justify-center font-mono text-sm text-code-green flex-shrink-0">2</div>
+                        <div>
+                            <p class="text-white font-medium">Read Like a Philosopher-Archaeologist 🔍</p>
+                            <p class="text-gray-light text-sm">Dig for tools, understand the landscape, map the territory.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-code-green/20 flex items-center justify-center font-mono text-sm text-code-green flex-shrink-0">3</div>
+                        <div>
+                            <p class="text-white font-medium">Save Every Precious Gem 💎</p>
+                            <p class="text-gray-light text-sm">Build your personal knowledge base. Every insight counts.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-code-green/20 flex items-center justify-center font-mono text-sm text-code-green flex-shrink-0">4</div>
+                        <div>
+                            <p class="text-white font-medium">Accept the Fog 🌫️</p>
+                            <p class="text-gray-light text-sm">Clarity comes with time. Embrace the uncertainty as part of the process.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🤝 The Best Therapy</h2>
+
+                <p>You know what's been the most valuable resource in these 42 days?</p>
+
+                <p><strong>Other PhD students and postdocs.</strong></p>
+
+                <p>Talking to them. Sharing struggles. Comparing notes. And discovering that <em>everyone is just as gloriously lost and confused</em>? Absolutely priceless. 🙌</p>
+
+                <p>That brilliant third-year PhD who published in a top venue? Still has imposter syndrome. The postdoc with 10 papers? Still questions their research direction sometimes. The senior researcher? Still learning.</p>
+
+                <blockquote>
+                    "We're all in this beautiful, chaotic boat together. 🚣‍♂️ And honestly? That's the most comforting thing I've learned."
+                </blockquote>
+
+                <h2>📊 42-Day Stats</h2>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
+                <div class="bg-noble-blue/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-digital-cyan">47</p>
+                    <p class="font-mono text-xs text-gray-light">Papers Read</p>
+                </div>
+                <div class="bg-noble-blue/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-determination">∞</p>
+                    <p class="font-mono text-xs text-gray-light">Cups of Coffee</p>
+                </div>
+                <div class="bg-noble-blue/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-code-green">3</p>
+                    <p class="font-mono text-xs text-gray-light">Pivots Already</p>
+                </div>
+                <div class="bg-noble-blue/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-noble-gold">1</p>
+                    <p class="font-mono text-xs text-gray-light">Thesis (in progress)</p>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🚀 What's Next?</h2>
+
+                <p>The journey is terrifying, humbling, and absolutely <strong>electrifying</strong>.</p>
+
+                <p>In the coming months, I'll be:</p>
+                <ul>
+                    <li>Diving deeper into self-adaptive systems literature</li>
+                    <li>Refining my research questions</li>
+                    <li>Building the first prototypes of my ideas</li>
+                    <li>Probably drinking more coffee than medically advisable</li>
+                </ul>
+
+                <p>If you're on this path too, <strong>wave hello! 👋</strong></p>
+
+                <p>We got this. One day at a time. One paper at a time. One coffee at a time. ☕</p>
+
+                <p><strong>See you at Day 100!</strong> 🎯</p>
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-12 pt-8 border-t border-white/10">
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#PhDlife</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#PhDJourney</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Research</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#AcademicLife</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#INRIA</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#SurvivalGuide</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#ImpostorSyndrome</span>
+                </div>
+            </div>
+
+            <!-- Series Navigation -->
+            <div class="mt-10 grid md:grid-cols-2 gap-4">
+                <a href="/blog/articles/day-1-phd-student.html" class="p-5 bg-gradient-to-br from-noble-blue/20 to-deep-night rounded-xl border border-white/5 hover:border-determination/30 transition-colors group">
+                    <p class="font-mono text-xs text-gray-medium mb-1">← Previous</p>
+                    <p class="font-display font-bold text-white group-hover:text-determination transition-colors">Day 1 as a PhD Student</p>
+                </a>
+                <a href="/blog/articles/engineer-evolving-phd.html" class="p-5 bg-gradient-to-br from-determination/10 to-noble-blue/20 rounded-xl border border-determination/20 hover:border-determination/40 transition-colors group text-right">
+                    <p class="font-mono text-xs text-determination mb-1">Next →</p>
+                    <p class="font-display font-bold text-white group-hover:text-determination transition-colors">The Engineer is Evolving!</p>
+                </a>
+            </div>
+
+            <!-- Author -->
+            <div class="mt-12 p-6 bg-gradient-to-br from-noble-blue/30 to-night-sky/50 rounded-2xl border border-white/5">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-determination to-warm-energy flex items-center justify-center font-display font-bold text-xl text-white">AZ</div>
+                    <div>
+                        <h4 class="font-display font-bold text-white">Arléon Zemtsop</h4>
+                        <p class="font-body text-sm text-gray-light">PhD Student at Inria Lille / University of Lille • 42 days and counting!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share -->
+            <div class="mt-8 flex items-center gap-4">
+                <span class="font-mono text-sm text-gray-medium">Partager:</span>
+                <a href="https://www.linkedin.com/in/brice-arl%C3%A9on-zemtsop-ndadji-b258321a4/" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://x.com/ZemtsopArleon" target="_blank" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 bg-deep-night/50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="/" class="font-display font-extrabold text-2xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+            <p class="font-mono text-xs text-gray-medium mt-4">© 2025 ZEMTSOP NDADJI Brice Arléon</p>
+        </div>
+    </footer>
+</body>
+</html>
