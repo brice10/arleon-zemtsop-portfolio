@@ -1,6 +1,6 @@
 # Portfolio - ZEMTSOP NDADJI Brice Arléon
 
-Portfolio personnel présentant mon double profil de **PhD Researcher** et **Senior Software Engineer**.
+Portfolio personnel présentant mon double profil de **PhD Student** et **Senior Software Engineer**.
 
 ## 🎨 Design
 
