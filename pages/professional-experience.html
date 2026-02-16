@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcours Professionnel — ZEMTSOP NDADJI Brice Arléon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Colors */
+            --blue-deep: #0A1628;
+            --blue-cobalt: #1E3A5F;
+            --blue-night: #0F2847;
+            
+            /* Secondary Colors */
+            --orange-vivid: #E85D04;
+            --orange-warm: #F48C06;
+            --mustard: #D4A012;
+            
+            /* Accent Colors */
+            --cyan-electric: #00D4FF;
+            --mint-code: #4FFFB0;
+            
+            /* Neutral Colors */
+            --gray-charcoal: #1C1C1E;
+            --gray-dark: #2D2D30;
+            --gray-medium: #6B6B6F;
+            --gray-light: #A0A0A5;
+            --gray-soft: #E5E5EA;
+            --white-off: #F8F9FA;
+            --white-pure: #FFFFFF;
+            
+            /* Functional */
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--blue-deep);
+            color: var(--white-off);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(232, 93, 4, 0.08) 0%, transparent 40%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231E3A5F' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* Header */
+        .header {
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        
+        .header-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            color: var(--gray-light);
+        }
+        
+        .header-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--cyan-electric);
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--cyan-electric);
+            border-radius: 2px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 8rem 4rem 6rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .hero-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--orange-vivid);
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .hero-eyebrow::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--orange-vivid);
+        }
+        
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--white-pure) 0%, var(--gray-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-title span {
+            display: block;
+            background: linear-gradient(135deg, var(--orange-vivid) 0%, var(--mustard) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--gray-light);
+            max-width: 700px;
+            line-height: 1.6;
+        }
+        
+        /* Section Styling */
+        .section {
+            padding: 6rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .section-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--orange-vivid);
+            letter-spacing: 0.1em;
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 80px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--cyan-electric) 0%, var(--orange-vivid) 100%);
+            opacity: 0.3;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 5rem;
+            padding: 2.5rem;
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        
+        .timeline-item:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateX(5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -60px;
+            top: 50px;
+            width: 20px;
+            height: 20px;
+            background: var(--orange-vivid);
+            border: 4px solid var(--blue-deep);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(232, 93, 4, 0.2);
+            transition: all 0.3s var(--transition-smooth);
+        }
+        
+        .timeline-item:hover::before {
+            background: var(--cyan-electric);
+            box-shadow: 0 0 0 8px rgba(0, 212, 255, 0.3);
+            transform: scale(1.2);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .experience-title-group {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .experience-role {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-company {
+            font-size: 1.1rem;
+            color: var(--cyan-electric);
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-period {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--gray-light);
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 4px;
+            border-left: 3px solid var(--cyan-electric);
+        }
+        
+        .experience-location {
+            font-size: 0.9rem;
+            color: var(--gray-light);
+            margin-top: 0.5rem;
+        }
+        
+        .experience-section {
+            margin-top: 2rem;
+        }
+        
+        .experience-section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--orange-warm);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .experience-section-title::before {
+            content: '';
+            width: 20px;
+            height: 2px;
+            background: var(--orange-warm);
+        }
+        
+        .experience-content {
+            color: var(--gray-soft);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .experience-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .experience-list li {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--gray-soft);
+            line-height: 1.7;
+        }
+        
+        .experience-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--cyan-electric);
+            font-size: 1.2rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+        
+        .tech-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.4rem 0.8rem;
+            background: rgba(79, 255, 176, 0.1);
+            color: var(--mint-code);
+            border: 1px solid rgba(79, 255, 176, 0.2);
+            border-radius: 4px;
+            transition: all 0.3s var(--transition-smooth);
+        }
+        
+        .tech-tag:hover {
+            background: rgba(79, 255, 176, 0.2);
+            border-color: var(--mint-code);
+            transform: translateY(-2px);
+        }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .skill-card {
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        
+        .skill-card:hover {
+            border-color: rgba(232, 93, 4, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .skill-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--orange-warm);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .skill-card-icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(232, 93, 4, 0.2);
+            border-radius: 6px;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray-soft);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .skill-list li::before {
+            content: '✓';
+            color: var(--cyan-electric);
+            font-weight: bold;
+        }
+        
+        /* Competences Transversales */
+        .competences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .competence-card {
+            background: linear-gradient(135deg, rgba(232, 93, 4, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.4s var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .competence-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--orange-vivid), var(--cyan-electric));
+            transition: width 0.3s var(--transition-smooth);
+        }
+        
+        .competence-card:hover::before {
+            width: 100%;
+            opacity: 0.1;
+        }
+        
+        .competence-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .competence-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white-pure);
+            margin-bottom: 0.8rem;
+        }
+        
+        .competence-description {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 4rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: 6rem;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo .a {
+            color: var(--white-pure);
+        }
+        
+        .footer-logo .z {
+            color: var(--orange-vivid);
+            margin-left: -8px;
+        }
+        
+        .footer-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--gray-light);
+        }
+        
+        .footer-text span {
+            color: var(--cyan-electric);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1.5rem 2rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero {
+                padding: 4rem 2rem 3rem;
+            }
+            
+            .section {
+                padding: 4rem 2rem;
+            }
+            
+            .timeline {
+                padding-left: 40px;
+            }
+            
+            .timeline::before {
+                left: 10px;
+            }
+            
+            .timeline-item::before {
+                left: -35px;
+            }
+            
+            .skills-grid,
+            .competences-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body::before {
+                display: none;
+            }
+            
+            .header,
+            .footer {
+                border: none;
+            }
+            
+            .timeline-item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-brand">ZEMTSOP NDADJI BRICE ARLÉON</div>
+        <div class="header-tag">SOFTWARE ENGINEER</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-eyebrow">PARCOURS PROFESSIONNEL</div>
+        <h1 class="hero-title">
+            Analyse des Acquis
+            <span>d'Expériences</span>
+        </h1>
+        <p class="hero-subtitle">
+            Une synthèse détaillée de mes expériences professionnelles, compétences techniques et savoir-faire acquis tout au long de mon parcours en ingénierie logicielle et développement web.
+        </p>
+    </section>
+
+    <!-- Expériences Professionnelles -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-number">01</span>
+            <h2 class="section-title">Expériences Professionnelles</h2>
+        </div>
+
+        <div class="timeline">
+            <!-- Experience 1: Dimsoft (Actuel) -->
+            <article class="timeline-item">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-role">Software Engineer Team Lead</h3>
+                        <div class="experience-company">Dimsoft Cenkyah</div>
+                        <div class="experience-location">📍 Cameroun</div>
+                    </div>
+                    <div class="experience-period">Août 2020 — Oct 2024</div>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Contexte et Responsabilités</h4>
+                    <p class="experience-content">
+                        En tant que Software Engineer Team Lead chez Dimsoft, j'ai eu l'opportunité de diriger des projets stratégiques de grande envergure, allant du développement de plateformes de paiement à la mise en œuvre de solutions de gestion pour le secteur de la santé. Mon rôle combine expertise technique et leadership d'équipe, avec une responsabilité directe sur l'architecture logicielle et l'encadrement des développeurs.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Réalisations Clés</h4>
+                    <ul class="experience-list">
+                        <li><strong>5Pay (Mai 2021 - Avril 2022)</strong> : Développement d'une plateforme générique d'intégration de multiples modes de paiement (Carte Bancaire, PayPal, Mobile Money). J'ai architecturé une solution robuste permettant aux entreprises d'intégrer facilement des systèmes de paiement dans leurs applications avec un suivi en temps réel des transactions.</li>
+                        <li><strong>Clinique Le Berceau (Août 2022 - Novembre 2022)</strong> : En tant que Project Manager et développeur principal, j'ai dirigé la création du site web et du CMS d'administration pour la Clinique Médico-Chirurgicale le Berceau. Ce projet m'a permis de combiner gestion d'équipe et développement full-stack.</li>
+                        <li><strong>DevTimeManager (Avril 2022 - Juillet 2022)</strong> : Conception et développement d'une plateforme interne de gestion de projets et de suivi d'équipes de développement, implémentant des pratiques agiles et des métriques de performance.</li>
+                        <li><strong>Agrie-Power (Janvier 2021 - Avril 2021)</strong> : Plateforme innovante mettant en relation agriculteurs et investisseurs mondiaux pour lutter contre la faim. J'ai développé l'architecture complète avec déploiement cloud sur Azure.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Approche et Méthodologies</h4>
+                    <p class="experience-content">
+                        Mon approche repose sur le Test-Driven Development (TDD) et l'intégration continue. J'ai systématiquement mis en place des pipelines CI/CD avec Docker et Jenkins, garantissant la qualité et la stabilité des applications déployées. J'ai également formé et encadré plusieurs développeurs juniors aux bonnes pratiques de développement.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Difficultés et Apprentissages</h4>
+                    <p class="experience-content">
+                        La gestion simultanée de multiples projets complexes m'a appris l'importance de la priorisation et de la communication claire avec les parties prenantes. J'ai développé une expertise particulière dans la résolution de problèmes d'architecture microservices et de scalabilité des applications.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Compétences Acquises</h4>
+                    <ul class="experience-list">
+                        <li><strong>Concevoir</strong> et architecturer des solutions logicielles complexes en microservices</li>
+                        <li><strong>Développer</strong> des applications web full-stack avec Angular et Spring Boot</li>
+                        <li><strong>Diriger</strong> et encadrer des équipes de développeurs sur des projets stratégiques</li>
+                        <li><strong>Implémenter</strong> des pipelines CI/CD pour automatiser les déploiements</li>
+                        <li><strong>Déployer</strong> et maintenir des applications en production avec Docker et Kubernetes</li>
+                        <li><strong>Tester</strong> rigoureusement le code avec TDD et BDD (JUnit, Cucumber)</li>
+                        <li><strong>Optimiser</strong> les performances et la scalabilité des applications</li>
+                        <li><strong>Gérer</strong> les bases de données relationnelles (PostgreSQL) et leur architecture</li>
+                        <li><strong>Coordonner</strong> les sprints Agile et organiser les cérémonies Scrum</li>
+                        <li><strong>Former</strong> et mentorer des développeurs juniors aux bonnes pratiques</li>
+                        <li><strong>Communiquer</strong> efficacement avec les parties prenantes et les clients</li>
+                        <li><strong>Résoudre</strong> des problèmes techniques complexes d'architecture et de performance</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Experience 2: Novalitix (Actuel) -->
+            <article class="timeline-item">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-role">Consultant IT</h3>
+                        <div class="experience-company">Novalitix</div>
+                        <div class="experience-location">📍 Cameroun</div>
+                    </div>
+                    <div class="experience-period">Février 2021 — Oct 2024</div>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Contexte et Mission</h4>
+                    <p class="experience-content">
+                        En tant que consultant IT chez Novalitix, j'interviens sur des projets variés pour différents clients, principalement dans les secteurs de l'éducation, du commerce électronique et de la construction. Mon rôle consiste à analyser les besoins clients, concevoir des solutions adaptées et assurer leur développement et déploiement.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Projets Marquants</h4>
+                    <ul class="experience-list">
+                        <li><strong>Lasico Dashboard (Juin 2023 - Août 2023)</strong> : En tant que lead développeur, j'ai dirigé une équipe de 2 développeurs pour créer une plateforme Dashboard sophistiquée de gestion et suivi de projets de construction pour la France et le Sénégal. Ce projet m'a permis de développer mon expertise en gestion d'équipe distribuée.</li>
+                        <li><strong>Intel'Actuel (Février 2023 - Mai 2023)</strong> : Développement du site web et de la plateforme d'administration pour la revue de lettres et sciences humaines de l'Université de Dschang. J'ai mis l'accent sur l'accessibilité et l'expérience utilisateur.</li>
+                        <li><strong>ASSIMIC (Mars 2023 - Mai 2023)</strong> : Site web et plateforme d'administration pour l'Association des Ingénieurs des Mines du Cameroun, avec gestion des membres et des événements.</li>
+                        <li><strong>Kouna (Février 2021 - Avril 2021)</strong> : Application mobile de gestion d'événements pour le festival KounaWeek à Dschang, développée avec Firebase pour une scalabilité optimale.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Compétences Développées</h4>
+                    <p class="experience-content">
+                        Ces missions m'ont permis de perfectionner ma capacité d'adaptation à différents contextes métiers et d'affiner mes compétences en communication client. J'ai appris à traduire des besoins métiers complexes en solutions techniques élégantes et maintenables.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Compétences Acquises</h4>
+                    <ul class="experience-list">
+                        <li><strong>Analyser</strong> les besoins clients et traduire les exigences métiers en solutions techniques</li>
+                        <li><strong>Concevoir</strong> des architectures adaptées aux contraintes spécifiques de chaque secteur</li>
+                        <li><strong>Développer</strong> des applications web et mobiles avec Ionic et Angular</li>
+                        <li><strong>Intégrer</strong> des services cloud Firebase pour la scalabilité et la performance</li>
+                        <li><strong>Diriger</strong> une équipe distribuée sur des projets internationaux (France, Sénégal)</li>
+                        <li><strong>Adapter</strong> rapidement ma méthodologie à différents contextes métiers</li>
+                        <li><strong>Containeriser</strong> et déployer des applications avec Docker</li>
+                        <li><strong>Créer</strong> des interfaces utilisateur intuitives et accessibles</li>
+                        <li><strong>Coordonner</strong> avec des parties prenantes multiculturelles</li>
+                        <li><strong>Documenter</strong> les processus et les solutions pour faciliter la maintenance</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Experience 3: Share and Win -->
+            <article class="timeline-item">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-role">Développeur Stagiaire</h3>
+                        <div class="experience-company">Share and Win</div>
+                        <div class="experience-location">📍 Cameroun</div>
+                    </div>
+                    <div class="experience-period">Janvier 2019 — Décembre 2020</div>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Contexte du Stage</h4>
+                    <p class="experience-content">
+                        Mon premier stage professionnel m'a permis de découvrir le développement en équipe sur un projet réel. J'ai participé activement à la mise en œuvre de la plateforme Share and Win, contribuant principalement au développement frontend et à l'intégration avec les microservices backend.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Activités Principales</h4>
+                    <ul class="experience-list">
+                        <li>Développement de composants Angular réutilisables pour l'interface utilisateur</li>
+                        <li>Intégration des APIs REST avec les microservices Spring Boot</li>
+                        <li>Participation aux code reviews et aux daily standups</li>
+                        <li>Apprentissage de l'architecture microservices avec Zuul Gateway et Eureka Server</li>
+                    </ul>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Apprentissages Clés</h4>
+                    <p class="experience-content">
+                        Cette expérience fondatrice m'a enseigné les bases du développement professionnel : travail en équipe, utilisation de Git pour le versioning, méthodologie Agile/Scrum, et l'importance de la documentation du code. J'ai également découvert ma passion pour l'architecture logicielle et les systèmes distribués.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Compétences Acquises</h4>
+                    <ul class="experience-list">
+                        <li><strong>Développer</strong> des composants Angular réutilisables et maintenables</li>
+                        <li><strong>Intégrer</strong> des APIs REST avec des microservices backend</li>
+                        <li><strong>Collaborer</strong> efficacement au sein d'une équipe de développement</li>
+                        <li><strong>Utiliser</strong> Git pour le versioning et la gestion du code source</li>
+                        <li><strong>Participer</strong> activement aux code reviews et aux daily standups</li>
+                        <li><strong>Comprendre</strong> l'architecture microservices (Zuul Gateway, Eureka Server)</li>
+                        <li><strong>Appliquer</strong> les méthodologies Agile/Scrum dans un contexte professionnel</li>
+                        <li><strong>Documenter</strong> le code pour faciliter la collaboration d'équipe</li>
+                        <li><strong>Structurer</strong> des bases de données NoSQL avec MongoDB</li>
+                        <li><strong>Styliser</strong> des interfaces utilisateur avec Sass et les préprocesseurs CSS</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo"><span class="a">A</span><span class="z">Z</span></div>
+        <p class="footer-text">Analyse des Acquis d'Expériences — <span>2025</span> — ZEMTSOP NDADJI Brice Arléon</p>
+    </footer>
+</body>
+</html>
