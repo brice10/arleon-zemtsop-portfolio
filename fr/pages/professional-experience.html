@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — ZEMTSOP NDADJI Brice Arléon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-deep: #0A1628;
+            --blue-cobalt: #1E3A5F;
+            --blue-night: #0F2847;
+            --orange-vivid: #E85D04;
+            --orange-warm: #F48C06;
+            --mustard: #D4A012;
+            --cyan-electric: #00D4FF;
+            --mint-code: #4FFFB0;
+            --gray-charcoal: #1C1C1E;
+            --gray-dark: #2D2D30;
+            --gray-medium: #6B6B6F;
+            --gray-light: #A0A0A5;
+            --gray-soft: #E5E5EA;
+            --white-off: #F8F9FA;
+            --white-pure: #FFFFFF;
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--blue-deep);
+            color: var(--white-off);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image:
+                radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(232, 93, 4, 0.08) 0%, transparent 40%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231E3A5F' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ── HEADER ── */
+        .header {
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(12px);
+        }
+
+        .header-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            color: var(--gray-light);
+        }
+
+        /* Navigation portfolio dans le header */
+        .header-nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .header-nav a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--gray-light);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover { color: var(--cyan-electric); }
+
+        .header-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--cyan-electric);
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--cyan-electric);
+            border-radius: 2px;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 8rem 4rem 6rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--orange-vivid);
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--orange-vivid);
+        }
+
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--white-pure) 0%, var(--gray-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title span {
+            display: block;
+            background: linear-gradient(135deg, var(--orange-vivid) 0%, var(--mustard) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--gray-light);
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        /* Sommaire du portfolio */
+        .portfolio-summary {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .summary-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: var(--cyan-electric);
+            background: rgba(0, 212, 255, 0.06);
+            letter-spacing: 0.05em;
+        }
+
+        .summary-pill.active {
+            background: rgba(232, 93, 4, 0.15);
+            border-color: rgba(232, 93, 4, 0.5);
+            color: var(--orange-warm);
+        }
+
+        /* ── SECTIONS ── */
+        .section {
+            padding: 6rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .section-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--orange-vivid);
+            letter-spacing: 0.1em;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* ── TIMELINE ── */
+        .timeline {
+            position: relative;
+            padding-left: 80px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--cyan-electric) 0%, var(--orange-vivid) 100%);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 5rem;
+            padding: 2.5rem;
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            transition: all 0.4s var(--transition-smooth);
+        }
+
+        .timeline-item:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateX(5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -60px;
+            top: 50px;
+            width: 20px; height: 20px;
+            background: var(--orange-vivid);
+            border: 4px solid var(--blue-deep);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(232, 93, 4, 0.2);
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .timeline-item:hover::before {
+            background: var(--cyan-electric);
+            box-shadow: 0 0 0 8px rgba(0, 212, 255, 0.3);
+            transform: scale(1.2);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .experience-title-group { flex: 1; min-width: 300px; }
+
+        .experience-role {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            font-size: 1.1rem;
+            color: var(--cyan-electric);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-period {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--gray-light);
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 4px;
+            border-left: 3px solid var(--cyan-electric);
+        }
+
+        .experience-location {
+            font-size: 0.9rem;
+            color: var(--gray-light);
+            margin-top: 0.5rem;
+        }
+
+        .experience-section { margin-top: 2rem; }
+
+        .experience-section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--orange-warm);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .experience-section-title::before {
+            content: '';
+            width: 20px; height: 2px;
+            background: var(--orange-warm);
+        }
+
+        .experience-content {
+            color: var(--gray-soft);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-list li {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--gray-soft);
+            line-height: 1.7;
+        }
+
+        .experience-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--cyan-electric);
+            font-size: 1.2rem;
+        }
+
+        /* ── SKILL LIST PHRASES (inside category cards) ── */
+        .skill-list-phrases {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .skill-list-phrases li {
+            font-size: 0.88rem;
+            color: var(--gray-soft);
+            line-height: 1.5;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .skill-list-phrases li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--cyan-electric);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .skill-list-phrases li strong {
+            color: var(--orange-warm);
+        }
+
+        /* ── SKILLS CATEGORIES GRID ── */
+        .skills-categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .skill-category-card {
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.35), rgba(15, 40, 71, 0.55));
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: all 0.35s var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--orange-vivid), var(--cyan-electric));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .skill-category-card:hover {
+            border-color: rgba(0, 212, 255, 0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-category-card:hover::after {
+            opacity: 1;
+        }
+
+        .skill-category-header {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .skill-category-icon {
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(232, 93, 4, 0.15);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .skill-category-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--orange-warm);
+            letter-spacing: 0.03em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray-soft);
+            transition: all 0.25s var(--transition-smooth);
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.4);
+            color: var(--cyan-electric);
+            transform: translateY(-2px);
+        }
+
+        .skill-tag.highlight {
+            background: rgba(79, 255, 176, 0.08);
+            border-color: rgba(79, 255, 176, 0.25);
+            color: var(--mint-code);
+        }
+
+        /* ── COMPETENCES TRANSVERSALES ── */
+        .competences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .competence-card {
+            background: linear-gradient(135deg, rgba(232, 93, 4, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.4s var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .competence-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: linear-gradient(180deg, var(--orange-vivid), var(--cyan-electric));
+            transition: width 0.3s var(--transition-smooth);
+        }
+
+        .competence-card:hover::before { width: 100%; opacity: 0.1; }
+
+        .competence-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .competence-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .competence-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white-pure);
+            margin-bottom: 0.8rem;
+        }
+
+        .competence-description {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ── PROJET PROFESSIONNEL ── */
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .mv-card {
+            border-radius: 14px;
+            padding: 2.2rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .mv-card--mission {
+            background: linear-gradient(145deg, rgba(232, 93, 4, 0.08), rgba(15, 40, 71, 0.6));
+            border-color: rgba(232, 93, 4, 0.2);
+        }
+
+        .mv-card--vision {
+            background: linear-gradient(145deg, rgba(0, 212, 255, 0.06), rgba(15, 40, 71, 0.6));
+            border-color: rgba(0, 212, 255, 0.15);
+        }
+
+        .mv-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .mv-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--orange-warm);
+            margin-bottom: 1rem;
+        }
+
+        .mv-card--vision .mv-label {
+            color: var(--cyan-electric);
+        }
+
+        .mv-text {
+            color: var(--gray-soft);
+            font-size: 0.95rem;
+            line-height: 1.75;
+        }
+
+        /* Target role block */
+        .target-role-block {
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.35), rgba(15, 40, 71, 0.55));
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 14px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .target-role-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .target-role-icon {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+
+        .target-role-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--orange-vivid);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .target-role-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: 0.3rem;
+        }
+
+        .target-role-sub {
+            font-size: 0.9rem;
+            color: var(--cyan-electric);
+            font-style: italic;
+        }
+
+        .target-role-desc {
+            color: var(--gray-soft);
+            line-height: 1.75;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .fit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .fit-block {
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .fit-block--strengths {
+            background: rgba(79, 255, 176, 0.04);
+            border-color: rgba(79, 255, 176, 0.12);
+        }
+
+        .fit-block--gaps {
+            background: rgba(232, 93, 4, 0.04);
+            border-color: rgba(232, 93, 4, 0.12);
+        }
+
+        .fit-block-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .fit-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .fit-dot--green { background: var(--mint-code); }
+        .fit-dot--orange { background: var(--orange-vivid); }
+
+        .fit-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .fit-list li {
+            font-size: 0.87rem;
+            color: var(--gray-soft);
+            padding-left: 1.2rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .fit-block--strengths .fit-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--mint-code);
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .fit-block--gaps .fit-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--orange-vivid);
+            font-size: 0.9rem;
+        }
+
+        /* ── PLAN D'ACTION ── */
+        .plan-intro {
+            font-size: 1rem;
+            color: var(--gray-soft);
+            line-height: 1.75;
+            max-width: 780px;
+            margin-bottom: 4rem;
+        }
+
+        .plan-intro strong {
+            color: var(--orange-warm);
+        }
+
+        .plan-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .plan-phase {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .plan-phase-marker {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+            width: 24px;
+        }
+
+        .plan-phase-dot {
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            background: var(--blue-cobalt);
+            border: 3px solid var(--orange-vivid);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .plan-phase-dot--now {
+            background: var(--orange-vivid);
+            box-shadow: 0 0 0 6px rgba(232, 93, 4, 0.2);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .plan-phase-dot--target {
+            background: var(--mint-code);
+            border-color: var(--mint-code);
+            box-shadow: 0 0 0 6px rgba(79, 255, 176, 0.15);
+        }
+
+        .plan-phase-line {
+            width: 2px;
+            flex: 1;
+            margin: 6px 0;
+            background: linear-gradient(180deg, rgba(232, 93, 4, 0.4), rgba(232, 93, 4, 0.1));
+            min-height: 30px;
+        }
+
+        .plan-phase-line--last { background: transparent; }
+
+        .plan-phase-content {
+            flex: 1;
+            padding-bottom: 3.5rem;
+        }
+
+        .plan-phase-header {
+            margin-bottom: 1.8rem;
+        }
+
+        .plan-phase-period {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--orange-vivid);
+            letter-spacing: 0.08em;
+            margin-bottom: 0.4rem;
+        }
+
+        .plan-phase-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white-pure);
+        }
+
+        .plan-actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .plan-action-card {
+            display: flex;
+            gap: 1rem;
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 1.4rem;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .plan-action-card:hover {
+            border-color: rgba(0, 212, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        .plan-action-card--cert {
+            border-color: rgba(232, 93, 4, 0.15);
+            background: linear-gradient(145deg, rgba(232, 93, 4, 0.05), rgba(15, 40, 71, 0.55));
+        }
+
+        .plan-action-card--target {
+            border-color: rgba(79, 255, 176, 0.2);
+            background: linear-gradient(145deg, rgba(79, 255, 176, 0.05), rgba(15, 40, 71, 0.55));
+            grid-column: 1 / -1;
+        }
+
+        .plan-action-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .plan-action-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--gray-medium);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .plan-action-card--cert .plan-action-label { color: var(--orange-vivid); }
+        .plan-action-card--target .plan-action-label { color: var(--mint-code); }
+
+        .plan-action-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+
+        .plan-action-desc {
+            font-size: 0.85rem;
+            color: var(--gray-light);
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .plan-action-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .plan-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: var(--gray-light);
+        }
+
+        .plan-tag--cert {
+            background: rgba(232, 93, 4, 0.1);
+            border-color: rgba(232, 93, 4, 0.3);
+            color: var(--orange-warm);
+        }
+
+        .plan-tag--target {
+            background: rgba(79, 255, 176, 0.08);
+            border-color: rgba(79, 255, 176, 0.25);
+            color: var(--mint-code);
+        }
+
+        /* Cert recap path */
+        .cert-recap {
+            margin-top: 4rem;
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 14px;
+            padding: 2.5rem;
+        }
+
+        .cert-recap-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: 2rem;
+        }
+
+        .cert-path {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .cert-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .cert-step-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.5rem 0.9rem;
+            border-radius: 6px;
+            background: rgba(232, 93, 4, 0.15);
+            border: 1px solid rgba(232, 93, 4, 0.35);
+            color: var(--orange-warm);
+            white-space: nowrap;
+        }
+
+        .cert-step-badge--expert {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+            color: var(--cyan-electric);
+        }
+
+        .cert-step-badge--k8s {
+            background: rgba(79, 255, 176, 0.08);
+            border-color: rgba(79, 255, 176, 0.25);
+            color: var(--mint-code);
+        }
+
+        .cert-step-badge--tf {
+            background: rgba(212, 160, 18, 0.1);
+            border-color: rgba(212, 160, 18, 0.3);
+            color: var(--mustard);
+        }
+
+        .cert-step-name {
+            font-size: 0.72rem;
+            color: var(--gray-light);
+            text-align: center;
+        }
+
+        .cert-step-delay {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--gray-medium);
+        }
+
+        .cert-arrow {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--gray-medium);
+            font-size: 1rem;
+            padding-bottom: 1.2rem;
+        }
+
+        /* ── PARCOURS ACADÉMIQUE ── */
+        .academic-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-top: 1rem;
+        }
+
+        .academic-card {
+            display: flex;
+            gap: 2rem;
+            padding: 0 0 2.5rem 0;
+        }
+
+        .academic-card-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+            width: 60px;
+        }
+
+        .academic-degree-badge {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--orange-vivid), var(--mustard));
+            color: var(--white-pure);
+            box-shadow: 0 4px 16px rgba(232, 93, 4, 0.35);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .academic-degree-badge--m2 {
+            background: linear-gradient(135deg, var(--blue-cobalt), var(--cyan-electric));
+            box-shadow: 0 4px 16px rgba(0, 212, 255, 0.25);
+        }
+
+        .academic-degree-badge--m1 {
+            background: linear-gradient(135deg, #1E3A5F, #2d5a8e);
+            box-shadow: 0 4px 16px rgba(30, 58, 95, 0.5);
+        }
+
+        .academic-degree-badge--licence {
+            background: linear-gradient(135deg, #2D2D30, #4a4a50);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .academic-timeline-line {
+            width: 2px;
+            flex: 1;
+            margin-top: 8px;
+            background: linear-gradient(180deg, rgba(232, 93, 4, 0.4), rgba(0, 212, 255, 0.15));
+            min-height: 40px;
+        }
+
+        .academic-timeline-line--last {
+            background: transparent;
+        }
+
+        .academic-card-content {
+            flex: 1;
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 1.8rem 2rem;
+            transition: all 0.35s var(--transition-smooth);
+        }
+
+        .academic-card--featured .academic-card-content {
+            border-color: rgba(232, 93, 4, 0.25);
+            background: linear-gradient(145deg, rgba(232, 93, 4, 0.06), rgba(15, 40, 71, 0.6));
+        }
+
+        .academic-card-content:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateX(5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .academic-period-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--gray-light);
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .academic-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--gray-medium);
+            flex-shrink: 0;
+        }
+
+        .academic-dot--active {
+            background: var(--mint-code);
+            box-shadow: 0 0 6px var(--mint-code);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .academic-degree {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: 0.4rem;
+        }
+
+        .academic-institution {
+            font-size: 0.95rem;
+            color: var(--cyan-electric);
+            margin-bottom: 0.8rem;
+        }
+
+        .academic-description {
+            font-size: 0.9rem;
+            color: var(--gray-soft);
+            line-height: 1.6;
+            margin-bottom: 1.1rem;
+            font-style: italic;
+        }
+
+        .academic-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .academic-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray-light);
+        }
+
+        .academic-card--featured .academic-tag {
+            background: rgba(232, 93, 4, 0.08);
+            border-color: rgba(232, 93, 4, 0.25);
+            color: var(--orange-warm);
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            padding: 4rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: 6rem;
+        }
+
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo .a { color: var(--white-pure); }
+        .footer-logo .z { color: var(--orange-vivid); margin-left: -8px; }
+
+        .footer-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--gray-light);
+        }
+
+        .footer-text span { color: var(--cyan-electric); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .header { padding: 1.5rem 2rem; flex-direction: column; gap: 1rem; }
+            .header-nav { display: none; }
+            .hero { padding: 4rem 2rem 3rem; }
+            .section { padding: 4rem 2rem; }
+            .timeline { padding-left: 40px; }
+            .timeline::before { left: 10px; }
+            .timeline-item::before { left: -35px; }
+            .skills-categories-grid,
+            .competences-grid { grid-template-columns: 1fr; }
+        }
+
+        @media print {
+            body::before { display: none; }
+            .header, .footer { border: none; }
+            .timeline-item { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-brand">ZEMTSOP NDADJI BRICE ARLÉON</div>
+        <nav class="header-nav">
+            <a href="#experiences">Expériences</a>
+            <a href="#competences">Compétences</a>
+            <!-- Sections à venir -->
+            <a href="#formation">Formation</a>
+            <a href="#projet">Projet Professionnel</a>
+            <a href="#plan">Plan d'Action</a>
+        </nav>
+        <div class="header-tag">PORTFOLIO COMPLET</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-eyebrow">PORTFOLIO PROFESSIONNEL</div>
+        <h1 class="hero-title">
+            Brice Arléon
+            <span>Zemtsop Ndadji</span>
+        </h1>
+        <p class="hero-subtitle">
+            Un portfolio complet retraçant mon parcours en ingénierie logicielle : expériences professionnelles, formation académique, compétences acquises et projet professionnel avec son plan d'action.
+        </p>
+
+        <div class="portfolio-summary">
+            <span class="summary-pill active">01 · Expériences Professionnelles</span>
+            <span class="summary-pill active">02 · Compétences</span>
+            <span class="summary-pill active">03 · Parcours Académique</span>
+            <span class="summary-pill active">04 · Projet Professionnel</span>
+            <span class="summary-pill active">05 · Plan d'Action</span>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 01 — EXPÉRIENCES PROFESSIONNELLES
+         ═══════════════════════════════════════════ -->
+    <section class="section" id="experiences">
+        <div class="section-header">
+            <span class="section-number">01</span>
+            <h2 class="section-title">Expériences Professionnelles</h2>
+        </div>
+
+        <div class="timeline">
+
+            <!-- ── Inria / Université de Lille ── -->
+            <article class="timeline-item">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-role">Research Engineer</h3>
+                        <div class="experience-company">Inria · Université de Lille</div>
+                        <div class="experience-location">📍 Lille, France</div>
+                    </div>
+                    <div class="experience-period">Oct 2024 — Septembre 2025</div>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Contexte et Mission</h4>
+                    <p class="experience-content">
+                        Au sein d'Inria et de l'Université de Lille, j'ai travaillé dans le domaine des systèmes autonomes et du cloud computing. Mes recherches portaient sur l'auto-adaptation des systèmes distribués dans le cloud, avec pour objectif de concevoir des mécanismes permettant aux microservices de s'adapter de façon autonome aux conditions dynamiques de leur environnement.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Réalisations Clés</h4>
+                    <ul class="experience-list">
+                        <li><strong>AdaptiFlow</strong> : Conception et développement d'un framework Java léger et extensible permettant aux microservices de s'adapter de manière autonome aux conditions dynamiques du cloud. Le framework repose sur des couches d'abstraction pour les phases de monitoring et d'exécution du cycle MAPE-K.</li>
+                        <li><strong>Adaptable TeaStore</strong> : Construction d'une plateforme de benchmark cloud-native dédiée à l'évaluation des capacités d'auto-adaptation, permettant de valider des scénarios concrets (récupération de base de données, mitigation DDoS, gestion du trafic).</li>
+                        <li><strong>Architectures événementielles décentralisées</strong> : Ingénierie de pipelines event-driven pour orchestrer les quatre propriétés d'auto-gestion : auto-guérison, auto-protection, auto-optimisation et auto-configuration.</li>
+                        <li><strong>Abstraction MAPE-K</strong> : Développement de collecteurs de métriques et d'actions d'adaptation pour microservices cloud, avec des workflows systématiques minimisant l'intrusion dans le code existant.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Compétences Acquises</h4>
+                    <div class="skills-categories-grid">
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🔬</div>
+                                <div class="skill-category-name">Recherche & Systèmes Autonomes</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Concevoir</strong> des frameworks d'auto-adaptation pour microservices distribués dans le cloud</li>
+                                <li><strong>Contribuer</strong> à la recherche sur les systèmes autonomes via des couches d'abstraction pratiques</li>
+                                <li><strong>Valider</strong> des résultats de recherche à travers des scénarios d'adaptation concrets</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">⚡</div>
+                                <div class="skill-category-name">Architecture Cloud & Event-Driven</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Concevoir</strong> des architectures événementielles pour l'adaptation décentralisée des systèmes</li>
+                                <li><strong>Implémenter</strong> le cycle MAPE-K (Monitor, Analyze, Plan, Execute) pour l'auto-gestion</li>
+                                <li><strong>Développer</strong> des collecteurs de métriques et des actions d'adaptation pour microservices cloud</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">☕</div>
+                                <div class="skill-category-name">Développement Java & Microservices</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Développer</strong> un framework Java léger et extensible à faible intrusion dans le code</li>
+                                <li><strong>Créer</strong> des workflows systématiques pour activer l'adaptabilité des microservices</li>
+                                <li><strong>Construire</strong> une plateforme benchmark cloud-native pour évaluer l'auto-adaptation</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🛡️</div>
+                                <div class="skill-category-name">Auto-Gestion des Systèmes</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Implémenter</strong> des mécanismes d'auto-guérison pour la récupération automatique après panne</li>
+                                <li><strong>Concevoir</strong> des stratégies d'auto-protection contre les attaques (mitigation DDoS)</li>
+                                <li><strong>Mettre en œuvre</strong> l'auto-optimisation et l'auto-configuration pour la gestion dynamique du trafic</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+            <!-- ── Dimsoft ── -->
+            <article class="timeline-item">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-role">Software Engineer Team Lead</h3>
+                        <div class="experience-company">Dimsoft Cenkyah</div>
+                        <div class="experience-location">📍 Cameroun</div>
+                    </div>
+                    <div class="experience-period">Août 2020 — Oct 2024</div>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Contexte et Responsabilités</h4>
+                    <p class="experience-content">
+                        En tant que Software Engineer Team Lead chez Dimsoft, j'ai eu l'opportunité de diriger des projets stratégiques de grande envergure, allant du développement de plateformes de paiement à la mise en œuvre de solutions de gestion pour le secteur de la santé. Mon rôle combine expertise technique et leadership d'équipe, avec une responsabilité directe sur l'architecture logicielle et l'encadrement des développeurs.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Réalisations Clés</h4>
+                    <ul class="experience-list">
+                        <li><strong>5Pay (Mai 2021 - Avril 2022)</strong> : Développement d'une plateforme générique d'intégration de multiples modes de paiement (Carte Bancaire, PayPal, Mobile Money). J'ai architecturé une solution robuste permettant aux entreprises d'intégrer facilement des systèmes de paiement dans leurs applications avec un suivi en temps réel des transactions.</li>
+                        <li><strong>Clinique Le Berceau (Août 2022 - Novembre 2022)</strong> : En tant que Project Manager et développeur principal, j'ai dirigé la création du site web et du CMS d'administration pour la Clinique Médico-Chirurgicale le Berceau. Ce projet m'a permis de combiner gestion d'équipe et développement full-stack.</li>
+                        <li><strong>DevTimeManager (Avril 2022 - Juillet 2022)</strong> : Conception et développement d'une plateforme interne de gestion de projets et de suivi d'équipes de développement, implémentant des pratiques agiles et des métriques de performance.</li>
+                        <li><strong>Agrie-Power (Janvier 2021 - Avril 2021)</strong> : Plateforme innovante mettant en relation agriculteurs et investisseurs mondiaux pour lutter contre la faim. J'ai développé l'architecture complète avec déploiement cloud sur Azure.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Approche et Méthodologies</h4>
+                    <p class="experience-content">
+                        Mon approche repose sur le Test-Driven Development (TDD) et l'intégration continue. J'ai systématiquement mis en place des pipelines CI/CD avec Docker et Jenkins, garantissant la qualité et la stabilité des applications déployées. J'ai également formé et encadré plusieurs développeurs juniors aux bonnes pratiques de développement.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Difficultés et Apprentissages</h4>
+                    <p class="experience-content">
+                        La gestion simultanée de multiples projets complexes m'a appris l'importance de la priorisation et de la communication claire avec les parties prenantes. J'ai développé une expertise particulière dans la résolution de problèmes d'architecture microservices et de scalabilité des applications.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Compétences Acquises</h4>
+                    <div class="skills-categories-grid">
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🏗️</div>
+                                <div class="skill-category-name">Architecture & Conception</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Concevoir</strong> et architecturer des solutions logicielles complexes en microservices</li>
+                                <li><strong>Optimiser</strong> les performances et la scalabilité des applications</li>
+                                <li><strong>Résoudre</strong> des problèmes techniques complexes d'architecture et de performance</li>
+                                <li><strong>Gérer</strong> les bases de données relationnelles (PostgreSQL) et leur architecture</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">💻</div>
+                                <div class="skill-category-name">Développement Full-Stack</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Développer</strong> des applications web full-stack avec Angular et Spring Boot</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">⚙️</div>
+                                <div class="skill-category-name">DevOps & CI/CD</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Implémenter</strong> des pipelines CI/CD pour automatiser les déploiements</li>
+                                <li><strong>Déployer</strong> et maintenir des applications en production avec Docker et Kubernetes</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🧪</div>
+                                <div class="skill-category-name">Qualité & Tests</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Tester</strong> rigoureusement le code avec TDD et BDD (JUnit, Cucumber)</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">👥</div>
+                                <div class="skill-category-name">Leadership & Management</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Diriger</strong> et encadrer des équipes de développeurs sur des projets stratégiques</li>
+                                <li><strong>Coordonner</strong> les sprints Agile et organiser les cérémonies Scrum</li>
+                                <li><strong>Former</strong> et mentorer des développeurs juniors aux bonnes pratiques</li>
+                                <li><strong>Communiquer</strong> efficacement avec les parties prenantes et les clients</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+            <!-- ── Novalitix ── -->
+            <article class="timeline-item">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-role">Consultant IT</h3>
+                        <div class="experience-company">Novalitix</div>
+                        <div class="experience-location">📍 Cameroun</div>
+                    </div>
+                    <div class="experience-period">Février 2021 — Oct 2024</div>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Contexte et Mission</h4>
+                    <p class="experience-content">
+                        En tant que consultant IT chez Novalitix, j'interviens sur des projets variés pour différents clients, principalement dans les secteurs de l'éducation, du commerce électronique et de la construction. Mon rôle consiste à analyser les besoins clients, concevoir des solutions adaptées et assurer leur développement et déploiement.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Projets Marquants</h4>
+                    <ul class="experience-list">
+                        <li><strong>Lasico Dashboard (Juin 2023 - Août 2023)</strong> : En tant que lead développeur, j'ai dirigé une équipe de 2 développeurs pour créer une plateforme Dashboard sophistiquée de gestion et suivi de projets de construction pour la France et le Sénégal. Ce projet m'a permis de développer mon expertise en gestion d'équipe distribuée.</li>
+                        <li><strong>Intel'Actuel (Février 2023 - Mai 2023)</strong> : Développement du site web et de la plateforme d'administration pour la revue de lettres et sciences humaines de l'Université de Dschang. J'ai mis l'accent sur l'accessibilité et l'expérience utilisateur.</li>
+                        <li><strong>ASSIMIC (Mars 2023 - Mai 2023)</strong> : Site web et plateforme d'administration pour l'Association des Ingénieurs des Mines du Cameroun, avec gestion des membres et des événements.</li>
+                        <li><strong>Kouna (Février 2021 - Avril 2021)</strong> : Application mobile de gestion d'événements pour le festival KounaWeek à Dschang, développée avec Firebase pour une scalabilité optimale.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Compétences Développées</h4>
+                    <p class="experience-content">
+                        Ces missions m'ont permis de perfectionner ma capacité d'adaptation à différents contextes métiers et d'affiner mes compétences en communication client. J'ai appris à traduire des besoins métiers complexes en solutions techniques élégantes et maintenables.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Compétences Acquises</h4>
+                    <div class="skills-categories-grid">
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🔍</div>
+                                <div class="skill-category-name">Analyse & Conseil</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Analyser</strong> les besoins clients et traduire les exigences métiers en solutions techniques</li>
+                                <li><strong>Adapter</strong> rapidement ma méthodologie à différents contextes métiers</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🏗️</div>
+                                <div class="skill-category-name">Architecture & Conception</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Concevoir</strong> des architectures adaptées aux contraintes spécifiques de chaque secteur</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">📱</div>
+                                <div class="skill-category-name">Développement Web & Mobile</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Développer</strong> des applications web et mobiles avec Ionic et Angular</li>
+                                <li><strong>Intégrer</strong> des services cloud Firebase pour la scalabilité et la performance</li>
+                                <li><strong>Containeriser</strong> et déployer des applications avec Docker</li>
+                                <li><strong>Créer</strong> des interfaces utilisateur intuitives et accessibles</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🌍</div>
+                                <div class="skill-category-name">Gestion de Projet International</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Diriger</strong> une équipe distribuée sur des projets internationaux (France, Sénégal)</li>
+                                <li><strong>Coordonner</strong> avec des parties prenantes multiculturelles</li>
+                                <li><strong>Documenter</strong> les processus et les solutions pour faciliter la maintenance</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+            <!-- ── Share and Win ── -->
+            <article class="timeline-item">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-role">Développeur Stagiaire</h3>
+                        <div class="experience-company">Share and Win</div>
+                        <div class="experience-location">📍 Cameroun</div>
+                    </div>
+                    <div class="experience-period">Janvier 2019 — Décembre 2020</div>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Contexte du Stage</h4>
+                    <p class="experience-content">
+                        Mon premier stage professionnel m'a permis de découvrir le développement en équipe sur un projet réel. J'ai participé activement à la mise en œuvre de la plateforme Share and Win, contribuant principalement au développement frontend et à l'intégration avec les microservices backend.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Activités Principales</h4>
+                    <ul class="experience-list">
+                        <li>Développement de composants Angular réutilisables pour l'interface utilisateur</li>
+                        <li>Intégration des APIs REST avec les microservices Spring Boot</li>
+                        <li>Participation aux code reviews et aux daily standups</li>
+                        <li>Apprentissage de l'architecture microservices avec Zuul Gateway et Eureka Server</li>
+                    </ul>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Apprentissages Clés</h4>
+                    <p class="experience-content">
+                        Cette expérience fondatrice m'a enseigné les bases du développement professionnel : travail en équipe, utilisation de Git pour le versioning, méthodologie Agile/Scrum, et l'importance de la documentation du code. J'ai également découvert ma passion pour l'architecture logicielle et les systèmes distribués.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Compétences Acquises</h4>
+                    <div class="skills-categories-grid">
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🖥️</div>
+                                <div class="skill-category-name">Développement Frontend</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Développer</strong> des composants Angular réutilisables et maintenables</li>
+                                <li><strong>Styliser</strong> des interfaces utilisateur avec Sass et les préprocesseurs CSS</li>
+                                <li><strong>Intégrer</strong> des APIs REST avec des microservices backend</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🏛️</div>
+                                <div class="skill-category-name">Architecture Backend</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Comprendre</strong> l'architecture microservices (Zuul Gateway, Eureka Server)</li>
+                                <li><strong>Structurer</strong> des bases de données NoSQL avec MongoDB</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🤝</div>
+                                <div class="skill-category-name">Collaboration & Méthodes</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Collaborer</strong> efficacement au sein d'une équipe de développement</li>
+                                <li><strong>Utiliser</strong> Git pour le versioning et la gestion du code source</li>
+                                <li><strong>Participer</strong> activement aux code reviews et aux daily standups</li>
+                                <li><strong>Appliquer</strong> les méthodologies Agile/Scrum dans un contexte professionnel</li>
+                                <li><strong>Documenter</strong> le code pour faciliter la collaboration d'équipe</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         SECTION 02 — COMPÉTENCES TRANSVERSALES
+         ═══════════════════════════════════════ -->
+    <section class="section" id="competences">
+        <div class="section-header">
+            <span class="section-number">02</span>
+            <h2 class="section-title">Compétences Transversales</h2>
+        </div>
+
+        <div class="competences-grid">
+            <div class="competence-card">
+                <div class="competence-icon">🧠</div>
+                <div class="competence-title">Résolution de Problèmes Complexes</div>
+                <p class="competence-description">Capacité à analyser des situations techniques complexes et à concevoir des solutions scalables et maintenables, en combinant rigueur analytique et créativité.</p>
+            </div>
+            <div class="competence-card">
+                <div class="competence-icon">🔄</div>
+                <div class="competence-title">Adaptabilité Sectorielle</div>
+                <p class="competence-description">Expérience dans des domaines variés — santé, e-commerce, agriculture, construction, éducation — avec une capacité à s'approprier rapidement les enjeux métiers de chaque secteur.</p>
+            </div>
+            <div class="competence-card">
+                <div class="competence-icon">🗣️</div>
+                <div class="competence-title">Communication Technique</div>
+                <p class="competence-description">Aptitude à vulgariser des concepts techniques auprès de profils non-techniques, à rédiger des documentations claires et à animer des réunions techniques productives.</p>
+            </div>
+            <div class="competence-card">
+                <div class="competence-icon">🎯</div>
+                <div class="competence-title">Leadership & Mentorat</div>
+                <p class="competence-description">Expérience confirmée dans l'encadrement d'équipes de développeurs, le coaching des juniors et la transmission des bonnes pratiques de développement logiciel.</p>
+            </div>
+            <div class="competence-card">
+                <div class="competence-icon">📐</div>
+                <div class="competence-title">Rigueur & Qualité</div>
+                <p class="competence-description">Culture du code propre, des tests automatisés et de l'amélioration continue. Engagement constant envers la qualité logicielle à travers les pratiques TDD et BDD.</p>
+            </div>
+            <div class="competence-card">
+                <div class="competence-icon">🌐</div>
+                <div class="competence-title">Vision Système & Transversalité</div>
+                <p class="competence-description">Capacité à appréhender un projet dans sa globalité, depuis l'analyse des besoins jusqu'au déploiement en production, en maîtrisant chaque niveau de la chaîne de valeur technique.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════
+         SECTIONS À COMPLÉTER
+         ═══════════════════════════════ -->
+    <section class="section" id="formation">
+        <div class="section-header">
+            <span class="section-number">03</span>
+            <h2 class="section-title">Parcours Académique</h2>
+        </div>
+
+        <div class="academic-grid">
+
+            <!-- Doctorat -->
+            <div class="academic-card academic-card--featured">
+                <div class="academic-card-left">
+                    <div class="academic-degree-badge">PhD</div>
+                    <div class="academic-timeline-line"></div>
+                </div>
+                <div class="academic-card-content">
+                    <div class="academic-period-tag">
+                        <span class="academic-dot academic-dot--active"></span>
+                        Oct 2025 — En cours
+                    </div>
+                    <h3 class="academic-degree">Doctorat en Informatique</h3>
+                    <div class="academic-institution">Université de Lille · Inria &nbsp;🇫🇷</div>
+                    <p class="academic-description">Recherche sur les systèmes auto-adaptatifs et l'architecture cloud.</p>
+                    <div class="academic-tags">
+                        <span class="academic-tag">Systèmes distribués</span>
+                        <span class="academic-tag">Auto-adaptation</span>
+                        <span class="academic-tag">Cloud computing</span>
+                        <span class="academic-tag">Calcul autonomique</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Master 2 -->
+            <div class="academic-card">
+                <div class="academic-card-left">
+                    <div class="academic-degree-badge academic-degree-badge--m2">M2</div>
+                    <div class="academic-timeline-line"></div>
+                </div>
+                <div class="academic-card-content">
+                    <div class="academic-period-tag">2021 — 2022</div>
+                    <h3 class="academic-degree">Master 2 en Intelligence Artificielle</h3>
+                    <div class="academic-institution">Université de Dschang &nbsp;🇨🇲</div>
+                    <p class="academic-description">Spécialisation en Génie logiciel, option Business Process Management.</p>
+                    <div class="academic-tags">
+                        <span class="academic-tag">Intelligence Artificielle</span>
+                        <span class="academic-tag">Génie Logiciel</span>
+                        <span class="academic-tag">BPM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Master 1 -->
+            <div class="academic-card">
+                <div class="academic-card-left">
+                    <div class="academic-degree-badge academic-degree-badge--m1">M1</div>
+                    <div class="academic-timeline-line"></div>
+                </div>
+                <div class="academic-card-content">
+                    <div class="academic-period-tag">2020 — 2021</div>
+                    <h3 class="academic-degree">Master 1 en Intelligence Artificielle</h3>
+                    <div class="academic-institution">Université de Dschang &nbsp;🇨🇲</div>
+                    <p class="academic-description">Fondamentaux de l'IA et du machine learning.</p>
+                    <div class="academic-tags">
+                        <span class="academic-tag">Intelligence Artificielle</span>
+                        <span class="academic-tag">Machine Learning</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Licence -->
+            <div class="academic-card">
+                <div class="academic-card-left">
+                    <div class="academic-degree-badge academic-degree-badge--licence">Lic.</div>
+                    <div class="academic-timeline-line academic-timeline-line--last"></div>
+                </div>
+                <div class="academic-card-content">
+                    <div class="academic-period-tag">2017 — 2020</div>
+                    <h3 class="academic-degree">Licence en Informatique</h3>
+                    <div class="academic-institution">Université de Dschang &nbsp;🇨🇲</div>
+                    <p class="academic-description">Fondamentaux de l'informatique et programmation.</p>
+                    <div class="academic-tags">
+                        <span class="academic-tag">Informatique</span>
+                        <span class="academic-tag">Algorithmique</span>
+                        <span class="academic-tag">Programmation</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section" id="projet">
+        <div class="section-header">
+            <span class="section-number">04</span>
+            <h2 class="section-title">Projet Professionnel</h2>
+        </div>
+
+        <!-- Mission & Vision -->
+        <div class="mv-grid">
+            <div class="mv-card mv-card--mission">
+                <div class="mv-icon">🎯</div>
+                <div class="mv-label">Ma Mission</div>
+                <p class="mv-text">Accompagner les entreprises dans la transformation digitale de leurs processus métier en concevant des solutions logicielles innovantes, robustes et évolutives. Je m'engage à apporter des solutions aux besoins changeants des systèmes modernes, réduisant ainsi la complexité opérationnelle et maximisant la valeur business.</p>
+            </div>
+            <div class="mv-card mv-card--vision">
+                <div class="mv-icon">🔭</div>
+                <div class="mv-label">Ma Vision</div>
+                <p class="mv-text">Devenir un leader reconnu dans l'ingénierie logicielle, à l'intersection de la recherche académique et de l'excellence industrielle. Je vise à créer des solutions qui transforment fondamentalement la manière dont les entreprises gèrent leurs processus, en combinant rigueur scientifique et pragmatisme opérationnel.</p>
+            </div>
+        </div>
+
+        <!-- Cible professionnelle -->
+        <div class="target-role-block">
+            <div class="target-role-header">
+                <div class="target-role-icon">☁️</div>
+                <div>
+                    <div class="target-role-eyebrow">Poste visé</div>
+                    <div class="target-role-title">Research / Senior Cloud & DevOps Engineer</div>
+                </div>
+            </div>
+            <p class="target-role-desc">
+                Mon objectif est d'évoluer vers un poste d'ingénieur de recherche dans le domaine du DevOps Cloud, en capitalisant sur mon expérience en systèmes auto-adaptatifs (INRIA) et mes cinq années de développement logiciel en contexte industriel. Je vise des missions centrées sur la scalabilité, l'automatisation et l'excellence opérationnelle des infrastructures cloud — notamment sur Microsoft Azure.
+            </p>
+
+            <!-- Adéquation profil / poste -->
+            <div class="fit-grid">
+                <div class="fit-block fit-block--strengths">
+                    <div class="fit-block-title">
+                        <span class="fit-dot fit-dot--green"></span>
+                        Atouts actuels
+                    </div>
+                    <ul class="fit-list">
+                        <li>Conception de frameworks Java pour microservices cloud (AdaptiFlow — INRIA)</li>
+                        <li>Maîtrise de Docker, Kubernetes et des architectures conteneurisées</li>
+                        <li>Expérience CI/CD avec Jenkins et pipelines automatisés</li>
+                        <li>Architectures événementielles et systèmes distribués</li>
+                        <li>Communication technique, documentation et encadrement d'équipes</li>
+                    </ul>
+                </div>
+                <div class="fit-block fit-block--gaps">
+                    <div class="fit-block-title">
+                        <span class="fit-dot fit-dot--orange"></span>
+                        Axes de développement
+                    </div>
+                    <ul class="fit-list">
+                        <li>Approfondir Azure : certifications AZ-305 et AZ-400</li>
+                        <li>Acquérir les bases AWS : certification AWS Cloud Practitioner puis AWS Solutions Architect Associate</li>
+                        <li>Acquérir une expertise IaC formelle : Terraform, Bicep, ARM templates</li>
+                        <li>Maîtriser Python et/ou Golang pour l'automatisation cloud-native</li>
+                        <li>Certifications Kubernetes : CKA et/ou CKAD</li>
+                        <li>Sécurité cloud : RBAC, image scanning, conformité DevSecOps</li>
+                        <li>Expérience avec Azure DevOps et GitHub Actions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════
+         SECTION 05 — PLAN D'ACTION
+         ═══════════════════════════════ -->
+    <section class="section" id="plan">
+        <div class="section-header">
+            <span class="section-number">05</span>
+            <h2 class="section-title">Plan d'Action</h2>
+        </div>
+
+        <p class="plan-intro">
+            Feuille de route structurée sur <strong>24 mois</strong> pour atteindre le niveau <strong>Senior Cloud / DevOps Engineer</strong> — un horizon réaliste compte tenu du volume de certifications et de pratique requis pour les postes de ce niveau.
+        </p>
+
+        <div class="plan-timeline">
+
+            <!-- Phase 1 -->
+            <div class="plan-phase">
+                <div class="plan-phase-marker">
+                    <div class="plan-phase-dot plan-phase-dot--now"></div>
+                    <div class="plan-phase-line"></div>
+                </div>
+                <div class="plan-phase-content">
+                    <div class="plan-phase-header">
+                        <div class="plan-phase-period">Mois 1 – 5 &nbsp;·&nbsp; Fondations cloud</div>
+                        <h3 class="plan-phase-title">Socle Azure, AWS & Infrastructure as Code</h3>
+                    </div>
+
+                    <div class="plan-phase-body">
+                        <div class="plan-actions-grid">
+
+                            <div class="plan-action-card plan-action-card--cert">
+                                <div class="plan-action-icon">📜</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Certification Azure</div>
+                                    <div class="plan-action-title">AZ-900 — Microsoft Azure Fundamentals</div>
+                                    <p class="plan-action-desc">Fondamentaux du cloud Azure : services compute, réseau, stockage, sécurité et gouvernance. Point d'entrée indispensable avant toute certification Azure avancée.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--cert">Certification</span>
+                                        <span class="plan-tag">~3 semaines</span>
+                                        <span class="plan-tag">Microsoft Learn (gratuit)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card plan-action-card--cert">
+                                <div class="plan-action-icon">📜</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Certification AWS</div>
+                                    <div class="plan-action-title">AWS Cloud Practitioner (CLF-C02)</div>
+                                    <p class="plan-action-desc">Vue d'ensemble des services AWS, modèles de tarification, sécurité et architecture cloud. Permet de se positionner sur des offres multi-cloud, de plus en plus fréquentes dans les postes Senior.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--cert">Certification</span>
+                                        <span class="plan-tag">~3 semaines</span>
+                                        <span class="plan-tag">AWS Skill Builder</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card plan-action-card--cert">
+                                <div class="plan-action-icon">📜</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Certification Azure</div>
+                                    <div class="plan-action-title">AZ-104 — Microsoft Azure Administrator</div>
+                                    <p class="plan-action-desc">Administration opérationnelle d'Azure : VMs, VNets, identités (Entra ID), stockage, monitoring. Base technique solide avant les certifications Expert.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--cert">Certification</span>
+                                        <span class="plan-tag">~6 semaines</span>
+                                        <span class="plan-tag">Prérequis : AZ-900</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card">
+                                <div class="plan-action-icon">🔧</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Compétence technique</div>
+                                    <div class="plan-action-title">Infrastructure as Code — Terraform & Bicep</div>
+                                    <p class="plan-action-desc">Provisionner et gérer des infrastructures Azure et AWS via Terraform (HCL) et Bicep. Créer des modules réutilisables, des workspaces multi-environnements et des pipelines IaC. Viser la certification Terraform Associate (HashiCorp).</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--cert">Terraform Associate</span>
+                                        <span class="plan-tag">HashiCorp Learn</span>
+                                        <span class="plan-tag">Projets pratiques</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card">
+                                <div class="plan-action-icon">🐍</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Compétence technique</div>
+                                    <div class="plan-action-title">Python pour l'automatisation cloud</div>
+                                    <p class="plan-action-desc">Scripts d'automatisation avec les SDKs Azure et AWS pour Python : gestion des ressources, déploiements automatisés, collecte de métriques et réponses aux événements cloud.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag">Azure SDK for Python</span>
+                                        <span class="plan-tag">Boto3 (AWS)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="plan-phase">
+                <div class="plan-phase-marker">
+                    <div class="plan-phase-dot"></div>
+                    <div class="plan-phase-line"></div>
+                </div>
+                <div class="plan-phase-content">
+                    <div class="plan-phase-header">
+                        <div class="plan-phase-period">Mois 6 – 12 &nbsp;·&nbsp; Montée en expertise</div>
+                        <h3 class="plan-phase-title">Certifications Expert Azure, AWS & Kubernetes</h3>
+                    </div>
+
+                    <div class="plan-phase-body">
+                        <div class="plan-actions-grid">
+
+                            <div class="plan-action-card plan-action-card--cert">
+                                <div class="plan-action-icon">📜</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Certification Azure Expert</div>
+                                    <div class="plan-action-title">AZ-305 — Azure Solutions Architect Expert</div>
+                                    <p class="plan-action-desc">Conception d'architectures Azure robustes : haute disponibilité, reprise après sinistre, sécurité, gouvernance et optimisation des coûts. Certification essentielle pour les postes Senior cloud.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--cert">Niveau Expert</span>
+                                        <span class="plan-tag">Prérequis : AZ-104</span>
+                                        <span class="plan-tag">~8 semaines</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card plan-action-card--cert">
+                                <div class="plan-action-icon">📜</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Certification Azure Expert</div>
+                                    <div class="plan-action-title">AZ-400 — Azure DevOps Engineer Expert</div>
+                                    <p class="plan-action-desc">Pipelines CI/CD avec Azure DevOps et GitHub Actions, gestion des releases, monitoring, sécurité intégrée dans la chaîne de livraison. Directement aligné sur les exigences des offres Senior DevOps.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--cert">Niveau Expert</span>
+                                        <span class="plan-tag">Prérequis : AZ-104</span>
+                                        <span class="plan-tag">~8 semaines</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card plan-action-card--cert">
+                                <div class="plan-action-icon">📜</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Certification AWS</div>
+                                    <div class="plan-action-title">AWS Solutions Architect — Associate (SAA-C03)</div>
+                                    <p class="plan-action-desc">Conception de solutions AWS : EC2, S3, RDS, VPC, IAM, Lambda, EKS. Complément indispensable à Azure pour les profils multi-cloud de plus en plus demandés sur le marché.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--cert">Niveau Associate</span>
+                                        <span class="plan-tag">Prérequis : CLF-C02</span>
+                                        <span class="plan-tag">~8 semaines</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card plan-action-card--cert">
+                                <div class="plan-action-icon">📜</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Certification CNCF</div>
+                                    <div class="plan-action-title">CKA — Certified Kubernetes Administrator</div>
+                                    <p class="plan-action-desc">Administration de clusters Kubernetes : scheduling, networking, stockage, sécurité et troubleshooting. Examen entièrement pratique (2h). S'appuie directement sur l'expérience des microservices acquise à INRIA.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--cert">Examen pratique</span>
+                                        <span class="plan-tag">~8 semaines</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card">
+                                <div class="plan-action-icon">🔐</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Compétence technique</div>
+                                    <div class="plan-action-title">DevSecOps — Sécurité cloud & conteneurs</div>
+                                    <p class="plan-action-desc">RBAC Azure et Kubernetes, scanning d'images (Trivy, Snyk), politiques de conformité (Azure Policy, OPA/Gatekeeper), gestion des secrets (Azure Key Vault, AWS Secrets Manager), vulnerability management.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag">RBAC</span>
+                                        <span class="plan-tag">Image scanning</span>
+                                        <span class="plan-tag">Key Vault</span>
+                                        <span class="plan-tag">OPA/Gatekeeper</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="plan-phase">
+                <div class="plan-phase-marker">
+                    <div class="plan-phase-dot"></div>
+                    <div class="plan-phase-line"></div>
+                </div>
+                <div class="plan-phase-content">
+                    <div class="plan-phase-header">
+                        <div class="plan-phase-period">Mois 13 – 20 &nbsp;·&nbsp; Spécialisation avancée</div>
+                        <h3 class="plan-phase-title">Kubernetes avancé, Golang & AWS Expert</h3>
+                    </div>
+
+                    <div class="plan-phase-body">
+                        <div class="plan-actions-grid">
+
+                            <div class="plan-action-card plan-action-card--cert">
+                                <div class="plan-action-icon">📜</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Certification CNCF</div>
+                                    <div class="plan-action-title">CKAD — Certified Kubernetes Application Developer</div>
+                                    <p class="plan-action-desc">Développement et déploiement d'applications cloud-native sur Kubernetes : ConfigMaps, Secrets, probes, networking, observabilité. Complément du CKA pour un profil orienté engineering.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--cert">Examen pratique</span>
+                                        <span class="plan-tag">Après CKA</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card plan-action-card--cert">
+                                <div class="plan-action-icon">📜</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Certification AWS</div>
+                                    <div class="plan-action-title">AWS DevOps Engineer — Professional (DOP-C02)</div>
+                                    <p class="plan-action-desc">Automatisation, CI/CD, monitoring et sécurité sur AWS à l'échelle enterprise. Complète le profil multi-cloud et renforce la légitimité pour les postes Senior exigeant AWS et Azure.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--cert">Niveau Professional</span>
+                                        <span class="plan-tag">Prérequis : SAA-C03</span>
+                                        <span class="plan-tag">~10 semaines</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card">
+                                <div class="plan-action-icon">🦫</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Compétence technique</div>
+                                    <div class="plan-action-title">Golang pour le développement cloud-native</div>
+                                    <p class="plan-action-desc">Développement d'outils d'automatisation et d'opérateurs Kubernetes en Go — le langage natif de l'écosystème cloud (Docker, Kubernetes et Terraform sont écrits en Go). Atout différenciant pour les profils orientés R&D.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag">Kubernetes Operators</span>
+                                        <span class="plan-tag">CLI tools</span>
+                                        <span class="plan-tag">Go Tour + projets</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="plan-phase">
+                <div class="plan-phase-marker">
+                    <div class="plan-phase-dot plan-phase-dot--target"></div>
+                    <div class="plan-phase-line plan-phase-line--last"></div>
+                </div>
+                <div class="plan-phase-content">
+                    <div class="plan-phase-header">
+                        <div class="plan-phase-period">Mois 21 – 24 &nbsp;·&nbsp; Profil complet</div>
+                        <h3 class="plan-phase-title">Candidature Senior Cloud / DevOps Engineer</h3>
+                    </div>
+
+                    <div class="plan-phase-body">
+                        <div class="plan-actions-grid">
+
+                            <div class="plan-action-card plan-action-card--target">
+                                <div class="plan-action-icon">🎯</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label">Objectif final</div>
+                                    <div class="plan-action-title">Profil Senior Cloud / DevOps Research Engineer</div>
+                                    <p class="plan-action-desc">À l'issue de cette feuille de route, le profil sera complet pour postuler à des postes Senior Cloud/DevOps Engineer en contexte international (Europe, Île Maurice, Afrique), avec une double maîtrise Azure et AWS, une expertise Kubernetes certifiée et une expérience solide en IaC, DevSecOps et automatisation cloud-native.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--target">AZ-900 ✓</span>
+                                        <span class="plan-tag plan-tag--target">AZ-104 ✓</span>
+                                        <span class="plan-tag plan-tag--target">AZ-305 ✓</span>
+                                        <span class="plan-tag plan-tag--target">AZ-400 ✓</span>
+                                        <span class="plan-tag plan-tag--target">CLF-C02 ✓</span>
+                                        <span class="plan-tag plan-tag--target">SAA-C03 ✓</span>
+                                        <span class="plan-tag plan-tag--target">DOP-C02 ✓</span>
+                                        <span class="plan-tag plan-tag--target">CKA ✓</span>
+                                        <span class="plan-tag plan-tag--target">CKAD ✓</span>
+                                        <span class="plan-tag plan-tag--target">Terraform Associate ✓</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo"><span class="a">A</span><span class="z">Z</span></div>
+        <p class="footer-text">Portfolio — <span>2025</span> — ZEMTSOP NDADJI Brice Arléon</p>
+    </footer>
+
+</body>
+</html>

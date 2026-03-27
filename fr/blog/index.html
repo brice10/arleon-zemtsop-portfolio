@@ -47,6 +47,76 @@
         .tab-item:hover { transform: translateY(-4px); }
         .tab-item .tab-tooltip { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; }
         .tab-item:hover .tab-tooltip { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        /* ═══════════════════════════════════════
+           LANGUAGE SWITCHER — VARIANT 1 (Dropdown)
+           ═══════════════════════════════════════ */
+        .lang-switcher { position: relative; display: inline-block; }
+        .lang-trigger {
+            display: flex; align-items: center; gap: 6px; padding: 6px 12px 6px 10px;
+            background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.14);
+            border-radius: 8px; cursor: pointer; font-family: 'JetBrains Mono', monospace;
+            font-size: 12px; color: #A0A0A5;
+            transition: border-color 0.2s, color 0.2s, background 0.2s;
+            user-select: none; white-space: nowrap;
+        }
+        .lang-trigger:hover { border-color: rgba(232,93,4,0.45); color: #F8F9FA; background: rgba(232,93,4,0.05); }
+        .lang-trigger.open { border-color: rgba(232,93,4,0.55); color: #F8F9FA; background: rgba(232,93,4,0.08); }
+        .lang-flag { font-size: 15px; line-height: 1; }
+        .lang-code { font-weight: 500; letter-spacing: 0.06em; }
+        .lang-chevron { width: 12px; height: 12px; transition: transform 0.2s, color 0.2s; color: #6B6B6F; flex-shrink: 0; }
+        .lang-trigger.open .lang-chevron { transform: rotate(180deg); color: #E85D04; }
+        .lang-dropdown {
+            position: absolute; top: calc(100% + 10px); right: 0; min-width: 168px;
+            background: #0F2847; border: 0.5px solid rgba(255,255,255,0.1); border-radius: 14px;
+            overflow: hidden; opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none;
+            transition: opacity 0.2s cubic-bezier(0.4,0,0.2,1), transform 0.2s cubic-bezier(0.4,0,0.2,1);
+            z-index: 200; padding: 6px;
+            box-shadow: 0 20px 40px -8px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(255,255,255,0.06);
+        }
+        .lang-dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+        .lang-option {
+            display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 9px;
+            cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A0A0A5;
+            transition: background 0.15s, color 0.15s; text-decoration: none;
+        }
+        .lang-option:hover { background: rgba(232,93,4,0.1); color: #F8F9FA; }
+        .lang-option.selected { background: rgba(232,93,4,0.13); color: #E85D04; }
+        .lang-option-flag { font-size: 17px; line-height: 1; flex-shrink: 0; }
+        .lang-option-info { display: flex; flex-direction: column; gap: 1px; flex: 1; }
+        .lang-option-name { font-size: 12px; font-weight: 500; }
+        .lang-option-sub { font-size: 10px; color: #6B6B6F; }
+        .lang-option.selected .lang-option-sub { color: rgba(232,93,4,0.55); }
+        .lang-check { width: 13px; height: 13px; color: #E85D04; opacity: 0; flex-shrink: 0; }
+        .lang-option.selected .lang-check { opacity: 1; }
+
+        /* ═══════════════════════════════════════════════════
+           LANGUAGE SWITCHER — VARIANT 3 (Mobile bottom sheet)
+           ═══════════════════════════════════════════════════ */
+        .lang-sheet-trigger { display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 6px 10px; color: #6B6B6F; cursor: pointer; background: none; border: none; transition: color 0.2s; }
+        .lang-sheet-trigger svg { width: 24px; height: 24px; }
+        .lang-sheet-trigger span { font-family: 'JetBrains Mono', monospace; font-size: 9px; }
+        .lang-sheet-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0); z-index: 300; pointer-events: none; transition: background 0.3s; }
+        .lang-sheet-overlay.open { background: rgba(0,0,0,0.55); pointer-events: all; }
+        .lang-sheet { position: fixed; bottom: 0; left: 0; right: 0; z-index: 301; background: #1E3A5F; border-radius: 20px 20px 0 0; padding: 12px 16px 32px; transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 -20px 60px -10px rgba(0,0,0,0.5); }
+        .lang-sheet.open { transform: translateY(0); }
+        .sheet-handle { width: 40px; height: 4px; background: rgba(255,255,255,0.15); border-radius: 2px; margin: 0 auto 20px; }
+        .sheet-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+        .sheet-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B6B6F; text-transform: uppercase; letter-spacing: 0.1em; }
+        .sheet-close { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.07); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #6B6B6F; transition: background 0.2s, color 0.2s; }
+        .sheet-close:hover { background: rgba(255,255,255,0.12); color: #F8F9FA; }
+        .sheet-close svg { width: 14px; height: 14px; }
+        .sheet-option { display: flex; align-items: center; gap: 14px; padding: 13px 14px; border-radius: 12px; margin-bottom: 8px; cursor: pointer; transition: background 0.15s; text-decoration: none; }
+        .sheet-option:last-child { margin-bottom: 0; }
+        .sheet-option:hover { background: rgba(255,255,255,0.05); }
+        .sheet-option.selected { background: rgba(232,93,4,0.1); }
+        .sheet-flag { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .sheet-lang-name { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 600; color: #F8F9FA; display: block; }
+        .sheet-lang-sub { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #6B6B6F; display: block; margin-top: 2px; }
+        .sheet-option.selected .sheet-lang-name { color: #E85D04; }
+        .sheet-option.selected .sheet-lang-sub { color: rgba(232,93,4,0.55); }
+        .sheet-tick { margin-left: auto; width: 22px; height: 22px; color: #E85D04; flex-shrink: 0; opacity: 0; transition: opacity 0.2s; }
+        .sheet-option.selected .sheet-tick { opacity: 1; }
     </style>
     
     <!-- Vercel Web Analytics -->
@@ -58,22 +128,66 @@
 <body>
     <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
 
+    <!-- Variant 3 — Mobile bottom sheet -->
+    <div class="lang-sheet-overlay" id="langSheetOverlay" onclick="closeLangSheet()"></div>
+    <div class="lang-sheet" id="langSheet" role="dialog" aria-modal="true" aria-label="Choose language">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+            <span class="sheet-title">Language / Langue</span>
+            <button class="sheet-close" onclick="closeLangSheet()" aria-label="Close">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <a href="/fr/blog/" class="sheet-option selected" id="sheetFr" onclick="selectSheet('fr')">
+            <div class="sheet-flag">🇫🇷</div>
+            <div><span class="sheet-lang-name">Français</span></div>
+            <svg class="sheet-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L19 7"/></svg>
+        </a>
+        <a href="/en/blog/" class="sheet-option" id="sheetEn" onclick="selectSheet('en')">
+            <div class="sheet-flag">🇬🇧</div>
+            <div><span class="sheet-lang-name">English</span></div>
+            <svg class="sheet-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L19 7"/></svg>
+        </a>
+    </div>
+
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-deep-night/80 border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <a href="/" class="font-display font-extrabold text-2xl lg:text-3xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
                 <nav class="hidden lg:flex items-center gap-8">
-                    <a href="/" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">Accueil</a>
-                    <a href="/pages/about.html" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">À Propos</a>
-                    <a href="/pages/research.html" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">Recherche</a>
-                    <a href="/pages/projects.html" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">Projets</a>
-                    <a href="/blog/" class="menu-item relative font-body text-sm font-medium text-white py-2">Blog</a>
-                    <a href="/pages/contact.html" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">Contact</a>
+                    <a href="/fr/" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">Accueil</a>
+                    <a href="/fr/pages/about.html" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">À Propos</a>
+                    <a href="/fr/pages/research.html" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">Recherche</a>
+                    <a href="/fr/pages/projects.html" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">Projets</a>
+                    <a href="/fr/blog/" class="menu-item relative font-body text-sm font-medium text-white py-2">Blog</a>
+                    <a href="/fr/pages/contact.html" class="menu-item relative font-body text-sm font-medium text-gray-light hover:text-determination py-2">Contact</a>
                 </nav>
-                <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-code-green/10 border border-code-green/20">
-                    <div class="available-dot"></div>
-                    <span class="font-mono text-xs text-code-green">Disponible</span>
+                <div class="flex items-center gap-3">
+                    <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-code-green/10 border border-code-green/20">
+                        <div class="available-dot"></div>
+                        <span class="font-mono text-xs text-code-green">Disponible</span>
+                    </div>
+                    <!-- Variant 1 — Dropdown desktop -->
+                    <div class="hidden lg:block lang-switcher" id="langSwitcher">
+                        <div class="lang-trigger" id="langTrigger" onclick="toggleLangDropdown()" role="button" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+                            <span class="lang-flag" id="currentFlag">🇬🇧</span>
+                            <span class="lang-code" id="currentCode">EN</span>
+                            <svg class="lang-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+                        </div>
+                        <div class="lang-dropdown" id="langDropdown" role="listbox">
+                            <a href="/fr/blog/" class="lang-option selected" id="dropFr" role="option" aria-selected="true" onclick="selectDropdownLang(event,'fr','🇫🇷','FR')">
+                                <span class="lang-option-flag">🇫🇷</span>
+                                <div class="lang-option-info"><span class="lang-option-name">Français</span></div>
+                                <svg class="lang-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8l4 4 6-6"/></svg>
+                            </a>
+                            <a href="/en/blog/" class="lang-option" id="dropEn" role="option" aria-selected="false" onclick="selectDropdownLang(event,'en','🇬🇧','EN')">
+                                <span class="lang-option-flag">🇬🇧</span>
+                                <div class="lang-option-info"><span class="lang-option-name">English</span></div>
+                                <svg class="lang-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8l4 4 6-6"/></svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,12 +196,17 @@
     <!-- Mobile Navigation -->
     <nav class="fixed bottom-0 left-0 right-0 z-50 lg:hidden tab-nav bg-deep-night/90 border-t border-white/10">
         <div class="flex items-center justify-around py-2 px-4">
-            <a href="/" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></a>
-            <a href="/pages/about.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></a>
-            <a href="/pages/research.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></a>
-            <a href="/pages/projects.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></a>
-            <a href="/blog/" class="tab-item flex flex-col items-center gap-1 p-2 text-determination"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg></a>
-            <a href="/pages/contact.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+            <a href="/fr/" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></a>
+            <a href="/fr/pages/about.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></a>
+            <a href="/fr/pages/research.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></a>
+            <a href="/fr/pages/projects.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></a>
+            <a href="/fr/blog/" class="tab-item flex flex-col items-center gap-1 p-2 text-determination"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg></a>
+            <a href="/fr/pages/contact.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+            <!-- Variant 3 — trigger mobile -->
+            <button class="lang-sheet-trigger" id="langSheetTrigger" onclick="openLangSheet()" aria-label="Changer de langue">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+                <span id="mobileCurrentLang">FR</span>
+            </button>
         </div>
     </nav>
 
@@ -122,7 +241,7 @@
 
         <!-- Featured Article -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-            <a href="blog/articles/ai-replace-developers.html" class="block bg-gradient-to-br from-determination/10 to-noble-blue/30 border border-determination/20 rounded-2xl overflow-hidden reveal hover:border-determination/40 transition-all" data-category="tech">
+            <a href="/blog/articles/ai-replace-developers.html" class="block bg-gradient-to-br from-determination/10 to-noble-blue/30 border border-determination/20 rounded-2xl overflow-hidden reveal hover:border-determination/40 transition-all" data-category="tech">
                 <div class="grid lg:grid-cols-2 gap-0">
                     <div class="h-64 lg:h-auto bg-gradient-to-br from-determination/30 to-noble-blue/50 flex items-center justify-center p-8">
                         <div class="text-center">
@@ -151,7 +270,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="articles-grid">
                 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="research">
-                    <a href="blog/articles/natures-adaptation-strategy.html" class="block">
+                    <a href="/blog/articles/natures-adaptation-strategy.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-code-green/20 to-digital-cyan/10 flex items-center justify-center"><span class="text-5xl">🐸</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -165,7 +284,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="research phd">
-                    <a href="blog/articles/expert-validates-baby.html" class="block">
+                    <a href="/blog/articles/expert-validates-baby.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-noble-gold/20 to-determination/10 flex items-center justify-center"><span class="text-5xl">🥹</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -179,7 +298,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="phd">
-                    <a href="blog/articles/day-1-phd-student.html" class="block">
+                    <a href="/blog/articles/day-1-phd-student.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-determination/20 to-warm-energy/10 flex items-center justify-center"><span class="text-5xl">🎤</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -193,7 +312,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="phd">
-                    <a href="blog/articles/1-month-12-days-phd.html" class="block">
+                    <a href="/blog/articles/1-month-12-days-phd.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-digital-cyan/20 to-noble-blue/10 flex items-center justify-center"><span class="text-5xl">🎢</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -207,7 +326,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="phd">
-                    <a href="blog/articles/engineer-evolving-phd.html" class="block">
+                    <a href="/blog/articles/engineer-evolving-phd.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-warm-energy/20 to-determination/10 flex items-center justify-center"><span class="text-5xl">🔥</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -221,7 +340,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="life">
-                    <a href="blog/articles/closing-chapter-engineer.html" class="block">
+                    <a href="/blog/articles/closing-chapter-engineer.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-noble-blue/30 to-night-sky/20 flex items-center justify-center"><span class="text-5xl">🌟</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -235,7 +354,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="research">
-                    <a href="blog/articles/discotec-2025-reflections.html" class="block">
+                    <a href="/blog/articles/discotec-2025-reflections.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-digital-cyan/20 to-code-green/10 flex items-center justify-center"><span class="text-5xl">🎓</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -249,7 +368,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="life">
-                    <a href="blog/articles/french-integration-hacks.html" class="block">
+                    <a href="/blog/articles/french-integration-hacks.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-determination/20 to-noble-gold/10 flex items-center justify-center"><span class="text-5xl">🥋</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -263,7 +382,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="research">
-                    <a href="blog/articles/first-paper-accepted.html" class="block">
+                    <a href="/blog/articles/first-paper-accepted.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-code-green/20 to-digital-cyan/10 flex items-center justify-center"><span class="text-5xl">🎉</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -277,7 +396,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="life">
-                    <a href="blog/articles/holidays-cameroon.html" class="block">
+                    <a href="/blog/articles/holidays-cameroon.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-code-green/20 to-warm-energy/10 flex items-center justify-center"><span class="text-5xl">🌴</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -291,7 +410,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="tech">
-                    <a href="blog/articles/clean-code-adventure.html" class="block">
+                    <a href="/blog/articles/clean-code-adventure.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-digital-cyan/20 to-noble-blue/10 flex items-center justify-center"><span class="text-5xl">🚀</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -305,7 +424,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="research">
-                    <a href="blog/articles/spirals-seminar.html" class="block">
+                    <a href="/blog/articles/spirals-seminar.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-noble-gold/20 to-determination/10 flex items-center justify-center"><span class="text-5xl">✨</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -319,7 +438,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="life">
-                    <a href="blog/articles/two-months-inria-lessons.html" class="block">
+                    <a href="/blog/articles/two-months-inria-lessons.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-determination/20 to-warm-energy/10 flex items-center justify-center"><span class="text-5xl">😊</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -333,7 +452,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="research">
-                    <a href="blog/articles/master-thesis-presentation.html" class="block">
+                    <a href="/blog/articles/master-thesis-presentation.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-noble-gold/20 to-warm-energy/10 flex items-center justify-center"><span class="text-5xl">🎓</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -347,7 +466,7 @@
                 </article>
 
                 <article class="article-card reveal bg-gradient-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" data-category="tech">
-                    <a href="blog/articles/developers-vs-testers.html" class="block">
+                    <a href="/blog/articles/developers-vs-testers.html" class="block">
                         <div class="h-48 bg-gradient-to-br from-determination/20 to-warm-energy/10 flex items-center justify-center"><span class="text-5xl">😂</span></div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 mb-3">
@@ -430,6 +549,40 @@
                 });
             });
         });
+
+        // Language switcher
+        let dropdownOpen = false;
+        function toggleLangDropdown() {
+            dropdownOpen = !dropdownOpen;
+            document.getElementById('langTrigger').classList.toggle('open', dropdownOpen);
+            document.getElementById('langTrigger').setAttribute('aria-expanded', dropdownOpen);
+            document.getElementById('langDropdown').classList.toggle('open', dropdownOpen);
+        }
+        function selectDropdownLang(e, code, flag, label) {
+            document.getElementById('currentFlag').textContent = flag;
+            document.getElementById('currentCode').textContent = label;
+            document.querySelectorAll('#langDropdown .lang-option').forEach(o => { o.classList.remove('selected'); o.setAttribute('aria-selected','false'); });
+            e.currentTarget.classList.add('selected'); e.currentTarget.setAttribute('aria-selected','true');
+            document.getElementById('mobileCurrentLang').textContent = label;
+            dropdownOpen = false;
+            document.getElementById('langTrigger').classList.remove('open');
+            document.getElementById('langTrigger').setAttribute('aria-expanded','false');
+            document.getElementById('langDropdown').classList.remove('open');
+        }
+        document.addEventListener('click', e => { if (!document.getElementById('langSwitcher').contains(e.target)) { dropdownOpen=false; document.getElementById('langTrigger').classList.remove('open'); document.getElementById('langTrigger').setAttribute('aria-expanded','false'); document.getElementById('langDropdown').classList.remove('open'); } });
+        document.addEventListener('keydown', e => { if (e.key==='Escape') { if(dropdownOpen){dropdownOpen=false;document.getElementById('langTrigger').classList.remove('open');document.getElementById('langDropdown').classList.remove('open');document.getElementById('langTrigger').focus();} closeLangSheet(); } });
+
+        function openLangSheet() { document.getElementById('langSheet').classList.add('open'); document.getElementById('langSheetOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
+        function closeLangSheet() { document.getElementById('langSheet').classList.remove('open'); document.getElementById('langSheetOverlay').classList.remove('open'); document.body.style.overflow=''; }
+        function selectSheet(lang) {
+            document.getElementById('sheetFr').classList.toggle('selected', lang==='fr');
+            document.getElementById('sheetEn').classList.toggle('selected', lang==='en');
+            const label = lang==='fr'?'FR':'EN';
+            document.getElementById('mobileCurrentLang').textContent = label;
+            document.getElementById('currentFlag').textContent = lang==='fr'?'🇫🇷':'🇬🇧';
+            document.getElementById('currentCode').textContent = label;
+            setTimeout(closeLangSheet, 220);
+        }
     </script>
     
     <!-- Vercel Speed Insights -->
