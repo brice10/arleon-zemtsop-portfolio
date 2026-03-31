@@ -191,8 +191,21 @@
         .sheet-option.selected .sheet-tick { opacity: 1; }
     </style>
     
-    <script>window.va = window.va || function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+    <!-- Vercel Web Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
     <script defer src="/_vercel/insights/script.js"></script>
+        
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXFPVSPT1S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-NXFPVSPT1S');
+    </script>
 </head>
 <body>
     <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
