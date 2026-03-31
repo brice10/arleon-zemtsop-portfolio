@@ -1,126 +1,156 @@
-# Portfolio - ZEMTSOP NDADJI Brice Arléon
+# Brice Arléon ZEMTSOP NDADJI — Personal Portfolio
 
-Portfolio personnel présentant mon double profil de **PhD Student** et **Senior Software Engineer**.
+> Personal portfolio of a **PhD Student at Inria & Université de Lille** and **Senior Software Engineer**, published online in **2025**.
 
-## 🎨 Design
-
-L'identité visuelle suit une charte graphique professionnelle avec :
-- **Couleurs primaires** : Bleu Profond (#0A1628), Bleu Cobalt (#1E3A5F)
-- **Couleurs d'accent** : Orange (#E85D04), Cyan (#00D4FF), Vert (#4FFFB0)
-- **Typographie** : Montserrat (titres), Inter (corps), Playfair Display (citations), JetBrains Mono (code)
-
-## 📁 Structure du Projet
-
-```
-portfolio/
-├── index.html              # Page d'accueil
-├── vercel.json             # Configuration Vercel
-├── robots.txt              # Instructions pour les robots
-├── sitemap.xml             # Plan du site pour SEO
-├── css/                    # Styles personnalisés
-├── js/                     # Scripts JavaScript
-├── images/                 # Images et médias
-│   └── blog/              # Images des articles de blog
-├── pages/                  # Pages secondaires
-│   ├── about.html         # À propos
-│   ├── research.html      # Recherche & Publications
-│   ├── projects.html      # Projets d'ingénierie
-│   └── contact.html       # Contact
-└── blog/                   # Section blog
-    ├── index.html         # Liste des articles
-    └── articles/          # Articles individuels
-        └── _template.html # Template pour nouveaux articles
-```
-
-## 🚀 Déploiement sur Vercel
-
-### Option 1 : Via l'interface Vercel
-
-1. Connectez-vous à [Vercel](https://vercel.com)
-2. Cliquez sur "New Project"
-3. Importez ce repository depuis GitHub
-4. Vercel détectera automatiquement la configuration
-5. Cliquez sur "Deploy"
-
-### Option 2 : Via CLI
-
-```bash
-# Installer Vercel CLI
-npm i -g vercel
-
-# Se connecter
-vercel login
-
-# Déployer
-vercel
-
-# Déployer en production
-vercel --prod
-```
-
-### Configuration du domaine personnalisé
-
-1. Dans le dashboard Vercel, allez dans Settings > Domains
-2. Ajoutez votre domaine : `arleonzemtsop.vercel.app`
-3. Configurez les DNS selon les instructions de Vercel
-
-## 📝 Ajouter un Article de Blog
-
-1. Copiez le fichier `blog/articles/_template.html`
-2. Renommez-le avec un slug descriptif (ex: `systemes-adaptatifs-intro.html`)
-3. Modifiez les placeholders `[...]` :
-   - `[TITRE]` : Titre de l'article
-   - `[DESCRIPTION]` : Description SEO (150-160 caractères)
-   - `[SLUG]` : Nom du fichier sans extension
-   - `[DATE-ISO]` : Date au format ISO (ex: 2025-01-15T10:00:00Z)
-   - `[CATÉGORIE]` : Recherche, Ingénierie, Tutoriel, etc.
-   - `[IMAGE]` : Nom du fichier image
-4. Ajoutez votre contenu dans la section `<article>`
-5. Mettez à jour `sitemap.xml` avec la nouvelle URL
-6. Committez et déployez
-
-## 🔍 Optimisation SEO
-
-Le site est optimisé pour le référencement :
-
-- ✅ Meta tags complets (title, description, keywords)
-- ✅ Open Graph pour les réseaux sociaux
-- ✅ Twitter Cards
-- ✅ Schema.org / JSON-LD
-- ✅ Sitemap XML
-- ✅ robots.txt
-- ✅ URLs canoniques
-- ✅ Structure HTML sémantique
-- ✅ Texte alternatif sur les images
-- ✅ Liens internes optimisés
-
-## 🌙 Fonctionnalités
-
-- **Mode sombre/clair** : Toggle dans le header
-- **Navigation responsive** : Menu classique sur desktop, tabs sur mobile
-- **Animations** : Transitions fluides et effets au scroll
-- **Indicateur "Disponible"** : Badge avec animation
-- **Photos interactives** : Effet 3D au survol
-- **Blog intégré** : Section blog avec template réutilisable
-
-## 📱 Responsive Design
-
-Le site est entièrement responsive avec Tailwind CSS :
-- Mobile : Navigation par tabs, layout adapté
-- Tablet : Transition fluide
-- Desktop : Navigation complète, animations avancées
-
-## ⚡ Performance
-
-- Fonts préconnectés (Google Fonts)
-- Images lazy-loaded
-- CSS optimisé avec Tailwind
-- JavaScript minimal et optimisé
-
-## 📄 Licence
-
-© 2025 ZEMTSOP NDADJI Brice Arléon. Tous droits réservés.
+Live at → **[arleonzemtsop.fr](https://arleonzemtsop.fr)**
 
 ---
 
-**Contact** : brice.zemtsop@inria.fr | [LinkedIn](https://linkedin.com/in/arleonzemtsop) | [GitHub](https://github.com/arleonzemtsop)
+## 👤 About
+
+This portfolio showcases my dual profile as a researcher and engineer. I am currently pursuing a doctorate on **self-adaptive distributed systems** within the SPIRALS team at Inria Lille, while maintaining an active background in full-stack engineering and software architecture consulting.
+
+---
+
+## 🌐 Languages
+
+The site is fully bilingual — every page is available in both **French** and **English**, routed under dedicated prefixes:
+
+| Language | Root path |
+|----------|-----------|
+| 🇫🇷 Français | `/fr/` |
+| 🇬🇧 English | `/en/` |
+
+Language switching is handled by two custom components: a dropdown in the desktop navbar and a bottom sheet on mobile, both built with vanilla CSS and JavaScript — no framework dependency.
+
+---
+
+## 📁 Project Structure
+
+```
+portfolio/
+├── fr/                         # French version
+│   ├── index.html              # Homepage
+│   ├── pages/
+│   │   ├── about.html          # About me
+│   │   ├── research.html       # Research & publications
+│   │   ├── projects.html       # Engineering projects
+│   │   └── contact.html        # Contact
+│   └── blog/
+│       ├── index.html          # Blog index
+│       └── articles/           # Individual blog posts
+│           └── _template.html
+│
+├── en/                         # English version (mirrors fr/)
+│   ├── index.html
+│   ├── pages/
+│   │   ├── about.html
+│   │   ├── research.html
+│   │   ├── projects.html
+│   │   └── contact.html
+│   └── blog/
+│       ├── index.html
+│       └── articles/
+│
+├── robots.txt
+├── sitemap.xml
+└── vercel.json
+```
+
+---
+
+## 📄 Pages
+
+| Page | Description |
+|------|-------------|
+| **Home** | Hero section, skills overview, featured projects, quick contact |
+| **About** | Background, timeline, values, certifications, personality |
+| **Research** | PhD focus on self-adaptive systems, AdaptiFlow framework, publications, affiliations (Inria / Université de Lille) |
+| **Projects** | 20+ delivered projects — enterprise apps, research tools, open source contributions |
+| **Blog** | Articles on research, the PhD journey, software engineering and personal life |
+| **Contact** | Message form (Formspree), Calendly booking, FAQ |
+
+---
+
+## 🎨 Design System
+
+The visual identity follows a custom design language built around a dark, technical aesthetic.
+
+**Color palette**
+
+| Token | Hex | Role |
+|-------|-----|------|
+| `deep-night` | `#0A1628` | Page background |
+| `noble-blue` | `#1E3A5F` | Card backgrounds |
+| `determination` | `#E85D04` | Primary accent |
+| `warm-energy` | `#F48C06` | Gradient partner |
+| `digital-cyan` | `#00D4FF` | Info / tech accent |
+| `code-green` | `#4FFFB0` | Success / availability |
+| `noble-gold` | `#D4A012` | Highlights |
+
+**Typography**
+
+| Font | Usage |
+|------|-------|
+| Montserrat | Display headings, nav, buttons |
+| Inter | Body text |
+| Playfair Display | Pull quotes, accent text |
+| JetBrains Mono | Code snippets, labels, tags |
+
+---
+
+## 🛠️ Tech Stack
+
+The site is intentionally framework-free — pure HTML, CSS and JavaScript, enhanced with:
+
+- **[Tailwind CSS](https://tailwindcss.com)** (CDN) — utility-first styling
+- **[Google Fonts](https://fonts.google.com)** — Montserrat, Inter, Playfair Display, JetBrains Mono
+- **[Formspree](https://formspree.io)** — contact form backend
+- **[Calendly](https://calendly.com)** — meeting booking widget
+- **[Vercel](https://vercel.com)** — hosting and edge delivery
+- **Vercel Web Analytics & Speed Insights** — performance monitoring
+
+---
+
+## ✨ Features
+
+- **Bilingual FR / EN** with custom language switcher (dropdown + mobile bottom sheet)
+- **Scroll-reveal animations** — elements animate in as the user scrolls
+- **Project filtering** — filter by category (Enterprise, Research, Open Source, Personal)
+- **Blog filtering** — filter posts by topic
+- **FAQ accordion** — animated expand/collapse
+- **Async contact form** — Formspree submission with success/error feedback, no page reload
+- **Available badge** — pulsing indicator signalling open availability
+- **Mobile-first responsive layout** — bottom tab navigation on small screens, full navbar on desktop
+- **Custom scrollbar** — styled to match the color palette
+
+---
+
+## 🔍 SEO
+
+- Full meta tags (title, description, keywords, author)
+- Open Graph tags per page and locale
+- Canonical URLs
+- `robots.txt` and `sitemap.xml`
+- Semantic HTML structure
+- Schema.org / JSON-LD on research page
+
+---
+
+## 📝 Adding a Blog Post
+
+1. Copy `blog/articles/_template.html` (in either `fr/` or `en/`)
+2. Rename it with a descriptive slug (e.g. `adaptive-systems-intro.html`)
+3. Fill in the placeholders: title, description, date, category, content
+4. Update `sitemap.xml` with the new URL
+5. Add a card to the corresponding `blog/index.html`
+
+---
+
+## 📄 License
+
+© 2025 ZEMTSOP NDADJI Brice Arléon. All rights reserved.
+
+---
+
+**Contact** · [arleonzemtsop@gmail.com](mailto:arleonzemtsop@gmail.com) · [LinkedIn](https://www.linkedin.com/in/brice-arléon-zemtsop-ndadji-b258321a4/) · [GitHub](https://github.com/brice10)
