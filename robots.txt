@@ -26,6 +26,45 @@
 # RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN UNION DIRECTIVE 2019/790 ON COPYRIGHT
 # AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.
 
+
+# Allow specific important pages
+Allow: /blog/
+Allow: /blog/articles/
+
+# Disallow private or unnecessary paths
+Disallow: /api/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow all major search engines explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+
 # BEGIN Cloudflare Managed content
 
 User-agent: *
@@ -98,46 +137,3 @@ Disallow:
 Disallow: /cgi-bin/
 Sitemap: https://www.arleonzemtsop.fr/sitemap.xml
 
-# Allow all crawlers
-User-agent: *
-Allow: /
-
-# Crawl-delay (optional, for polite crawling)
-Crawl-delay: 1
-
-# Allow specific important pages
-Allow: /blog/
-Allow: /blog/articles/
-
-# Disallow private or unnecessary paths
-Disallow: /api/
-Disallow: /.git/
-Disallow: /node_modules/
-
-# Allow all major search engines explicitly
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
