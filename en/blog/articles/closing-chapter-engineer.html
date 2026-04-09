@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closing a Chapter: My Gratitude | Blog - Arléon Zemtsop</title>
+    <meta name="description" content="Reflections on my journey as a Research Engineer at Inria Lille - gratitude, lessons learned, and the next chapter.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230A1628' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' text-anchor='middle'%3E%3Ctspan fill='%23FFFFFF'%3EA%3C/tspan%3E%3Ctspan fill='%23E85D04'%3EZ%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-night': '#0A1628', 'noble-blue': '#1E3A5F', 'night-sky': '#0F2847',
+                        'determination': '#E85D04', 'warm-energy': '#F48C06', 'noble-gold': '#D4A012',
+                        'digital-cyan': '#00D4FF', 'code-green': '#4FFFB0', 'gray-medium': '#6B6B6F',
+                        'gray-light': '#A0A0A5', 'off-white': '#F8F9FA',
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'], 'body': ['Inter', 'sans-serif'],
+                        'accent': ['Playfair Display', 'serif'], 'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0A1628; color: #F8F9FA; }
+        .bg-pattern { background-image: radial-gradient(ellipse at 20% 80%, rgba(30,58,95,0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(212,160,18,0.08) 0%, transparent 40%); }
+        .prose-custom h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; color: #F8F9FA; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose-custom h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; color: #D4A012; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose-custom p { margin-bottom: 1.25rem; line-height: 1.8; color: #A0A0A5; }
+        .prose-custom strong { color: #F8F9FA; }
+        .prose-custom em { color: #D4A012; }
+        .prose-custom ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+        .prose-custom ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #A0A0A5; }
+        .prose-custom ul li::before { content: '✦'; position: absolute; left: 0; color: #D4A012; }
+        .prose-custom blockquote { border-left: 3px solid #D4A012; padding-left: 1.5rem; margin: 1.5rem 0; font-family: 'Playfair Display', serif; font-style: italic; color: #F8F9FA; background: rgba(212,160,18,0.05); padding: 1.5rem; border-radius: 0 12px 12px 0; font-size: 1.1rem; }
+        .chapter-badge { background: linear-gradient(135deg, #D4A012 0%, #F48C06 100%); }
+        .timeline-line { background: linear-gradient(180deg, #D4A012 0%, #1E3A5F 100%); }
+        .timeline-dot { background: #D4A012; box-shadow: 0 0 20px rgba(212,160,18,0.4); }
+        .achievement-card { background: linear-gradient(135deg, rgba(212,160,18,0.1) 0%, rgba(30,58,95,0.3) 100%); border: 1px solid rgba(212,160,18,0.2); }
+        .lesson-card { background: linear-gradient(135deg, rgba(30,58,95,0.4) 0%, rgba(15,40,71,0.6) 100%); border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
+        .lesson-card:hover { border-color: rgba(212,160,18,0.4); transform: translateY(-4px); }
+        .gratitude-card { background: linear-gradient(135deg, rgba(0,212,255,0.05) 0%, rgba(30,58,95,0.3) 100%); border: 1px solid rgba(0,212,255,0.2); }
+        .quote-highlight { position: relative; }
+        .quote-highlight::before { content: '"'; position: absolute; top: -20px; left: -10px; font-family: 'Playfair Display', serif; font-size: 4rem; color: rgba(212,160,18,0.2); line-height: 1; }
+        .tab-nav { backdrop-filter: blur(20px); }
+        .tab-item { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .tab-item:hover { transform: translateY(-4px); }
+        .tab-item .tab-tooltip { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; }
+        .tab-item:hover .tab-tooltip { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        /* ── Dropdown ── */
+        .lang-switcher { position: relative; display: inline-block; }
+        .lang-trigger { display: flex; align-items: center; gap: 6px; padding: 6px 12px 6px 10px; background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.14); border-radius: 8px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A0A0A5; transition: border-color 0.2s, color 0.2s, background 0.2s; user-select: none; white-space: nowrap; }
+        .lang-trigger:hover { border-color: rgba(232,93,4,0.45); color: #F8F9FA; background: rgba(232,93,4,0.05); }
+        .lang-trigger.open { border-color: rgba(232,93,4,0.55); color: #F8F9FA; background: rgba(232,93,4,0.08); }
+        .lang-flag { font-size: 15px; line-height: 1; }
+        .lang-code { font-weight: 500; letter-spacing: 0.06em; }
+        .lang-chevron { width: 12px; height: 12px; transition: transform 0.2s, color 0.2s; color: #6B6B6F; flex-shrink: 0; }
+        .lang-trigger.open .lang-chevron { transform: rotate(180deg); color: #E85D04; }
+        .lang-dropdown { position: absolute; top: calc(100% + 10px); right: 0; min-width: 148px; background: #0F2847; border: 0.5px solid rgba(255,255,255,0.1); border-radius: 14px; overflow: hidden; opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none; transition: opacity 0.2s cubic-bezier(0.4,0,0.2,1), transform 0.2s cubic-bezier(0.4,0,0.2,1); z-index: 200; padding: 6px; box-shadow: 0 20px 40px -8px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(255,255,255,0.06); }
+        .lang-dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+        .lang-option { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 9px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A0A0A5; transition: background 0.15s, color 0.15s; text-decoration: none; }
+        .lang-option:hover { background: rgba(232,93,4,0.1); color: #F8F9FA; }
+        .lang-option.selected { background: rgba(232,93,4,0.13); color: #E85D04; }
+        .lang-option-flag { font-size: 17px; line-height: 1; flex-shrink: 0; }
+        .lang-option-name { font-size: 12px; font-weight: 500; }
+        .lang-check { width: 13px; height: 13px; color: #E85D04; opacity: 0; flex-shrink: 0; margin-left: auto; }
+        .lang-option.selected .lang-check { opacity: 1; }
+
+        /* ── Bottom sheet ── */
+        .lang-sheet-trigger { display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 6px 10px; color: #6B6B6F; cursor: pointer; background: none; border: none; transition: color 0.2s; }
+        .lang-sheet-trigger svg { width: 24px; height: 24px; }
+        .lang-sheet-trigger span { font-family: 'JetBrains Mono', monospace; font-size: 9px; }
+        .lang-sheet-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0); z-index: 300; pointer-events: none; transition: background 0.3s; }
+        .lang-sheet-overlay.open { background: rgba(0,0,0,0.55); pointer-events: all; }
+        .lang-sheet { position: fixed; bottom: 0; left: 0; right: 0; z-index: 301; background: #1E3A5F; border-radius: 20px 20px 0 0; padding: 12px 16px 32px; transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 -20px 60px -10px rgba(0,0,0,0.5); }
+        .lang-sheet.open { transform: translateY(0); }
+        .sheet-handle { width: 40px; height: 4px; background: rgba(255,255,255,0.15); border-radius: 2px; margin: 0 auto 20px; }
+        .sheet-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+        .sheet-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B6B6F; text-transform: uppercase; letter-spacing: 0.1em; }
+        .sheet-close { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.07); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #6B6B6F; transition: background 0.2s, color 0.2s; }
+        .sheet-close:hover { background: rgba(255,255,255,0.12); color: #F8F9FA; }
+        .sheet-close svg { width: 14px; height: 14px; }
+        .sheet-option { display: flex; align-items: center; gap: 14px; padding: 13px 14px; border-radius: 12px; margin-bottom: 8px; cursor: pointer; transition: background 0.15s; text-decoration: none; }
+        .sheet-option:last-child { margin-bottom: 0; }
+        .sheet-option:hover { background: rgba(255,255,255,0.05); }
+        .sheet-option.selected { background: rgba(232,93,4,0.1); }
+        .sheet-flag { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .sheet-lang-name { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 600; color: #F8F9FA; display: block; }
+        .sheet-option.selected .sheet-lang-name { color: #E85D04; }
+        .sheet-tick { margin-left: auto; width: 22px; height: 22px; color: #E85D04; flex-shrink: 0; opacity: 0; transition: opacity 0.2s; }
+        .sheet-option.selected .sheet-tick { opacity: 1; }
+    </style>
+
+    <script>window.va = window.va || function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXFPVSPT1S"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NXFPVSPT1S');</script>
+</head>
+<body>
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <!-- Mobile bottom sheet -->
+    <div class="lang-sheet-overlay" id="langSheetOverlay" onclick="closeLangSheet()"></div>
+    <div class="lang-sheet" id="langSheet" role="dialog" aria-modal="true" aria-label="Choose language">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+            <span class="sheet-title">Language / Langue</span>
+            <button class="sheet-close" onclick="closeLangSheet()" aria-label="Close">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <a href="/fr/blog/articles/closing-chapter-engineer.html" class="sheet-option" id="sheetFr" onclick="selectSheet('fr')">
+            <div class="sheet-flag">🇫🇷</div>
+            <div><span class="sheet-lang-name">Français</span></div>
+            <svg class="sheet-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L19 7"/></svg>
+        </a>
+        <a href="/en/blog/articles/closing-chapter-engineer.html" class="sheet-option selected" id="sheetEn" onclick="selectSheet('en')">
+            <div class="sheet-flag">🇬🇧</div>
+            <div><span class="sheet-lang-name">English</span></div>
+            <svg class="sheet-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L19 7"/></svg>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-deep-night/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="/en/" class="font-display font-extrabold text-2xl lg:text-3xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="/en/" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Home</a>
+                    <a href="/en/pages/about.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">About</a>
+                    <a href="/en/pages/research.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Research</a>
+                    <a href="/en/pages/projects.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Projects</a>
+                    <a href="/en/blog/" class="font-body text-sm font-medium text-white py-2">Blog</a>
+                    <a href="/en/pages/contact.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Contact</a>
+                </nav>
+                <!-- Dropdown desktop -->
+                <div class="hidden lg:block lang-switcher" id="langSwitcher">
+                    <div class="lang-trigger" id="langTrigger" onclick="toggleLangDropdown()" role="button" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+                        <span class="lang-flag" id="currentFlag">🇬🇧</span>
+                        <span class="lang-code" id="currentCode">EN</span>
+                        <svg class="lang-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+                    </div>
+                    <div class="lang-dropdown" id="langDropdown" role="listbox">
+                        <a href="/fr/blog/articles/closing-chapter-engineer.html" class="lang-option" id="dropFr" role="option" aria-selected="false" onclick="selectDropdownLang(event,'fr','🇫🇷','FR')">
+                            <span class="lang-option-flag">🇫🇷</span>
+                            <span class="lang-option-name">Français</span>
+                            <svg class="lang-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8l4 4 6-6"/></svg>
+                        </a>
+                        <a href="/en/blog/articles/closing-chapter-engineer.html" class="lang-option selected" id="dropEn" role="option" aria-selected="true" onclick="selectDropdownLang(event,'en','🇬🇧','EN')">
+                            <span class="lang-option-flag">🇬🇧</span>
+                            <span class="lang-option-name">English</span>
+                            <svg class="lang-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8l4 4 6-6"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Tab Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 z-50 lg:hidden tab-nav bg-deep-night/90 border-t border-white/10" aria-label="Mobile navigation">
+        <div class="flex items-center justify-around py-2 px-4">
+            <a href="/en/" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">Home</span>
+            </a>
+            <a href="/en/pages/about.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">About</span>
+            </a>
+            <a href="/en/pages/research.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">Research</span>
+            </a>
+            <a href="/en/pages/projects.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">Projects</span>
+            </a>
+            <a href="/en/blog/" class="tab-item flex flex-col items-center gap-1 p-2 text-determination relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">Blog</span>
+            </a>
+            <a href="/en/pages/contact.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">Contact</span>
+            </a>
+            <button class="lang-sheet-trigger" id="langSheetTrigger" onclick="openLangSheet()" aria-label="Change language">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+                <span id="mobileCurrentLang">EN</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-24 lg:pt-32 pb-24">
+        <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Back Link -->
+            <a href="/en/blog/" class="inline-flex items-center gap-2 text-gray-light hover:text-determination mb-8 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Back to blog
+            </a>
+
+            <!-- Article Header -->
+            <header class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="px-3 py-1 bg-noble-gold/20 rounded-full font-mono text-xs text-noble-gold">Gratitude</span>
+                    <span class="px-3 py-1 bg-digital-cyan/20 rounded-full font-mono text-xs text-digital-cyan">Milestone</span>
+                    <span class="font-mono text-xs text-gray-medium">• September 2024</span>
+                </div>
+                <h1 class="font-display text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-tight mb-6">
+                    🌟 Closing a Chapter: My Gratitude and Lessons Learned
+                </h1>
+                <p class="font-body text-xl text-gray-light leading-relaxed">
+                    Today marks my last day as a Distributed Systems & Middleware Engineer with the Spirals team at Inria. This chapter ends with a heart full of emotions and a mind rich with lessons.
+                </p>
+            </header>
+
+            <!-- Chapter Badge -->
+            <div class="flex justify-center mb-10">
+                <div class="chapter-badge rounded-2xl px-8 py-5 text-center">
+                    <p class="font-mono text-xs text-white/80 uppercase tracking-widest mb-2">Chapter Complete</p>
+                    <p class="font-display text-3xl font-extrabold text-white">1 Year</p>
+                    <p class="font-body text-sm text-white/80">as Research Engineer at Inria Lille</p>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="prose-custom">
+                <h2>🌍 A Journey Across Worlds</h2>
+                <p>A year ago, I arrived from <strong>Cameroon</strong>, stepping into a new world: a new country, a new culture, and the vast, fascinating domain of scientific research.</p>
+                <p>The beginning was a challenge—a journey of adaptation not just professionally, but personally. Learning to navigate French bureaucracy. Finding my footing in a research laboratory. Understanding the unwritten rules of academic culture. Building a life from scratch in Lille.</p>
+                <blockquote class="quote-highlight">
+                    Every challenge became a lesson. Every struggle became strength. Every doubt became determination.
+                </blockquote>
+            </div>
+
+            <!-- Timeline -->
+            <div class="my-10 relative">
+                <h3 class="font-display font-bold text-white mb-6 text-center">📅 The Year in Milestones</h3>
+                <div class="relative pl-8">
+                    <div class="absolute left-3 top-0 bottom-0 w-0.5 timeline-line"></div>
+                    <div class="relative mb-8">
+                        <div class="absolute left-[-22px] w-4 h-4 rounded-full timeline-dot"></div>
+                        <div class="bg-noble-blue/20 rounded-lg p-4">
+                            <p class="font-mono text-xs text-noble-gold mb-1">October 2023</p>
+                            <p class="font-display font-bold text-white">Arrived in France</p>
+                            <p class="text-sm text-gray-light">First steps into Inria Lille and the Spirals team</p>
+                        </div>
+                    </div>
+                    <div class="relative mb-8">
+                        <div class="absolute left-[-22px] w-4 h-4 rounded-full timeline-dot"></div>
+                        <div class="bg-noble-blue/20 rounded-lg p-4">
+                            <p class="font-mono text-xs text-noble-gold mb-1">December 2023</p>
+                            <p class="font-display font-bold text-white">First Lines of AdaptiFlow</p>
+                            <p class="text-sm text-gray-light">Started developing the self-adaptive microservices platform</p>
+                        </div>
+                    </div>
+                    <div class="relative mb-8">
+                        <div class="absolute left-[-22px] w-4 h-4 rounded-full timeline-dot"></div>
+                        <div class="bg-noble-blue/20 rounded-lg p-4">
+                            <p class="font-mono text-xs text-noble-gold mb-1">March 2024</p>
+                            <p class="font-display font-bold text-white">Paper Submission</p>
+                            <p class="text-sm text-gray-light">Submitted my first scientific publication</p>
+                        </div>
+                    </div>
+                    <div class="relative mb-8">
+                        <div class="absolute left-[-22px] w-4 h-4 rounded-full timeline-dot"></div>
+                        <div class="bg-noble-blue/20 rounded-lg p-4">
+                            <p class="font-mono text-xs text-noble-gold mb-1">June 2024</p>
+                            <p class="font-display font-bold text-white">Paper Accepted! 🎉</p>
+                            <p class="text-sm text-gray-light">First publication accepted at a scientific conference</p>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute left-[-22px] w-4 h-4 rounded-full timeline-dot"></div>
+                        <div class="bg-gradient-to-r from-noble-gold/20 to-determination/20 rounded-lg p-4 border border-noble-gold/30">
+                            <p class="font-mono text-xs text-noble-gold mb-1">September 2024</p>
+                            <p class="font-display font-bold text-white">Chapter Closes</p>
+                            <p class="text-sm text-gray-light">Last day as Research Engineer — New chapter awaits</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🤝 The Perfect Team</h2>
+                <p>I was incredibly fortunate to join a team with inspiring profiles. Guided step by step, I delved into the fields I am passionate about:</p>
+                <ul>
+                    <li><strong>Distributed Systems</strong> — The art of making many computers work as one</li>
+                    <li><strong>Self-Adaptation</strong> — Building systems that heal and optimize themselves</li>
+                    <li><strong>Cloud Computing</strong> — Harnessing the power of scalable infrastructure</li>
+                    <li><strong>Microservices</strong> — Architecting modular, resilient applications</li>
+                </ul>
+                <h2>🔬 A Beautiful Symbiosis</h2>
+                <p>This journey revealed a <em>perfect symbiosis</em>: my background in software development, DevOps, and project management beautifully merged with rigorous scientific methodology.</p>
+                <p>I grew in ways I hadn't imagined, acquiring:</p>
+            </div>
+
+            <!-- Lessons Learned Cards -->
+            <div class="grid md:grid-cols-3 gap-4 my-8">
+                <div class="lesson-card rounded-xl p-5 text-center">
+                    <div class="text-3xl mb-3">🎯</div>
+                    <h4 class="font-display font-bold text-white mb-2">Methodical Rigor</h4>
+                    <p class="text-sm text-gray-light">The discipline of scientific thinking — hypothesis, experiment, analysis, repeat.</p>
+                </div>
+                <div class="lesson-card rounded-xl p-5 text-center">
+                    <div class="text-3xl mb-3">🙏</div>
+                    <h4 class="font-display font-bold text-white mb-2">Intellectual Humility</h4>
+                    <p class="text-sm text-gray-light">Knowing what you don't know is the first step to wisdom.</p>
+                </div>
+                <div class="lesson-card rounded-xl p-5 text-center">
+                    <div class="text-3xl mb-3">🚀</div>
+                    <h4 class="font-display font-bold text-white mb-2">Greater Autonomy</h4>
+                    <p class="text-sm text-gray-light">The confidence to chart your own course through unknown territory.</p>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🏆 Tangible Outcomes</h2>
+                <p>This growth led to tangible outcomes I am proud of:</p>
+            </div>
+
+            <!-- Achievement Cards -->
+            <div class="grid md:grid-cols-2 gap-4 my-8">
+                <div class="achievement-card rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">📄</span>
+                        <h4 class="font-display font-bold text-noble-gold">First Publication</h4>
+                    </div>
+                    <p class="text-gray-light text-sm">My first scientific publication was accepted at a peer-reviewed conference. From idea to paper to acceptance — a complete cycle.</p>
+                </div>
+                <div class="achievement-card rounded-xl p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-2xl">⚙️</span>
+                        <h4 class="font-display font-bold text-noble-gold">AdaptiFlow Platform</h4>
+                    </div>
+                    <p class="text-gray-light text-sm">Developed an experimental platform for self-adaptive microservices — the foundation for future research.</p>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>💎 The Key Lessons</h2>
+                <p>The lessons I carry forward aren't just technical. They're human:</p>
+                <h3>Humility</h3>
+                <p>Research taught me that the more you learn, the more you realize how much remains unknown. Every answer opens ten new questions. And that's beautiful.</p>
+                <h3>Perseverance</h3>
+                <p>Papers get rejected. Code breaks. Experiments fail. But each failure is data. Each rejection is feedback. The only true failure is giving up.</p>
+                <h3>Resilience</h3>
+                <p>Moving across the world, adapting to a new culture, navigating a new field — it all builds a kind of resilience that no classroom can teach.</p>
+            </div>
+
+            <!-- Gratitude Section -->
+            <div class="gratitude-card rounded-2xl p-6 my-10">
+                <h3 class="font-display font-bold text-white mb-4 flex items-center gap-2">
+                    <span class="text-digital-cyan">💙</span> Deep Gratitude
+                </h3>
+                <p class="text-gray-light mb-4">I am deeply grateful for the trust, guidance, and opportunity provided by:</p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg"><span class="text-noble-gold">✦</span><p class="text-white">My supervisors and mentors at Inria</p></div>
+                    <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg"><span class="text-noble-gold">✦</span><p class="text-white">The entire Spirals team</p></div>
+                    <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg"><span class="text-noble-gold">✦</span><p class="text-white">University of Lille</p></div>
+                    <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg"><span class="text-noble-gold">✦</span><p class="text-white">Everyone who supported me from Cameroon and beyond</p></div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>📖 Closing Thoughts</h2>
+                <p>The engineer I once was leaves not just with new skills, but with a <strong>clarified purpose</strong>.</p>
+                <p>I came to France searching for knowledge. I found something more: I found direction. I found passion. I found a community. I found home.</p>
+                <blockquote class="quote-highlight">
+                    Some chapters end so that better ones can begin. This isn't goodbye — it's "see you in the next chapter."
+                </blockquote>
+                <p><strong>Stay tuned — the next chapter begins now.</strong> 🚀</p>
+            </div>
+
+            <!-- Teaser -->
+            <div class="bg-gradient-to-br from-determination/10 to-warm-energy/10 rounded-2xl p-6 my-10 border border-determination/20 text-center">
+                <p class="font-mono text-xs text-determination uppercase tracking-widest mb-2">Coming Next</p>
+                <p class="font-display font-bold text-xl text-white mb-2">The Engineer is Evolving...</p>
+                <p class="text-gray-light text-sm mb-4">What comes after this chapter closes? Hint: it involves a PhD! 🎓</p>
+                <a href="/en/blog/articles/engineer-evolving-phd.html" class="inline-flex items-center gap-2 px-5 py-2 bg-determination/20 hover:bg-determination/30 rounded-lg text-determination text-sm font-medium transition-colors">
+                    Read the Announcement
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-12 pt-8 border-t border-white/10">
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Gratitude</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#INRIA</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Spirals</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#ResearchEngineer</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Milestone</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#LessonsLearned</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#Cameroon</span>
+                    <span class="px-3 py-1 bg-noble-blue/30 rounded-full font-mono text-xs text-gray-light">#France</span>
+                </div>
+            </div>
+
+            <!-- Series Navigation -->
+            <div class="mt-10 grid md:grid-cols-2 gap-4">
+                <a href="/en/blog/articles/first-paper-accepted.html" class="p-5 bg-gradient-to-br from-noble-blue/20 to-deep-night rounded-xl border border-white/5 hover:border-noble-gold/30 transition-colors group">
+                    <p class="font-mono text-xs text-gray-medium mb-1">← Related</p>
+                    <p class="font-display font-bold text-white group-hover:text-noble-gold transition-colors">First Paper Accepted!</p>
+                </a>
+                <a href="/en/blog/articles/engineer-evolving-phd.html" class="p-5 bg-gradient-to-br from-determination/10 to-noble-blue/20 rounded-xl border border-determination/20 hover:border-determination/40 transition-colors group text-right">
+                    <p class="font-mono text-xs text-determination mb-1">Next Chapter →</p>
+                    <p class="font-display font-bold text-white group-hover:text-determination transition-colors">The Engineer is Evolving!</p>
+                </a>
+            </div>
+
+            <!-- Author -->
+            <div class="mt-12 p-6 bg-gradient-to-br from-noble-blue/30 to-night-sky/50 rounded-2xl border border-white/5">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-determination to-warm-energy flex items-center justify-center font-display font-bold text-xl text-white">AZ</div>
+                    <div>
+                        <h4 class="font-display font-bold text-white">Arléon Zemtsop</h4>
+                        <p class="font-body text-sm text-gray-light">Former Research Engineer → Now PhD Student at Inria / University of Lille</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share -->
+            <div class="mt-8 flex items-center gap-4">
+                <span class="font-mono text-sm text-gray-medium">Share:</span>
+                <a href="https://www.linkedin.com/shareArticle?url=https://arleonzemtsop.vercel.app/en/blog/articles/closing-chapter-engineer.html" target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all" aria-label="Share on LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://x.com/share?url=https://arleonzemtsop.vercel.app/en/blog/articles/closing-chapter-engineer.html" target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-determination/20 flex items-center justify-center text-gray-light hover:text-determination transition-all" aria-label="Share on X">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 bg-deep-night/50 py-12 pb-24 lg:pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="/en/" class="font-display font-extrabold text-2xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+            <p class="font-mono text-xs text-gray-medium mt-4">© 2025 ZEMTSOP NDADJI Brice Arléon</p>
+        </div>
+    </footer>
+
+    <script>
+        let dropdownOpen = false;
+        function toggleLangDropdown() {
+            dropdownOpen = !dropdownOpen;
+            document.getElementById('langTrigger').classList.toggle('open', dropdownOpen);
+            document.getElementById('langTrigger').setAttribute('aria-expanded', dropdownOpen);
+            document.getElementById('langDropdown').classList.toggle('open', dropdownOpen);
+        }
+        function selectDropdownLang(e, code, flag, label) {
+            document.getElementById('currentFlag').textContent = flag;
+            document.getElementById('currentCode').textContent = label;
+            document.querySelectorAll('#langDropdown .lang-option').forEach(o => { o.classList.remove('selected'); o.setAttribute('aria-selected','false'); });
+            e.currentTarget.classList.add('selected'); e.currentTarget.setAttribute('aria-selected','true');
+            document.getElementById('mobileCurrentLang').textContent = label;
+            dropdownOpen = false;
+            document.getElementById('langTrigger').classList.remove('open');
+            document.getElementById('langTrigger').setAttribute('aria-expanded','false');
+            document.getElementById('langDropdown').classList.remove('open');
+        }
+        document.addEventListener('click', e => {
+            if (!document.getElementById('langSwitcher').contains(e.target)) {
+                dropdownOpen = false;
+                document.getElementById('langTrigger').classList.remove('open');
+                document.getElementById('langTrigger').setAttribute('aria-expanded','false');
+                document.getElementById('langDropdown').classList.remove('open');
+            }
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                if (dropdownOpen) { dropdownOpen=false; document.getElementById('langTrigger').classList.remove('open'); document.getElementById('langDropdown').classList.remove('open'); document.getElementById('langTrigger').focus(); }
+                closeLangSheet();
+            }
+        });
+        function openLangSheet() { document.getElementById('langSheet').classList.add('open'); document.getElementById('langSheetOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
+        function closeLangSheet() { document.getElementById('langSheet').classList.remove('open'); document.getElementById('langSheetOverlay').classList.remove('open'); document.body.style.overflow=''; }
+        function selectSheet(lang) {
+            document.getElementById('sheetFr').classList.toggle('selected', lang==='fr');
+            document.getElementById('sheetEn').classList.toggle('selected', lang==='en');
+            document.getElementById('mobileCurrentLang').textContent = lang==='fr'?'FR':'EN';
+            document.getElementById('currentFlag').textContent = lang==='fr'?'🇫🇷':'🇬🇧';
+            document.getElementById('currentCode').textContent = lang==='fr'?'FR':'EN';
+            setTimeout(closeLangSheet, 220);
+        }
+    </script>
+
+    <script>window.si = window.si || function(){(window.siq=window.siq||[]).push(arguments);};</script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>

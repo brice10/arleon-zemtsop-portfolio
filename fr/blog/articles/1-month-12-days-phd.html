@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 mois et 12 jours en tant que doctorant | Blog - Arléon Zemtsop</title>
+    <meta name="description" content="Un rapport de survie après 42 jours de doctorat. Attentes vs réalité, avalanche de papiers et trouver sa voie.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230A1628' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' text-anchor='middle'%3E%3Ctspan fill='%23FFFFFF'%3EA%3C/tspan%3E%3Ctspan fill='%23E85D04'%3EZ%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-night': '#0A1628', 'noble-blue': '#1E3A5F', 'night-sky': '#0F2847',
+                        'determination': '#E85D04', 'warm-energy': '#F48C06', 'noble-gold': '#D4A012',
+                        'digital-cyan': '#00D4FF', 'code-green': '#4FFFB0', 'gray-medium': '#6B6B6F',
+                        'gray-light': '#A0A0A5', 'off-white': '#F8F9FA',
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'], 'body': ['Inter', 'sans-serif'],
+                        'accent': ['Playfair Display', 'serif'], 'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0A1628; color: #F8F9FA; }
+        .bg-pattern { background-image: radial-gradient(ellipse at 20% 80%, rgba(30,58,95,0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(232,93,4,0.08) 0%, transparent 40%); }
+        .prose-custom h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; color: #F8F9FA; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose-custom h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; color: #00D4FF; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose-custom p { margin-bottom: 1.25rem; line-height: 1.8; color: #A0A0A5; }
+        .prose-custom strong { color: #F8F9FA; }
+        .prose-custom em { color: #F48C06; }
+        .prose-custom ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+        .prose-custom ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #A0A0A5; }
+        .prose-custom ul li::before { content: '→'; position: absolute; left: 0; color: #00D4FF; }
+        .prose-custom a { color: #00D4FF; text-decoration: underline; }
+        .prose-custom a:hover { color: #E85D04; }
+        .prose-custom blockquote { border-left: 3px solid #00D4FF; padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: #A0A0A5; background: rgba(0,212,255,0.05); padding: 1.5rem; border-radius: 0 12px 12px 0; }
+        .day-counter { background: linear-gradient(135deg, #00D4FF 0%, #1E3A5F 100%); position: relative; overflow: hidden; }
+        .day-counter::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent); animation: shine 3s ease-in-out infinite; }
+        @keyframes shine { 0%{transform:translateX(-100%) rotate(45deg);}100%{transform:translateX(100%) rotate(45deg);} }
+        .expectation-card { background: linear-gradient(135deg, rgba(232,93,4,0.1) 0%, rgba(30,58,95,0.2) 100%); border: 1px solid rgba(232,93,4,0.2); }
+        .reality-card { background: linear-gradient(135deg, rgba(0,212,255,0.1) 0%, rgba(30,58,95,0.2) 100%); border: 1px solid rgba(0,212,255,0.2); }
+        .survival-tip { background: linear-gradient(135deg, rgba(79,255,176,0.1) 0%, rgba(30,58,95,0.2) 100%); border: 1px solid rgba(79,255,176,0.2); }
+        .progress-bar { background: linear-gradient(90deg, #00D4FF 0%, #E85D04 100%); height: 4px; border-radius: 2px; }
+        .tab-nav { backdrop-filter: blur(20px); }
+        .tab-item { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .tab-item:hover { transform: translateY(-4px); }
+        .tab-item .tab-tooltip { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; }
+        .tab-item:hover .tab-tooltip { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        /* LANGUAGE SWITCHER STYLES */
+        .lang-switcher { position: relative; display: inline-block; }
+        .lang-trigger {
+            display: flex; align-items: center; gap: 6px; padding: 6px 12px 6px 10px;
+            background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.14);
+            border-radius: 8px; cursor: pointer; font-family: 'JetBrains Mono', monospace;
+            font-size: 12px; color: #A0A0A5; transition: all 0.2s; user-select: none;
+        }
+        .lang-trigger:hover { border-color: rgba(232,93,4,0.45); color: #F8F9FA; background: rgba(232,93,4,0.05); }
+        .lang-trigger.open { border-color: rgba(232,93,4,0.55); color: #F8F9FA; background: rgba(232,93,4,0.08); }
+        .lang-chevron { width: 12px; height: 12px; transition: transform 0.2s; color: #6B6B6F; }
+        .lang-trigger.open .lang-chevron { transform: rotate(180deg); color: #E85D04; }
+        .lang-dropdown {
+            position: absolute; top: calc(100% + 10px); right: 0; min-width: 168px;
+            background: #0F2847; border: 0.5px solid rgba(255,255,255,0.1); border-radius: 14px;
+            overflow: hidden; opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none;
+            transition: all 0.2s cubic-bezier(0.4,0,0.2,1); z-index: 200; padding: 6px;
+            box-shadow: 0 20px 40px -8px rgba(0,0,0,0.5);
+        }
+        .lang-dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+        .lang-option {
+            display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 9px;
+            cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A0A0A5;
+            transition: all 0.15s; text-decoration: none;
+        }
+        .lang-option:hover { background: rgba(232,93,4,0.1); color: #F8F9FA; }
+        .lang-option.selected { background: rgba(232,93,4,0.13); color: #E85D04; }
+        .lang-check { width: 13px; height: 13px; color: #E85D04; opacity: 0; }
+        .lang-option.selected .lang-check { opacity: 1; }
+
+        /* MOBILE BOTTOM SHEET */
+        .lang-sheet-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0); z-index: 300; pointer-events: none; transition: background 0.3s; }
+        .lang-sheet-overlay.open { background: rgba(0,0,0,0.55); pointer-events: all; }
+        .lang-sheet { position: fixed; bottom: 0; left: 0; right: 0; z-index: 301; background: #1E3A5F; border-radius: 20px 20px 0 0; padding: 12px 16px 32px; transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); }
+        .lang-sheet.open { transform: translateY(0); }
+        .sheet-handle { width: 40px; height: 4px; background: rgba(255,255,255,0.15); border-radius: 2px; margin: 0 auto 20px; }
+        .sheet-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+        .sheet-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B6B6F; text-transform: uppercase; }
+        .sheet-option { display: flex; align-items: center; gap: 14px; padding: 13px 14px; border-radius: 12px; margin-bottom: 8px; cursor: pointer; transition: background 0.15s; text-decoration: none; }
+        .sheet-option.selected { background: rgba(232,93,4,0.1); }
+        .sheet-flag { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .sheet-lang-name { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 600; color: #F8F9FA; }
+        .sheet-option.selected .sheet-lang-name { color: #E85D04; }
+        .sheet-tick { margin-left: auto; width: 22px; height: 22px; color: #E85D04; opacity: 0; }
+        .sheet-option.selected .sheet-tick { opacity: 1; }
+    </style>
+    <script>window.va = window.va || function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXFPVSPT1S"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NXFPVSPT1S');</script>
+</head>
+<body>
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <div class="lang-sheet-overlay" id="langSheetOverlay" onclick="closeLangSheet()"></div>
+    <div class="lang-sheet" id="langSheet" role="dialog" aria-modal="true">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+            <span class="sheet-title">Langue / Language</span>
+            <button class="sheet-close p-2" onclick="closeLangSheet()">
+                <svg class="w-6 h-6 text-gray-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <a href="/fr/blog/articles/1-month-12-days-phd.html" class="sheet-option selected">
+            <div class="sheet-flag">🇫🇷</div>
+            <div><span class="sheet-lang-name">Français</span></div>
+            <svg class="sheet-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L19 7"/></svg>
+        </a>
+        <a href="/en/blog/articles/1-month-12-days-phd.html" class="sheet-option">
+            <div class="sheet-flag">🇬🇧</div>
+            <div><span class="sheet-lang-name">English</span></div>
+            <svg class="sheet-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L19 7"/></svg>
+        </a>
+    </div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-deep-night/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="/fr/" class="font-display font-extrabold text-2xl lg:text-3xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="/fr/" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Accueil</a>
+                    <a href="/fr/pages/about.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">À propos</a>
+                    <a href="/fr/pages/research.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Recherche</a>
+                    <a href="/fr/pages/projects.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Projets</a>
+                    <a href="/fr/blog/" class="font-body text-sm font-medium text-white py-2">Blog</a>
+                    <a href="/fr/pages/contact.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Contact</a>
+                </nav>
+                
+                <div class="hidden lg:block lang-switcher" id="langSwitcher">
+                    <div class="lang-trigger" id="langTrigger" onclick="toggleLangDropdown()">
+                        <span class="lang-flag">🇫🇷</span>
+                        <span class="lang-code">FR</span>
+                        <svg class="lang-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+                    </div>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <a href="/fr/blog/articles/1-month-12-days-phd.html" class="lang-option selected">
+                            <span class="lang-option-flag">🇫🇷</span>
+                            <div class="lang-option-info"><span class="lang-option-name">Français</span></div>
+                            <svg class="lang-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8l4 4 6-6"/></svg>
+                        </a>
+                        <a href="/en/blog/articles/1-month-12-days-phd.html" class="lang-option">
+                            <span class="lang-option-flag">🇬🇧</span>
+                            <div class="lang-option-info"><span class="lang-option-name">English</span></div>
+                            <svg class="lang-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8l4 4 6-6"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="fixed bottom-0 left-0 right-0 z-50 lg:hidden tab-nav bg-deep-night/90 border-t border-white/10" aria-label="Mobile navigation">
+        <div class="flex items-center justify-around py-2 px-4">
+            <a href="/fr/" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">Accueil</span>
+            </a>
+            <a href="/fr/pages/about.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">À propos</span>
+            </a>
+            <a href="/fr/pages/research.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">Recherche</span>
+            </a>
+            <a href="/fr/blog/" class="tab-item flex flex-col items-center gap-1 p-2 text-determination relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">Blog</span>
+            </a>
+            <button class="lang-sheet-trigger flex flex-col items-center gap-1 p-2 text-gray-light" onclick="openLangSheet()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+                <span class="text-[10px] font-mono">FR</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-24 lg:pt-32 pb-24 lg:pb-12">
+        <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="/fr/blog/" class="inline-flex items-center gap-2 text-gray-light hover:text-determination mb-8 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Retour au blog
+            </a>
+
+            <header class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="px-3 py-1 bg-digital-cyan/20 rounded-full font-mono text-xs text-digital-cyan">Parcours PhD</span>
+                    <span class="px-3 py-1 bg-determination/20 rounded-full font-mono text-xs text-determination">Rapport de survie</span>
+                    <span class="font-mono text-xs text-gray-medium">• 6 min de lecture</span>
+                </div>
+                <h1 class="font-display text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-tight mb-6">
+                    🎢 1 mois, 12 jours en tant que doctorant : Un rapport de survie
+                </h1>
+                <p class="font-body text-xl text-gray-light leading-relaxed">
+                    42 jours de thèse. Toujours vivant. Principalement alimenté au café. Voici ce que j'ai appris jusqu'à présent en naviguant dans le chaos magnifique de la recherche doctorale.
+                </p>
+            </header>
+
+            <div class="flex justify-center mb-10">
+                <div class="day-counter rounded-2xl px-8 py-6 text-center">
+                    <p class="font-mono text-xs text-white/80 uppercase tracking-widest mb-2">Progression du PhD</p>
+                    <div class="flex items-baseline justify-center gap-2">
+                        <span class="font-display text-5xl font-extrabold text-white">42</span>
+                        <span class="font-body text-white/80">jours</span>
+                    </div>
+                    <div class="mt-3 w-full bg-white/20 rounded-full h-2">
+                        <div class="progress-bar" style="width: 3.8%;"></div>
+                    </div>
+                    <p class="font-mono text-xs text-white/60 mt-2">~3,8 % du voyage</p>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🗺️ Attentes vs Réalité</h2>
+                <p>Laissez-moi vous brosser le tableau de ce que je <em>pensais</em> être le doctorat par rapport à ce que c'est <em>réellement</em> après 42 jours.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 my-8">
+                <div class="expectation-card rounded-xl p-5">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xl">🦄</span>
+                        <h4 class="font-display font-bold text-determination">Mon fantasme pré-PhD</h4>
+                    </div>
+                    <ul class="text-sm text-gray-light space-y-2">
+                        <li class="flex items-start gap-2"><span class="text-determination">✗</span><span>Les encadrants me donnent une feuille de route sacrée 🗺️</span></li>
+                        <li class="flex items-start gap-2"><span class="text-determination">✗</span><span>Je jure une dévotion éternelle et la suis aveuglément</span></li>
+                        <li class="flex items-start gap-2"><span class="text-determination">✗</span><span>Jalons clairs, progression prévisible</span></li>
+                        <li class="flex items-start gap-2"><span class="text-determination">✗</span><span>L'expertise arrive en ~6 mois</span></li>
+                    </ul>
+                </div>
+                <div class="reality-card rounded-xl p-5">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xl">🌊</span>
+                        <h4 class="font-display font-bold text-digital-cyan">La réalité concrète</h4>
+                    </div>
+                    <ul class="text-sm text-gray-light space-y-2">
+                        <li class="flex items-start gap-2"><span class="text-digital-cyan">✓</span><span>C'est VOTRE thèse — vous définissez le chemin</span></li>
+                        <li class="flex items-start gap-2"><span class="text-digital-cyan">✓</span><span>Les encadrants sont des guides 🧘‍♂️, pas des GPS</span></li>
+                        <li class="flex items-start gap-2"><span class="text-digital-cyan">✓</span><span>Pivots constants, incertitude stimulante</span></li>
+                        <li class="flex items-start gap-2"><span class="text-digital-cyan">✓</span><span>Vous devenez le capitaine de votre propre navire ⛵</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <blockquote>
+                    "Vos encadrants vous apprennent à être le capitaine de votre navire. Ils ne rameront pas pour vous — mais ils s'assureront que vous ne naviguiez pas vers une tempête sans préparation."
+                </blockquote>
+
+                <h2>📚 L'avalanche de papiers</h2>
+                <p>Semaine 2. J'ai ouvert les vannes des publications scientifiques.</p>
+                <p>Et j'ai failli me noyer. 🤯</p>
+                <p>Des centaines d'articles. Des milliers de citations. Des décennies de recherche. On a l'impression que tout le monde a déjà pensé à tout. Le syndrome de l'imposteur frappe à la porte : <em>« Hé, tu te souviens de moi ? »</em></p>
+
+                <h3>Le changement d'état d'esprit qui m'a sauvé</h3>
+                <p>Voici ce qui a tout changé : j'ai arrêté de voir la littérature comme une montagne que je ne gravirai jamais. À la place, j'ai reformulé ma pensée :</p>
+                <p>Ne dites pas : <strong>« J'abandonne, tout a déjà été fait ! »</strong></p>
+                <p>Dites plutôt : <strong>« Les fondations sont posées, et c'est à moi de construire les murs ! »</strong> 🧱✨</p>
+                <p>Tous ces papiers ? Ce n'est pas de la compétition. Ce sont des <em>cadeaux</em>. Des outils. Des tremplins. Les géants sur les épaules desquels je peux me tenir.</p>
+
+                <h2>🧭 Par quoi commencer ?</h2>
+                <p>C'était la grande question qui me hantait à 2h du matin devant une tasse de café froid. Où commencer quand le domaine est si vaste ?</p>
+            </div>
+
+            <div class="survival-tip rounded-2xl p-6 my-8">
+                <h4 class="font-display font-bold text-code-green mb-4 flex items-center gap-2">
+                    <span>🎯</span> La formule secrète (jusqu'ici)
+                </h4>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-code-green/20 flex items-center justify-center font-mono text-sm text-code-green flex-shrink-0">1</div>
+                        <div><p class="text-white font-medium">Définir un grand objectif (probablement irréalisable)</p><p class="text-gray-light text-sm">On le rate à 95%, et c'est le but ! Ça donne une direction sans pression.</p></div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-code-green/20 flex items-center justify-center font-mono text-sm text-code-green flex-shrink-0">2</div>
+                        <div><p class="text-white font-medium">Lire comme un philosophe-archéologue 🔍</p><p class="text-gray-light text-sm">Chercher des outils, comprendre le paysage, cartographier le territoire.</p></div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-code-green/20 flex items-center justify-center font-mono text-sm text-code-green flex-shrink-0">3</div>
+                        <div><p class="text-white font-medium">Sauvegarder chaque gemme précieuse 💎</p><p class="text-gray-light text-sm">Bâtissez votre base de connaissances personnelle. Chaque idée compte.</p></div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-code-green/20 flex items-center justify-center font-mono text-sm text-code-green flex-shrink-0">4</div>
+                        <div><p class="text-white font-medium">Accepter le brouillard 🌫️</p><p class="text-gray-light text-sm">La clarté vient avec le temps. L'incertitude fait partie du processus.</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🤝 La meilleure thérapie</h2>
+                <p>Savez-vous quelle a été la ressource la plus précieuse durant ces 42 jours ?</p>
+                <p><strong>Les autres doctorants et post-doctorants.</strong></p>
+                <p>Discuter avec eux. Partager les galères. Comparer nos notes. Et découvrir que <em>tout le monde est tout aussi glorieusement perdu et confus</em> ? Absolument inestimable. 🙌</p>
+                <p>Ce brillant doctorant de troisième année ? Il a encore le syndrome de l'imposteur. Le post-doc avec 10 papiers ? Il remet parfois en question sa direction de recherche. Le chercheur senior ? Il continue d'apprendre.</p>
+                <blockquote>
+                    "Nous sommes tous dans le même bateau magnifique et chaotique. 🚣‍♂️ Et honnêtement ? C'est la chose la plus réconfortante que j'ai apprise."
+                </blockquote>
+
+                <h2>📊 Statistiques des 42 jours</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
+                <div class="bg-noble-blue/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-digital-cyan">47</p>
+                    <p class="font-mono text-xs text-gray-light">Articles lus</p>
+                </div>
+                <div class="bg-noble-blue/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-determination">∞</p>
+                    <p class="font-mono text-xs text-gray-light">Tasses de café</p>
+                </div>
+                <div class="bg-noble-blue/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-code-green">3</p>
+                    <p class="font-mono text-xs text-gray-light">Pivots déjà faits</p>
+                </div>
+                <div class="bg-noble-blue/20 rounded-xl p-4 text-center">
+                    <p class="font-display text-2xl font-bold text-noble-gold">1</p>
+                    <p class="font-mono text-xs text-gray-light">Thèse (en cours)</p>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🚀 Et la suite ?</h2>
+                <p>Le voyage est terrifiant, rend humble, mais est absolument <strong>électrisant</strong>.</p>
+                <p>Dans les mois à venir, je vais :</p>
+                <ul>
+                    <li>Plonger plus profondément dans la littérature sur les systèmes auto-adaptatifs.</li>
+                    <li>Affiner mes questions de recherche.</li>
+                    <li>Commencer à prototyper mes premières idées.</li>
+                </ul>
+                <p>Si vous envisagez de commencer un PhD ou si vous êtes dans le même brouillard que moi : tenez bon. C'est en se perdant qu'on finit par découvrir de nouveaux territoires.</p>
+                <p>On se revoit au jour 100 ! 🥂</p>
+            </div>
+
+            <footer class="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <span class="font-mono text-xs text-gray-medium">Partager :</span>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-light hover:bg-determination hover:text-white transition-all"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-light hover:bg-noble-blue hover:text-white transition-all"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <script>
+        function toggleLangDropdown() {
+            const trigger = document.getElementById('langTrigger');
+            const dropdown = document.getElementById('langDropdown');
+            const isOpen = dropdown.classList.contains('open');
+            trigger.classList.toggle('open', !isOpen);
+            dropdown.classList.toggle('open', !isOpen);
+        }
+
+        function openLangSheet() {
+            document.getElementById('langSheet').classList.add('open');
+            document.getElementById('langSheetOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLangSheet() {
+            document.getElementById('langSheet').classList.remove('open');
+            document.getElementById('langSheetOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.closest('#langSwitcher')) {
+                document.getElementById('langTrigger')?.classList.remove('open');
+                document.getElementById('langDropdown')?.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+</html>

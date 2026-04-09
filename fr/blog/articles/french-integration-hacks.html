@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment j'ai hacké mon intégration en France | Blog - Arléon Zemtsop</title>
+    <meta name="description" content="Du Cameroun à Lille - comment le judo, la musique et les sports de plein air m'ont aidé à décoder l'intégration en France.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230A1628' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' text-anchor='middle'%3E%3Ctspan fill='%23FFFFFF'%3EA%3C/tspan%3E%3Ctspan fill='%23E85D04'%3EZ%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-night': '#0A1628', 'noble-blue': '#1E3A5F', 'night-sky': '#0F2847',
+                        'determination': '#E85D04', 'warm-energy': '#F48C06', 'noble-gold': '#D4A012',
+                        'digital-cyan': '#00D4FF', 'code-green': '#4FFFB0', 'gray-medium': '#6B6B6F',
+                        'gray-light': '#A0A0A5', 'off-white': '#F8F9FA',
+                    },
+                    fontFamily: {
+                        'display': ['Montserrat', 'sans-serif'], 'body': ['Inter', 'sans-serif'],
+                        'accent': ['Playfair Display', 'serif'], 'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0A1628; color: #F8F9FA; }
+        .bg-pattern { background-image: radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(232, 93, 4, 0.08) 0%, transparent 40%); }
+        .prose-custom h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; color: #F8F9FA; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose-custom h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.25rem; color: #E85D04; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose-custom p { margin-bottom: 1.25rem; line-height: 1.8; color: #A0A0A5; }
+        .prose-custom strong { color: #F8F9FA; }
+        .prose-custom em { color: #F48C06; }
+        .prose-custom ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+        .prose-custom ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #A0A0A5; }
+        .prose-custom ul li::before { content: '→'; position: absolute; left: 0; color: #E85D04; }
+        .prose-custom blockquote { border-left: 3px solid #E85D04; padding-left: 1.5rem; margin: 1.5rem 0; font-family: 'Playfair Display', serif; font-style: italic; color: #F8F9FA; background: rgba(232, 93, 4, 0.05); padding: 1.5rem; border-radius: 0 12px 12px 0; font-size: 1.1rem; }
+        
+        .journey-card {
+            background: linear-gradient(135deg, rgba(232, 93, 4, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
+            border: 1px solid rgba(232, 93, 4, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .journey-card::before {
+            content: '🇨🇲 → 🇫🇷';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .hack-card {
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.4) 0%, rgba(15, 40, 71, 0.6) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .hack-card:hover {
+            border-color: rgba(232, 93, 4, 0.4);
+            transform: translateY(-4px);
+        }
+        
+        .judo-belt {
+            background: linear-gradient(90deg, #1a237e, #3949ab);
+            height: 8px;
+            border-radius: 4px;
+        }
+        
+        .music-card {
+            background: linear-gradient(135deg, rgba(156, 39, 176, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
+            border: 1px solid rgba(156, 39, 176, 0.3);
+        }
+        
+        .outdoor-card {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+        
+        .principle-card {
+            background: rgba(30, 58, 95, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .cheese-tip {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        /* Tab nav mobile */
+        .tab-nav { backdrop-filter: blur(20px); }
+        .tab-item { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .tab-item:hover { transform: translateY(-4px); }
+        .tab-item .tab-tooltip { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; }
+        .tab-item:hover .tab-tooltip { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        /* ── Dropdown desktop ── */
+        .lang-switcher { position: relative; display: inline-block; }
+        .lang-trigger {
+            display: flex; align-items: center; gap: 6px; padding: 6px 12px 6px 10px;
+            background: rgba(255,255,255,0.04); border: 0.5px solid rgba(255,255,255,0.14);
+            border-radius: 8px; cursor: pointer; font-family: 'JetBrains Mono', monospace;
+            font-size: 12px; color: #A0A0A5;
+            transition: border-color 0.2s, color 0.2s, background 0.2s;
+            user-select: none; white-space: nowrap;
+        }
+        .lang-trigger:hover { border-color: rgba(232,93,4,0.45); color: #F8F9FA; background: rgba(232,93,4,0.05); }
+        .lang-trigger.open { border-color: rgba(232,93,4,0.55); color: #F8F9FA; background: rgba(232,93,4,0.08); }
+        .lang-flag { font-size: 15px; line-height: 1; }
+        .lang-code { font-weight: 500; letter-spacing: 0.06em; }
+        .lang-chevron { width: 12px; height: 12px; transition: transform 0.2s, color 0.2s; color: #6B6B6F; flex-shrink: 0; }
+        .lang-trigger.open .lang-chevron { transform: rotate(180deg); color: #E85D04; }
+        .lang-dropdown {
+            position: absolute; top: calc(100% + 10px); right: 0; min-width: 148px;
+            background: #0F2847; border: 0.5px solid rgba(255,255,255,0.1); border-radius: 14px;
+            overflow: hidden; opacity: 0; transform: translateY(-8px) scale(0.96); pointer-events: none;
+            transition: opacity 0.2s cubic-bezier(0.4,0,0.2,1), transform 0.2s cubic-bezier(0.4,0,0.2,1);
+            z-index: 200; padding: 6px;
+            box-shadow: 0 20px 40px -8px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(255,255,255,0.06);
+        }
+        .lang-dropdown.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+        .lang-option {
+            display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 9px;
+            cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A0A0A5;
+            transition: background 0.15s, color 0.15s; text-decoration: none;
+        }
+        .lang-option:hover { background: rgba(232,93,4,0.1); color: #F8F9FA; }
+        .lang-option.selected { background: rgba(232,93,4,0.13); color: #E85D04; }
+        .lang-option-flag { font-size: 17px; line-height: 1; flex-shrink: 0; }
+        .lang-option-name { font-size: 12px; font-weight: 500; }
+        .lang-check { width: 13px; height: 13px; color: #E85D04; opacity: 0; flex-shrink: 0; margin-left: auto; }
+        .lang-option.selected .lang-check { opacity: 1; }
+
+        /* ── Bottom sheet mobile ── */
+        .lang-sheet-trigger { display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 6px 10px; color: #6B6B6F; cursor: pointer; background: none; border: none; transition: color 0.2s; }
+        .lang-sheet-trigger svg { width: 24px; height: 24px; }
+        .lang-sheet-trigger span { font-family: 'JetBrains Mono', monospace; font-size: 9px; }
+        .lang-sheet-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0); z-index: 300; pointer-events: none; transition: background 0.3s; }
+        .lang-sheet-overlay.open { background: rgba(0,0,0,0.55); pointer-events: all; }
+        .lang-sheet { position: fixed; bottom: 0; left: 0; right: 0; z-index: 301; background: #1E3A5F; border-radius: 20px 20px 0 0; padding: 12px 16px 32px; transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 -20px 60px -10px rgba(0,0,0,0.5); }
+        .lang-sheet.open { transform: translateY(0); }
+        .sheet-handle { width: 40px; height: 4px; background: rgba(255,255,255,0.15); border-radius: 2px; margin: 0 auto 20px; }
+        .sheet-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+        .sheet-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B6B6F; text-transform: uppercase; letter-spacing: 0.1em; }
+        .sheet-close { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.07); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #6B6B6F; transition: background 0.2s, color 0.2s; }
+        .sheet-close:hover { background: rgba(255,255,255,0.12); color: #F8F9FA; }
+        .sheet-close svg { width: 14px; height: 14px; }
+        .sheet-option { display: flex; align-items: center; gap: 14px; padding: 13px 14px; border-radius: 12px; margin-bottom: 8px; cursor: pointer; transition: background 0.15s; text-decoration: none; }
+        .sheet-option:last-child { margin-bottom: 0; }
+        .sheet-option:hover { background: rgba(255,255,255,0.05); }
+        .sheet-option.selected { background: rgba(232,93,4,0.1); }
+        .sheet-flag { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .sheet-lang-name { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 600; color: #F8F9FA; display: block; }
+        .sheet-option.selected .sheet-lang-name { color: #E85D04; }
+        .sheet-tick { margin-left: auto; width: 22px; height: 22px; color: #E85D04; flex-shrink: 0; opacity: 0; transition: opacity 0.2s; }
+        .sheet-option.selected .sheet-tick { opacity: 1; }
+    </style>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+        
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXFPVSPT1S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NXFPVSPT1S');
+    </script>
+</head>
+<body>
+    <div class="lang-sheet-overlay" id="langSheetOverlay" onclick="closeLangSheet()"></div>
+    <div class="lang-sheet" id="langSheet" role="dialog" aria-modal="true" aria-label="Choisir la langue">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+            <span class="sheet-title">Langue / Language</span>
+            <button class="sheet-close" onclick="closeLangSheet()" aria-label="Fermer">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <a href="/fr/blog/articles/french-integration-hacks.html" class="sheet-option selected" id="sheetFr">
+            <div class="sheet-flag">🇫🇷</div>
+            <div><span class="sheet-lang-name">Français</span></div>
+            <svg class="sheet-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L19 7"/></svg>
+        </a>
+        <a href="/en/blog/articles/french-integration-hacks.html" class="sheet-option" id="sheetEn">
+            <div class="sheet-flag">🇬🇧</div>
+            <div><span class="sheet-lang-name">English</span></div>
+            <svg class="sheet-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L19 7"/></svg>
+        </a>
+    </div>
+
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-deep-night/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="/fr/" class="font-display font-extrabold text-2xl lg:text-3xl"><span class="text-white">A</span><span class="text-determination">Z</span></a>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="/fr/" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Accueil</a>
+                    <a href="/fr/pages/about.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">À propos</a>
+                    <a href="/fr/pages/research.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Recherche</a>
+                    <a href="/fr/pages/projects.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Projets</a>
+                    <a href="/fr/blog/" class="font-body text-sm font-medium text-white py-2">Blog</a>
+                    <a href="/fr/pages/contact.html" class="font-body text-sm font-medium text-gray-light hover:text-determination py-2">Contact</a>
+                </nav>
+                <div class="hidden lg:block lang-switcher" id="langSwitcher">
+                    <div class="lang-trigger" id="langTrigger" onclick="toggleLangDropdown()" role="button" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+                        <span class="lang-flag" id="currentFlag">🇫🇷</span>
+                        <span class="lang-code" id="currentCode">FR</span>
+                        <svg class="lang-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg>
+                    </div>
+                    <div class="lang-dropdown" id="langDropdown" role="listbox">
+                        <a href="/fr/blog/articles/french-integration-hacks.html" class="lang-option selected" id="dropFr" role="option" aria-selected="true">
+                            <span class="lang-option-flag">🇫🇷</span>
+                            <span class="lang-option-name">Français</span>
+                            <svg class="lang-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8l4 4 6-6"/></svg>
+                        </a>
+                        <a href="/en/blog/articles/french-integration-hacks.html" class="lang-option" id="dropEn" role="option" aria-selected="false">
+                            <span class="lang-option-flag">🇬🇧</span>
+                            <span class="lang-option-name">English</span>
+                            <svg class="lang-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 8l4 4 6-6"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="fixed bottom-0 left-0 right-0 z-50 lg:hidden tab-nav bg-deep-night/90 border-t border-white/10" aria-label="Navigation mobile">
+        <div class="flex items-center justify-around py-2 px-4">
+            <a href="/fr/" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">Accueil</span>
+            </a>
+            <a href="/fr/pages/about.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">À propos</span>
+            </a>
+            <a href="/fr/pages/research.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">Recherche</span>
+            </a>
+            <a href="/fr/pages/projects.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">Projets</span>
+            </a>
+            <a href="/fr/blog/" class="tab-item flex flex-col items-center gap-1 p-2 text-determination relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">Blog</span>
+            </a>
+            <a href="/fr/pages/contact.html" class="tab-item flex flex-col items-center gap-1 p-2 text-gray-light relative group">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span class="tab-tooltip absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-determination text-white text-xs rounded whitespace-nowrap">Contact</span>
+            </a>
+            <button class="lang-sheet-trigger" id="langSheetTrigger" onclick="openLangSheet()" aria-label="Changer de langue">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+                <span id="mobileCurrentLang">FR</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-24 lg:pt-32 pb-24">
+        <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="/fr/blog/" class="inline-flex items-center gap-2 text-gray-light hover:text-determination mb-8 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Retour au blog
+            </a>
+
+            <header class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="px-3 py-1 bg-determination/20 rounded-full font-mono text-xs text-determination">Vie Personnelle</span>
+                    <span class="px-3 py-1 bg-warm-energy/20 rounded-full font-mono text-xs text-warm-energy">Intégration</span>
+                    <span class="font-mono text-xs text-gray-medium">• 6 min de lecture</span>
+                </div>
+                <h1 class="font-display text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white leading-tight mb-6">
+                    🥋 Comment j'ai hacké mon intégration en France : Prises de Judo, Playlists et Aventures pavées !
+                </h1>
+                <p class="font-body text-xl text-gray-light leading-relaxed">
+                    Bonjour le réseau ! ✨ Emménager à Lille n'était pas seulement un "nouveau job" — c'était un <em>glitch dans la matrice</em> 🌐. Voici comment j'ai décodé tout ça !
+                </p>
+            </header>
+
+            <div class="journey-card rounded-2xl p-6 mb-10">
+                <h3 class="font-display font-bold text-white text-lg mb-3">Le défi de l'intégration</h3>
+                <p class="text-gray-light mb-4">Une météo changeante (🥶 24h/24 ?), les obstacles de la langue, et des croissants qui ont ruiné tous mes régimes 🥐😅... Mais devinez quoi ?</p>
+                <p class="font-display font-bold text-xl text-determination">J'ai craqué le code ! 💡</p>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🥋 Hack #1 : Le Judo — Mon arme secrète</h2>
+
+                <p>Après 4 ans à projeter des gens (poliment !) au Cameroun, j'ai continué la pratique ici en France. Et le résultat ?</p>
+            </div>
+
+            <div class="hack-card rounded-2xl p-6 my-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-700 to-blue-900 flex items-center justify-center text-3xl">🥋</div>
+                    <div>
+                        <p class="font-mono text-xs text-digital-cyan mb-1">Succès déverrouillé !</p>
+                        <h3 class="font-display font-bold text-white text-xl">Ceinture Bleue en France ! 💙</h3>
+                    </div>
+                </div>
+                <div class="judo-belt w-full mb-4"></div>
+                <p class="text-gray-light text-sm">Au-delà des tatamis, les principes du Judo sont devenus mon système d'exploitation pour l'intégration...</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 my-8">
+                <div class="principle-card rounded-xl p-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xl">🙏</span>
+                        <h4 class="font-display font-bold text-white">Respect</h4>
+                    </div>
+                    <p class="text-sm text-gray-light">Écouter avant de réagir en réunion. Comprendre les nuances culturelles.</p>
+                </div>
+                <div class="principle-card rounded-xl p-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xl">💪</span>
+                        <h4 class="font-display font-bold text-white">Courage</h4>
+                    </div>
+                    <p class="text-sm text-gray-light">Commander mon café en <em class="text-warm-energy">franglais</em> ☕️🗣️ sans peur !</p>
+                </div>
+                <div class="principle-card rounded-xl p-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xl">🧘</span>
+                        <h4 class="font-display font-bold text-white">Contrôle de soi</h4>
+                    </div>
+                    <p class="text-sm text-gray-light">Ne pas manger <em class="text-warm-energy">tout</em> le fromage en soirée 🧀🚫 (travail toujours en cours...)</p>
+                </div>
+                <div class="principle-card rounded-xl p-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xl">🤝</span>
+                        <h4 class="font-display font-bold text-white">Amitié</h4>
+                    </div>
+                    <p class="text-sm text-gray-light">Créer des liens avec mon club — une communauté instantanée ! ✨</p>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <blockquote>
+                    "Le dojo est devenu ma première véritable communauté en France. Pas de barrière de la langue sur le tapis — juste du respect mutuel et quelques chutes au sol de temps en temps. 😄"
+                </blockquote>
+
+                <h2>🎧 Hack #2 : La Musique — Ma thérapie 24h/24</h2>
+
+                <p>Quand les verbes français contre-attaquaient 🥊 et que les conjugaisons perdaient tout leur sens, je mettais mon casque pour laisser la musique opérer.</p>
+            </div>
+
+            <div class="music-card rounded-2xl p-6 my-8">
+                <h3 class="font-display font-bold text-white mb-4 flex items-center gap-2">
+                    <span>🎵</span> Mes Playlists d'Intégration
+                </h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-3 bg-white/5 rounded-lg">
+                        <span class="text-2xl">🥁</span>
+                        <div>
+                            <p class="font-display font-bold text-white">Afrobeat</p>
+                            <p class="text-sm text-gray-light">Pour l'énergie et la motivation — me rappelle d'où je viens tout en avançant.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-white/5 rounded-lg">
+                        <span class="text-2xl">🎷</span>
+                        <div>
+                            <p class="font-display font-bold text-white">Jazz</p>
+                            <p class="text-sm text-gray-light">Pour les dimanches pluvieux ☔️ — et il y en a BEAUCOUP à Lille !</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-white/5 rounded-lg">
+                        <span class="text-2xl">🎻</span>
+                        <div>
+                            <p class="font-display font-bold text-white">Classique</p>
+                            <p class="text-sm text-gray-light">Pour la concentration pendant le code 👨‍💻 — Bach + Debug = Magie.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-3 bg-white/5 rounded-lg">
+                        <span class="text-2xl">🇫🇷</span>
+                        <div>
+                            <p class="font-display font-bold text-white">Chanson Française</p>
+                            <p class="text-sm text-gray-light">Pour l'immersion linguistique — Stromae est un excellent professeur !</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prose-custom">
+                <p>La musique est devenue mon pont entre les cultures. Un titre de Fela Kuti suivi d'Édith Piaf ? C'est ça l'intégration en format audio ! 🎶</p>
+
+                <h2>🚴 Hack #3 : Sports de plein air — Mon jeu de piste</h2>
+
+                <p>J'ai troqué Google Maps pour une <strong>exploration à la force des jambes</strong> ! 🌳</p>
+
+                <p>Plutôt que de lire des choses sur Lille, j'ai décidé de la <em>parcourir en courant</em>, de la <em>traverser à vélo</em> et d'en <em>fouler chaque pavé</em>.</p>
+            </div>
+
+            <div class="outdoor-card rounded-2xl p-6 my-8">
+                <h3 class="font-display font-bold text-white mb-4 flex items-center gap-2">
+                    <span>🏃</span> Découverte à la sueur
+                </h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3">
+                        <span class="text-2xl">🌊</span>
+                        <div>
+                            <p class="font-display font-bold text-white">Bords de la Deûle</p>
+                            <p class="text-sm text-gray-light">Joggings matinaux le long du canal — paisible et pittoresque.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-2xl">🍃</span>
+                        <div>
+                            <p class="font-display font-bold text-white">Parc de la Citadelle</p>
+                            <p class="text-sm text-gray-light">Le poumon vert de Lille — parfait pour l'exploration du weekend.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-2xl">🚴</span>
+                        <div>
+                            <p class="font-display font-bold text-white">Aventures en V'Lille</p>
+                            <p class="text-sm text-gray-light">Le système de vélos en libre-service est devenu mon transport principal.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-2xl">🏛️</span>
+                        <div>
+                            <p class="font-display font-bold text-white">Marches dans le Vieux Lille</p>
+                            <p class="text-sm text-gray-light">Se perdre dans les rues magnifiques de la vieille ville.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-light mt-4 pt-4 border-t border-white/10">
+                    <strong class="text-white">Résultat ?</strong> Je connais mieux les parcs de Lille que ma propre galerie photo ! 📸
+                </p>
+            </div>
+
+            <div class="prose-custom">
+                <h2>🧀 Hack Bonus : Oser le fromage</h2>
+
+                <p>Écoutez, je ne vais pas mentir. Le fromage français a été... une aventure. 😅</p>
+
+                <p>Venant du Cameroun, mon expérience du fromage se limitait aux tranches de fromage fondu. Et puis la France est arrivée.</p>
+            </div>
+
+            <div class="cheese-tip rounded-2xl p-6 my-8">
+                <h3 class="font-display font-bold text-white mb-4 flex items-center gap-2">
+                    <span>🧀</span> Le voyage fromager d'Arléon
+                </h3>
+                <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                        <span class="text-determination font-bold">Niveau 1</span>
+                        <p class="text-gray-light"><strong class="text-white">Comté</strong> — Début sécurisé. Goût de noisette, délicieux, abordable.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-determination font-bold">Niveau 2</span>
+                        <p class="text-gray-light"><strong class="text-white">Brie</strong> — Aventure crémeuse. Esprit : ouvert.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-determination font-bold">Niveau 3</span>
+                        <p class="text-gray-light"><strong class="text-white">Maroilles</strong> — Le boss final de Lille ! 🧀🔥 Odeur puissante, goût divin.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-white/10">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                    <div class="flex items-center gap-4">
+                        <span class="text-gray-medium font-mono text-sm">Partager :</span>
+                        <div class="flex items-center gap-3">
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-light hover:bg-determination hover:text-white transition-all">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-light hover:bg-determination hover:text-white transition-all">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="relative z-10 border-t border-white/5 bg-deep-night/50 py-12 pb-24 lg:pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="font-body text-gray-medium text-sm">
+                © 2025 Arléon Zemtsop. Fait avec ❤️ à Lille.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleLangDropdown() {
+            const dropdown = document.getElementById('langDropdown');
+            const trigger = document.getElementById('langTrigger');
+            const isOpen = dropdown.classList.contains('open');
+            
+            if (isOpen) {
+                dropdown.classList.remove('open');
+                trigger.classList.remove('open');
+                trigger.setAttribute('aria-expanded', 'false');
+            } else {
+                dropdown.classList.add('open');
+                trigger.classList.add('open');
+                trigger.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        function openLangSheet() {
+            document.getElementById('langSheet').classList.add('open');
+            document.getElementById('langSheetOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLangSheet() {
+            document.getElementById('langSheet').classList.remove('open');
+            document.getElementById('langSheetOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('click', function(event) {
+            const switcher = document.getElementById('langSwitcher');
+            if (switcher && !switcher.contains(event.target)) {
+                document.getElementById('langDropdown').classList.remove('open');
+                document.getElementById('langTrigger').classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
