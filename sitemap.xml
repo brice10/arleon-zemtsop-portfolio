@@ -89,112 +89,224 @@
     
     <!-- Blog Articles -->
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/ai-replace-developers.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/ai-replace-developers.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/ai-replace-developers.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/natures-adaptation-strategy.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/natures-adaptation-strategy.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/natures-adaptation-strategy.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/expert-validates-baby.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/expert-validates-baby.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/expert-validates-baby.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/day-1-phd-student.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/day-1-phd-student.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/day-1-phd-student.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/1-month-12-days-phd.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/1-month-12-days-phd.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/1-month-12-days-phd.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/engineer-evolving-phd.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/engineer-evolving-phd.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/engineer-evolving-phd.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/closing-chapter-engineer.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/closing-chapter-engineer.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/closing-chapter-engineer.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/discotec-2025-reflections.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/discotec-2025-reflections.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/discotec-2025-reflections.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/french-integration-hacks.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/french-integration-hacks.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/french-integration-hacks.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/first-paper-accepted.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/first-paper-accepted.html</loc>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/first-paper-accepted.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/holidays-cameroon.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/holidays-cameroon.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/holidays-cameroon.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/holidays-cameroon.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/clean-code-adventure.html</loc>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/clean-code-adventure.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/spirals-seminar.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/spirals-seminar.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/spirals-seminar.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/two-months-inria-lessons.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/two-months-inria-lessons.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/two-months-inria-lessons.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/master-thesis-presentation.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/master-thesis-presentation.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/master-thesis-presentation.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://arleonzemtsop.fr/blog/articles/developers-vs-testers.html</loc>
+        <loc>https://arleonzemtsop.fr/fr/blog/articles/developers-vs-testers.html</loc>
+        <lastmod>2025-12-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://arleonzemtsop.fr/en/blog/articles/developers-vs-testers.html</loc>
         <lastmod>2025-12-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
