@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -527,6 +527,300 @@
             color: var(--gray-light);
             font-size: 0.95rem;
             line-height: 1.6;
+        }
+
+        /* ── PROJET ALTERNATIF ENSEIGNANT-CHERCHEUR ── */
+        .alt-project-intro {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: linear-gradient(145deg, rgba(79, 255, 176, 0.04), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(79, 255, 176, 0.12);
+            border-radius: 14px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .alt-project-icon {
+            font-size: 2.5rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .alt-project-text {
+            color: var(--gray-soft);
+            font-size: 0.97rem;
+            line-height: 1.8;
+        }
+
+        .alt-motiv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .alt-motiv-card {
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .alt-motiv-card:hover {
+            border-color: rgba(79, 255, 176, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+        }
+
+        .alt-motiv-icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .alt-motiv-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--mint-code);
+            margin-bottom: 0.7rem;
+        }
+
+        .alt-motiv-desc {
+            color: var(--gray-light);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .doctoral-formations-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .doctoral-formations-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--orange-vivid);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .doctoral-formations-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: 0.6rem;
+        }
+
+        .doctoral-formations-sub {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .doctoral-formations-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .doctoral-card {
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.35s var(--transition-smooth);
+        }
+
+        .doctoral-card:hover {
+            border-color: rgba(0, 212, 255, 0.25);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+
+        .doctoral-card-header {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            padding: 1.8rem 2rem 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .doctoral-card-date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(232, 93, 4, 0.12);
+            border: 1px solid rgba(232, 93, 4, 0.2);
+            border-radius: 8px;
+            padding: 0.6rem 0.9rem;
+            flex-shrink: 0;
+            min-width: 52px;
+        }
+
+        .doctoral-date-day {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--orange-warm);
+            line-height: 1;
+        }
+
+        .doctoral-date-month {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--orange-vivid);
+            margin-top: 0.2rem;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .doctoral-card-meta { flex: 1; }
+
+        .doctoral-card-category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--gray-medium);
+            letter-spacing: 0.08em;
+            margin-bottom: 0.4rem;
+        }
+
+        .doctoral-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: 0.7rem;
+        }
+
+        .doctoral-card-format {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .doctoral-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--gray-light);
+        }
+
+        .doctoral-badge--present {
+            background: rgba(0, 212, 255, 0.08);
+            border-color: rgba(0, 212, 255, 0.25);
+            color: var(--cyan-electric);
+        }
+
+        .doctoral-badge--complet {
+            background: rgba(160, 160, 165, 0.08);
+            border-color: rgba(160, 160, 165, 0.2);
+            color: var(--gray-light);
+        }
+
+        .doctoral-badge--open {
+            background: rgba(79, 255, 176, 0.08);
+            border-color: rgba(79, 255, 176, 0.25);
+            color: var(--mint-code);
+        }
+
+        .doctoral-card-body {
+            padding: 1.4rem 2rem 1.8rem;
+        }
+
+        .doctoral-card-desc {
+            color: var(--gray-soft);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .doctoral-card-themes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .doctoral-theme {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 3px;
+            background: rgba(212, 160, 18, 0.07);
+            border: 1px solid rgba(212, 160, 18, 0.2);
+            color: var(--mustard);
+        }
+
+        .doctoral-card-team {
+            font-size: 0.82rem;
+            color: var(--gray-medium);
+            line-height: 1.5;
+        }
+
+        .doctoral-team-label {
+            font-weight: 600;
+            color: var(--gray-light);
+        }
+
+        .doctoral-card-location {
+            margin-top: 0.3rem;
+            font-size: 0.8rem;
+            color: var(--gray-medium);
+        }
+
+        .doctoral-credits-bar {
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 2rem 2.2rem;
+        }
+
+        .doctoral-credits-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--white-pure);
+            margin-bottom: 1rem;
+        }
+
+        .doctoral-credits-track {
+            width: 100%;
+            height: 10px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 0.8rem;
+        }
+
+        .doctoral-credits-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--mint-code), var(--cyan-electric));
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 0.5rem;
+            transition: width 1s ease;
+        }
+
+        .doctoral-credits-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--blue-deep);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .doctoral-credits-note {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--gray-medium);
         }
 
         /* ── PROJET PROFESSIONNEL ── */
@@ -1175,22 +1469,6 @@
             .timeline-item { page-break-inside: avoid; }
         }
     </style>
-    
-    <!-- Vercel Web Analytics -->
-    <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-        
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXFPVSPT1S"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-NXFPVSPT1S');
-    </script>
 </head>
 <body>
 
@@ -1198,43 +1476,44 @@
     <header class="header">
         <div class="header-brand">ZEMTSOP NDADJI BRICE ARLÉON</div>
         <nav class="header-nav">
-            <a href="#experiences">Expériences</a>
-            <a href="#competences">Compétences</a>
-            <!-- Sections à venir -->
-            <a href="#formation">Formation</a>
-            <a href="#projet">Projet Professionnel</a>
-            <a href="#plan">Plan d'Action</a>
+            <a href="#experiences">Experience</a>
+            <a href="#competences">Skills</a>
+            <a href="#formation">Education</a>
+            <a href="#projet">Career Project</a>
+            <a href="#projet-academique">Academic Project</a>
+            <a href="#plan">Action Plan</a>
         </nav>
-        <div class="header-tag">PORTFOLIO COMPLET</div>
+        <div class="header-tag">FULL PORTFOLIO</div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-eyebrow">PORTFOLIO PROFESSIONNEL</div>
+        <div class="hero-eyebrow">PROFESSIONAL PORTFOLIO</div>
         <h1 class="hero-title">
             Brice Arléon
             <span>Zemtsop Ndadji</span>
         </h1>
         <p class="hero-subtitle">
-            Un portfolio complet retraçant mon parcours en ingénierie logicielle : expériences professionnelles, formation académique, compétences acquises et projet professionnel avec son plan d'action.
+            A comprehensive portfolio tracing my journey in software engineering: professional experience, academic background, acquired skills, and career project with its action plan.
         </p>
 
         <div class="portfolio-summary">
-            <span class="summary-pill active">01 · Expériences Professionnelles</span>
-            <span class="summary-pill active">02 · Compétences</span>
-            <span class="summary-pill active">03 · Parcours Académique</span>
-            <span class="summary-pill active">04 · Projet Professionnel</span>
-            <span class="summary-pill active">05 · Plan d'Action</span>
+            <span class="summary-pill active">01 · Professional Experience</span>
+            <span class="summary-pill active">02 · Skills</span>
+            <span class="summary-pill active">03 · Academic Background</span>
+            <span class="summary-pill active">04 · Career Project</span>
+            <span class="summary-pill active">04b · Researcher-Teacher Project</span>
+            <span class="summary-pill active">05 · Action Plan</span>
         </div>
     </section>
 
     <!-- ═══════════════════════════════════════════
-         SECTION 01 — EXPÉRIENCES PROFESSIONNELLES
+         SECTION 01 — PROFESSIONAL EXPERIENCE
          ═══════════════════════════════════════════ -->
     <section class="section" id="experiences">
         <div class="section-header">
             <span class="section-number">01</span>
-            <h2 class="section-title">Expériences Professionnelles</h2>
+            <h2 class="section-title">Professional Experience</h2>
         </div>
 
         <div class="timeline">
@@ -1247,28 +1526,28 @@
                         <div class="experience-company">Inria · Université de Lille</div>
                         <div class="experience-location">📍 Lille, France</div>
                     </div>
-                    <div class="experience-period">Oct 2024 — Septembre 2025</div>
+                    <div class="experience-period">Oct 2024 — September 2025</div>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Contexte et Mission</h4>
+                    <h4 class="experience-section-title">Context & Mission</h4>
                     <p class="experience-content">
-                        Au sein d'Inria et de l'Université de Lille, j'ai travaillé dans le domaine des systèmes autonomes et du cloud computing. Mes recherches portaient sur l'auto-adaptation des systèmes distribués dans le cloud, avec pour objectif de concevoir des mécanismes permettant aux microservices de s'adapter de façon autonome aux conditions dynamiques de leur environnement.
+                        At Inria and the University of Lille, I worked in the field of autonomous systems and cloud computing. My research focused on self-adaptation of distributed systems in the cloud, with the goal of designing mechanisms enabling microservices to autonomously adapt to the dynamic conditions of their environment.
                     </p>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Réalisations Clés</h4>
+                    <h4 class="experience-section-title">Key Achievements</h4>
                     <ul class="experience-list">
-                        <li><strong>AdaptiFlow</strong> : Conception et développement d'un framework Java léger et extensible permettant aux microservices de s'adapter de manière autonome aux conditions dynamiques du cloud. Le framework repose sur des couches d'abstraction pour les phases de monitoring et d'exécution du cycle MAPE-K.</li>
-                        <li><strong>Adaptable TeaStore</strong> : Construction d'une plateforme de benchmark cloud-native dédiée à l'évaluation des capacités d'auto-adaptation, permettant de valider des scénarios concrets (récupération de base de données, mitigation DDoS, gestion du trafic).</li>
-                        <li><strong>Architectures événementielles décentralisées</strong> : Ingénierie de pipelines event-driven pour orchestrer les quatre propriétés d'auto-gestion : auto-guérison, auto-protection, auto-optimisation et auto-configuration.</li>
-                        <li><strong>Abstraction MAPE-K</strong> : Développement de collecteurs de métriques et d'actions d'adaptation pour microservices cloud, avec des workflows systématiques minimisant l'intrusion dans le code existant.</li>
+                        <li><strong>AdaptiFlow</strong>: Design and development of a lightweight, extensible Java framework enabling microservices to autonomously adapt to dynamic cloud conditions. The framework relies on abstraction layers for the monitoring and execution phases of the MAPE-K cycle.</li>
+                        <li><strong>Adaptable TeaStore</strong>: Built a cloud-native benchmark platform dedicated to evaluating self-adaptive capabilities, validating concrete scenarios (database recovery, DDoS mitigation, traffic management).</li>
+                        <li><strong>Decentralised event-driven architectures</strong>: Engineering of event-driven pipelines to orchestrate the four self-management properties: self-healing, self-protection, self-optimisation, and self-configuration.</li>
+                        <li><strong>MAPE-K Abstraction</strong>: Development of metrics collectors and adaptation actions for cloud microservices, with systematic workflows minimising intrusion into existing code.</li>
                     </ul>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Compétences Acquises</h4>
+                    <h4 class="experience-section-title">Skills Acquired</h4>
                     <div class="skills-categories-grid">
 
                         <div class="skill-category-card">
@@ -1277,9 +1556,9 @@
                                 <div class="skill-category-name">Recherche & Systèmes Autonomes</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Concevoir</strong> des frameworks d'auto-adaptation pour microservices distribués dans le cloud</li>
-                                <li><strong>Contribuer</strong> à la recherche sur les systèmes autonomes via des couches d'abstraction pratiques</li>
-                                <li><strong>Valider</strong> des résultats de recherche à travers des scénarios d'adaptation concrets</li>
+                                <li><strong>Design</strong> self-adaptation frameworks for distributed microservices in the cloud</li>
+                                <li><strong>Contribute</strong> to research on autonomous systems through practical abstraction layers</li>
+                                <li><strong>Validate</strong> research results through concrete adaptation scenarios</li>
                             </ul>
                         </div>
 
@@ -1289,9 +1568,9 @@
                                 <div class="skill-category-name">Architecture Cloud & Event-Driven</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Concevoir</strong> des architectures événementielles pour l'adaptation décentralisée des systèmes</li>
-                                <li><strong>Implémenter</strong> le cycle MAPE-K (Monitor, Analyze, Plan, Execute) pour l'auto-gestion</li>
-                                <li><strong>Développer</strong> des collecteurs de métriques et des actions d'adaptation pour microservices cloud</li>
+                                <li><strong>Design</strong> event-driven architectures for the decentralised adaptation of systems</li>
+                                <li><strong>Implement</strong> the MAPE-K cycle (Monitor, Analyze, Plan, Execute) for self-management</li>
+                                <li><strong>Develop</strong> metrics collectors and adaptation actions for cloud microservices</li>
                             </ul>
                         </div>
 
@@ -1301,21 +1580,21 @@
                                 <div class="skill-category-name">Développement Java & Microservices</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Développer</strong> un framework Java léger et extensible à faible intrusion dans le code</li>
-                                <li><strong>Créer</strong> des workflows systématiques pour activer l'adaptabilité des microservices</li>
-                                <li><strong>Construire</strong> une plateforme benchmark cloud-native pour évaluer l'auto-adaptation</li>
+                                <li><strong>Develop</strong> a lightweight, extensible Java framework with minimal code intrusion</li>
+                                <li><strong>Create</strong> systematic workflows to enable microservice adaptability</li>
+                                <li><strong>Build</strong> a cloud-native benchmark platform to evaluate self-adaptation</li>
                             </ul>
                         </div>
 
                         <div class="skill-category-card">
                             <div class="skill-category-header">
                                 <div class="skill-category-icon">🛡️</div>
-                                <div class="skill-category-name">Auto-Gestion des Systèmes</div>
+                                <div class="skill-category-name">System Self-Management</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Implémenter</strong> des mécanismes d'auto-guérison pour la récupération automatique après panne</li>
-                                <li><strong>Concevoir</strong> des stratégies d'auto-protection contre les attaques (mitigation DDoS)</li>
-                                <li><strong>Mettre en œuvre</strong> l'auto-optimisation et l'auto-configuration pour la gestion dynamique du trafic</li>
+                                <li><strong>Implement</strong> self-healing mechanisms for automatic recovery after failure</li>
+                                <li><strong>Design</strong> self-protection strategies against attacks (DDoS mitigation)</li>
+                                <li><strong>Implement</strong> self-optimisation and self-configuration for dynamic traffic management</li>
                             </ul>
                         </div>
 
@@ -1329,44 +1608,44 @@
                     <div class="experience-title-group">
                         <h3 class="experience-role">Software Engineer Team Lead</h3>
                         <div class="experience-company">Dimsoft Cenkyah</div>
-                        <div class="experience-location">📍 Cameroun</div>
+                        <div class="experience-location">📍 Cameroon</div>
                     </div>
-                    <div class="experience-period">Août 2020 — Oct 2024</div>
+                    <div class="experience-period">August 2020 — Oct 2024</div>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Contexte et Responsabilités</h4>
+                    <h4 class="experience-section-title">Context &amp; Responsibilities</h4>
                     <p class="experience-content">
-                        En tant que Software Engineer Team Lead chez Dimsoft, j'ai eu l'opportunité de diriger des projets stratégiques de grande envergure, allant du développement de plateformes de paiement à la mise en œuvre de solutions de gestion pour le secteur de la santé. Mon rôle combine expertise technique et leadership d'équipe, avec une responsabilité directe sur l'architecture logicielle et l'encadrement des développeurs.
+                        As Software Engineer Team Lead at Dimsoft, I had the opportunity to lead large-scale strategic projects, ranging from payment platform development to management solution implementation for the healthcare sector. My role combined technical expertise with team leadership, with direct responsibility over software architecture and developer mentoring.
                     </p>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Réalisations Clés</h4>
+                    <h4 class="experience-section-title">Key Achievements</h4>
                     <ul class="experience-list">
-                        <li><strong>5Pay (Mai 2021 - Avril 2022)</strong> : Développement d'une plateforme générique d'intégration de multiples modes de paiement (Carte Bancaire, PayPal, Mobile Money). J'ai architecturé une solution robuste permettant aux entreprises d'intégrer facilement des systèmes de paiement dans leurs applications avec un suivi en temps réel des transactions.</li>
-                        <li><strong>Clinique Le Berceau (Août 2022 - Novembre 2022)</strong> : En tant que Project Manager et développeur principal, j'ai dirigé la création du site web et du CMS d'administration pour la Clinique Médico-Chirurgicale le Berceau. Ce projet m'a permis de combiner gestion d'équipe et développement full-stack.</li>
-                        <li><strong>DevTimeManager (Avril 2022 - Juillet 2022)</strong> : Conception et développement d'une plateforme interne de gestion de projets et de suivi d'équipes de développement, implémentant des pratiques agiles et des métriques de performance.</li>
-                        <li><strong>Agrie-Power (Janvier 2021 - Avril 2021)</strong> : Plateforme innovante mettant en relation agriculteurs et investisseurs mondiaux pour lutter contre la faim. J'ai développé l'architecture complète avec déploiement cloud sur Azure.</li>
+                        <li><strong>5Pay (May 2021 – April 2022)</strong>: Development of a generic platform integrating multiple payment methods (credit card, PayPal, Mobile Money). I architected a robust solution enabling companies to seamlessly embed payment systems into their applications with real-time transaction tracking.</li>
+                        <li><strong>Clinique Le Berceau (August 2022 – November 2022)</strong>: As Project Manager and lead developer, I directed the creation of the website and administration CMS for the Le Berceau Medical-Surgical Clinic. This project allowed me to combine team management with full-stack development.</li>
+                        <li><strong>DevTimeManager (April 2022 – July 2022)</strong>: Design and development of an internal platform for project management and development team tracking, implementing agile practices and performance metrics.</li>
+                        <li><strong>Agrie-Power (January 2021 – April 2021)</strong>: Innovative platform connecting farmers with global investors to fight hunger. I developed the full architecture with cloud deployment on Azure.</li>
                     </ul>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Approche et Méthodologies</h4>
+                    <h4 class="experience-section-title">Approach &amp; Methodologies</h4>
                     <p class="experience-content">
-                        Mon approche repose sur le Test-Driven Development (TDD) et l'intégration continue. J'ai systématiquement mis en place des pipelines CI/CD avec Docker et Jenkins, garantissant la qualité et la stabilité des applications déployées. J'ai également formé et encadré plusieurs développeurs juniors aux bonnes pratiques de développement.
+                        My approach is grounded in Test-Driven Development (TDD) and continuous integration. I systematically set up CI/CD pipelines with Docker and Jenkins, ensuring the quality and stability of deployed applications. I also trained and mentored several junior developers in best development practices.
                     </p>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Difficultés et Apprentissages</h4>
+                    <h4 class="experience-section-title">Challenges &amp; Learnings</h4>
                     <p class="experience-content">
-                        La gestion simultanée de multiples projets complexes m'a appris l'importance de la priorisation et de la communication claire avec les parties prenantes. J'ai développé une expertise particulière dans la résolution de problèmes d'architecture microservices et de scalabilité des applications.
+                        Managing multiple complex projects simultaneously taught me the importance of prioritisation and clear communication with stakeholders. I developed particular expertise in solving microservices architecture and application scalability challenges.
                     </p>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Compétences Acquises</h4>
+                    <h4 class="experience-section-title">Skills Acquired</h4>
                     <div class="skills-categories-grid">
 
                         <div class="skill-category-card">
@@ -1375,20 +1654,20 @@
                                 <div class="skill-category-name">Architecture & Conception</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Concevoir</strong> et architecturer des solutions logicielles complexes en microservices</li>
-                                <li><strong>Optimiser</strong> les performances et la scalabilité des applications</li>
-                                <li><strong>Résoudre</strong> des problèmes techniques complexes d'architecture et de performance</li>
-                                <li><strong>Gérer</strong> les bases de données relationnelles (PostgreSQL) et leur architecture</li>
+                                <li><strong>Design</strong> and architect complex software solutions in microservices</li>
+                                <li><strong>Optimise</strong> application performance and scalability</li>
+                                <li><strong>Solve</strong> complex technical architecture and performance problems</li>
+                                <li><strong>Manage</strong> relational databases (PostgreSQL) and their architecture</li>
                             </ul>
                         </div>
 
                         <div class="skill-category-card">
                             <div class="skill-category-header">
                                 <div class="skill-category-icon">💻</div>
-                                <div class="skill-category-name">Développement Full-Stack</div>
+                                <div class="skill-category-name">Full-Stack Development</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Développer</strong> des applications web full-stack avec Angular et Spring Boot</li>
+                                <li><strong>Develop</strong> full-stack web applications with Angular and Spring Boot</li>
                             </ul>
                         </div>
 
@@ -1398,8 +1677,8 @@
                                 <div class="skill-category-name">DevOps & CI/CD</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Implémenter</strong> des pipelines CI/CD pour automatiser les déploiements</li>
-                                <li><strong>Déployer</strong> et maintenir des applications en production avec Docker et Kubernetes</li>
+                                <li><strong>Implement</strong> CI/CD pipelines to automate deployments</li>
+                                <li><strong>Deploy</strong> and maintain production applications with Docker and Kubernetes</li>
                             </ul>
                         </div>
 
@@ -1409,7 +1688,7 @@
                                 <div class="skill-category-name">Qualité & Tests</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Tester</strong> rigoureusement le code avec TDD et BDD (JUnit, Cucumber)</li>
+                                <li><strong>Test</strong> code rigorously with TDD and BDD (JUnit, Cucumber)</li>
                             </ul>
                         </div>
 
@@ -1419,10 +1698,10 @@
                                 <div class="skill-category-name">Leadership & Management</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Diriger</strong> et encadrer des équipes de développeurs sur des projets stratégiques</li>
-                                <li><strong>Coordonner</strong> les sprints Agile et organiser les cérémonies Scrum</li>
-                                <li><strong>Former</strong> et mentorer des développeurs juniors aux bonnes pratiques</li>
-                                <li><strong>Communiquer</strong> efficacement avec les parties prenantes et les clients</li>
+                                <li><strong>Lead</strong> and manage developer teams on strategic projects</li>
+                                <li><strong>Coordinate</strong> Agile sprints and organise Scrum ceremonies</li>
+                                <li><strong>Train</strong> and mentor junior developers in best practices</li>
+                                <li><strong>Communicate</strong> effectively with stakeholders and clients</li>
                             </ul>
                         </div>
 
@@ -1434,39 +1713,39 @@
             <article class="timeline-item">
                 <div class="experience-header">
                     <div class="experience-title-group">
-                        <h3 class="experience-role">Consultant IT</h3>
+                        <h3 class="experience-role">IT Consultant</h3>
                         <div class="experience-company">Novalitix</div>
-                        <div class="experience-location">📍 Cameroun</div>
+                        <div class="experience-location">📍 Cameroon</div>
                     </div>
-                    <div class="experience-period">Février 2021 — Oct 2024</div>
+                    <div class="experience-period">February 2021 — Oct 2024</div>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Contexte et Mission</h4>
+                    <h4 class="experience-section-title">Context & Mission</h4>
                     <p class="experience-content">
-                        En tant que consultant IT chez Novalitix, j'interviens sur des projets variés pour différents clients, principalement dans les secteurs de l'éducation, du commerce électronique et de la construction. Mon rôle consiste à analyser les besoins clients, concevoir des solutions adaptées et assurer leur développement et déploiement.
+                        As an IT consultant at Novalitix, I worked on diverse projects for various clients, primarily in the education, e-commerce, and construction sectors. My role involved analysing client needs, designing appropriate solutions, and overseeing their development and deployment.
                     </p>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Projets Marquants</h4>
+                    <h4 class="experience-section-title">Notable Projects</h4>
                     <ul class="experience-list">
-                        <li><strong>Lasico Dashboard (Juin 2023 - Août 2023)</strong> : En tant que lead développeur, j'ai dirigé une équipe de 2 développeurs pour créer une plateforme Dashboard sophistiquée de gestion et suivi de projets de construction pour la France et le Sénégal. Ce projet m'a permis de développer mon expertise en gestion d'équipe distribuée.</li>
-                        <li><strong>Intel'Actuel (Février 2023 - Mai 2023)</strong> : Développement du site web et de la plateforme d'administration pour la revue de lettres et sciences humaines de l'Université de Dschang. J'ai mis l'accent sur l'accessibilité et l'expérience utilisateur.</li>
-                        <li><strong>ASSIMIC (Mars 2023 - Mai 2023)</strong> : Site web et plateforme d'administration pour l'Association des Ingénieurs des Mines du Cameroun, avec gestion des membres et des événements.</li>
-                        <li><strong>Kouna (Février 2021 - Avril 2021)</strong> : Application mobile de gestion d'événements pour le festival KounaWeek à Dschang, développée avec Firebase pour une scalabilité optimale.</li>
+                        <li><strong>Lasico Dashboard (June 2023 – August 2023)</strong>: As lead developer, I managed a team of 2 developers to build a sophisticated dashboard platform for construction project management and tracking across France and Senegal. This project helped me develop my expertise in distributed team management.</li>
+                        <li><strong>Intel'Actuel (February 2023 – May 2023)</strong>: Development of the website and administration platform for the humanities and social sciences journal of the University of Dschang. I focused on accessibility and user experience.</li>
+                        <li><strong>ASSIMIC (March 2023 – May 2023)</strong>: Website and administration platform for the Association of Mining Engineers of Cameroon, with member and event management.</li>
+                        <li><strong>Kouna (February 2021 – April 2021)</strong>: Mobile event management application for the KounaWeek festival in Dschang, developed with Firebase for optimal scalability.</li>
                     </ul>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Compétences Développées</h4>
+                    <h4 class="experience-section-title">Skills Developed</h4>
                     <p class="experience-content">
-                        Ces missions m'ont permis de perfectionner ma capacité d'adaptation à différents contextes métiers et d'affiner mes compétences en communication client. J'ai appris à traduire des besoins métiers complexes en solutions techniques élégantes et maintenables.
+                        These assignments allowed me to refine my ability to adapt to different business contexts and sharpen my client communication skills. I learned to translate complex business requirements into elegant, maintainable technical solutions.
                     </p>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Compétences Acquises</h4>
+                    <h4 class="experience-section-title">Skills Acquired</h4>
                     <div class="skills-categories-grid">
 
                         <div class="skill-category-card">
@@ -1475,8 +1754,8 @@
                                 <div class="skill-category-name">Analyse & Conseil</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Analyser</strong> les besoins clients et traduire les exigences métiers en solutions techniques</li>
-                                <li><strong>Adapter</strong> rapidement ma méthodologie à différents contextes métiers</li>
+                                <li><strong>Analyse</strong> client needs and translate business requirements into technical solutions</li>
+                                <li><strong>Adapt</strong> my methodology quickly to different business contexts</li>
                             </ul>
                         </div>
 
@@ -1486,7 +1765,7 @@
                                 <div class="skill-category-name">Architecture & Conception</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Concevoir</strong> des architectures adaptées aux contraintes spécifiques de chaque secteur</li>
+                                <li><strong>Design</strong> architectures tailored to the specific constraints of each sector</li>
                             </ul>
                         </div>
 
@@ -1496,22 +1775,22 @@
                                 <div class="skill-category-name">Développement Web & Mobile</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Développer</strong> des applications web et mobiles avec Ionic et Angular</li>
-                                <li><strong>Intégrer</strong> des services cloud Firebase pour la scalabilité et la performance</li>
-                                <li><strong>Containeriser</strong> et déployer des applications avec Docker</li>
-                                <li><strong>Créer</strong> des interfaces utilisateur intuitives et accessibles</li>
+                                <li><strong>Develop</strong> web and mobile applications with Ionic and Angular</li>
+                                <li><strong>Integrate</strong> Firebase cloud services for scalability and performance</li>
+                                <li><strong>Containerise</strong> and deploy applications with Docker</li>
+                                <li><strong>Create</strong> intuitive and accessible user interfaces</li>
                             </ul>
                         </div>
 
                         <div class="skill-category-card">
                             <div class="skill-category-header">
                                 <div class="skill-category-icon">🌍</div>
-                                <div class="skill-category-name">Gestion de Projet International</div>
+                                <div class="skill-category-name">International Project Management</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Diriger</strong> une équipe distribuée sur des projets internationaux (France, Sénégal)</li>
-                                <li><strong>Coordonner</strong> avec des parties prenantes multiculturelles</li>
-                                <li><strong>Documenter</strong> les processus et les solutions pour faciliter la maintenance</li>
+                                <li><strong>Lead</strong> a distributed team on international projects (France, Senegal)</li>
+                                <li><strong>Coordinate</strong> with multicultural stakeholders</li>
+                                <li><strong>Document</strong> processes and solutions to facilitate maintenance</li>
                             </ul>
                         </div>
 
@@ -1523,61 +1802,61 @@
             <article class="timeline-item">
                 <div class="experience-header">
                     <div class="experience-title-group">
-                        <h3 class="experience-role">Développeur Stagiaire</h3>
+                        <h3 class="experience-role">Junior Developer (Intern)</h3>
                         <div class="experience-company">Share and Win</div>
-                        <div class="experience-location">📍 Cameroun</div>
+                        <div class="experience-location">📍 Cameroon</div>
                     </div>
-                    <div class="experience-period">Janvier 2019 — Décembre 2020</div>
+                    <div class="experience-period">January 2019 — December 2020</div>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Contexte du Stage</h4>
+                    <h4 class="experience-section-title">Internship Context</h4>
                     <p class="experience-content">
-                        Mon premier stage professionnel m'a permis de découvrir le développement en équipe sur un projet réel. J'ai participé activement à la mise en œuvre de la plateforme Share and Win, contribuant principalement au développement frontend et à l'intégration avec les microservices backend.
+                        My first professional internship gave me the opportunity to discover team development on a real-world project. I actively contributed to the implementation of the Share and Win platform, primarily focused on frontend development and backend microservices integration.
                     </p>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Activités Principales</h4>
+                    <h4 class="experience-section-title">Main Activities</h4>
                     <ul class="experience-list">
-                        <li>Développement de composants Angular réutilisables pour l'interface utilisateur</li>
-                        <li>Intégration des APIs REST avec les microservices Spring Boot</li>
-                        <li>Participation aux code reviews et aux daily standups</li>
-                        <li>Apprentissage de l'architecture microservices avec Zuul Gateway et Eureka Server</li>
+                        <li>Development of reusable Angular components for the user interface</li>
+                        <li>Integration of REST APIs with Spring Boot microservices</li>
+                        <li>Participation in code reviews and daily standups</li>
+                        <li>Learning microservices architecture with Zuul Gateway and Eureka Server</li>
                     </ul>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Apprentissages Clés</h4>
+                    <h4 class="experience-section-title">Key Learnings</h4>
                     <p class="experience-content">
-                        Cette expérience fondatrice m'a enseigné les bases du développement professionnel : travail en équipe, utilisation de Git pour le versioning, méthodologie Agile/Scrum, et l'importance de la documentation du code. J'ai également découvert ma passion pour l'architecture logicielle et les systèmes distribués.
+                        This foundational experience taught me the basics of professional development: teamwork, using Git for version control, Agile/Scrum methodology, and the importance of code documentation. I also discovered my passion for software architecture and distributed systems.
                     </p>
                 </div>
 
                 <div class="experience-section">
-                    <h4 class="experience-section-title">Compétences Acquises</h4>
+                    <h4 class="experience-section-title">Skills Acquired</h4>
                     <div class="skills-categories-grid">
 
                         <div class="skill-category-card">
                             <div class="skill-category-header">
                                 <div class="skill-category-icon">🖥️</div>
-                                <div class="skill-category-name">Développement Frontend</div>
+                                <div class="skill-category-name">Frontend Development</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Développer</strong> des composants Angular réutilisables et maintenables</li>
-                                <li><strong>Styliser</strong> des interfaces utilisateur avec Sass et les préprocesseurs CSS</li>
-                                <li><strong>Intégrer</strong> des APIs REST avec des microservices backend</li>
+                                <li><strong>Develop</strong> reusable and maintainable Angular components</li>
+                                <li><strong>Style</strong> user interfaces with Sass and CSS preprocessors</li>
+                                <li><strong>Integrate</strong> REST APIs with backend microservices</li>
                             </ul>
                         </div>
 
                         <div class="skill-category-card">
                             <div class="skill-category-header">
                                 <div class="skill-category-icon">🏛️</div>
-                                <div class="skill-category-name">Architecture Backend</div>
+                                <div class="skill-category-name">Backend Architecture</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Comprendre</strong> l'architecture microservices (Zuul Gateway, Eureka Server)</li>
-                                <li><strong>Structurer</strong> des bases de données NoSQL avec MongoDB</li>
+                                <li><strong>Understand</strong> microservices architecture (Zuul Gateway, Eureka Server)</li>
+                                <li><strong>Structure</strong> NoSQL databases with MongoDB</li>
                             </ul>
                         </div>
 
@@ -1587,11 +1866,11 @@
                                 <div class="skill-category-name">Collaboration & Méthodes</div>
                             </div>
                             <ul class="skill-list-phrases">
-                                <li><strong>Collaborer</strong> efficacement au sein d'une équipe de développement</li>
-                                <li><strong>Utiliser</strong> Git pour le versioning et la gestion du code source</li>
-                                <li><strong>Participer</strong> activement aux code reviews et aux daily standups</li>
-                                <li><strong>Appliquer</strong> les méthodologies Agile/Scrum dans un contexte professionnel</li>
-                                <li><strong>Documenter</strong> le code pour faciliter la collaboration d'équipe</li>
+                                <li><strong>Collaborate</strong> effectively within a development team</li>
+                                <li><strong>Use</strong> Git for version control and source code management</li>
+                                <li><strong>Participate</strong> actively in code reviews and daily standups</li>
+                                <li><strong>Apply</strong> Agile/Scrum methodologies in a professional context</li>
+                                <li><strong>Document</strong> code to facilitate team collaboration</li>
                             </ul>
                         </div>
 
@@ -1603,55 +1882,55 @@
     </section>
 
     <!-- ═══════════════════════════════════════
-         SECTION 02 — COMPÉTENCES TRANSVERSALES
+         SECTION 02 — CROSS-CUTTING SKILLS
          ═══════════════════════════════════════ -->
     <section class="section" id="competences">
         <div class="section-header">
             <span class="section-number">02</span>
-            <h2 class="section-title">Compétences Transversales</h2>
+            <h2 class="section-title">Cross-Cutting Skills</h2>
         </div>
 
         <div class="competences-grid">
             <div class="competence-card">
                 <div class="competence-icon">🧠</div>
-                <div class="competence-title">Résolution de Problèmes Complexes</div>
-                <p class="competence-description">Capacité à analyser des situations techniques complexes et à concevoir des solutions scalables et maintenables, en combinant rigueur analytique et créativité.</p>
+                <div class="competence-title">Complex Problem Solving</div>
+                <p class="competence-description">Ability to analyse complex technical situations and design scalable, maintainable solutions, combining analytical rigour with creativity.</p>
             </div>
             <div class="competence-card">
                 <div class="competence-icon">🔄</div>
-                <div class="competence-title">Adaptabilité Sectorielle</div>
-                <p class="competence-description">Expérience dans des domaines variés — santé, e-commerce, agriculture, construction, éducation — avec une capacité à s'approprier rapidement les enjeux métiers de chaque secteur.</p>
+                <div class="competence-title">Sector Adaptability</div>
+                <p class="competence-description">Experience across diverse domains — healthcare, e-commerce, agriculture, construction, education — with the ability to quickly grasp the business challenges of each sector.</p>
             </div>
             <div class="competence-card">
                 <div class="competence-icon">🗣️</div>
-                <div class="competence-title">Communication Technique</div>
-                <p class="competence-description">Aptitude à vulgariser des concepts techniques auprès de profils non-techniques, à rédiger des documentations claires et à animer des réunions techniques productives.</p>
+                <div class="competence-title">Technical Communication</div>
+                <p class="competence-description">Ability to explain technical concepts to non-technical audiences, write clear documentation, and facilitate productive technical meetings.</p>
             </div>
             <div class="competence-card">
                 <div class="competence-icon">🎯</div>
                 <div class="competence-title">Leadership & Mentorat</div>
-                <p class="competence-description">Expérience confirmée dans l'encadrement d'équipes de développeurs, le coaching des juniors et la transmission des bonnes pratiques de développement logiciel.</p>
+                <p class="competence-description">Proven experience in managing developer teams, coaching junior staff, and passing on software development best practices.</p>
             </div>
             <div class="competence-card">
                 <div class="competence-icon">📐</div>
                 <div class="competence-title">Rigueur & Qualité</div>
-                <p class="competence-description">Culture du code propre, des tests automatisés et de l'amélioration continue. Engagement constant envers la qualité logicielle à travers les pratiques TDD et BDD.</p>
+                <p class="competence-description">Culture of clean code, automated testing, and continuous improvement. Constant commitment to software quality through TDD and BDD practices.</p>
             </div>
             <div class="competence-card">
                 <div class="competence-icon">🌐</div>
                 <div class="competence-title">Vision Système & Transversalité</div>
-                <p class="competence-description">Capacité à appréhender un projet dans sa globalité, depuis l'analyse des besoins jusqu'au déploiement en production, en maîtrisant chaque niveau de la chaîne de valeur technique.</p>
+                <p class="competence-description">Ability to understand a project holistically, from requirements analysis through to production deployment, mastering every level of the technical value chain.</p>
             </div>
         </div>
     </section>
 
     <!-- ═══════════════════════════════
-         SECTIONS À COMPLÉTER
+         COMPLETED SECTIONS
          ═══════════════════════════════ -->
     <section class="section" id="formation">
         <div class="section-header">
             <span class="section-number">03</span>
-            <h2 class="section-title">Parcours Académique</h2>
+            <h2 class="section-title">Academic Background</h2>
         </div>
 
         <div class="academic-grid">
@@ -1665,16 +1944,16 @@
                 <div class="academic-card-content">
                     <div class="academic-period-tag">
                         <span class="academic-dot academic-dot--active"></span>
-                        Oct 2025 — En cours
+                        Oct 2025 — Ongoing
                     </div>
-                    <h3 class="academic-degree">Doctorat en Informatique</h3>
+                    <h3 class="academic-degree">PhD in Computer Science</h3>
                     <div class="academic-institution">Université de Lille · Inria &nbsp;🇫🇷</div>
-                    <p class="academic-description">Recherche sur les systèmes auto-adaptatifs et l'architecture cloud.</p>
+                    <p class="academic-description">Research on self-adaptive systems and cloud architecture.</p>
                     <div class="academic-tags">
-                        <span class="academic-tag">Systèmes distribués</span>
-                        <span class="academic-tag">Auto-adaptation</span>
+                        <span class="academic-tag">Distributed systems</span>
+                        <span class="academic-tag">Self-adaptation</span>
                         <span class="academic-tag">Cloud computing</span>
-                        <span class="academic-tag">Calcul autonomique</span>
+                        <span class="academic-tag">Autonomous systems</span>
                     </div>
                 </div>
             </div>
@@ -1687,12 +1966,12 @@
                 </div>
                 <div class="academic-card-content">
                     <div class="academic-period-tag">2021 — 2022</div>
-                    <h3 class="academic-degree">Master 2 en Intelligence Artificielle</h3>
+                    <h3 class="academic-degree">Master's (M2) in Artificial Intelligence</h3>
                     <div class="academic-institution">Université de Dschang &nbsp;🇨🇲</div>
-                    <p class="academic-description">Spécialisation en Génie logiciel, option Business Process Management.</p>
+                    <p class="academic-description">Specialisation in Software Engineering, Business Process Management track.</p>
                     <div class="academic-tags">
-                        <span class="academic-tag">Intelligence Artificielle</span>
-                        <span class="academic-tag">Génie Logiciel</span>
+                        <span class="academic-tag">Artificial Intelligence</span>
+                        <span class="academic-tag">Software Engineering</span>
                         <span class="academic-tag">BPM</span>
                     </div>
                 </div>
@@ -1706,11 +1985,11 @@
                 </div>
                 <div class="academic-card-content">
                     <div class="academic-period-tag">2020 — 2021</div>
-                    <h3 class="academic-degree">Master 1 en Intelligence Artificielle</h3>
+                    <h3 class="academic-degree">Master 1 en Artificial Intelligence</h3>
                     <div class="academic-institution">Université de Dschang &nbsp;🇨🇲</div>
-                    <p class="academic-description">Fondamentaux de l'IA et du machine learning.</p>
+                    <p class="academic-description">Fundamentals of AI and machine learning.</p>
                     <div class="academic-tags">
-                        <span class="academic-tag">Intelligence Artificielle</span>
+                        <span class="academic-tag">Artificial Intelligence</span>
                         <span class="academic-tag">Machine Learning</span>
                     </div>
                 </div>
@@ -1724,13 +2003,13 @@
                 </div>
                 <div class="academic-card-content">
                     <div class="academic-period-tag">2017 — 2020</div>
-                    <h3 class="academic-degree">Licence en Informatique</h3>
+                    <h3 class="academic-degree">Bachelor's in Computer Science</h3>
                     <div class="academic-institution">Université de Dschang &nbsp;🇨🇲</div>
-                    <p class="academic-description">Fondamentaux de l'informatique et programmation.</p>
+                    <p class="academic-description">Fundamentals of computer science and programming.</p>
                     <div class="academic-tags">
                         <span class="academic-tag">Informatique</span>
-                        <span class="academic-tag">Algorithmique</span>
-                        <span class="academic-tag">Programmation</span>
+                        <span class="academic-tag">Algorithms</span>
+                        <span class="academic-tag">Programming</span>
                     </div>
                 </div>
             </div>
@@ -1741,20 +2020,20 @@
     <section class="section" id="projet">
         <div class="section-header">
             <span class="section-number">04</span>
-            <h2 class="section-title">Projet Professionnel</h2>
+            <h2 class="section-title">Career Project</h2>
         </div>
 
         <!-- Mission & Vision -->
         <div class="mv-grid">
             <div class="mv-card mv-card--mission">
                 <div class="mv-icon">🎯</div>
-                <div class="mv-label">Ma Mission</div>
-                <p class="mv-text">Accompagner les entreprises dans la transformation digitale de leurs processus métier en concevant des solutions logicielles innovantes, robustes et évolutives. Je m'engage à apporter des solutions aux besoins changeants des systèmes modernes, réduisant ainsi la complexité opérationnelle et maximisant la valeur business.</p>
+                <div class="mv-label">My Mission</div>
+                <p class="mv-text">Supporting companies in the digital transformation of their business processes by designing innovative, robust, and scalable software solutions. I am committed to addressing the evolving needs of modern systems, reducing operational complexity and maximising business value.</p>
             </div>
             <div class="mv-card mv-card--vision">
                 <div class="mv-icon">🔭</div>
-                <div class="mv-label">Ma Vision</div>
-                <p class="mv-text">Devenir un leader reconnu dans l'ingénierie logicielle, à l'intersection de la recherche académique et de l'excellence industrielle. Je vise à créer des solutions qui transforment fondamentalement la manière dont les entreprises gèrent leurs processus, en combinant rigueur scientifique et pragmatisme opérationnel.</p>
+                <div class="mv-label">My Vision</div>
+                <p class="mv-text">To become a recognised leader in software engineering, at the crossroads of academic research and industrial excellence. I aim to create solutions that fundamentally transform the way companies manage their processes, combining scientific rigour with operational pragmatism.</p>
             </div>
         </div>
 
@@ -1763,12 +2042,12 @@
             <div class="target-role-header">
                 <div class="target-role-icon">☁️</div>
                 <div>
-                    <div class="target-role-eyebrow">Poste visé</div>
+                    <div class="target-role-eyebrow">Target Role</div>
                     <div class="target-role-title">Research / Senior Cloud & DevOps Engineer</div>
                 </div>
             </div>
             <p class="target-role-desc">
-                Mon objectif est d'évoluer vers un poste d'ingénieur de recherche dans le domaine du DevOps Cloud, en capitalisant sur mon expérience en systèmes auto-adaptatifs (INRIA) et mes cinq années de développement logiciel en contexte industriel. Je vise des missions centrées sur la scalabilité, l'automatisation et l'excellence opérationnelle des infrastructures cloud — notamment sur Microsoft Azure.
+                My goal is to move into a research engineering role in the Cloud DevOps domain, building on my experience in self-adaptive systems (INRIA) and five years of software development in an industrial context. I target roles focused on scalability, automation, and operational excellence of cloud infrastructures — particularly on Microsoft Azure.
             </p>
 
             <!-- Adéquation profil / poste -->
@@ -1776,46 +2055,195 @@
                 <div class="fit-block fit-block--strengths">
                     <div class="fit-block-title">
                         <span class="fit-dot fit-dot--green"></span>
-                        Atouts actuels
+                        Current strengths
                     </div>
                     <ul class="fit-list">
-                        <li>Conception de frameworks Java pour microservices cloud (AdaptiFlow — INRIA)</li>
-                        <li>Maîtrise de Docker, Kubernetes et des architectures conteneurisées</li>
-                        <li>Expérience CI/CD avec Jenkins et pipelines automatisés</li>
-                        <li>Architectures événementielles et systèmes distribués</li>
-                        <li>Communication technique, documentation et encadrement d'équipes</li>
+                        <li>Design of Java frameworks for cloud microservices (AdaptiFlow — INRIA)</li>
+                        <li>Proficiency in Docker, Kubernetes and containerised architectures</li>
+                        <li>CI/CD experience with Jenkins and automated pipelines</li>
+                        <li>Event-driven architectures and distributed systems</li>
+                        <li>Technical communication, documentation and team management</li>
                     </ul>
                 </div>
                 <div class="fit-block fit-block--gaps">
                     <div class="fit-block-title">
                         <span class="fit-dot fit-dot--orange"></span>
-                        Axes de développement
+                        Development areas
                     </div>
                     <ul class="fit-list">
-                        <li>Approfondir Azure : certifications AZ-305 et AZ-400</li>
-                        <li>Acquérir les bases AWS : certification AWS Cloud Practitioner puis AWS Solutions Architect Associate</li>
-                        <li>Acquérir une expertise IaC formelle : Terraform, Bicep, ARM templates</li>
-                        <li>Maîtriser Python et/ou Golang pour l'automatisation cloud-native</li>
-                        <li>Certifications Kubernetes : CKA et/ou CKAD</li>
-                        <li>Sécurité cloud : RBAC, image scanning, conformité DevSecOps</li>
-                        <li>Expérience avec Azure DevOps et GitHub Actions</li>
+                        <li>Deepen Azure expertise: AZ-305 and AZ-400 certifications</li>
+                        <li>Acquire AWS foundations: AWS Cloud Practitioner, then AWS Solutions Architect Associate</li>
+                        <li>Gain formal IaC expertise: Terraform, Bicep, ARM templates</li>
+                        <li>Master Python and/or Golang for cloud-native automation</li>
+                        <li>Kubernetes certifications: CKA and/or CKAD</li>
+                        <li>Cloud security: RBAC, image scanning, DevSecOps compliance</li>
+                        <li>Hands-on experience with Azure DevOps and GitHub Actions</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════════
+         SECTION 04b — ALTERNATIVE PROJECT
+         ═══════════════════════════════════════ -->
+    <section class="section" id="projet-academique">
+        <div class="section-header">
+            <span class="section-number">04b</span>
+            <h2 class="section-title">Alternative Project — Researcher-Teacher</h2>
+        </div>
+
+        <!-- Intro -->
+        <div class="alt-project-intro">
+            <div class="alt-project-icon">🎓</div>
+            <div>
+                <p class="alt-project-text">
+                    Alongside my path towards the cloud industry, I have long nurtured an academic ambition: to become a researcher-teacher. Passionate about knowledge transfer since my first experiences tutoring secondary school students and running tutorials at university, I have been actively preparing for this goal since my first doctoral year — with teaching duties planned from the second year of my PhD.
+                </p>
+            </div>
+        </div>
+
+        <!-- Motivations -->
+        <div class="alt-motiv-grid">
+            <div class="alt-motiv-card">
+                <div class="alt-motiv-icon">📚</div>
+                <div class="alt-motiv-title">Passion for Teaching</div>
+                <p class="alt-motiv-desc">Secondary school tutoring, university tutorials and lab sessions — a progressively built teaching experience and a genuine ease in conveying complex technical concepts.</p>
+            </div>
+            <div class="alt-motiv-card">
+                <div class="alt-motiv-icon">🔬</div>
+                <div class="alt-motiv-title">Research Grounding</div>
+                <p class="alt-motiv-desc">The PhD at the University of Lille provides the essential foundation. Research on self-adaptive systems directly feeds into the courses I intend to deliver in cloud computing, distributed architectures, and software engineering.</p>
+            </div>
+            <div class="alt-motiv-card">
+                <div class="alt-motiv-icon">🌍</div>
+                <div class="alt-motiv-title">Lasting Impact</div>
+                <p class="alt-motiv-desc">Training the engineers of tomorrow, contributing to the growth of computer science in francophone Africa and Europe — a vision that gives meaning to the entire academic and professional journey.</p>
+            </div>
+        </div>
+
+        <!-- Doctoral training courses -->
+        <div class="doctoral-formations-header">
+            <div class="doctoral-formations-eyebrow">Active Preparation</div>
+            <h3 class="doctoral-formations-title">Doctoral training courses attended — Doctoral College, University of Lille</h3>
+            <p class="doctoral-formations-sub">These courses, delivered within the doctoral college framework, represent the first concrete steps towards a career as a researcher-teacher.</p>
+        </div>
+
+        <div class="doctoral-formations-grid">
+
+            <!-- Formation 1 -->
+            <div class="doctoral-card">
+                <div class="doctoral-card-header">
+                    <div class="doctoral-card-date">
+                        <div class="doctoral-date-day">07</div>
+                        <div class="doctoral-date-month">Apr. 2026</div>
+                    </div>
+                    <div class="doctoral-card-meta">
+                        <div class="doctoral-card-category">Teaching · Academic Career</div>
+                        <h4 class="doctoral-card-title">The Researcher-Teacher Profession</h4>
+                        <div class="doctoral-card-format">
+                            <span class="doctoral-badge doctoral-badge--present">In-person</span>
+                            <span class="doctoral-badge">2h · 2 credits</span>
+                            <span class="doctoral-badge doctoral-badge--complet">Full</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctoral-card-body">
+                    <p class="doctoral-card-desc">Overview of the researcher-teacher status and duties, university functioning and funding, the role of the CNU, the qualification process and recruitment recommendations.</p>
+                    <div class="doctoral-card-themes">
+                        <span class="doctoral-theme">EC Status</span>
+                        <span class="doctoral-theme">CNU</span>
+                        <span class="doctoral-theme">Qualification</span>
+                        <span class="doctoral-theme">University funding</span>
+                        <span class="doctoral-theme">Recruitment</span>
+                    </div>
+                    <div class="doctoral-card-team">
+                        <span class="doctoral-team-label">Speakers ·</span>
+                        Denis Petitprez, Laurent Sparrow, Mathilde Caron — University of Lille
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formation 2 -->
+            <div class="doctoral-card">
+                <div class="doctoral-card-header">
+                    <div class="doctoral-card-date">
+                        <div class="doctoral-date-day">30</div>
+                        <div class="doctoral-date-month">Apr. 2026</div>
+                    </div>
+                    <div class="doctoral-card-meta">
+                        <div class="doctoral-card-category">Teaching · Ethics</div>
+                        <h4 class="doctoral-card-title">Ethics for Higher Education Teachers</h4>
+                        <div class="doctoral-card-format">
+                            <span class="doctoral-badge doctoral-badge--present">In-person</span>
+                            <span class="doctoral-badge">3h · 2 credits</span>
+                            <span class="doctoral-badge doctoral-badge--open">Seats available</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctoral-card-body">
+                    <p class="doctoral-card-desc">Statutory independence of academics, freedom of expression and its limits in public service. Obligations towards students, examination law, handling academic misconduct, and respecting student freedoms.</p>
+                    <div class="doctoral-card-themes">
+                        <span class="doctoral-theme">Academic freedom</span>
+                        <span class="doctoral-theme">Secularism</span>
+                        <span class="doctoral-theme">Examination law</span>
+                        <span class="doctoral-theme">Student relations</span>
+                    </div>
+                    <div class="doctoral-card-team">
+                        <span class="doctoral-team-label">Speaker ·</span>
+                        Jenifer Prades — Legal Affairs Department, University of Lille
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formation 3 -->
+            <div class="doctoral-card">
+                <div class="doctoral-card-header">
+                    <div class="doctoral-card-date">
+                        <div class="doctoral-date-day">05</div>
+                        <div class="doctoral-date-month">Jun. 2026</div>
+                    </div>
+                    <div class="doctoral-card-meta">
+                        <div class="doctoral-card-category">Teaching · Academic Career</div>
+                        <h4 class="doctoral-card-title">Understanding the University</h4>
+                        <div class="doctoral-card-format">
+                            <span class="doctoral-badge doctoral-badge--present">In-person</span>
+                            <span class="doctoral-badge">3h · 2 credits</span>
+                            <span class="doctoral-badge doctoral-badge--complet">Full</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctoral-card-body">
+                    <p class="doctoral-card-desc">Legal framework of French higher education, academic freedoms, structure and governance of the University of Lille. Provides the institutional understanding essential to any academic career.</p>
+                    <div class="doctoral-card-themes">
+                        <span class="doctoral-theme">University governance</span>
+                        <span class="doctoral-theme">Higher education public service</span>
+                        <span class="doctoral-theme">Academic freedoms</span>
+                        <span class="doctoral-theme">U. Lille structure</span>
+                    </div>
+                    <div class="doctoral-card-team">
+                        <span class="doctoral-team-label">Speaker ·</span>
+                        Margaux Mièze — Legal Affairs Department, University of Lille
+                        <div class="doctoral-card-location">📍 Campus Flers-Château, 9h–12h</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- ═══════════════════════════════
-         SECTION 05 — PLAN D'ACTION
+         SECTION 05 — ACTION PLAN
          ═══════════════════════════════ -->
     <section class="section" id="plan">
         <div class="section-header">
             <span class="section-number">05</span>
-            <h2 class="section-title">Plan d'Action</h2>
+            <h2 class="section-title">Action Plan</h2>
         </div>
 
         <p class="plan-intro">
-            Feuille de route structurée sur <strong>24 mois</strong> pour atteindre le niveau <strong>Senior Cloud / DevOps Engineer</strong> — un horizon réaliste compte tenu du volume de certifications et de pratique requis pour les postes de ce niveau.
+            A structured <strong>24-month</strong> roadmap to reach <strong>Senior Cloud / DevOps Engineer</strong> level — a realistic horizon given the volume of certifications and hands-on practice required for roles at this level.
         </p>
 
         <div class="plan-timeline">
@@ -1828,23 +2256,24 @@
                 </div>
                 <div class="plan-phase-content">
                     <div class="plan-phase-header">
-                        <div class="plan-phase-period">Mois 1 – 5 &nbsp;·&nbsp; Fondations cloud</div>
+                        <div class="plan-phase-period">Months 1–5 &nbsp;·&nbsp; Cloud foundations</div>
                         <h3 class="plan-phase-title">Socle Azure, AWS & Infrastructure as Code</h3>
                     </div>
 
                     <div class="plan-phase-body">
                         <div class="plan-actions-grid">
 
+
                             <div class="plan-action-card plan-action-card--cert">
                                 <div class="plan-action-icon">📜</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Certification Azure</div>
+                                    <div class="plan-action-label">Azure Certification</div>
                                     <div class="plan-action-title">AZ-900 — Microsoft Azure Fundamentals</div>
-                                    <p class="plan-action-desc">Fondamentaux du cloud Azure : services compute, réseau, stockage, sécurité et gouvernance. Point d'entrée indispensable avant toute certification Azure avancée.</p>
+                                    <p class="plan-action-desc">Azure cloud fundamentals: compute, networking, storage, security, and governance services. An essential entry point before any advanced Azure certification.</p>
                                     <div class="plan-action-meta">
                                         <span class="plan-tag plan-tag--cert">Certification</span>
-                                        <span class="plan-tag">~3 semaines</span>
-                                        <span class="plan-tag">Microsoft Learn (gratuit)</span>
+                                        <span class="plan-tag">~3 weeks</span>
+                                        <span class="plan-tag">Microsoft Learn (free)</span>
                                     </div>
                                 </div>
                             </div>
@@ -1852,12 +2281,12 @@
                             <div class="plan-action-card plan-action-card--cert">
                                 <div class="plan-action-icon">📜</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Certification AWS</div>
+                                    <div class="plan-action-label">AWS Certification</div>
                                     <div class="plan-action-title">AWS Cloud Practitioner (CLF-C02)</div>
-                                    <p class="plan-action-desc">Vue d'ensemble des services AWS, modèles de tarification, sécurité et architecture cloud. Permet de se positionner sur des offres multi-cloud, de plus en plus fréquentes dans les postes Senior.</p>
+                                    <p class="plan-action-desc">Overview of AWS services, pricing models, security, and cloud architecture. Enables positioning for multi-cloud roles, increasingly common in Senior positions.</p>
                                     <div class="plan-action-meta">
                                         <span class="plan-tag plan-tag--cert">Certification</span>
-                                        <span class="plan-tag">~3 semaines</span>
+                                        <span class="plan-tag">~3 weeks</span>
                                         <span class="plan-tag">AWS Skill Builder</span>
                                     </div>
                                 </div>
@@ -1866,13 +2295,13 @@
                             <div class="plan-action-card plan-action-card--cert">
                                 <div class="plan-action-icon">📜</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Certification Azure</div>
+                                    <div class="plan-action-label">Azure Certification</div>
                                     <div class="plan-action-title">AZ-104 — Microsoft Azure Administrator</div>
-                                    <p class="plan-action-desc">Administration opérationnelle d'Azure : VMs, VNets, identités (Entra ID), stockage, monitoring. Base technique solide avant les certifications Expert.</p>
+                                    <p class="plan-action-desc">Operational administration of Azure: VMs, VNets, identities (Entra ID), storage, monitoring. Solid technical foundation before Expert certifications.</p>
                                     <div class="plan-action-meta">
                                         <span class="plan-tag plan-tag--cert">Certification</span>
-                                        <span class="plan-tag">~6 semaines</span>
-                                        <span class="plan-tag">Prérequis : AZ-900</span>
+                                        <span class="plan-tag">~6 weeks</span>
+                                        <span class="plan-tag">Prerequisite: AZ-900</span>
                                     </div>
                                 </div>
                             </div>
@@ -1880,13 +2309,13 @@
                             <div class="plan-action-card">
                                 <div class="plan-action-icon">🔧</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Compétence technique</div>
+                                    <div class="plan-action-label">Technical skill</div>
                                     <div class="plan-action-title">Infrastructure as Code — Terraform & Bicep</div>
-                                    <p class="plan-action-desc">Provisionner et gérer des infrastructures Azure et AWS via Terraform (HCL) et Bicep. Créer des modules réutilisables, des workspaces multi-environnements et des pipelines IaC. Viser la certification Terraform Associate (HashiCorp).</p>
+                                    <p class="plan-action-desc">Provision and manage Azure and AWS infrastructure via Terraform (HCL) and Bicep. Build reusable modules, multi-environment workspaces, and IaC pipelines. Target the Terraform Associate (HashiCorp) certification.</p>
                                     <div class="plan-action-meta">
                                         <span class="plan-tag plan-tag--cert">Terraform Associate</span>
                                         <span class="plan-tag">HashiCorp Learn</span>
-                                        <span class="plan-tag">Projets pratiques</span>
+                                        <span class="plan-tag">Practical projects</span>
                                     </div>
                                 </div>
                             </div>
@@ -1894,9 +2323,9 @@
                             <div class="plan-action-card">
                                 <div class="plan-action-icon">🐍</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Compétence technique</div>
+                                    <div class="plan-action-label">Technical skill</div>
                                     <div class="plan-action-title">Python pour l'automatisation cloud</div>
-                                    <p class="plan-action-desc">Scripts d'automatisation avec les SDKs Azure et AWS pour Python : gestion des ressources, déploiements automatisés, collecte de métriques et réponses aux événements cloud.</p>
+                                    <p class="plan-action-desc">Automation scripts using Azure and AWS Python SDKs: resource management, automated deployments, metrics collection, and cloud event responses.</p>
                                     <div class="plan-action-meta">
                                         <span class="plan-tag">Azure SDK for Python</span>
                                         <span class="plan-tag">Boto3 (AWS)</span>
@@ -1917,7 +2346,7 @@
                 </div>
                 <div class="plan-phase-content">
                     <div class="plan-phase-header">
-                        <div class="plan-phase-period">Mois 6 – 12 &nbsp;·&nbsp; Montée en expertise</div>
+                        <div class="plan-phase-period">Months 6–12 &nbsp;·&nbsp; Building expertise</div>
                         <h3 class="plan-phase-title">Certifications Expert Azure, AWS & Kubernetes</h3>
                     </div>
 
@@ -1927,13 +2356,13 @@
                             <div class="plan-action-card plan-action-card--cert">
                                 <div class="plan-action-icon">📜</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Certification Azure Expert</div>
+                                    <div class="plan-action-label">Azure Certification Expert</div>
                                     <div class="plan-action-title">AZ-305 — Azure Solutions Architect Expert</div>
-                                    <p class="plan-action-desc">Conception d'architectures Azure robustes : haute disponibilité, reprise après sinistre, sécurité, gouvernance et optimisation des coûts. Certification essentielle pour les postes Senior cloud.</p>
+                                    <p class="plan-action-desc">Design of robust Azure architectures: high availability, disaster recovery, security, governance, and cost optimisation. Essential certification for Senior cloud roles.</p>
                                     <div class="plan-action-meta">
-                                        <span class="plan-tag plan-tag--cert">Niveau Expert</span>
-                                        <span class="plan-tag">Prérequis : AZ-104</span>
-                                        <span class="plan-tag">~8 semaines</span>
+                                        <span class="plan-tag plan-tag--cert">Expert level</span>
+                                        <span class="plan-tag">Prerequisite: AZ-104</span>
+                                        <span class="plan-tag">~8 weeks</span>
                                     </div>
                                 </div>
                             </div>
@@ -1941,13 +2370,13 @@
                             <div class="plan-action-card plan-action-card--cert">
                                 <div class="plan-action-icon">📜</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Certification Azure Expert</div>
+                                    <div class="plan-action-label">Azure Certification Expert</div>
                                     <div class="plan-action-title">AZ-400 — Azure DevOps Engineer Expert</div>
-                                    <p class="plan-action-desc">Pipelines CI/CD avec Azure DevOps et GitHub Actions, gestion des releases, monitoring, sécurité intégrée dans la chaîne de livraison. Directement aligné sur les exigences des offres Senior DevOps.</p>
+                                    <p class="plan-action-desc">CI/CD pipelines with Azure DevOps and GitHub Actions, release management, monitoring, security integrated into the delivery pipeline. Directly aligned with Senior DevOps role requirements.</p>
                                     <div class="plan-action-meta">
-                                        <span class="plan-tag plan-tag--cert">Niveau Expert</span>
-                                        <span class="plan-tag">Prérequis : AZ-104</span>
-                                        <span class="plan-tag">~8 semaines</span>
+                                        <span class="plan-tag plan-tag--cert">Expert level</span>
+                                        <span class="plan-tag">Prerequisite: AZ-104</span>
+                                        <span class="plan-tag">~8 weeks</span>
                                     </div>
                                 </div>
                             </div>
@@ -1955,13 +2384,13 @@
                             <div class="plan-action-card plan-action-card--cert">
                                 <div class="plan-action-icon">📜</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Certification AWS</div>
+                                    <div class="plan-action-label">AWS Certification</div>
                                     <div class="plan-action-title">AWS Solutions Architect — Associate (SAA-C03)</div>
-                                    <p class="plan-action-desc">Conception de solutions AWS : EC2, S3, RDS, VPC, IAM, Lambda, EKS. Complément indispensable à Azure pour les profils multi-cloud de plus en plus demandés sur le marché.</p>
+                                    <p class="plan-action-desc">AWS solution design: EC2, S3, RDS, VPC, IAM, Lambda, EKS. An essential complement to Azure for multi-cloud profiles increasingly in demand on the market.</p>
                                     <div class="plan-action-meta">
-                                        <span class="plan-tag plan-tag--cert">Niveau Associate</span>
-                                        <span class="plan-tag">Prérequis : CLF-C02</span>
-                                        <span class="plan-tag">~8 semaines</span>
+                                        <span class="plan-tag plan-tag--cert">Associate level</span>
+                                        <span class="plan-tag">Prerequisite: CLF-C02</span>
+                                        <span class="plan-tag">~8 weeks</span>
                                     </div>
                                 </div>
                             </div>
@@ -1969,12 +2398,12 @@
                             <div class="plan-action-card plan-action-card--cert">
                                 <div class="plan-action-icon">📜</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Certification CNCF</div>
+                                    <div class="plan-action-label">CNCF Certification</div>
                                     <div class="plan-action-title">CKA — Certified Kubernetes Administrator</div>
-                                    <p class="plan-action-desc">Administration de clusters Kubernetes : scheduling, networking, stockage, sécurité et troubleshooting. Examen entièrement pratique (2h). S'appuie directement sur l'expérience des microservices acquise à INRIA.</p>
+                                    <p class="plan-action-desc">Kubernetes cluster administration: scheduling, networking, storage, security, and troubleshooting. Fully practical exam (2h). Builds directly on the microservices experience gained at INRIA.</p>
                                     <div class="plan-action-meta">
-                                        <span class="plan-tag plan-tag--cert">Examen pratique</span>
-                                        <span class="plan-tag">~8 semaines</span>
+                                        <span class="plan-tag plan-tag--cert">Hands-on exam</span>
+                                        <span class="plan-tag">~8 weeks</span>
                                     </div>
                                 </div>
                             </div>
@@ -1982,9 +2411,9 @@
                             <div class="plan-action-card">
                                 <div class="plan-action-icon">🔐</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Compétence technique</div>
+                                    <div class="plan-action-label">Technical skill</div>
                                     <div class="plan-action-title">DevSecOps — Sécurité cloud & conteneurs</div>
-                                    <p class="plan-action-desc">RBAC Azure et Kubernetes, scanning d'images (Trivy, Snyk), politiques de conformité (Azure Policy, OPA/Gatekeeper), gestion des secrets (Azure Key Vault, AWS Secrets Manager), vulnerability management.</p>
+                                    <p class="plan-action-desc">Azure and Kubernetes RBAC, image scanning (Trivy, Snyk), compliance policies (Azure Policy, OPA/Gatekeeper), secrets management (Azure Key Vault, AWS Secrets Manager), vulnerability management.</p>
                                     <div class="plan-action-meta">
                                         <span class="plan-tag">RBAC</span>
                                         <span class="plan-tag">Image scanning</span>
@@ -2007,7 +2436,7 @@
                 </div>
                 <div class="plan-phase-content">
                     <div class="plan-phase-header">
-                        <div class="plan-phase-period">Mois 13 – 20 &nbsp;·&nbsp; Spécialisation avancée</div>
+                        <div class="plan-phase-period">Months 13–20 &nbsp;·&nbsp; Advanced specialisation</div>
                         <h3 class="plan-phase-title">Kubernetes avancé, Golang & AWS Expert</h3>
                     </div>
 
@@ -2017,12 +2446,12 @@
                             <div class="plan-action-card plan-action-card--cert">
                                 <div class="plan-action-icon">📜</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Certification CNCF</div>
+                                    <div class="plan-action-label">CNCF Certification</div>
                                     <div class="plan-action-title">CKAD — Certified Kubernetes Application Developer</div>
-                                    <p class="plan-action-desc">Développement et déploiement d'applications cloud-native sur Kubernetes : ConfigMaps, Secrets, probes, networking, observabilité. Complément du CKA pour un profil orienté engineering.</p>
+                                    <p class="plan-action-desc">Development and deployment of cloud-native applications on Kubernetes: ConfigMaps, Secrets, probes, networking, observability. Complements the CKA for an engineering-oriented profile.</p>
                                     <div class="plan-action-meta">
-                                        <span class="plan-tag plan-tag--cert">Examen pratique</span>
-                                        <span class="plan-tag">Après CKA</span>
+                                        <span class="plan-tag plan-tag--cert">Hands-on exam</span>
+                                        <span class="plan-tag">After CKA</span>
                                     </div>
                                 </div>
                             </div>
@@ -2030,13 +2459,13 @@
                             <div class="plan-action-card plan-action-card--cert">
                                 <div class="plan-action-icon">📜</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Certification AWS</div>
+                                    <div class="plan-action-label">AWS Certification</div>
                                     <div class="plan-action-title">AWS DevOps Engineer — Professional (DOP-C02)</div>
-                                    <p class="plan-action-desc">Automatisation, CI/CD, monitoring et sécurité sur AWS à l'échelle enterprise. Complète le profil multi-cloud et renforce la légitimité pour les postes Senior exigeant AWS et Azure.</p>
+                                    <p class="plan-action-desc">Automation, CI/CD, monitoring, and security on AWS at enterprise scale. Fulles the multi-cloud profile and strengthens credibility for Senior roles requiring both AWS and Azure.</p>
                                     <div class="plan-action-meta">
-                                        <span class="plan-tag plan-tag--cert">Niveau Professional</span>
-                                        <span class="plan-tag">Prérequis : SAA-C03</span>
-                                        <span class="plan-tag">~10 semaines</span>
+                                        <span class="plan-tag plan-tag--cert">Professional level</span>
+                                        <span class="plan-tag">Prerequisite: SAA-C03</span>
+                                        <span class="plan-tag">~10 weeks</span>
                                     </div>
                                 </div>
                             </div>
@@ -2044,13 +2473,13 @@
                             <div class="plan-action-card">
                                 <div class="plan-action-icon">🦫</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Compétence technique</div>
-                                    <div class="plan-action-title">Golang pour le développement cloud-native</div>
-                                    <p class="plan-action-desc">Développement d'outils d'automatisation et d'opérateurs Kubernetes en Go — le langage natif de l'écosystème cloud (Docker, Kubernetes et Terraform sont écrits en Go). Atout différenciant pour les profils orientés R&D.</p>
+                                    <div class="plan-action-label">Technical skill</div>
+                                    <div class="plan-action-title">Golang for cloud-native development</div>
+                                    <p class="plan-action-desc">Development of automation tools and Kubernetes operators in Go — the native language of the cloud ecosystem (Docker, Kubernetes, and Terraform are written in Go). A differentiating asset for R&D-oriented profiles.</p>
                                     <div class="plan-action-meta">
                                         <span class="plan-tag">Kubernetes Operators</span>
                                         <span class="plan-tag">CLI tools</span>
-                                        <span class="plan-tag">Go Tour + projets</span>
+                                        <span class="plan-tag">Go Tour + projects</span>
                                     </div>
                                 </div>
                             </div>
@@ -2068,8 +2497,8 @@
                 </div>
                 <div class="plan-phase-content">
                     <div class="plan-phase-header">
-                        <div class="plan-phase-period">Mois 21 – 24 &nbsp;·&nbsp; Profil complet</div>
-                        <h3 class="plan-phase-title">Candidature Senior Cloud / DevOps Engineer</h3>
+                        <div class="plan-phase-period">Months 21–24 &nbsp;·&nbsp; Fulle profile</div>
+                        <h3 class="plan-phase-title">Senior Cloud / DevOps Engineer applications</h3>
                     </div>
 
                     <div class="plan-phase-body">
@@ -2078,9 +2507,9 @@
                             <div class="plan-action-card plan-action-card--target">
                                 <div class="plan-action-icon">🎯</div>
                                 <div class="plan-action-content">
-                                    <div class="plan-action-label">Objectif final</div>
-                                    <div class="plan-action-title">Profil Senior Cloud / DevOps Research Engineer</div>
-                                    <p class="plan-action-desc">À l'issue de cette feuille de route, le profil sera complet pour postuler à des postes Senior Cloud/DevOps Engineer en contexte international (Europe, Île Maurice, Afrique), avec une double maîtrise Azure et AWS, une expertise Kubernetes certifiée et une expérience solide en IaC, DevSecOps et automatisation cloud-native.</p>
+                                    <div class="plan-action-label">Final goal</div>
+                                    <div class="plan-action-title">Senior Cloud / DevOps Research Engineer Profile</div>
+                                    <p class="plan-action-desc">Upon completion of this roadmap, the profile will be complete to apply for Senior Cloud/DevOps Engineer positions in international contexts (Europe, Mauritius, Africa), with dual Azure and AWS mastery, certified Kubernetes expertise, and solid hands-on experience in IaC, DevSecOps, and cloud-native automation.</p>
                                     <div class="plan-action-meta">
                                         <span class="plan-tag plan-tag--target">AZ-900 ✓</span>
                                         <span class="plan-tag plan-tag--target">AZ-104 ✓</span>

@@ -529,6 +529,300 @@
             line-height: 1.6;
         }
 
+        /* ── PROJET ALTERNATIF ENSEIGNANT-CHERCHEUR ── */
+        .alt-project-intro {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: linear-gradient(145deg, rgba(79, 255, 176, 0.04), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(79, 255, 176, 0.12);
+            border-radius: 14px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .alt-project-icon {
+            font-size: 2.5rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .alt-project-text {
+            color: var(--gray-soft);
+            font-size: 0.97rem;
+            line-height: 1.8;
+        }
+
+        .alt-motiv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .alt-motiv-card {
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 1.8rem;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .alt-motiv-card:hover {
+            border-color: rgba(79, 255, 176, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+        }
+
+        .alt-motiv-icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .alt-motiv-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--mint-code);
+            margin-bottom: 0.7rem;
+        }
+
+        .alt-motiv-desc {
+            color: var(--gray-light);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .doctoral-formations-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .doctoral-formations-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--orange-vivid);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .doctoral-formations-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: 0.6rem;
+        }
+
+        .doctoral-formations-sub {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .doctoral-formations-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .doctoral-card {
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.35s var(--transition-smooth);
+        }
+
+        .doctoral-card:hover {
+            border-color: rgba(0, 212, 255, 0.25);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+
+        .doctoral-card-header {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            padding: 1.8rem 2rem 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .doctoral-card-date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(232, 93, 4, 0.12);
+            border: 1px solid rgba(232, 93, 4, 0.2);
+            border-radius: 8px;
+            padding: 0.6rem 0.9rem;
+            flex-shrink: 0;
+            min-width: 52px;
+        }
+
+        .doctoral-date-day {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--orange-warm);
+            line-height: 1;
+        }
+
+        .doctoral-date-month {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--orange-vivid);
+            margin-top: 0.2rem;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .doctoral-card-meta { flex: 1; }
+
+        .doctoral-card-category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--gray-medium);
+            letter-spacing: 0.08em;
+            margin-bottom: 0.4rem;
+        }
+
+        .doctoral-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            margin-bottom: 0.7rem;
+        }
+
+        .doctoral-card-format {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .doctoral-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--gray-light);
+        }
+
+        .doctoral-badge--present {
+            background: rgba(0, 212, 255, 0.08);
+            border-color: rgba(0, 212, 255, 0.25);
+            color: var(--cyan-electric);
+        }
+
+        .doctoral-badge--complet {
+            background: rgba(160, 160, 165, 0.08);
+            border-color: rgba(160, 160, 165, 0.2);
+            color: var(--gray-light);
+        }
+
+        .doctoral-badge--open {
+            background: rgba(79, 255, 176, 0.08);
+            border-color: rgba(79, 255, 176, 0.25);
+            color: var(--mint-code);
+        }
+
+        .doctoral-card-body {
+            padding: 1.4rem 2rem 1.8rem;
+        }
+
+        .doctoral-card-desc {
+            color: var(--gray-soft);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .doctoral-card-themes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .doctoral-theme {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 3px;
+            background: rgba(212, 160, 18, 0.07);
+            border: 1px solid rgba(212, 160, 18, 0.2);
+            color: var(--mustard);
+        }
+
+        .doctoral-card-team {
+            font-size: 0.82rem;
+            color: var(--gray-medium);
+            line-height: 1.5;
+        }
+
+        .doctoral-team-label {
+            font-weight: 600;
+            color: var(--gray-light);
+        }
+
+        .doctoral-card-location {
+            margin-top: 0.3rem;
+            font-size: 0.8rem;
+            color: var(--gray-medium);
+        }
+
+        .doctoral-credits-bar {
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 2rem 2.2rem;
+        }
+
+        .doctoral-credits-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--white-pure);
+            margin-bottom: 1rem;
+        }
+
+        .doctoral-credits-track {
+            width: 100%;
+            height: 10px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 0.8rem;
+        }
+
+        .doctoral-credits-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--mint-code), var(--cyan-electric));
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 0.5rem;
+            transition: width 1s ease;
+        }
+
+        .doctoral-credits-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--blue-deep);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .doctoral-credits-note {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--gray-medium);
+        }
+
         /* ── PROJET PROFESSIONNEL ── */
         .mv-grid {
             display: grid;
@@ -1175,22 +1469,6 @@
             .timeline-item { page-break-inside: avoid; }
         }
     </style>
-    
-    <!-- Vercel Web Analytics -->
-    <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-        
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXFPVSPT1S"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-NXFPVSPT1S');
-    </script>
 </head>
 <body>
 
@@ -1200,9 +1478,9 @@
         <nav class="header-nav">
             <a href="#experiences">Expériences</a>
             <a href="#competences">Compétences</a>
-            <!-- Sections à venir -->
             <a href="#formation">Formation</a>
-            <a href="#projet">Projet Professionnel</a>
+            <a href="#projet">Projet Pro.</a>
+            <a href="#projet-academique">Projet EC</a>
             <a href="#plan">Plan d'Action</a>
         </nav>
         <div class="header-tag">PORTFOLIO COMPLET</div>
@@ -1224,6 +1502,7 @@
             <span class="summary-pill active">02 · Compétences</span>
             <span class="summary-pill active">03 · Parcours Académique</span>
             <span class="summary-pill active">04 · Projet Professionnel</span>
+            <span class="summary-pill active">04b · Projet Enseignant-Chercheur</span>
             <span class="summary-pill active">05 · Plan d'Action</span>
         </div>
     </section>
@@ -1674,7 +1953,7 @@
                         <span class="academic-tag">Systèmes distribués</span>
                         <span class="academic-tag">Auto-adaptation</span>
                         <span class="academic-tag">Cloud computing</span>
-                        <span class="academic-tag">Calcul autonomique</span>
+                        <span class="academic-tag">Systèmes autonomes</span>
                     </div>
                 </div>
             </div>
@@ -1805,6 +2084,142 @@
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════════
+         SECTION 04b — PROJET ALTERNATIF
+         ═══════════════════════════════════════ -->
+    <section class="section" id="projet-academique">
+        <div class="section-header">
+            <span class="section-number">04b</span>
+            <h2 class="section-title">Projet Alternatif — Enseignant-Chercheur</h2>
+        </div>
+
+        <!-- Intro -->
+        <div class="alt-project-intro">
+            <div class="alt-project-icon">🎓</div>
+            <div>
+                <p class="alt-project-text">
+                    En parallèle de mon parcours vers l'industrie cloud, je nourris un projet académique de longue date : devenir enseignant-chercheur. Passionné par la transmission des savoirs depuis mes premières expériences de cours de répétition au secondaire et de travaux dirigés à l'université, je prépare activement ce projet dès ma première année de doctorat — avec un début d'activité d'enseignement prévu dès la deuxième année de thèse.
+                </p>
+            </div>
+        </div>
+
+        <!-- Motivations -->
+        <div class="alt-motiv-grid">
+            <div class="alt-motiv-card">
+                <div class="alt-motiv-icon">📚</div>
+                <div class="alt-motiv-title">Passion pour l'enseignement</div>
+                <p class="alt-motiv-desc">Cours de répétition au secondaire, TD et TP à l'université — une expérience pédagogique construite progressivement et une réelle aisance dans la transmission de concepts techniques complexes.</p>
+            </div>
+            <div class="alt-motiv-card">
+                <div class="alt-motiv-icon">🔬</div>
+                <div class="alt-motiv-title">Ancrage dans la recherche</div>
+                <p class="alt-motiv-desc">Le doctorat à l'Université de Lille constitue le socle indispensable. La recherche sur les systèmes auto-adaptatifs nourrit directement les enseignements que je souhaite porter dans les domaines du cloud, des architectures distribuées et du génie logiciel.</p>
+            </div>
+            <div class="alt-motiv-card">
+                <div class="alt-motiv-icon">🌍</div>
+                <div class="alt-motiv-title">Impact durable</div>
+                <p class="alt-motiv-desc">Former les ingénieurs de demain, contribuer à l'essor de l'informatique dans le monde — une vision qui donne du sens à l'ensemble du parcours académique et professionnel.</p>
+            </div>
+        </div>
+
+        <!-- Formations doctorales inscrites -->
+        <div class="doctoral-formations-header">
+            <div class="doctoral-formations-eyebrow">Préparation active</div>
+            <h3 class="doctoral-formations-title">Formations doctorales suivies — Collège doctoral, Université de Lille</h3>
+            <p class="doctoral-formations-sub">Ces formations, dispensées dans le cadre du collège doctoral, constituent les premières étapes concrètes vers le métier d'enseignant-chercheur.</p>
+        </div>
+
+        <div class="doctoral-formations-grid">
+
+            <!-- Formation 1 -->
+            <div class="doctoral-card">
+                <div class="doctoral-card-header">
+                    <div class="doctoral-card-date">
+                        <div class="doctoral-date-day">07</div>
+                        <div class="doctoral-date-month">Avr. 2026</div>
+                    </div>
+                    <div class="doctoral-card-meta">
+                        <div class="doctoral-card-category">Enseignement · Carrière académique</div>
+                        <h4 class="doctoral-card-title">Le métier d'enseignant-chercheur</h4>
+                    </div>
+                </div>
+                <div class="doctoral-card-body">
+                    <p class="doctoral-card-desc">Panorama du statut et des missions de l'enseignant-chercheur, fonctionnement et financement des universités, rôle du CNU, procédure de qualification et recommandations pour le recrutement.</p>
+                    <div class="doctoral-card-themes">
+                        <span class="doctoral-theme">Statut EC</span>
+                        <span class="doctoral-theme">CNU</span>
+                        <span class="doctoral-theme">Qualification</span>
+                        <span class="doctoral-theme">Financement universités</span>
+                        <span class="doctoral-theme">Recrutement</span>
+                    </div>
+                    <div class="doctoral-card-team">
+                        <span class="doctoral-team-label">Intervenants ·</span>
+                        Denis Petitprez, Laurent Sparrow, Mathilde Caron — Université de Lille
+                        <div class="doctoral-card-location">📍 Campus Flers-Château</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formation 2 -->
+            <div class="doctoral-card">
+                <div class="doctoral-card-header">
+                    <div class="doctoral-card-date">
+                        <div class="doctoral-date-day">30</div>
+                        <div class="doctoral-date-month">Avr. 2026</div>
+                    </div>
+                    <div class="doctoral-card-meta">
+                        <div class="doctoral-card-category">Enseignement · Déontologie</div>
+                        <h4 class="doctoral-card-title">Déontologie des enseignants du supérieur</h4>
+                    </div>
+                </div>
+                <div class="doctoral-card-body">
+                    <p class="doctoral-card-desc">Indépendance statutaire des universitaires, libertés d'expression et limites dans le service public. Obligations vis-à-vis des étudiants, droit des examens, gestion de la fraude et respect des libertés étudiantes.</p>
+                    <div class="doctoral-card-themes">
+                        <span class="doctoral-theme">Liberté académique</span>
+                        <span class="doctoral-theme">Laïcité</span>
+                        <span class="doctoral-theme">Droit des examens</span>
+                        <span class="doctoral-theme">Relations étudiants</span>
+                    </div>
+                    <div class="doctoral-card-team">
+                        <span class="doctoral-team-label">Intervenant ·</span>
+                        Jenifer Prades — Direction des Affaires Juridiques, Université de Lille
+                        <div class="doctoral-card-location">📍 Campus Flers-Château</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formation 3 -->
+            <div class="doctoral-card">
+                <div class="doctoral-card-header">
+                    <div class="doctoral-card-date">
+                        <div class="doctoral-date-day">05</div>
+                        <div class="doctoral-date-month">Juin 2026</div>
+                    </div>
+                    <div class="doctoral-card-meta">
+                        <div class="doctoral-card-category">Enseignement · Carrière académique</div>
+                        <h4 class="doctoral-card-title">Connaissance de l'université</h4>
+                    </div>
+                </div>
+                <div class="doctoral-card-body">
+                    <p class="doctoral-card-desc">Cadre juridique de l'université française, libertés universitaires, structuration et gouvernance de l'Université de Lille. Prépare la compréhension du fonctionnement institutionnel indispensable à toute carrière académique.</p>
+                    <div class="doctoral-card-themes">
+                        <span class="doctoral-theme">Gouvernance universitaire</span>
+                        <span class="doctoral-theme">Service public ESR</span>
+                        <span class="doctoral-theme">Libertés universitaires</span>
+                        <span class="doctoral-theme">Structuration U. Lille</span>
+                    </div>
+                    <div class="doctoral-card-team">
+                        <span class="doctoral-team-label">Intervenant ·</span>
+                        Margaux Mièze — Direction des Affaires Juridiques, Université de Lille
+                        <div class="doctoral-card-location">📍 Campus Flers-Château</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- ═══════════════════════════════
          SECTION 05 — PLAN D'ACTION
          ═══════════════════════════════ -->
@@ -1834,6 +2249,7 @@
 
                     <div class="plan-phase-body">
                         <div class="plan-actions-grid">
+
 
                             <div class="plan-action-card plan-action-card--cert">
                                 <div class="plan-action-icon">📜</div>
