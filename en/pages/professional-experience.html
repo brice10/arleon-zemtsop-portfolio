@@ -823,6 +823,218 @@
             color: var(--gray-medium);
         }
 
+
+        /* ── AUDIENCE & COMPETITORS ── */
+        .audience-competitors-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        @media (max-width: 1100px) {
+            .audience-competitors-grid { grid-template-columns: 1fr; }
+        }
+
+        .audience-block, .competitor-block {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .audience-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .audience-header-icon { font-size: 1.8rem; line-height: 1; }
+
+        .audience-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--orange-vivid);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+
+        .audience-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--white-pure);
+        }
+
+        .audience-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .audience-card {
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 1.3rem 1.5rem;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .audience-card:hover {
+            border-color: rgba(0, 212, 255, 0.2);
+            transform: translateX(4px);
+        }
+
+        .audience-card-icon { font-size: 1.2rem; margin-bottom: 0.4rem; }
+
+        .audience-card-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--cyan-electric);
+            margin-bottom: 0.4rem;
+        }
+
+        .audience-card-desc {
+            font-size: 0.84rem;
+            color: var(--gray-soft);
+            line-height: 1.6;
+            margin-bottom: 0.7rem;
+        }
+
+        .audience-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+        .atag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.67rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 3px;
+            background: rgba(0, 212, 255, 0.07);
+            border: 1px solid rgba(0, 212, 255, 0.18);
+            color: var(--cyan-electric);
+        }
+
+        .competitor-cards { display: flex; flex-direction: column; gap: 0.9rem; }
+
+        .competitor-card {
+            border-radius: 10px;
+            padding: 1.3rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .competitor-card:hover { transform: translateX(4px); }
+
+        .competitor-card--threat {
+            background: linear-gradient(145deg, rgba(232, 93, 4, 0.06), rgba(15, 40, 71, 0.5));
+            border-color: rgba(232, 93, 4, 0.15);
+        }
+
+        .competitor-card--moderate {
+            background: linear-gradient(145deg, rgba(212, 160, 18, 0.05), rgba(15, 40, 71, 0.5));
+            border-color: rgba(212, 160, 18, 0.12);
+        }
+
+        .competitor-card--low {
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border-color: rgba(255,255,255,0.06);
+        }
+
+        .competitor-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .competitor-level {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .competitor-level--high {
+            background: rgba(232, 93, 4, 0.15);
+            border: 1px solid rgba(232, 93, 4, 0.35);
+            color: var(--orange-warm);
+        }
+
+        .competitor-level--medium {
+            background: rgba(212, 160, 18, 0.12);
+            border: 1px solid rgba(212, 160, 18, 0.3);
+            color: var(--mustard);
+        }
+
+        .competitor-level--low {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--gray-light);
+        }
+
+        .competitor-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            line-height: 1.3;
+        }
+
+        .competitor-card-desc {
+            font-size: 0.83rem;
+            color: var(--gray-light);
+            line-height: 1.6;
+            margin-bottom: 0.7rem;
+        }
+
+        .competitor-differentiator {
+            font-size: 0.82rem;
+            color: var(--gray-soft);
+            line-height: 1.5;
+            padding: 0.6rem 0.8rem;
+            background: rgba(79, 255, 176, 0.05);
+            border-left: 2px solid var(--mint-code);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .diff-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--mint-code);
+            font-weight: 700;
+        }
+
+        .academic-competitors-block {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        /* ── NETWORKING ── */
+        .plan-phase-dot--network {
+            background: linear-gradient(135deg, var(--cyan-electric), var(--mint-code));
+            border-color: var(--cyan-electric);
+            box-shadow: 0 0 0 6px rgba(0, 212, 255, 0.15);
+        }
+
+        .plan-action-card--network {
+            border-color: rgba(0, 212, 255, 0.18);
+            background: linear-gradient(145deg, rgba(0, 212, 255, 0.04), rgba(15, 40, 71, 0.55));
+        }
+
+        .plan-action-label.network-label { color: var(--cyan-electric); }
+
+        .plan-tag--network {
+            background: rgba(0, 212, 255, 0.08);
+            border-color: rgba(0, 212, 255, 0.25);
+            color: var(--cyan-electric);
+        }
+
         /* ── PROJET PROFESSIONNEL ── */
         .mv-grid {
             display: grid;
@@ -1479,8 +1691,8 @@
             <a href="#experiences">Experience</a>
             <a href="#competences">Skills</a>
             <a href="#formation">Education</a>
-            <a href="#projet">Career Project</a>
-            <a href="#projet-academique">Academic Project</a>
+            <a href="#projet">Industry Path</a>
+            <a href="#projet-academique">Academic Path</a>
             <a href="#plan">Action Plan</a>
         </nav>
         <div class="header-tag">FULL PORTFOLIO</div>
@@ -1494,15 +1706,15 @@
             <span>Zemtsop Ndadji</span>
         </h1>
         <p class="hero-subtitle">
-            A comprehensive portfolio tracing my journey in software engineering: professional experience, academic background, acquired skills, and career project with its action plan.
+            A comprehensive portfolio tracing my journey in software engineering: professional experience, academic background, acquired skills, and two complementary career paths: an industry track in cloud &amp; DevOps, and an academic track towards a researcher-teacher position.
         </p>
 
         <div class="portfolio-summary">
             <span class="summary-pill active">01 · Professional Experience</span>
             <span class="summary-pill active">02 · Skills</span>
             <span class="summary-pill active">03 · Academic Background</span>
-            <span class="summary-pill active">04 · Career Project</span>
-            <span class="summary-pill active">04b · Researcher-Teacher Project</span>
+            <span class="summary-pill active">04 · Industry Path — Cloud &amp; DevOps</span>
+            <span class="summary-pill active">04b · Academic Path — Researcher-Teacher</span>
             <span class="summary-pill active">05 · Action Plan</span>
         </div>
     </section>
@@ -1517,6 +1729,94 @@
         </div>
 
         <div class="timeline">
+
+
+            <!-- ── PhD Student — Inria / Université de Lille ── -->
+            <article class="timeline-item">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-role">PhD Student in Computer Science</h3>
+                        <div class="experience-company">University of Lille · Inria</div>
+                        <div class="experience-location">📍 Lille, France</div>
+                    </div>
+                    <div class="experience-period">
+                        <span class="academic-dot academic-dot--active" style="display:inline-block;margin-right:0.5rem;"></span>
+                        Oct 2025 — Ongoing
+                    </div>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Context &amp; Mission</h4>
+                    <p class="experience-content">
+                        As part of my PhD at the Inria laboratories of the University of Lille, my research focuses on the <strong>dynamic, secure, and optimised reconfiguration of cloud computing systems</strong>. The goal is to design mechanisms enabling cloud infrastructures to reconfigure themselves autonomously in response to load changes, security threats, or optimisation objectives, while guaranteeing service continuity and compliance with defined security policies.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Research Areas</h4>
+                    <ul class="experience-list">
+                        <li><strong>Dynamic reconfiguration</strong>: Study and design of mechanisms enabling distributed cloud systems to modify their configuration at runtime (topology, resource allocation, request routing) without service interruption.</li>
+                        <li><strong>Security through reconfiguration</strong>: Integration of security constraints into autonomous decision loops — anomaly detection, isolation of compromised components, real-time update of access control policies.</li>
+                        <li><strong>Multi-objective optimisation</strong>: Development of reconfiguration strategies arbitrating between performance, cost, energy consumption, and resilience — relying on formal models and tailored heuristics.</li>
+                        <li><strong>Experimental validation</strong>: Implementation and evaluation of proposed approaches on cloud-native benchmarks (microservices, Kubernetes), building on work carried out during the Inria research engineering contract (AdaptiFlow, Adaptable TeaStore).</li>
+                    </ul>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Skills Developed</h4>
+                    <div class="skills-categories-grid">
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🔬</div>
+                                <div class="skill-category-name">Distributed systems research</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Formally model</strong> dynamic reconfiguration systems in the cloud</li>
+                                <li><strong>Design</strong> autonomous control loops integrating security constraints</li>
+                                <li><strong>Evaluate</strong> reconfiguration approaches on real cloud infrastructures</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🛡️</div>
+                                <div class="skill-category-name">Cloud systems security</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Integrate</strong> security policies into self-adaptation mechanisms</li>
+                                <li><strong>Detect</strong> and respond to security anomalies through autonomous reconfiguration</li>
+                                <li><strong>Design</strong> architectures resilient to attacks and failures</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">⚡</div>
+                                <div class="skill-category-name">Cloud optimisation</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Define</strong> multi-objective strategies (performance, cost, energy, resilience)</li>
+                                <li><strong>Apply</strong> formal and heuristic optimisation methods to distributed systems</li>
+                                <li><strong>Validate</strong> optimisation models on Kubernetes environments</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">📝</div>
+                                <div class="skill-category-name">Academic practices</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Write</strong> and submit scientific contributions (papers, research reports)</li>
+                                <li><strong>Present</strong> research work to peers at seminars and conferences</li>
+                                <li><strong>Collaborate</strong> within an international research team at Inria</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
 
             <!-- ── Inria / Université de Lille ── -->
             <article class="timeline-item">
@@ -2020,7 +2320,7 @@
     <section class="section" id="projet">
         <div class="section-header">
             <span class="section-number">04</span>
-            <h2 class="section-title">Career Project</h2>
+            <h2 class="section-title">Industry Path — Cloud &amp; DevOps Engineer</h2>
         </div>
 
         <!-- Mission & Vision -->
@@ -2042,7 +2342,7 @@
             <div class="target-role-header">
                 <div class="target-role-icon">☁️</div>
                 <div>
-                    <div class="target-role-eyebrow">Target Role</div>
+                    <div class="target-role-eyebrow">Target position</div>
                     <div class="target-role-title">Research / Senior Cloud & DevOps Engineer</div>
                 </div>
             </div>
@@ -2081,16 +2381,107 @@
                     </ul>
                 </div>
             </div>
+
+        <!-- Target audience & Competition -->
+        <div class="audience-competitors-grid">
+
+            <!-- Target audience -->
+            <div class="audience-block">
+                <div class="audience-header">
+                    <div class="audience-header-icon">🎯</div>
+                    <div class="audience-header-text">
+                        <div class="audience-eyebrow">Who needs me?</div>
+                        <div class="audience-title">Target audience</div>
+                    </div>
+                </div>
+                <div class="audience-cards">
+                    <div class="audience-card">
+                        <div class="audience-card-icon">🏢</div>
+                        <div class="audience-card-name">Large enterprises</div>
+                        <p class="audience-card-desc">IT departments seeking to modernise their architectures towards hybrid cloud, industrialise their DevOps pipelines, or converge R&D and production on resilient distributed systems.</p>
+                        <div class="audience-tags"><span class="atag">Airbus</span><span class="atag">Orange</span><span class="atag">Thales</span><span class="atag">Société Générale</span></div>
+                    </div>
+                    <div class="audience-card">
+                        <div class="audience-card-icon">🚀</div>
+                        <div class="audience-card-name">Startups &amp; tech scale-ups</div>
+                        <p class="audience-card-desc">Cloud-native companies needing a hybrid profile able to design architecture, write code, automate infrastructure, and upskill the team — all in one person.</p>
+                        <div class="audience-tags"><span class="atag">SaaS cloud</span><span class="atag">Fintech</span><span class="atag">HealthTech</span><span class="atag">AgriTech</span></div>
+                    </div>
+                    <div class="audience-card">
+                        <div class="audience-card-icon">💼</div>
+                        <div class="audience-card-name">Digital services firms (ESN) &amp; consultancies</div>
+                        <p class="audience-card-desc">Service companies and consultancies seeking Senior profiles able to intervene on client missions across cloud, DevOps, microservices architecture, or digital transformation topics.</p>
+                        <div class="audience-tags"><span class="atag">Capgemini</span><span class="atag">Sopra Steria</span><span class="atag">Accenture</span><span class="atag">Devoteam</span></div>
+                    </div>
+                    <div class="audience-card">
+                        <div class="audience-card-icon">🌍</div>
+                        <div class="audience-card-name">NGOs &amp; international organisations</div>
+                        <p class="audience-card-desc">Humanitarian or development organisations seeking technical expertise to deploy robust systems in constrained contexts (limited connectivity, reduced costs, high social impact).</p>
+                        <div class="audience-tags"><span class="atag">UN / UNDP</span><span class="atag">Red Cross IT</span><span class="atag">Open Food Facts</span></div>
+                    </div>
+                    <div class="audience-card">
+                        <div class="audience-card-icon">🔬</div>
+                        <div class="audience-card-name">Research labs &amp; institutes</div>
+                        <p class="audience-card-desc">Organisations like Inria, CNRS, or university teams needing profiles that can bridge academic research and operational implementation on cloud infrastructures.</p>
+                        <div class="audience-tags"><span class="atag">Inria</span><span class="atag">CNRS</span><span class="atag">Universities</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competition -->
+            <div class="competitor-block">
+                <div class="audience-header">
+                    <div class="audience-header-icon">🔭</div>
+                    <div class="audience-header-text">
+                        <div class="audience-eyebrow">Positioning myself</div>
+                        <div class="audience-title">Competing profiles</div>
+                    </div>
+                </div>
+                <div class="competitor-cards">
+                    <div class="competitor-card competitor-card--threat">
+                        <div class="competitor-card-header">
+                            <span class="competitor-level competitor-level--high">Direct competition</span>
+                            <div class="competitor-card-title">Certified DevOps / Cloud Engineers (Azure / AWS)</div>
+                        </div>
+                        <p class="competitor-card-desc">3–7 years of experience, multi-certified, often from digital services firms. Main advantage: longer field experience and already validated certifications.</p>
+                        <div class="competitor-differentiator">
+                            <span class="diff-label">My edge ·</span> Dual research + industry grounding, international experience (Cameroon, France), unique expertise in self-adaptive systems.
+                        </div>
+                    </div>
+                    <div class="competitor-card competitor-card--moderate">
+                        <div class="competitor-card-header">
+                            <span class="competitor-level competitor-level--medium">Indirect competition</span>
+                            <div class="competitor-card-title">Backend software engineers transitioning to cloud</div>
+                        </div>
+                        <p class="competitor-card-desc">Experienced Java/Python developers moving into DevOps. Numerous on the market but often lacking a distributed systems architecture vision.</p>
+                        <div class="competitor-differentiator">
+                            <span class="diff-label">My edge ·</span> Team leadership experience, research background, and systemic thinking already built over years.
+                        </div>
+                    </div>
+                    <div class="competitor-card competitor-card--low">
+                        <div class="competitor-card-header">
+                            <span class="competitor-level competitor-level--low">Emerging competition</span>
+                            <div class="competitor-card-title">Computer science PhDs without industrial experience</div>
+                        </div>
+                        <p class="competitor-card-desc">Pure academic profiles, strong in research but sometimes disconnected from operational realities and product-mode delivery.</p>
+                        <div class="competitor-differentiator">
+                            <span class="diff-label">My edge ·</span> 5+ years of real industrial experience on top of research — a rare profile that bridges both worlds.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         </div>
     </section>
 
     <!-- ═══════════════════════════════════════
-         SECTION 04b — ALTERNATIVE PROJECT
+         SECTION 04b — ACADEMIC PATH
          ═══════════════════════════════════════ -->
     <section class="section" id="projet-academique">
         <div class="section-header">
             <span class="section-number">04b</span>
-            <h2 class="section-title">Alternative Project — Researcher-Teacher</h2>
+            <h2 class="section-title">Academic Path — Researcher-Teacher</h2>
         </div>
 
         <!-- Intro -->
@@ -2098,7 +2489,7 @@
             <div class="alt-project-icon">🎓</div>
             <div>
                 <p class="alt-project-text">
-                    Alongside my path towards the cloud industry, I have long nurtured an academic ambition: to become a researcher-teacher. Passionate about knowledge transfer since my first experiences tutoring secondary school students and running tutorials at university, I have been actively preparing for this goal since my first doctoral year — with teaching duties planned from the second year of my PhD.
+                    These two paths are not in opposition — they reinforce each other. I am actively preparing an academic career as a researcher-teacher alongside my development towards the cloud industry. Passionate about knowledge transfer since my first experiences tutoring secondary school students and running tutorials at university, I have been actively preparing for this goal since my first doctoral year — with teaching duties planned from the second year of my PhD.
                 </p>
             </div>
         </div>
@@ -2231,6 +2622,61 @@
 
         </div>
 
+
+        <!-- Competition — academic path -->
+        <div class="academic-competitors-block">
+            <div class="audience-header" style="margin-bottom:1.8rem;">
+                <div class="audience-header-icon">🔭</div>
+                <div class="audience-header-text">
+                    <div class="audience-eyebrow">Positioning in academia</div>
+                    <div class="audience-title">Competing profiles — Academic Path</div>
+                </div>
+            </div>
+            <div class="competitor-cards">
+                <div class="competitor-card competitor-card--threat">
+                    <div class="competitor-card-header">
+                        <span class="competitor-level competitor-level--high">Direct competition</span>
+                        <div class="competitor-card-title">Computer science PhDs from leading French institutions</div>
+                    </div>
+                    <p class="competitor-card-desc">Graduates from ENS, Polytechnique, CentraleSupélec, or top Parisian universities, often with an established academic network and publications at A-ranked conferences.</p>
+                    <div class="competitor-differentiator">
+                        <span class="diff-label">My edge ·</span> Rare industrial experience for an academic profile, dual research/industry competence, international background, and PhD at Inria — a world-class research institute.
+                    </div>
+                </div>
+                <div class="competitor-card competitor-card--moderate">
+                    <div class="competitor-card-header">
+                        <span class="competitor-level competitor-level--medium">Indirect competition</span>
+                        <div class="competitor-card-title">International post-docs and visiting researchers</div>
+                    </div>
+                    <p class="competitor-card-desc">Foreign researchers doing post-docs in France, often well-published and accustomed to international research environments.</p>
+                    <div class="competitor-differentiator">
+                        <span class="diff-label">My edge ·</span> Mastery of both French and Cameroonian academic contexts, proven versatility in teaching (secondary through university), and a multicultural profile valued in current academic hiring.
+                    </div>
+                </div>
+                <div class="competitor-card competitor-card--low">
+                    <div class="competitor-card-header">
+                        <span class="competitor-level competitor-level--low">Emerging competition</span>
+                        <div class="competitor-card-title">Industry engineers transitioning into higher education</div>
+                    </div>
+                    <p class="competitor-card-desc">Practitioners attempting to enter academia through a late PhD or part-time teaching. Less structured in their research approach.</p>
+                    <div class="competitor-differentiator">
+                        <span class="diff-label">My edge ·</span> Active preparation from year 1 of the PhD, specific researcher-teacher training already underway, and a coherent trajectory linking applied research and teaching.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Synthèse crédits -->
+        <div class="doctoral-credits-bar">
+            <div class="doctoral-credits-label">Crédits doctoraux acquis en enseignement</div>
+            <div class="doctoral-credits-track">
+                <div class="doctoral-credits-fill" style="width: 60%;">
+                    <span class="doctoral-credits-value">6 crédits / 10</span>
+                </div>
+            </div>
+            <div class="doctoral-credits-note">3 training courses · 8h of training · Doctoral College, University of Lille</div>
+        </div>
+
     </section>
 
     <!-- ═══════════════════════════════
@@ -2247,6 +2693,68 @@
         </p>
 
         <div class="plan-timeline">
+
+
+            <!-- Networking phase -->
+            <div class="plan-phase">
+                <div class="plan-phase-marker">
+                    <div class="plan-phase-dot plan-phase-dot--network"></div>
+                    <div class="plan-phase-line"></div>
+                </div>
+                <div class="plan-phase-content">
+                    <div class="plan-phase-header">
+                        <div class="plan-phase-period">Ongoing &nbsp;·&nbsp; Starting now</div>
+                        <h3 class="plan-phase-title">Professional network development</h3>
+                    </div>
+                    <div class="plan-phase-body">
+                        <div class="plan-actions-grid">
+
+                            <div class="plan-action-card plan-action-card--network">
+                                <div class="plan-action-icon">💼</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label network-label">LinkedIn presence</div>
+                                    <div class="plan-action-title">Active and targeted presence</div>
+                                    <p class="plan-action-desc">Optimise the LinkedIn profile (title, summary, cloud/DevOps/research keywords), publish regular technical content (experience write-ups, short articles on adaptive systems, cloud), and engage with CNCF, Azure, AWS, and academic communities. Priority: in-person meetings after an initial online contact.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--network">Weekly</span>
+                                        <span class="plan-tag">Technical publications</span>
+                                        <span class="plan-tag">Cloud / DevOps / Research groups</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card plan-action-card--network">
+                                <div class="plan-action-icon">🎤</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label network-label">Conferences &amp; events</div>
+                                    <div class="plan-action-title">In-person attendance as a priority</div>
+                                    <p class="plan-action-desc">Actively attend cloud conferences (KubeCon, CloudNativeCon, Microsoft Build, AWS re:Invent), research seminars (ICSE, ICDCS, Middleware), and local meetups (Lille Tech, DevOps Lille). Prioritise in-person events for lasting connections. Aim for a short talk (lightning talk, poster) from the 2nd year of the PhD.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--network">In-person priority</span>
+                                        <span class="plan-tag">KubeCon · MS Build · AWS re:Invent</span>
+                                        <span class="plan-tag">Lille meetups</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card plan-action-card--network">
+                                <div class="plan-action-icon">🤝</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label network-label">Companies &amp; recruiters</div>
+                                    <div class="plan-action-title">Direct and targeted outreach</div>
+                                    <p class="plan-action-desc">Identify engineers and technical leads at target companies (ESN, cloud startups, R&D labs), request informal in-person meetings (coffee, office visit, sector events). Avoid cold applications: favour recommendation or prior meeting. Build visibility through Inria and university career fairs.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--network">In-person meetings</span>
+                                        <span class="plan-tag">Inria / university forums</span>
+                                        <span class="plan-tag">Progressive approach</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Phase 1 -->
             <div class="plan-phase">

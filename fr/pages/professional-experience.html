@@ -823,6 +823,218 @@
             color: var(--gray-medium);
         }
 
+
+        /* ── AUDIENCE & COMPETITORS ── */
+        .audience-competitors-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        @media (max-width: 1100px) {
+            .audience-competitors-grid { grid-template-columns: 1fr; }
+        }
+
+        .audience-block, .competitor-block {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .audience-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .audience-header-icon { font-size: 1.8rem; line-height: 1; }
+
+        .audience-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--orange-vivid);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+
+        .audience-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--white-pure);
+        }
+
+        .audience-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .audience-card {
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 1.3rem 1.5rem;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .audience-card:hover {
+            border-color: rgba(0, 212, 255, 0.2);
+            transform: translateX(4px);
+        }
+
+        .audience-card-icon { font-size: 1.2rem; margin-bottom: 0.4rem; }
+
+        .audience-card-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--cyan-electric);
+            margin-bottom: 0.4rem;
+        }
+
+        .audience-card-desc {
+            font-size: 0.84rem;
+            color: var(--gray-soft);
+            line-height: 1.6;
+            margin-bottom: 0.7rem;
+        }
+
+        .audience-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+        .atag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.67rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 3px;
+            background: rgba(0, 212, 255, 0.07);
+            border: 1px solid rgba(0, 212, 255, 0.18);
+            color: var(--cyan-electric);
+        }
+
+        .competitor-cards { display: flex; flex-direction: column; gap: 0.9rem; }
+
+        .competitor-card {
+            border-radius: 10px;
+            padding: 1.3rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .competitor-card:hover { transform: translateX(4px); }
+
+        .competitor-card--threat {
+            background: linear-gradient(145deg, rgba(232, 93, 4, 0.06), rgba(15, 40, 71, 0.5));
+            border-color: rgba(232, 93, 4, 0.15);
+        }
+
+        .competitor-card--moderate {
+            background: linear-gradient(145deg, rgba(212, 160, 18, 0.05), rgba(15, 40, 71, 0.5));
+            border-color: rgba(212, 160, 18, 0.12);
+        }
+
+        .competitor-card--low {
+            background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+            border-color: rgba(255,255,255,0.06);
+        }
+
+        .competitor-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .competitor-level {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .competitor-level--high {
+            background: rgba(232, 93, 4, 0.15);
+            border: 1px solid rgba(232, 93, 4, 0.35);
+            color: var(--orange-warm);
+        }
+
+        .competitor-level--medium {
+            background: rgba(212, 160, 18, 0.12);
+            border: 1px solid rgba(212, 160, 18, 0.3);
+            color: var(--mustard);
+        }
+
+        .competitor-level--low {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--gray-light);
+        }
+
+        .competitor-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--white-pure);
+            line-height: 1.3;
+        }
+
+        .competitor-card-desc {
+            font-size: 0.83rem;
+            color: var(--gray-light);
+            line-height: 1.6;
+            margin-bottom: 0.7rem;
+        }
+
+        .competitor-differentiator {
+            font-size: 0.82rem;
+            color: var(--gray-soft);
+            line-height: 1.5;
+            padding: 0.6rem 0.8rem;
+            background: rgba(79, 255, 176, 0.05);
+            border-left: 2px solid var(--mint-code);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .diff-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--mint-code);
+            font-weight: 700;
+        }
+
+        .academic-competitors-block {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        /* ── NETWORKING ── */
+        .plan-phase-dot--network {
+            background: linear-gradient(135deg, var(--cyan-electric), var(--mint-code));
+            border-color: var(--cyan-electric);
+            box-shadow: 0 0 0 6px rgba(0, 212, 255, 0.15);
+        }
+
+        .plan-action-card--network {
+            border-color: rgba(0, 212, 255, 0.18);
+            background: linear-gradient(145deg, rgba(0, 212, 255, 0.04), rgba(15, 40, 71, 0.55));
+        }
+
+        .plan-action-label.network-label { color: var(--cyan-electric); }
+
+        .plan-tag--network {
+            background: rgba(0, 212, 255, 0.08);
+            border-color: rgba(0, 212, 255, 0.25);
+            color: var(--cyan-electric);
+        }
+
         /* ── PROJET PROFESSIONNEL ── */
         .mv-grid {
             display: grid;
@@ -1479,8 +1691,8 @@
             <a href="#experiences">Expériences</a>
             <a href="#competences">Compétences</a>
             <a href="#formation">Formation</a>
-            <a href="#projet">Projet Pro.</a>
-            <a href="#projet-academique">Projet EC</a>
+            <a href="#projet">Voie Industrie</a>
+            <a href="#projet-academique">Voie Académique</a>
             <a href="#plan">Plan d'Action</a>
         </nav>
         <div class="header-tag">PORTFOLIO COMPLET</div>
@@ -1494,15 +1706,15 @@
             <span>Zemtsop Ndadji</span>
         </h1>
         <p class="hero-subtitle">
-            Un portfolio complet retraçant mon parcours en ingénierie logicielle : expériences professionnelles, formation académique, compétences acquises et projet professionnel avec son plan d'action.
+            Un portfolio complet retraçant mon parcours en ingénierie logicielle : expériences professionnelles, formation académique, compétences acquises et deux projets de carrière complémentaires : une voie industrielle cloud &amp; DevOps et une voie académique vers l'enseignant-chercheur.
         </p>
 
         <div class="portfolio-summary">
             <span class="summary-pill active">01 · Expériences Professionnelles</span>
             <span class="summary-pill active">02 · Compétences</span>
             <span class="summary-pill active">03 · Parcours Académique</span>
-            <span class="summary-pill active">04 · Projet Professionnel</span>
-            <span class="summary-pill active">04b · Projet Enseignant-Chercheur</span>
+            <span class="summary-pill active">04 · Voie Industrie — Cloud &amp; DevOps</span>
+            <span class="summary-pill active">04b · Voie Académique — Enseignant-Chercheur</span>
             <span class="summary-pill active">05 · Plan d'Action</span>
         </div>
     </section>
@@ -1517,6 +1729,94 @@
         </div>
 
         <div class="timeline">
+
+
+            <!-- ── Doctorant — Inria / Université de Lille ── -->
+            <article class="timeline-item">
+                <div class="experience-header">
+                    <div class="experience-title-group">
+                        <h3 class="experience-role">Doctorant en Informatique</h3>
+                        <div class="experience-company">Inria · Université de Lille</div>
+                        <div class="experience-location">📍 Lille, France</div>
+                    </div>
+                    <div class="experience-period">
+                        <span class="academic-dot academic-dot--active" style="display:inline-block;margin-right:0.5rem;"></span>
+                        Oct 2025 — En cours
+                    </div>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Contexte et Mission</h4>
+                    <p class="experience-content">
+                        Dans le cadre de mon doctorat au sein des laboratoires Inria de l'Université de Lille, mes travaux portent sur la <strong>reconfiguration dynamique, sécurisée et optimisée des systèmes cloud</strong>. L'objectif est de concevoir des mécanismes permettant aux infrastructures cloud de se reconfigurer de façon autonome en réponse à des changements de charge, des menaces de sécurité ou des objectifs d'optimisation, tout en garantissant la continuité de service et la conformité aux politiques de sécurité définies.
+                    </p>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Axes de Recherche</h4>
+                    <ul class="experience-list">
+                        <li><strong>Reconfiguration dynamique</strong> : Étude et conception de mécanismes permettant à des systèmes cloud distribués de modifier leur configuration à l'exécution (topologie, allocation de ressources, routage des requêtes) sans interruption de service.</li>
+                        <li><strong>Sécurité par la reconfiguration</strong> : Intégration de contraintes de sécurité dans les boucles de décision autonomes — détection d'anomalies, isolation de composants compromis, mise à jour de politiques de contrôle d'accès en temps réel.</li>
+                        <li><strong>Optimisation multi-objectifs</strong> : Développement de stratégies de reconfiguration arbitrant entre performance, coût, consommation énergétique et résilience — en s'appuyant sur des modèles formels et des heuristiques adaptées.</li>
+                        <li><strong>Validation expérimentale</strong> : Mise en œuvre et évaluation des approches proposées sur des benchmarks cloud-native (microservices, Kubernetes), en continuité avec les travaux réalisés lors du contrat d'ingénieur à Inria (AdaptiFlow, Adaptable TeaStore).</li>
+                    </ul>
+                </div>
+
+                <div class="experience-section">
+                    <h4 class="experience-section-title">Compétences Développées</h4>
+                    <div class="skills-categories-grid">
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🔬</div>
+                                <div class="skill-category-name">Recherche en systèmes distribués</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Modéliser</strong> formellement des systèmes de reconfiguration dynamique dans le cloud</li>
+                                <li><strong>Concevoir</strong> des boucles de contrôle autonomes intégrant des contraintes de sécurité</li>
+                                <li><strong>Évaluer</strong> des approches de reconfiguration sur des infrastructures cloud réelles</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">🛡️</div>
+                                <div class="skill-category-name">Sécurité des systèmes cloud</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Intégrer</strong> des politiques de sécurité dans des mécanismes d'auto-adaptation</li>
+                                <li><strong>Détecter</strong> et répondre à des anomalies de sécurité par reconfiguration autonome</li>
+                                <li><strong>Concevoir</strong> des architectures résilientes aux attaques et aux défaillances</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">⚡</div>
+                                <div class="skill-category-name">Optimisation cloud</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Définir</strong> des stratégies multi-objectifs (performance, coût, énergie, résilience)</li>
+                                <li><strong>Appliquer</strong> des méthodes d'optimisation formelle et heuristique à des systèmes distribués</li>
+                                <li><strong>Valider</strong> des modèles d'optimisation sur des environnements Kubernetes</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category-card">
+                            <div class="skill-category-header">
+                                <div class="skill-category-icon">📝</div>
+                                <div class="skill-category-name">Pratiques académiques</div>
+                            </div>
+                            <ul class="skill-list-phrases">
+                                <li><strong>Rédiger</strong> et soumettre des contributions scientifiques (articles, rapports de recherche)</li>
+                                <li><strong>Présenter</strong> des travaux de recherche devant des pairs dans des séminaires et conférences</li>
+                                <li><strong>Collaborer</strong> au sein d'une équipe de recherche internationale à Inria</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
 
             <!-- ── Inria / Université de Lille ── -->
             <article class="timeline-item">
@@ -2020,7 +2320,7 @@
     <section class="section" id="projet">
         <div class="section-header">
             <span class="section-number">04</span>
-            <h2 class="section-title">Projet Professionnel</h2>
+            <h2 class="section-title">Voie Industrie — Cloud &amp; DevOps Engineer</h2>
         </div>
 
         <!-- Mission & Vision -->
@@ -2042,7 +2342,7 @@
             <div class="target-role-header">
                 <div class="target-role-icon">☁️</div>
                 <div>
-                    <div class="target-role-eyebrow">Poste visé</div>
+                    <div class="target-role-eyebrow">Cible professionnelle</div>
                     <div class="target-role-title">Research / Senior Cloud & DevOps Engineer</div>
                 </div>
             </div>
@@ -2081,16 +2381,107 @@
                     </ul>
                 </div>
             </div>
+
+        <!-- Audience cible & Concurrence -->
+        <div class="audience-competitors-grid">
+
+            <!-- Audience cible -->
+            <div class="audience-block">
+                <div class="audience-header">
+                    <div class="audience-header-icon">🎯</div>
+                    <div class="audience-header-text">
+                        <div class="audience-eyebrow">Qui a besoin de moi ?</div>
+                        <div class="audience-title">Cibles professionnelles</div>
+                    </div>
+                </div>
+                <div class="audience-cards">
+                    <div class="audience-card">
+                        <div class="audience-card-icon">🏢</div>
+                        <div class="audience-card-name">Grandes entreprises</div>
+                        <p class="audience-card-desc">DSI cherchant à moderniser leurs architectures vers le cloud hybride, à industrialiser leurs pipelines DevOps ou à faire converger R&D et production sur des systèmes distribués résilients.</p>
+                        <div class="audience-tags"><span class="atag">Airbus</span><span class="atag">Orange</span><span class="atag">Thales</span><span class="atag">Société Générale</span></div>
+                    </div>
+                    <div class="audience-card">
+                        <div class="audience-card-icon">🚀</div>
+                        <div class="audience-card-name">Startups &amp; scale-ups tech</div>
+                        <p class="audience-card-desc">Jeunes structures cloud-native nécessitant un profil hybride capable de concevoir l'architecture, écrire le code, automatiser l'infrastructure et faire monter l'équipe en compétences.</p>
+                        <div class="audience-tags"><span class="atag">SaaS cloud</span><span class="atag">Fintech</span><span class="atag">HealthTech</span><span class="atag">AgriTech</span></div>
+                    </div>
+                    <div class="audience-card">
+                        <div class="audience-card-icon">💼</div>
+                        <div class="audience-card-name">ESN / Cabinets de conseil</div>
+                        <p class="audience-card-desc">Sociétés de services et consultants cherchant des profils Senior capables d'intervenir en mission chez des clients variés sur des sujets cloud, DevOps, architecture microservices ou transformation digitale.</p>
+                        <div class="audience-tags"><span class="atag">Capgemini</span><span class="atag">Sopra Steria</span><span class="atag">Accenture</span><span class="atag">Devoteam</span></div>
+                    </div>
+                    <div class="audience-card">
+                        <div class="audience-card-icon">🌍</div>
+                        <div class="audience-card-name">ONG &amp; organismes internationaux</div>
+                        <p class="audience-card-desc">Organisations humanitaires ou de développement recherchant une expertise technique pour déployer des systèmes robustes dans des contextes contraints (connectivité limitée, coûts réduits, impact social fort).</p>
+                        <div class="audience-tags"><span class="atag">ONU / PNUD</span><span class="atag">Croix-Rouge IT</span><span class="atag">Open Food Facts</span></div>
+                    </div>
+                    <div class="audience-card">
+                        <div class="audience-card-icon">🔬</div>
+                        <div class="audience-card-name">Laboratoires &amp; instituts de recherche</div>
+                        <p class="audience-card-desc">Structures comme Inria, CNRS ou équipes universitaires ayant besoin de profils capables de faire le pont entre recherche académique et mise en œuvre opérationnelle sur des infrastructures cloud.</p>
+                        <div class="audience-tags"><span class="atag">Inria</span><span class="atag">CNRS</span><span class="atag">Universités</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Concurrence -->
+            <div class="competitor-block">
+                <div class="audience-header">
+                    <div class="audience-header-icon">🔭</div>
+                    <div class="audience-header-text">
+                        <div class="audience-eyebrow">Se positionner</div>
+                        <div class="audience-title">Profils concurrents</div>
+                    </div>
+                </div>
+                <div class="competitor-cards">
+                    <div class="competitor-card competitor-card--threat">
+                        <div class="competitor-card-header">
+                            <span class="competitor-level competitor-level--high">Concurrence directe</span>
+                            <div class="competitor-card-title">DevOps / Cloud Engineers certifiés (Azure / AWS)</div>
+                        </div>
+                        <p class="competitor-card-desc">Profils 3–7 ans d'expérience, multi-certifiés, souvent issus d'ESN. Avantage principal : expérience terrain plus longue et certifications déjà validées.</p>
+                        <div class="competitor-differentiator">
+                            <span class="diff-label">Mon avantage ·</span> Double ancrage recherche + industrie, expérience internationale (Cameroun, France), expertise unique en systèmes auto-adaptatifs.
+                        </div>
+                    </div>
+                    <div class="competitor-card competitor-card--moderate">
+                        <div class="competitor-card-header">
+                            <span class="competitor-level competitor-level--medium">Concurrence indirecte</span>
+                            <div class="competitor-card-title">Software Engineers backend souhaitant évoluer vers le cloud</div>
+                        </div>
+                        <p class="competitor-card-desc">Développeurs Java/Python expérimentés en transition DevOps. Nombreux sur le marché mais manquant souvent d'une vision architecture systèmes distribuée.</p>
+                        <div class="competitor-differentiator">
+                            <span class="diff-label">Mon avantage ·</span> Expérience de leadership d'équipe, parcours de recherche et approche systémique déjà construits.
+                        </div>
+                    </div>
+                    <div class="competitor-card competitor-card--low">
+                        <div class="competitor-card-header">
+                            <span class="competitor-level competitor-level--low">Concurrence émergente</span>
+                            <div class="competitor-card-title">Docteurs en informatique sans expérience industrielle</div>
+                        </div>
+                        <p class="competitor-card-desc">Profils académiques purs, forts en recherche mais parfois déconnectés des réalités opérationnelles et du travail en mode produit.</p>
+                        <div class="competitor-differentiator">
+                            <span class="diff-label">Mon avantage ·</span> 5+ ans d'expérience industrielle réelle en plus de la recherche — profil rare combinant les deux mondes.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         </div>
     </section>
 
     <!-- ═══════════════════════════════════════
-         SECTION 04b — PROJET ALTERNATIF
+         SECTION 04b — VOIE ACADÉMIQUE
          ═══════════════════════════════════════ -->
     <section class="section" id="projet-academique">
         <div class="section-header">
             <span class="section-number">04b</span>
-            <h2 class="section-title">Projet Alternatif — Enseignant-Chercheur</h2>
+            <h2 class="section-title">Voie Académique — Enseignant-Chercheur</h2>
         </div>
 
         <!-- Intro -->
@@ -2098,7 +2489,7 @@
             <div class="alt-project-icon">🎓</div>
             <div>
                 <p class="alt-project-text">
-                    En parallèle de mon parcours vers l'industrie cloud, je nourris un projet académique de longue date : devenir enseignant-chercheur. Passionné par la transmission des savoirs depuis mes premières expériences de cours de répétition au secondaire et de travaux dirigés à l'université, je prépare activement ce projet dès ma première année de doctorat — avec un début d'activité d'enseignement prévu dès la deuxième année de thèse.
+                    Ces deux voies ne s'opposent pas : elles se nourrissent mutuellement. Je prépare activement une carrière d'enseignant-chercheur en parallèle de mon développement vers l'industrie cloud. Passionné par la transmission des savoirs depuis mes premières expériences de cours de répétition au secondaire et de travaux dirigés à l'université, je prépare activement ce projet dès ma première année de doctorat — avec un début d'activité d'enseignement prévu dès la deuxième année de thèse.
                 </p>
             </div>
         </div>
@@ -2118,7 +2509,7 @@
             <div class="alt-motiv-card">
                 <div class="alt-motiv-icon">🌍</div>
                 <div class="alt-motiv-title">Impact durable</div>
-                <p class="alt-motiv-desc">Former les ingénieurs de demain, contribuer à l'essor de l'informatique dans le monde — une vision qui donne du sens à l'ensemble du parcours académique et professionnel.</p>
+                <p class="alt-motiv-desc">Former les ingénieurs de demain, contribuer à l'essor de l'informatique en Afrique francophone et en Europe — une vision qui donne du sens à l'ensemble du parcours académique et professionnel.</p>
             </div>
         </div>
 
@@ -2141,6 +2532,11 @@
                     <div class="doctoral-card-meta">
                         <div class="doctoral-card-category">Enseignement · Carrière académique</div>
                         <h4 class="doctoral-card-title">Le métier d'enseignant-chercheur</h4>
+                        <div class="doctoral-card-format">
+                            <span class="doctoral-badge doctoral-badge--present">Présentiel</span>
+                            <span class="doctoral-badge">2h · 2 crédits</span>
+                            <span class="doctoral-badge doctoral-badge--complet">Complet</span>
+                        </div>
                     </div>
                 </div>
                 <div class="doctoral-card-body">
@@ -2155,7 +2551,6 @@
                     <div class="doctoral-card-team">
                         <span class="doctoral-team-label">Intervenants ·</span>
                         Denis Petitprez, Laurent Sparrow, Mathilde Caron — Université de Lille
-                        <div class="doctoral-card-location">📍 Campus Flers-Château</div>
                     </div>
                 </div>
             </div>
@@ -2170,6 +2565,11 @@
                     <div class="doctoral-card-meta">
                         <div class="doctoral-card-category">Enseignement · Déontologie</div>
                         <h4 class="doctoral-card-title">Déontologie des enseignants du supérieur</h4>
+                        <div class="doctoral-card-format">
+                            <span class="doctoral-badge doctoral-badge--present">Présentiel</span>
+                            <span class="doctoral-badge">3h · 2 crédits</span>
+                            <span class="doctoral-badge doctoral-badge--open">Places disponibles</span>
+                        </div>
                     </div>
                 </div>
                 <div class="doctoral-card-body">
@@ -2183,7 +2583,6 @@
                     <div class="doctoral-card-team">
                         <span class="doctoral-team-label">Intervenant ·</span>
                         Jenifer Prades — Direction des Affaires Juridiques, Université de Lille
-                        <div class="doctoral-card-location">📍 Campus Flers-Château</div>
                     </div>
                 </div>
             </div>
@@ -2198,6 +2597,11 @@
                     <div class="doctoral-card-meta">
                         <div class="doctoral-card-category">Enseignement · Carrière académique</div>
                         <h4 class="doctoral-card-title">Connaissance de l'université</h4>
+                        <div class="doctoral-card-format">
+                            <span class="doctoral-badge doctoral-badge--present">Présentiel</span>
+                            <span class="doctoral-badge">3h · 2 crédits</span>
+                            <span class="doctoral-badge doctoral-badge--complet">Complet</span>
+                        </div>
                     </div>
                 </div>
                 <div class="doctoral-card-body">
@@ -2211,11 +2615,66 @@
                     <div class="doctoral-card-team">
                         <span class="doctoral-team-label">Intervenant ·</span>
                         Margaux Mièze — Direction des Affaires Juridiques, Université de Lille
-                        <div class="doctoral-card-location">📍 Campus Flers-Château</div>
+                        <div class="doctoral-card-location">📍 Campus Flers-Château, 9h–12h</div>
                     </div>
                 </div>
             </div>
 
+        </div>
+
+
+        <!-- Concurrence voie académique -->
+        <div class="academic-competitors-block">
+            <div class="audience-header" style="margin-bottom:1.8rem;">
+                <div class="audience-header-icon">🔭</div>
+                <div class="audience-header-text">
+                    <div class="audience-eyebrow">Se positionner dans le milieu académique</div>
+                    <div class="audience-title">Profils concurrents — Voie Académique</div>
+                </div>
+            </div>
+            <div class="competitor-cards">
+                <div class="competitor-card competitor-card--threat">
+                    <div class="competitor-card-header">
+                        <span class="competitor-level competitor-level--high">Concurrence directe</span>
+                        <div class="competitor-card-title">Docteurs en informatique issus de grandes écoles françaises</div>
+                    </div>
+                    <p class="competitor-card-desc">Docteurs de l'ENS, Polytechnique, CentraleSupélec ou grandes universités parisiennes, souvent avec un réseau académique déjà établi et des publications dans des conférences de rang A.</p>
+                    <div class="competitor-differentiator">
+                        <span class="diff-label">Mon avantage ·</span> Expérience industrielle rare pour un profil académique, double compétence recherche/industrie, ancrage international et thèse en cours à Inria — laboratoire de référence mondial.
+                    </div>
+                </div>
+                <div class="competitor-card competitor-card--moderate">
+                    <div class="competitor-card-header">
+                        <span class="competitor-level competitor-level--medium">Concurrence indirecte</span>
+                        <div class="competitor-card-title">Post-docs et chercheurs internationaux en mobilité</div>
+                    </div>
+                    <p class="competitor-card-desc">Chercheurs étrangers effectuant leur post-doc en France, souvent bien publiés et habitués aux environnements de recherche internationaux.</p>
+                    <div class="competitor-differentiator">
+                        <span class="diff-label">Mon avantage ·</span> Maîtrise des contextes académiques français et camerounais, polyvalence pédagogique prouvée (secondaire → université), et profil multi-culturel valorisé dans les recrutements actuels.
+                    </div>
+                </div>
+                <div class="competitor-card competitor-card--low">
+                    <div class="competitor-card-header">
+                        <span class="competitor-level competitor-level--low">Concurrence émergente</span>
+                        <div class="competitor-card-title">Ingénieurs en reconversion vers l'enseignement supérieur</div>
+                    </div>
+                    <p class="competitor-card-desc">Praticiens de l'industrie tentant d'intégrer le milieu académique par la voie du doctorat tardif ou de vacations d'enseignement. Moins structurés dans leur approche recherche.</p>
+                    <div class="competitor-differentiator">
+                        <span class="diff-label">Mon avantage ·</span> Préparation dès la 1ère année de thèse, formations spécifiques au métier d'EC suivies, et trajectoire cohérente entre recherche appliquée et enseignement.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Synthèse crédits -->
+        <div class="doctoral-credits-bar">
+            <div class="doctoral-credits-label">Crédits doctoraux acquis en enseignement</div>
+            <div class="doctoral-credits-track">
+                <div class="doctoral-credits-fill" style="width: 60%;">
+                    <span class="doctoral-credits-value">6 crédits / 10</span>
+                </div>
+            </div>
+            <div class="doctoral-credits-note">3 formations · 8h de formation · Collège doctoral, Université de Lille</div>
         </div>
 
     </section>
@@ -2234,6 +2693,68 @@
         </p>
 
         <div class="plan-timeline">
+
+
+            <!-- Phase réseau -->
+            <div class="plan-phase">
+                <div class="plan-phase-marker">
+                    <div class="plan-phase-dot plan-phase-dot--network"></div>
+                    <div class="plan-phase-line"></div>
+                </div>
+                <div class="plan-phase-content">
+                    <div class="plan-phase-header">
+                        <div class="plan-phase-period">En continu &nbsp;·&nbsp; Dès maintenant</div>
+                        <h3 class="plan-phase-title">Développement du réseau professionnel</h3>
+                    </div>
+                    <div class="plan-phase-body">
+                        <div class="plan-actions-grid">
+
+                            <div class="plan-action-card plan-action-card--network">
+                                <div class="plan-action-icon">💼</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label network-label">Réseau LinkedIn</div>
+                                    <div class="plan-action-title">Présence active et ciblée</div>
+                                    <p class="plan-action-desc">Optimiser le profil LinkedIn (titre, résumé, mots-clés cloud/DevOps/recherche), publier régulièrement du contenu technique (retours d'expérience, articles courts sur les systèmes adaptatifs, cloud), interagir avec les communautés CNCF, Azure, AWS et académiques. Priorité : rencontres en personne après un premier contact en ligne.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--network">Hebdomadaire</span>
+                                        <span class="plan-tag">Publications techniques</span>
+                                        <span class="plan-tag">Groupes Cloud / DevOps / Recherche</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card plan-action-card--network">
+                                <div class="plan-action-icon">🎤</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label network-label">Conférences &amp; événements</div>
+                                    <div class="plan-action-title">Présence physique prioritaire</div>
+                                    <p class="plan-action-desc">Participer activement aux conférences Cloud (KubeCon, CloudNativeCon, Microsoft Build, AWS re:Invent), aux séminaires de recherche (ICSE, ICDCS, Middleware) et aux meetups locaux (Lille Tech, DevOps Lille). Préférer le présentiel pour créer des liens durables. Viser une prise de parole courte (lightning talk, poster) dès la 2e année de thèse.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--network">Présentiel prioritaire</span>
+                                        <span class="plan-tag">KubeCon · MS Build · AWS re:Invent</span>
+                                        <span class="plan-tag">Meetups Lille</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="plan-action-card plan-action-card--network">
+                                <div class="plan-action-icon">🤝</div>
+                                <div class="plan-action-content">
+                                    <div class="plan-action-label network-label">Entreprises &amp; recruteurs</div>
+                                    <div class="plan-action-title">Approche directe et ciblée</div>
+                                    <p class="plan-action-desc">Identifier les ingénieurs et responsables techniques dans les entreprises cibles (ESN, startups cloud, labs R&D), solliciter des échanges informels en présentiel (café, visite de bureau, événements sectoriels). Éviter les candidatures à froid : privilégier la recommandation ou la rencontre préalable. Se faire connaître via les forums étudiants d'Inria et des universités.</p>
+                                    <div class="plan-action-meta">
+                                        <span class="plan-tag plan-tag--network">Rencontres physiques</span>
+                                        <span class="plan-tag">Forums Inria / universités</span>
+                                        <span class="plan-tag">Approche progressive</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Phase 1 -->
             <div class="plan-phase">
