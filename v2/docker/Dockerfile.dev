@@ -11,8 +11,9 @@ ENV NG_CLI_ANALYTICS=false \
 
 WORKDIR /app
 
-COPY docker/dev-entrypoint.sh /usr/local/bin/dev-entrypoint
-RUN chmod +x /usr/local/bin/dev-entrypoint
+# --chmod : lisible et exécutable par l'utilisateur non-root du conteneur,
+# quels que soient les droits du fichier sur l'hôte.
+COPY --chmod=755 docker/dev-entrypoint.sh /usr/local/bin/dev-entrypoint
 
 EXPOSE 4200
 ENTRYPOINT ["dev-entrypoint"]
