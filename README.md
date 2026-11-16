@@ -1,156 +1,175 @@
-# Brice Arléon ZEMTSOP NDADJI — Personal Portfolio
+# Portfolio v2 — Brice Arléon ZEMTSOP NDADJI
 
-> Personal portfolio of a **PhD Student at Inria & Université de Lille** and **Senior Software Engineer**, published online in **2025**.
+Version 2 du portfolio [arleonzemtsop.fr](https://arleonzemtsop.fr) : application **Angular 22** modulaire,
+bilingue (FR/EN), **prérendue en HTML statique** (SSG) pour le SEO, développée dans **Docker** et déployée sur **Vercel**.
 
-Live at → **[arleonzemtsop.fr](https://arleonzemtsop.fr)**
+## Démarrage rapide
 
----
+Seul Docker est nécessaire — ni Node ni Angular CLI à installer.
 
-## 👤 About
-
-This portfolio showcases my dual profile as a researcher and engineer. I am currently pursuing a doctorate on **self-adaptive distributed systems** within the SPIRALS team at Inria Lille, while maintaining an active background in full-stack engineering and software architecture consulting.
-
----
-
-## 🌐 Languages
-
-The site is fully bilingual — every page is available in both **French** and **English**, routed under dedicated prefixes:
-
-| Language | Root path |
-|----------|-----------|
-| 🇫🇷 Français | `/fr/` |
-| 🇬🇧 English | `/en/` |
-
-Language switching is handled by two custom components: a dropdown in the desktop navbar and a bottom sheet on mobile, both built with vanilla CSS and JavaScript — no framework dependency.
-
----
-
-## 📁 Project Structure
-
-```
-portfolio/
-├── fr/                         # French version
-│   ├── index.html              # Homepage
-│   ├── pages/
-│   │   ├── about.html          # About me
-│   │   ├── research.html       # Research & publications
-│   │   ├── projects.html       # Engineering projects
-│   │   └── contact.html        # Contact
-│   └── blog/
-│       ├── index.html          # Blog index
-│       └── articles/           # Individual blog posts
-│           └── _template.html
-│
-├── en/                         # English version (mirrors fr/)
-│   ├── index.html
-│   ├── pages/
-│   │   ├── about.html
-│   │   ├── research.html
-│   │   ├── projects.html
-│   │   └── contact.html
-│   └── blog/
-│       ├── index.html
-│       └── articles/
-│
-├── robots.txt
-├── sitemap.xml
-└── vercel.json
+```bash
+bash run.sh dev        # http://localhost:4200  (premier lancement : installation des dépendances)
 ```
 
----
+| Commande | Effet |
+| --- | --- |
+| `bash run.sh dev` | **Profil dev** : serveur Angular avec rechargement à chaud |
+| `bash run.sh preview` | **Profil prod** : build de production servi par nginx sur http://localhost:8080 |
+| `bash run.sh build` | Build de production dans `dist/` (le même que sur Vercel) |
+| `bash run.sh test` | Tests unitaires (Vitest) |
+| `bash run.sh ng generate component features/about/components/timeline` | Angular CLI |
+| `bash run.sh npm install <paquet>` | npm |
+| `bash run.sh shell` / `down` / `clean` | Shell dans le conteneur / arrêt / nettoyage complet |
 
-## 📄 Pages
+`run.sh` n'est qu'un raccourci vers Docker Compose : `docker compose --profile dev up --build`,
+`docker compose --profile prod up --build`, `docker compose run --rm cli npx ng <commande>`.
 
-| Page | Description |
-|------|-------------|
-| **Home** | Hero section, skills overview, featured projects, quick contact |
-| **About** | Background, timeline, values, certifications, personality |
-| **Research** | PhD focus on self-adaptive systems, AdaptiFlow framework, publications, affiliations (Inria / Université de Lille) |
-| **Projects** | 20+ delivered projects — enterprise apps, research tools, open source contributions |
-| **Blog** | Articles on research, the PhD journey, software engineering and personal life |
-| **Contact** | Message form (Formspree), Calendly booking, FAQ |
+> Les conteneurs tournent avec l'utilisateur `1000:1000`. Si `id -u` renvoie autre chose, copier
+> `.env.example` en `.env` et ajuster `UID`/`GID` (les ports se changent au même endroit).
 
----
+## Les deux profils
 
-## 🎨 Design System
+| | Développement (local, Docker) | Production (Vercel) |
+| --- | --- | --- |
+| Lancement | `bash run.sh dev` | `git push` (ou `bash run.sh preview` pour vérifier en local) |
+| Configuration Angular | `development` | `production` |
+| Environnement | `src/environments/environment.development.ts` | `src/environments/environment.ts` |
+| URL du site (canonical, hreflang, Open Graph) | `http://localhost:4200` | `https://arleonzemtsop.fr` |
+| Indexation | `noindex, nofollow` | `index, follow` |
+| Mesure d'audience (Vercel Analytics) | désactivée | activée |
+| Build | non optimisé, source maps | optimisé, fichiers hachés, CSS critique en ligne |
+| Fichiers concernés | `compose.yaml`, `docker/Dockerfile.dev` | `vercel.json`, `tools/generate-seo-files.mjs` |
 
-The visual identity follows a custom design language built around a dark, technical aesthetic.
+Le remplacement du fichier d'environnement est déclaré dans `angular.json` (`fileReplacements`).
+Tout paramètre qui diffère entre les deux profils se déclare dans `environment.model.ts`.
 
-**Color palette**
+## Architecture
 
-| Token | Hex | Role |
-|-------|-----|------|
-| `deep-night` | `#0A1628` | Page background |
-| `noble-blue` | `#1E3A5F` | Card backgrounds |
-| `determination` | `#E85D04` | Primary accent |
-| `warm-energy` | `#F48C06` | Gradient partner |
-| `digital-cyan` | `#00D4FF` | Info / tech accent |
-| `code-green` | `#4FFFB0` | Success / availability |
-| `noble-gold` | `#D4A012` | Highlights |
+```
+src/app/
+├── core/                 Socle transverse, chargé une fois
+│   ├── config/           Identité du site, pages et chemins (site.config.ts)
+│   ├── i18n/             Langues, garde de route, dictionnaires typés fr.ts / en.ts
+│   ├── seo/              SeoService, resolvers de route, données structurées schema.org
+│   ├── analytics/        Chargement conditionnel des scripts de mesure
+│   └── layout/           En-tête (menu, sélecteur de langue) et pied de page
+├── shared/
+│   ├── content/          Hôte de contenu, chargement par langue, directives (apparition, filtres)
+│   └── ui/               Composants d'interface réutilisables
+├── features/             Un dossier = un module fonctionnel chargé à la demande
+│   ├── home/  about/  research/  projects/  experience/  contact/  not-found/
+│   │   ├── <feature>.routes.ts      Route, SEO et choix du contenu selon la langue
+│   │   └── content/                 <feature>.fr.{ts,html} · <feature>.en.{ts,html} · styles
+│   └── blog/
+│       ├── data/posts.ts            Registre des articles (métadonnées + contenu)
+│       ├── content/<slug>/          Un dossier par article, une version par langue
+│       └── pages/                   Liste des articles et page article
+├── app.routes.ts         Table des routes : /:lang/<feature>
+└── app.routes.server.ts  Liste des pages à prérendre
+```
 
-**Typography**
+Règles de dépendance : `features → shared → core`. Une feature n'importe d'une autre feature que ce
+que celle-ci exporte dans son fichier `public.ts` (ex. `@features/blog/public` pour les derniers
+articles affichés sur l'accueil).
+Alias d'import : `@core/*`, `@shared/*`, `@features/*`, `@env`.
 
-| Font | Usage |
-|------|-------|
-| Montserrat | Display headings, nav, buttons |
-| Inter | Body text |
-| Playfair Display | Pull quotes, accent text |
-| JetBrains Mono | Code snippets, labels, tags |
+**Contenu.** Chaque page et chaque article existe en deux composants, un par langue
+(`about.fr.ts` + `about.fr.html`, `about.en.ts` + `about.en.html`). Le texte se modifie directement
+dans le `.html`. Seule la version de la langue affichée est téléchargée ; le changement de langue
+se fait sans rechargement de page. Le style propre à une page vit dans le `.css` voisin : il est
+isolé du reste du site par Angular et placé dans la couche CSS `components`, donc les classes
+utilitaires Tailwind gardent la priorité.
 
----
+**Section des deux profils (accueil).** Composant `features/home/dual-profile/` : un seul portrait
+(`public/assets/images/portrait.webp`) partagé par un éclair, animation entièrement en CSS. Les
+libellés FR/EN sont dans `dual-profile.ts`.
 
-## 🛠️ Tech Stack
+**Thèmes clair et sombre.** Par défaut, le thème est celui du système : clair si le système est
+clair, sombre s'il est sombre ou sans préférence (`prefers-color-scheme`, sans script). Le bouton
+de l'en-tête bascule entre clair et sombre ; ce choix est mémorisé dans le navigateur et prime
+ensuite sur le système (`ThemeService`, `core/theme/`). Tout repose sur les tokens de couleur de `src/styles.css` : le thème clair leur
+donne simplement d'autres valeurs. En thème clair, `white` désigne donc la couleur du texte et
+`deep-night` celle du fond. Pour qu'un nouveau contenu suive le thème, utiliser les classes de
+tokens (`text-white`, `bg-noble-blue/30`, `text-digital-cyan`…) ou `var(--color-…)` en CSS,
+jamais une couleur écrite en dur.
 
-The site is intentionally framework-free — pure HTML, CSS and JavaScript, enhanced with:
+**Publications.** `features/research/publications.ts` est la source unique : la liste de la page
+Recherche, les entrées BibTeX à copier et les données structurées `ScholarlyArticle` en découlent.
+Ajouter une publication = ajouter une entrée dans ce fichier. Les études de cas des projets de
+recherche suivent le même principe (`case-studies.ts`) et résument les articles publiés.
 
-- **[Tailwind CSS](https://tailwindcss.com)** (CDN) — utility-first styling
-- **[Google Fonts](https://fonts.google.com)** — Montserrat, Inter, Playfair Display, JetBrains Mono
-- **[Formspree](https://formspree.io)** — contact form backend
-- **[Calendly](https://calendly.com)** — meeting booking widget
-- **[Vercel](https://vercel.com)** — hosting and edge delivery
-- **Vercel Web Analytics & Speed Insights** — performance monitoring
+**Blog.** Les cartes d'article (`PostCard`) servent à la liste du blog et aux derniers articles de
+l'accueil ; leur vignette dépend de la première catégorie de l'article. Un flux RSS par langue est
+généré au build (`/fr/feed.xml`, `/en/feed.xml`) et annoncé dans le `<head>` de chaque page.
 
----
+**Comportements.** Ils sont portés par des directives reconnues à la classe ou à l'attribut :
+`.reveal` (apparition au défilement), `.filter-btn` + `data-category` (filtres), `appFaqToggle`,
+`appContactForm`. Aucun script en ligne.
 
-## ✨ Features
+## SEO
 
-- **Bilingual FR / EN** with custom language switcher (dropdown + mobile bottom sheet)
-- **Scroll-reveal animations** — elements animate in as the user scrolls
-- **Project filtering** — filter by category (Enterprise, Research, Open Source, Personal)
-- **Blog filtering** — filter posts by topic
-- **FAQ accordion** — animated expand/collapse
-- **Async contact form** — Formspree submission with success/error feedback, no page reload
-- **Available badge** — pulsing indicator signalling open availability
-- **Mobile-first responsive layout** — bottom tab navigation on small screens, full navbar on desktop
-- **Custom scrollbar** — styled to match the color palette
+| Sujet | Mise en œuvre |
+| --- | --- |
+| HTML complet pour les robots | Prérendu de toutes les pages au build (`outputMode: static`), puis hydratation |
+| Balises par page et par langue | `SeoService` : `<title>`, description, robots, Open Graph, Twitter Cards |
+| Contenu dupliqué | URL canonique sur chaque page |
+| Bilingue | `<html lang>`, `hreflang` fr / en / x-default dans le HTML **et** dans le sitemap |
+| Données structurées | JSON-LD en graphe : `Person`, `WebSite`, `WebPage`, `BreadcrumbList`, `BlogPosting`, `ScholarlyArticle` |
+| Flux RSS | `/fr/feed.xml` et `/en/feed.xml`, générés au build |
+| Sitemap | Généré au build à partir des pages réellement produites |
+| Anciennes URL de la v1 | Redirections 301 dans `vercel.json` (`/fr/pages/about.html` → `/fr/about`, …) |
+| Erreurs | Vraie réponse HTTP 404 (`404.html`), page en `noindex` |
+| Performance | Polices auto-hébergées, Tailwind compilé (plus de CDN), CSS critique en ligne, image du héros prioritaire, cache d'un an sur les fichiers hachés |
+| Environnements hors prod | `noindex` automatique en développement |
 
----
+Les textes SEO des pages statiques se trouvent dans les dictionnaires, clé `seo.<page>`.
 
-## 🔍 SEO
+## Recettes
 
-- Full meta tags (title, description, keywords, author)
-- Open Graph tags per page and locale
-- Canonical URLs
-- `robots.txt` and `sitemap.xml`
-- Semantic HTML structure
-- Schema.org / JSON-LD on research page
+**Modifier un texte** : ouvrir le `.html` de la page ou de l'article, dans chaque langue.
 
----
+**Ajouter une page statique**
 
-## 📝 Adding a Blog Post
+1. Ajouter sa clé dans `PageKey`, `PAGE_PATHS` et `NAV_PAGES` (`core/config/site.config.ts`).
+2. Compléter `nav` et `seo` dans `fr.ts` et `en.ts` — le compilateur signale tout oubli.
+3. Copier un dossier de feature simple (ex. `features/about/`), le renommer et adapter ses composants.
+4. Déclarer la route dans `app.routes.ts`. Le prérendu et le sitemap suivent automatiquement.
 
-1. Copy `blog/articles/_template.html` (in either `fr/` or `en/`)
-2. Rename it with a descriptive slug (e.g. `adaptive-systems-intro.html`)
-3. Fill in the placeholders: title, description, date, category, content
-4. Update `sitemap.xml` with the new URL
-5. Add a card to the corresponding `blog/index.html`
+**Ajouter un article de blog**
 
----
+1. Copier un dossier de `features/blog/content/` (ex. `day-1-phd-student/`), le renommer avec le
+   nouveau slug, puis renommer et adapter les deux composants (`<slug>.fr.*`, `<slug>.en.*`).
+2. Ajouter l'entrée correspondante dans `features/blog/data/posts.ts`.
 
-## 📄 License
+La route, le prérendu, le sitemap, les balises SEO et la carte dans la liste du blog en découlent.
 
-© 2025 ZEMTSOP NDADJI Brice Arléon. All rights reserved.
+Dans un `.html` de contenu, trois caractères s'écrivent sous forme d'entité, car Angular les
+interprète : `{` → `&#123;`, `}` → `&#125;`, `@` → `&#64;`.
 
----
+## Déploiement sur Vercel
 
-**Contact** · [arleonzemtsop@gmail.com](mailto:arleonzemtsop@gmail.com) · [LinkedIn](https://www.linkedin.com/in/brice-arléon-zemtsop-ndadji-b258321a4/) · [GitHub](https://github.com/brice10)
+1. Dans le projet Vercel : **Settings → General → Root Directory** = `v2`.
+2. Rien d'autre à configurer : `vercel.json` fixe la commande de build (`npm run build`), le dossier
+   de sortie (`dist/portfolio/browser`), les redirections et les en-têtes ; `package.json` fixe Node 24.
+3. Chaque `git push` déclenche un déploiement ; les déploiements de prévisualisation ne sont pas
+   indexés (en-tête `X-Robots-Tag: noindex` ajouté par Vercel).
+
+Le site déployé est 100 % statique : aucune fonction serveur.
+
+## Reste à faire
+
+- [ ] Dates précises des articles restants : champ `date` de `features/blog/data/posts.ts` (optionnel)
+- [ ] Étude de cas d'un projet d'entreprise (DIMSOFT) sur la page Projets
+
+### Articles courts (série LinkedIn) et aperçus
+
+Les articles issus des posts LinkedIn utilisent le gabarit commun `features/blog/components/post-shell.ts` :
+le composant de contenu (`content/<slug>/<slug>.<langue>.html`) ne contient que le texte, entouré de
+`<app-post-shell slug="…">`. Titre, date, catégorie et média viennent de l'entrée du registre `data/posts.ts`.
+
+- `preview` (par langue) : `image` + dimensions, et au choix `video` (jouée au survol de la carte, lisible
+  dans l'article) ou `slides` (carrousel dans l'article). L'image sert aussi d'aperçu de partage (`og:image`).
+  Sans `preview`, la carte affiche le pictogramme de la catégorie.
+- `content` peut n'exister que dans une langue : l'article n'est alors ni listé ni prérendu dans l'autre.
+- Les médias sont dans `public/assets/blog/<slug>/` (`cover.<langue>.jpg`, `video.<langue>.mp4`,
+  `slide-N.<langue>.webp`).

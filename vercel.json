@@ -1,43 +1,49 @@
 {
-  "version": 2,
-  "buildCommand": null,
-  "outputDirectory": ".",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "angular",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/portfolio/browser",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "fr.*" }],
+      "destination": "/fr",
+      "permanent": false
+    },
+    { "source": "/", "destination": "/en", "permanent": false },
+
+    { "source": "/:lang(fr|en)/pages/professional-experience", "destination": "/:lang/experience", "permanent": true },
+    { "source": "/:lang(fr|en)/pages/professional-experience.html", "destination": "/:lang/experience", "permanent": true },
+    { "source": "/:lang(fr|en)/pages/:page([a-z-]+).html", "destination": "/:lang/:page", "permanent": true },
+    { "source": "/:lang(fr|en)/pages/:page([a-z-]+)", "destination": "/:lang/:page", "permanent": true },
+    { "source": "/:lang(fr|en)/blog/articles/:slug([a-z0-9-]+).html", "destination": "/:lang/blog/:slug", "permanent": true },
+    { "source": "/:lang(fr|en)/blog/articles/:slug([a-z0-9-]+)", "destination": "/:lang/blog/:slug", "permanent": true },
+    { "source": "/:lang(fr|en)/index.html", "destination": "/:lang", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
       ]
     },
     {
-      "source": "/images/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
+      "source": "/(main|chunk|styles|polyfills)-(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
     {
-      "source": "/css/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
+      "source": "/media/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
     {
-      "source": "/js/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }]
     }
-  ],
-  "rewrites": [
-    { "source": "/about", "destination": "/pages/about.html" },
-    { "source": "/research", "destination": "/pages/research.html" },
-    { "source": "/projects", "destination": "/pages/projects.html" },
-    { "source": "/contact", "destination": "/pages/contact.html" },
-    { "source": "/blog", "destination": "/blog/index.html" }
-  ],
-  "trailingSlash": false,
-  "cleanUrls": true
+  ]
 }
