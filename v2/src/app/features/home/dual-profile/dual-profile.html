@@ -1,0 +1,108 @@
+@let t = text();
+
+<figure
+  class="dual"
+  [class.is-engineer]="active() === 'engineer'"
+  [class.is-researcher]="active() === 'researcher'"
+  (pointerleave)="hover($event, null)"
+>
+  <div class="stage">
+    <!-- Moitié gauche : l'ingénieur -->
+    <div class="side side--engineer">
+      <div class="side-inner">
+        <img [ngSrc]="site.portrait" width="900" height="900" priority [alt]="site.name" />
+        <span class="tint"></span>
+        <pre class="motif" aria-hidden="true">{{ code }}</pre>
+        <span class="scan"></span>
+      </div>
+    </div>
+
+    <!-- Moitié droite : le chercheur (même photo, autre traitement) -->
+    <div class="side side--researcher" aria-hidden="true">
+      <div class="side-inner">
+        <img [src]="site.portrait" width="900" height="900" alt="" />
+        <span class="tint"></span>
+        <pre class="motif">{{ formula }}</pre>
+        <span class="scan"></span>
+      </div>
+    </div>
+
+    <span class="scrim"></span>
+
+    <!-- L'éclair suit exactement la ligne de découpe des deux moitiés -->
+    <svg class="bolt" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <path class="bolt-core" d="M56 0 L47 30 L55 34 L44 62 L52 66 L43 100" />
+    </svg>
+
+    <span class="corner corner--tl"></span>
+    <span class="corner corner--tr"></span>
+
+    <!-- Zones sensibles : survol, focus clavier et toucher -->
+    <button
+      type="button"
+      class="zone zone--engineer"
+      [attr.aria-label]="t.engineer.focus"
+      [attr.aria-pressed]="active() === 'engineer'"
+      (pointerenter)="hover($event, 'engineer')"
+      (focus)="highlight('engineer')"
+      (blur)="highlight(null)"
+      (click)="tap('engineer')"
+    ></button>
+    <button
+      type="button"
+      class="zone zone--researcher"
+      [attr.aria-label]="t.researcher.focus"
+      [attr.aria-pressed]="active() === 'researcher'"
+      (pointerenter)="hover($event, 'researcher')"
+      (focus)="highlight('researcher')"
+      (blur)="highlight(null)"
+      (click)="tap('researcher')"
+    ></button>
+
+    <figcaption class="panels">
+      <a
+        class="panel panel--engineer"
+        [routerLink]="i18n.page('experience')"
+        (pointerenter)="hover($event, 'engineer')"
+        (focus)="highlight('engineer')"
+        (blur)="highlight(null)"
+        (blur)="highlight(null)"
+      >
+        <span class="eyebrow">{{ t.engineer.eyebrow }}</span>
+        <span class="title">{{ t.engineer.title }}</span>
+        <span class="more">
+          <span class="more-inner">
+            <span class="chips">
+              @for (chip of t.engineer.chips; track chip) {
+                <span class="chip">{{ chip }}</span>
+              }
+            </span>
+            <span class="cta">{{ t.engineer.cta }} <span aria-hidden="true">→</span></span>
+          </span>
+        </span>
+      </a>
+
+      <a
+        class="panel panel--researcher"
+        [routerLink]="i18n.page('research')"
+        (pointerenter)="hover($event, 'researcher')"
+        (focus)="highlight('researcher')"
+        (blur)="highlight(null)"
+        (blur)="highlight(null)"
+      >
+        <span class="eyebrow">{{ t.researcher.eyebrow }}</span>
+        <span class="title">{{ t.researcher.title }}</span>
+        <span class="more">
+          <span class="more-inner">
+            <span class="chips">
+              @for (chip of t.researcher.chips; track chip) {
+                <span class="chip">{{ chip }}</span>
+              }
+            </span>
+            <span class="cta">{{ t.researcher.cta }} <span aria-hidden="true">→</span></span>
+          </span>
+        </span>
+      </a>
+    </figcaption>
+  </div>
+</figure>

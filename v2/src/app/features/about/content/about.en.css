@@ -80,10 +80,10 @@
   }
 
   .photo {
-    background-image: url(/assets/images/brice-arleon.webp);
-    background-position: center;
+    background-image: url(/assets/images/portrait.webp);
+    background-position: center top;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
   }
 
   @keyframes pulse-available {

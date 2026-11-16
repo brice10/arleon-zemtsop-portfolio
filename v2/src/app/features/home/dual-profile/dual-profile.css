@@ -1,0 +1,457 @@
+:host {
+  display: block;
+}
+
+/* ---------------------------------------------------------------------------
+   État : --shift déplace la ligne de partage (et l'éclair) vers la droite ou
+   vers la gauche.
+--------------------------------------------------------------------------- */
+.dual {
+  --shift: 0%;
+  --orange: #f48c06;
+  --cyan: #00d4ff;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --slow: 0.7s;
+
+  position: relative;
+  margin: 0 auto;
+  max-width: 30rem;
+}
+.dual.is-engineer {
+  --shift: 13%;
+}
+.dual.is-researcher {
+  --shift: -13%;
+}
+
+.stage {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 1.5rem;
+  background: #0b1f3a;
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.08),
+    0 30px 60px -20px rgb(0 0 0 / 0.65);
+  transition: box-shadow var(--slow) var(--ease);
+}
+.is-engineer .stage {
+  box-shadow:
+    0 0 0 1px rgb(244 140 6 / 0.45),
+    0 30px 70px -20px rgb(244 140 6 / 0.35);
+}
+.is-researcher .stage {
+  box-shadow:
+    0 0 0 1px rgb(0 212 255 / 0.45),
+    0 30px 70px -20px rgb(0 212 255 / 0.35);
+}
+
+/* ------------------------------------------------------------------ moitiés */
+/*
+ * Chaque moitié est découpée le long de l'éclair par un polygone FIXE, puis translatée de --shift ;
+ * son contenu est translaté en sens inverse. La photo reste donc immobile pendant que la ligne de
+ * partage se déplace. Tout passe par `transform` : la découpe et l'éclair bougent à l'unisson.
+ */
+.side {
+  position: absolute;
+  inset: 0;
+  transform: translateX(var(--shift));
+  transition:
+    transform var(--slow) var(--ease),
+    filter 0.5s ease;
+}
+.side-inner {
+  position: absolute;
+  inset: 0;
+  transform: translateX(calc(var(--shift) * -1));
+  transition: transform var(--slow) var(--ease);
+}
+.side img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0;
+  transition: transform 1.2s var(--ease);
+}
+
+/* Mêmes points que le tracé SVG de l'éclair ; débord de 40 % pour couvrir le cadre une fois décalé. */
+.side--engineer {
+  clip-path: polygon(-40% 0, 56% 0, 47% 30%, 55% 34%, 44% 62%, 52% 66%, 43% 100%, -40% 100%);
+}
+.side--researcher {
+  clip-path: polygon(56% 0, 140% 0, 140% 100%, 43% 100%, 52% 66%, 44% 62%, 55% 34%, 47% 30%);
+}
+
+/* Teinte : chaude côté ingénieur, froide côté chercheur */
+.tint {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: color;
+  opacity: 0.55;
+  transition: opacity 0.5s ease;
+}
+.side--engineer .tint {
+  background: linear-gradient(200deg, var(--orange), #e85d04 70%);
+}
+.side--researcher .tint {
+  background: linear-gradient(160deg, var(--cyan), #1e6bff 80%);
+}
+
+/* Moitié mise en avant : couleurs naturelles, léger zoom. L'autre s'éteint. */
+.is-engineer .side--engineer,
+.is-researcher .side--researcher {
+  filter: saturate(1.1) brightness(1.08);
+}
+.is-engineer .side--engineer .tint,
+.is-researcher .side--researcher .tint {
+  opacity: 0.12;
+}
+.is-engineer .side--engineer img,
+.is-researcher .side--researcher img {
+  transform: scale(1.04);
+}
+.is-engineer .side--researcher,
+.is-researcher .side--engineer {
+  filter: grayscale(0.85) brightness(0.42);
+}
+
+/* Motif décoratif : du code d'un côté, des formules de l'autre */
+.motif {
+  position: absolute;
+  top: 1.75rem;
+  margin: 0;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.62rem;
+  line-height: 1.6;
+  white-space: pre;
+  opacity: 0.4;
+  transition:
+    opacity 0.5s ease,
+    transform var(--slow) var(--ease);
+}
+.side--engineer .motif {
+  left: 1.75rem;
+  color: var(--orange);
+}
+.side--researcher .motif {
+  right: 1.75rem;
+  color: var(--cyan);
+  text-align: right;
+}
+.is-engineer .side--engineer .motif,
+.is-researcher .side--researcher .motif {
+  opacity: 0.95;
+  transform: translateY(0.25rem);
+}
+
+/* Ligne de balayage, visible uniquement sur la moitié mise en avant */
+.scan {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 16%;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.side--engineer .scan {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(244 140 6 / 0.1) 88%,
+    rgb(244 140 6 / 0.55)
+  );
+}
+.side--researcher .scan {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(0 212 255 / 0.1) 88%,
+    rgb(0 212 255 / 0.55)
+  );
+}
+.is-engineer .side--engineer .scan,
+.is-researcher .side--researcher .scan {
+  opacity: 1;
+  animation: scan 2.6s linear infinite;
+}
+
+/* ------------------------------------------------------------------- éclair */
+.bolt {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  transform: translateX(var(--shift));
+  transition: transform var(--slow) var(--ease);
+  /* Lueur diffuse : blanche au centre, orange vers l'ingénieur, cyan vers le chercheur */
+  filter: drop-shadow(0 0 4px rgb(255 255 255 / 0.8)) drop-shadow(-5px 0 12px rgb(244 140 6 / 0.85))
+    drop-shadow(5px 0 12px rgb(0 212 255 / 0.85));
+}
+.bolt path {
+  fill: none;
+  stroke-linejoin: miter;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+.bolt-core {
+  stroke: #fff;
+  stroke-width: 2.5px;
+  animation: flicker 3.2s ease-in-out infinite;
+}
+/* Décharge au changement de profil (deux noms pour qu'elle rejoue d'un côté à l'autre) */
+.is-engineer .bolt-core {
+  animation: strike-a 0.6s ease-out;
+}
+.is-researcher .bolt-core {
+  animation: strike-b 0.6s ease-out;
+}
+
+/* ------------------------------------------------------------ habillage HUD */
+.corner {
+  position: absolute;
+  top: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0 solid rgb(255 255 255 / 0.25);
+  transition: border-color 0.5s ease;
+  pointer-events: none;
+}
+.corner--tl {
+  left: 0.75rem;
+  border-top-width: 2px;
+  border-left-width: 2px;
+  border-top-left-radius: 0.5rem;
+}
+.corner--tr {
+  right: 0.75rem;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-top-right-radius: 0.5rem;
+}
+.is-engineer .corner--tl {
+  border-color: var(--orange);
+}
+.is-researcher .corner--tr {
+  border-color: var(--cyan);
+}
+
+.scrim {
+  position: absolute;
+  inset: auto 0 0;
+  height: 55%;
+  background: linear-gradient(to top, rgb(5 12 26 / 0.95) 8%, rgb(5 12 26 / 0.55) 45%, transparent);
+  pointer-events: none;
+}
+
+.zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.zone--engineer {
+  left: 0;
+}
+.zone--researcher {
+  right: 0;
+}
+.zone:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -6px;
+  border-radius: 1.25rem;
+}
+
+/* ------------------------------------------------------------------ panneaux */
+.panels {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem;
+  pointer-events: none;
+}
+.panel {
+  display: flex;
+  flex-direction: column;
+  max-width: 62%;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 0.9rem;
+  background: rgb(8 18 36 / 0.55);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  text-decoration: none;
+  pointer-events: auto;
+  transition:
+    opacity 0.5s ease,
+    transform var(--slow) var(--ease);
+}
+.panel--researcher {
+  align-items: flex-end;
+  text-align: right;
+}
+.eyebrow {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.panel--engineer .eyebrow,
+.panel--engineer .cta {
+  color: var(--orange);
+}
+.panel--researcher .eyebrow,
+.panel--researcher .cta {
+  color: var(--cyan);
+}
+.title {
+  margin-top: 0.2rem;
+  font-family: var(--font-display, sans-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* Détails repliés par défaut (hauteur animée via grid-template-rows) */
+.more {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows var(--slow) var(--ease),
+    opacity 0.4s ease;
+}
+.more-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 0;
+  overflow: hidden;
+}
+.panel--researcher .more-inner {
+  align-items: flex-end;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.6rem;
+}
+.panel--researcher .chips {
+  justify-content: flex-end;
+}
+.chip {
+  padding: 0.15rem 0.45rem;
+  border: 1px solid rgb(255 255 255 / 0.18);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.06);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.6rem;
+  white-space: nowrap;
+}
+.cta {
+  font-family: var(--font-display, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.is-engineer .panel--engineer .more,
+.is-researcher .panel--researcher .more,
+.panel:focus-visible .more {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.is-engineer .panel--engineer {
+  transform: translateY(-0.25rem);
+  border-color: rgb(244 140 6 / 0.5);
+}
+.is-researcher .panel--researcher {
+  transform: translateY(-0.25rem);
+  border-color: rgb(0 212 255 / 0.5);
+}
+.is-engineer .panel--researcher,
+.is-researcher .panel--engineer {
+  opacity: 0.3;
+}
+.panel:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+  border-radius: 0.5rem;
+}
+
+/* ---------------------------------------------------------------- animations */
+@keyframes scan {
+  to {
+    transform: translateY(630%);
+  }
+}
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  46% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+  52% {
+    opacity: 0.7;
+  }
+  54% {
+    opacity: 1;
+  }
+}
+@keyframes strike-a {
+  0% {
+    opacity: 0.2;
+  }
+  12% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 0.35;
+  }
+  36% {
+    opacity: 1;
+  }
+}
+@keyframes strike-b {
+  0% {
+    opacity: 0.2;
+  }
+  12% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 0.35;
+  }
+  36% {
+    opacity: 1;
+  }
+}
+@media (max-width: 480px) {
+  .motif {
+    display: none;
+  }
+  .chip {
+    font-size: 0.55rem;
+  }
+  .title {
+    font-size: 0.9rem;
+  }
+}

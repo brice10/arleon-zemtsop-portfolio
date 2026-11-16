@@ -78,9 +78,13 @@ se fait sans rechargement de page. Le style propre à une page vit dans le `.css
 isolé du reste du site par Angular et placé dans la couche CSS `components`, donc les classes
 utilitaires Tailwind gardent la priorité.
 
+**Section des deux profils (accueil).** Composant `features/home/dual-profile/` : un seul portrait
+(`public/assets/images/portrait.webp`) partagé par un éclair, animation entièrement en CSS. Les
+libellés FR/EN sont dans `dual-profile.ts`.
+
 **Comportements.** Ils sont portés par des directives reconnues à la classe ou à l'attribut :
 `.reveal` (apparition au défilement), `.filter-btn` + `data-category` (filtres), `appFaqToggle`,
-`appContactForm`, `.photo-container`. Aucun script en ligne.
+`appContactForm`. Aucun script en ligne.
 
 ## SEO
 

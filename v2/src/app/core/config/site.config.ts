@@ -31,7 +31,7 @@ export const SITE = {
   email: 'arleonzemtsop@gmail.com',
   twitterHandle: '@ZemtsopArleon',
   ogImage: '/assets/images/og-image.jpg',
-  portrait: '/assets/images/brice-arleon.webp',
+  portrait: '/assets/images/portrait.webp',
   cv: '/assets/docs/cv-brice-arleon-zemtsop.pdf',
   social: {
     linkedin: 'https://www.linkedin.com/in/brice-arl%C3%A9on-zemtsop-ndadji-b258321a4/',
