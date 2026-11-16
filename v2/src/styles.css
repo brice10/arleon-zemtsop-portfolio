@@ -1,0 +1,137 @@
+/* Polices auto-hébergées (aucune requête vers Google Fonts) */
+@import '@fontsource-variable/montserrat';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/playfair-display';
+@import '@fontsource-variable/jetbrains-mono';
+
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Design system (repris de la v1) — chaque token devient une classe utilitaire :
+   bg-deep-night, text-determination, font-display, ...
+--------------------------------------------------------------------------- */
+@theme {
+  --color-deep-night: #0a1628;
+  --color-night-sky: #0f2847;
+  --color-noble-blue: #1e3a5f;
+  --color-determination: #e85d04;
+  --color-warm-energy: #f48c06;
+  --color-noble-gold: #d4a012;
+  --color-digital-cyan: #00d4ff;
+  --color-code-green: #4fffb0;
+  --color-charcoal: #1c1c1e;
+  --color-gray-dark: #2d2d30;
+  --color-gray-medium: #8a8a90;
+  --color-gray-light: #a0a0a5;
+  --color-gray-soft: #e5e5ea;
+  --color-off-white: #f8f9fa;
+
+  --font-display: 'Montserrat Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-accent: 'Playfair Display Variable', ui-serif, Georgia, serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scrollbar-color: var(--color-noble-blue) var(--color-deep-night);
+  }
+
+  body {
+    @apply bg-deep-night font-body text-gray-soft antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-white;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-digital-cyan;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-display text-sm font-semibold transition-colors;
+  }
+  .btn-primary {
+    @apply bg-linear-to-r from-determination to-warm-energy text-deep-night hover:from-warm-energy hover:to-determination;
+  }
+  .btn-ghost {
+    @apply border border-white/15 text-white hover:border-digital-cyan hover:text-digital-cyan;
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/5 bg-linear-to-br from-noble-blue/30 to-night-sky/50 p-6;
+  }
+
+  .tag {
+    @apply rounded bg-white/5 px-2 py-1 font-mono text-xs text-digital-cyan;
+  }
+
+  /* Contenu long (articles de blog rendus depuis du Markdown) */
+  .prose-custom {
+    @apply text-lg leading-relaxed text-gray-soft;
+  }
+  .prose-custom h2 {
+    @apply mt-12 mb-4 text-2xl font-bold;
+  }
+  .prose-custom h3 {
+    @apply mt-8 mb-3 text-xl font-semibold;
+  }
+  .prose-custom p {
+    @apply mb-5;
+  }
+  .prose-custom ul {
+    @apply mb-5 list-disc space-y-2 pl-6;
+  }
+  .prose-custom ol {
+    @apply mb-5 list-decimal space-y-2 pl-6;
+  }
+  .prose-custom strong {
+    @apply font-semibold text-white;
+  }
+  .prose-custom a {
+    @apply text-digital-cyan underline underline-offset-4 hover:text-warm-energy;
+  }
+  .prose-custom blockquote {
+    @apply my-8 border-l-4 border-determination pl-6 font-accent text-xl text-white italic;
+  }
+  .prose-custom code {
+    @apply rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm text-code-green;
+  }
+}
+
+/* Apparition au défilement — posée par la directive appReveal, côté navigateur uniquement :
+   sans JavaScript (et pour les robots) le contenu reste visible. */
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.reveal-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
