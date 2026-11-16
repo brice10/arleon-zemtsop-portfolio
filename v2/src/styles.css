@@ -32,10 +32,114 @@
   --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, monospace;
 }
 
+/* ---------------------------------------------------------------------------
+   Thèmes clair et sombre
+   Le site est dessiné avec les tokens ci-dessus ; le thème clair se contente de
+   leur donner d'autres valeurs. Conséquence à connaître : en thème clair,
+   `white` désigne la couleur de premier plan (un bleu nuit) et `deep-night` le
+   fond (presque blanc). On raisonne donc en rôles, pas en teintes.
+
+   - Par défaut : thème clair si le système est clair, sombre s'il est sombre ou
+     s'il n'exprime aucune préférence (prefers-color-scheme).
+   - `data-theme="light|dark"` sur <html> : choix du visiteur (ThemeService).
+--------------------------------------------------------------------------- */
+:root {
+  color-scheme: dark;
+  --heading-fade: #1e3a5f;
+  --content-shadow: rgb(0 0 0 / 0.5);
+  --accent-yellow: #fcd116;
+  --accent-coral: #ff6b6b;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    color-scheme: light;
+    --color-deep-night: #f5f7fb;
+    --color-night-sky: #e9eef6;
+    --color-noble-blue: #c6d4e8;
+    --color-determination: #c2410c;
+    --color-warm-energy: #c2620a;
+    --color-noble-gold: #92660a;
+    --color-digital-cyan: #0369a1;
+    --color-code-green: #047857;
+    --color-charcoal: #e5e9f0;
+    --color-gray-dark: #d5dbe6;
+    --color-gray-medium: #64708a;
+    --color-gray-light: #4b586c;
+    --color-gray-soft: #2b3648;
+    --color-off-white: #111c2e;
+    --color-white: #0a1628;
+    --heading-fade: #5b6b85;
+    --content-shadow: rgb(15 23 42 / 0.12);
+    --color-black: #5b6b85;
+    --color-purple-400: #7e22ce;
+    --color-yellow-500: #a16207;
+    --color-red-400: #dc2626;
+    --color-blue-400: #2563eb;
+    --accent-yellow: #a16207;
+    --accent-coral: #dc2626;
+  }
+}
+:root[data-theme='light'] {
+  color-scheme: light;
+  --color-deep-night: #f5f7fb;
+  --color-night-sky: #e9eef6;
+  --color-noble-blue: #c6d4e8;
+  --color-determination: #c2410c;
+  --color-warm-energy: #c2620a;
+  --color-noble-gold: #92660a;
+  --color-digital-cyan: #0369a1;
+  --color-code-green: #047857;
+  --color-charcoal: #e5e9f0;
+  --color-gray-dark: #d5dbe6;
+  --color-gray-medium: #64708a;
+  --color-gray-light: #4b586c;
+  --color-gray-soft: #2b3648;
+  --color-off-white: #111c2e;
+  --color-white: #0a1628;
+  --heading-fade: #5b6b85;
+  --content-shadow: rgb(15 23 42 / 0.12);
+  --color-black: #5b6b85;
+  --color-purple-400: #7e22ce;
+  --color-yellow-500: #a16207;
+  --color-red-400: #dc2626;
+  --color-blue-400: #2563eb;
+  --accent-yellow: #a16207;
+  --accent-coral: #dc2626;
+}
+
+/* Bouton de thème : en sombre on propose le soleil, en clair la lune. */
+.theme-icon-moon {
+  display: none;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) .theme-icon-sun {
+    display: none;
+  }
+  :root:not([data-theme='dark']) .theme-icon-moon {
+    display: block;
+  }
+}
+:root[data-theme='light'] .theme-icon-sun {
+  display: none;
+}
+:root[data-theme='light'] .theme-icon-moon {
+  display: block;
+}
+
+/* Aplats orange (boutons, pastilles) : leur texte reste blanc dans les deux thèmes. */
+[class~='bg-determination'],
+[class~='from-determination'][class~='to-warm-energy'],
+[class~='hover:bg-determination']:hover,
+.btn-primary {
+  --color-white: #fff;
+  --color-deep-night: #fff;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
-    scrollbar-color: var(--color-noble-blue) var(--color-deep-night);
+    scrollbar-color: var(--color-gray-medium) var(--color-deep-night);
   }
 
   body {

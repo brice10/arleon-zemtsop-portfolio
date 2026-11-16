@@ -82,6 +82,15 @@ utilitaires Tailwind gardent la priorité.
 (`public/assets/images/portrait.webp`) partagé par un éclair, animation entièrement en CSS. Les
 libellés FR/EN sont dans `dual-profile.ts`.
 
+**Thèmes clair et sombre.** Par défaut, le thème est celui du système : clair si le système est
+clair, sombre s'il est sombre ou sans préférence (`prefers-color-scheme`, sans script). Le bouton
+de l'en-tête bascule entre clair et sombre ; ce choix est mémorisé dans le navigateur et prime
+ensuite sur le système (`ThemeService`, `core/theme/`). Tout repose sur les tokens de couleur de `src/styles.css` : le thème clair leur
+donne simplement d'autres valeurs. En thème clair, `white` désigne donc la couleur du texte et
+`deep-night` celle du fond. Pour qu'un nouveau contenu suive le thème, utiliser les classes de
+tokens (`text-white`, `bg-noble-blue/30`, `text-digital-cyan`…) ou `var(--color-…)` en CSS,
+jamais une couleur écrite en dur.
+
 **Comportements.** Ils sont portés par des directives reconnues à la classe ou à l'attribut :
 `.reveal` (apparition au défilement), `.filter-btn` + `data-category` (filtres), `appFaqToggle`,
 `appContactForm`. Aucun script en ligne.

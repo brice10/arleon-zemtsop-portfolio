@@ -5,8 +5,17 @@
     <title>Brice Arléon ZEMTSOP NDADJI</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0A1628" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a1628" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f7fb" />
+    <!-- Thème choisi à la main : appliqué avant le premier affichage pour éviter tout flash.
+         Sans choix enregistré, le CSS suit seul le réglage du système. -->
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    </script>
 
     <!-- Les balises SEO (description, canonical, hreflang, Open Graph, JSON-LD) sont
          générées par SeoService et figées dans le HTML de chaque page au prérendu. -->

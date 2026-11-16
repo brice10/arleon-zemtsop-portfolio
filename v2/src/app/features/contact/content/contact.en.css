@@ -5,24 +5,24 @@
 @layer components {
   :host {
     font-family: 'Inter Variable', sans-serif;
-    background: #0A1628;
-    color: #F8F9FA;
+    background: var(--color-deep-night);
+    color: var(--color-off-white);
     overflow-x: clip;
   }
 
   .bg-pattern {
-    background-image: radial-gradient(ellipse at 20% 80%, rgba(30,58,95,0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(232,93,4,0.08) 0%, transparent 40%), url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231E3A5F' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image: radial-gradient(ellipse at 20% 80%, color-mix(in srgb, var(--color-noble-blue) 40%, transparent) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, color-mix(in srgb, var(--color-determination) 8%, transparent) 0%, transparent 40%), url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231E3A5F' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #E85D04 0%, #D4A012 100%);
+    background: linear-gradient(135deg, var(--color-determination) 0%, var(--color-noble-gold) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .gradient-text-white {
-    background: linear-gradient(135deg, #FFFFFF 0%, #A0A0A5 100%);
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -42,11 +42,11 @@
   }
 
   .form-input {
-    background: rgba(30,58,95,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: color-mix(in srgb, var(--color-noble-blue) 30%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-white) 10%, transparent);
     border-radius: 12px;
     padding: 1rem 1.25rem;
-    color: #F8F9FA;
+    color: var(--color-off-white);
     font-family: 'Inter Variable', sans-serif;
     font-size: 1rem;
     transition: all 0.3s;
@@ -55,26 +55,26 @@
 
   .form-input:focus {
     outline: none;
-    border-color: #E85D04;
-    box-shadow: 0 0 0 3px rgba(232,93,4,0.1);
-    background: rgba(30,58,95,0.5);
+    border-color: var(--color-determination);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-determination) 10%, transparent);
+    background: color-mix(in srgb, var(--color-noble-blue) 50%, transparent);
   }
 
   .form-input::placeholder {
-    color: #6B6B6F;
+    color: var(--color-gray-medium);
   }
 
   .form-label {
     font-family: 'Montserrat Variable', sans-serif;
     font-weight: 600;
     font-size: 0.875rem;
-    color: #A0A0A5;
+    color: var(--color-gray-light);
     margin-bottom: 0.5rem;
     display: block;
   }
 
   .submit-btn {
-    background: linear-gradient(135deg, #E85D04, #F48C06);
+    background: linear-gradient(135deg, var(--color-determination), var(--color-warm-energy));
     color: white;
     font-family: 'Montserrat Variable', sans-serif;
     font-weight: 600;
@@ -92,7 +92,7 @@
 
   .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(232,93,4,0.3);
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--color-determination) 30%, transparent);
   }
 
   .submit-btn:disabled {
@@ -102,16 +102,16 @@
   }
 
   .booking-card {
-    background: linear-gradient(135deg, rgba(232,93,4,0.1), rgba(30,58,95,0.3));
-    border: 1px solid rgba(232,93,4,0.2);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-determination) 10%, transparent), color-mix(in srgb, var(--color-noble-blue) 30%, transparent));
+    border: 1px solid color-mix(in srgb, var(--color-determination) 20%, transparent);
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.4s;
   }
 
   .booking-card:hover {
-    border-color: rgba(232,93,4,0.4);
-    box-shadow: 0 20px 40px rgba(232,93,4,0.1);
+    border-color: color-mix(in srgb, var(--color-determination) 40%, transparent);
+    box-shadow: 0 20px 40px color-mix(in srgb, var(--color-determination) 10%, transparent);
   }
 
   .social-link {
@@ -123,7 +123,7 @@
   }
 
   .faq-item {
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-white) 5%, transparent);
   }
 
   .faq-item:last-child {
@@ -136,7 +136,7 @@
   }
 
   .faq-question:hover {
-    color: #E85D04;
+    color: var(--color-determination);
   }
 
   .faq-answer {

@@ -5,19 +5,19 @@
 @layer components {
   :host {
     font-family: 'Inter Variable', sans-serif;
-    background: #0A1628;
-    color: #F8F9FA;
+    background: var(--color-deep-night);
+    color: var(--color-off-white);
   }
 
   .bg-pattern {
-    background-image: radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(232, 93, 4, 0.15) 0%, transparent 40%);
+    background-image: radial-gradient(ellipse at 20% 80%, color-mix(in srgb, var(--color-noble-blue) 40%, transparent) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, color-mix(in srgb, var(--color-determination) 15%, transparent) 0%, transparent 40%);
   }
 
   .prose-custom h2 {
     font-family: 'Montserrat Variable', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: #F8F9FA;
+    color: var(--color-off-white);
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
@@ -26,7 +26,7 @@
     font-family: 'Montserrat Variable', sans-serif;
     font-weight: 600;
     font-size: 1.25rem;
-    color: #F48C06;
+    color: var(--color-warm-energy);
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
   }
@@ -34,15 +34,15 @@
   .prose-custom p {
     margin-bottom: 1.25rem;
     line-height: 1.8;
-    color: #A0A0A5;
+    color: var(--color-gray-light);
   }
 
   .prose-custom strong {
-    color: #F8F9FA;
+    color: var(--color-off-white);
   }
 
   .prose-custom em {
-    color: #F48C06;
+    color: var(--color-warm-energy);
   }
 
   .prose-custom ul {
@@ -55,30 +55,30 @@
     position: relative;
     padding-left: 1.5rem;
     margin-bottom: 0.75rem;
-    color: #A0A0A5;
+    color: var(--color-gray-light);
   }
 
   .prose-custom ul li::before {
     content: '→';
     position: absolute;
     left: 0;
-    color: #F48C06;
+    color: var(--color-warm-energy);
   }
 
   .prose-custom blockquote {
-    border-left: 3px solid #F48C06;
+    border-left: 3px solid var(--color-warm-energy);
     padding-left: 1.5rem;
     margin: 1.5rem 0;
     font-style: italic;
-    color: #A0A0A5;
-    background: rgba(244, 140, 6, 0.05);
+    color: var(--color-gray-light);
+    background: color-mix(in srgb, var(--color-warm-energy) 5%, transparent);
     padding: 1.5rem;
     border-radius: 0 12px 12px 0;
   }
 
   .announcement-card {
-    background: linear-gradient(135deg, rgba(244, 140, 6, 0.15) 0%, rgba(232, 93, 4, 0.1) 50%, rgba(30, 58, 95, 0.3) 100%);
-    border: 2px solid rgba(244, 140, 6, 0.4);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-warm-energy) 15%, transparent) 0%, color-mix(in srgb, var(--color-determination) 10%, transparent) 50%, color-mix(in srgb, var(--color-noble-blue) 30%, transparent) 100%);
+    border: 2px solid color-mix(in srgb, var(--color-warm-energy) 40%, transparent);
     position: relative;
     overflow: hidden;
   }
@@ -90,7 +90,7 @@
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #E85D04, #0A1628, #102647, #0A1628, #E85D04);
+    background: linear-gradient(45deg, var(--color-determination), var(--color-deep-night), #102647, var(--color-deep-night), var(--color-determination));
     background-size: 400% 400%;
     border-radius: 18px;
     z-index: -1;
@@ -113,7 +113,7 @@
   }
 
   .evolution-arrow {
-    background: linear-gradient(90deg, #1E3A5F, #E85D04, #F48C06);
+    background: linear-gradient(90deg, var(--color-noble-blue), var(--color-determination), var(--color-warm-energy));
   }
 
   .sparkle {
@@ -126,13 +126,13 @@
   }
 
   .topic-card {
-    background: linear-gradient(135deg, rgba(30, 58, 95, 0.4) 0%, rgba(15, 40, 71, 0.6) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-noble-blue) 40%, transparent) 0%, color-mix(in srgb, var(--color-night-sky) 60%, transparent) 100%);
+    border: 1px solid color-mix(in srgb, var(--color-white) 10%, transparent);
     transition: all 0.3s ease;
   }
 
   .topic-card:hover {
-    border-color: rgba(244, 140, 6, 0.4);
+    border-color: color-mix(in srgb, var(--color-warm-energy) 40%, transparent);
     transform: translateY(-4px);
   }
 }

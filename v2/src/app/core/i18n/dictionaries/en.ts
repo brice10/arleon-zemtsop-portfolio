@@ -8,6 +8,7 @@ export const EN: Dictionary = {
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
     switchLanguage: 'Switch language',
+    toggleTheme: 'Switch between light and dark theme',
   },
   nav: {
     home: 'Home',

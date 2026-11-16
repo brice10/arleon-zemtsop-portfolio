@@ -5,19 +5,19 @@
 @layer components {
   :host {
     font-family: 'Inter Variable', sans-serif;
-    background: #0A1628;
-    color: #F8F9FA;
+    background: var(--color-deep-night);
+    color: var(--color-off-white);
   }
 
   .bg-pattern {
-    background-image: radial-gradient(ellipse at 20% 80%, rgba(106, 27, 154, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(212, 160, 18, 0.08) 0%, transparent 40%);
+    background-image: radial-gradient(ellipse at 20% 80%, rgba(106, 27, 154, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, color-mix(in srgb, var(--color-noble-gold) 8%, transparent) 0%, transparent 40%);
   }
 
   .prose-custom h2 {
     font-family: 'Montserrat Variable', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: #F8F9FA;
+    color: var(--color-off-white);
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
@@ -26,7 +26,7 @@
     font-family: 'Montserrat Variable', sans-serif;
     font-weight: 600;
     font-size: 1.25rem;
-    color: #D4A012;
+    color: var(--color-noble-gold);
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
   }
@@ -34,15 +34,15 @@
   .prose-custom p {
     margin-bottom: 1.25rem;
     line-height: 1.8;
-    color: #A0A0A5;
+    color: var(--color-gray-light);
   }
 
   .prose-custom strong {
-    color: #F8F9FA;
+    color: var(--color-off-white);
   }
 
   .prose-custom em {
-    color: #D4A012;
+    color: var(--color-noble-gold);
   }
 
   .prose-custom ul {
@@ -55,7 +55,7 @@
     position: relative;
     padding-left: 1.5rem;
     margin-bottom: 0.75rem;
-    color: #A0A0A5;
+    color: var(--color-gray-light);
   }
 
   .prose-custom ul li::before {
@@ -65,21 +65,21 @@
   }
 
   .prose-custom blockquote {
-    border-left: 3px solid #D4A012;
+    border-left: 3px solid var(--color-noble-gold);
     padding-left: 1.5rem;
     margin: 1.5rem 0;
     font-family: 'Playfair Display Variable', serif;
     font-style: italic;
-    color: #F8F9FA;
-    background: rgba(212, 160, 18, 0.05);
+    color: var(--color-off-white);
+    background: color-mix(in srgb, var(--color-noble-gold) 5%, transparent);
     padding: 1.5rem;
     border-radius: 0 12px 12px 0;
     font-size: 1.1rem;
   }
 
   .graduation-card {
-    background: linear-gradient(135deg, rgba(212, 160, 18, 0.2) 0%, rgba(106, 27, 154, 0.15) 50%, rgba(30, 58, 95, 0.4) 100%);
-    border: 2px solid rgba(212, 160, 18, 0.4);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-noble-gold) 20%, transparent) 0%, rgba(106, 27, 154, 0.15) 50%, color-mix(in srgb, var(--color-noble-blue) 40%, transparent) 100%);
+    border: 2px solid color-mix(in srgb, var(--color-noble-gold) 40%, transparent);
     position: relative;
     overflow: hidden;
   }
@@ -91,7 +91,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #D4A012, #6A1B9A, #D4A012);
+    background: linear-gradient(90deg, var(--color-noble-gold), #6A1B9A, var(--color-noble-gold));
   }
 
   .graduation-cap {
@@ -104,39 +104,39 @@
   }
 
   .thesis-card {
-    background: linear-gradient(135deg, rgba(106, 27, 154, 0.15) 0%, rgba(30, 58, 95, 0.4) 100%);
+    background: linear-gradient(135deg, rgba(106, 27, 154, 0.15) 0%, color-mix(in srgb, var(--color-noble-blue) 40%, transparent) 100%);
     border: 1px solid rgba(106, 27, 154, 0.3);
   }
 
   .contribution-card {
-    background: linear-gradient(135deg, rgba(30, 58, 95, 0.4) 0%, rgba(15, 40, 71, 0.6) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-noble-blue) 40%, transparent) 0%, color-mix(in srgb, var(--color-night-sky) 60%, transparent) 100%);
+    border: 1px solid color-mix(in srgb, var(--color-white) 10%, transparent);
     transition: all 0.3s ease;
   }
 
   .contribution-card:hover {
-    border-color: rgba(212, 160, 18, 0.4);
+    border-color: color-mix(in srgb, var(--color-noble-gold) 40%, transparent);
     transform: translateY(-4px);
   }
 
   .expertise-tag {
-    background: rgba(30, 58, 95, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: color-mix(in srgb, var(--color-noble-blue) 50%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-white) 10%, transparent);
     transition: all 0.3s ease;
   }
 
   .expertise-tag:hover {
-    border-color: rgba(0, 212, 255, 0.4);
-    background: rgba(0, 212, 255, 0.1);
+    border-color: color-mix(in srgb, var(--color-digital-cyan) 40%, transparent);
+    background: color-mix(in srgb, var(--color-digital-cyan) 10%, transparent);
   }
 
   .gratitude-card {
-    background: linear-gradient(135deg, rgba(79, 255, 176, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
-    border: 1px solid rgba(79, 255, 176, 0.3);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-code-green) 10%, transparent) 0%, color-mix(in srgb, var(--color-noble-blue) 30%, transparent) 100%);
+    border: 1px solid color-mix(in srgb, var(--color-code-green) 30%, transparent);
   }
 
   .language-badge {
-    background: linear-gradient(135deg, rgba(232, 93, 4, 0.2) 0%, rgba(244, 140, 6, 0.2) 100%);
-    border: 1px solid rgba(232, 93, 4, 0.4);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-determination) 20%, transparent) 0%, color-mix(in srgb, var(--color-warm-energy) 20%, transparent) 100%);
+    border: 1px solid color-mix(in srgb, var(--color-determination) 40%, transparent);
   }
 }

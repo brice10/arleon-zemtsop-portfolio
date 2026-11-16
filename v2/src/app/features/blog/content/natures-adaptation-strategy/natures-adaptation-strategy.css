@@ -5,19 +5,19 @@
 @layer components {
   :host {
     font-family: 'Inter Variable', sans-serif;
-    background: #0A1628;
-    color: #F8F9FA;
+    background: var(--color-deep-night);
+    color: var(--color-off-white);
   }
 
   .bg-pattern {
-    background-image: radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(232, 93, 4, 0.08) 0%, transparent 40%);
+    background-image: radial-gradient(ellipse at 20% 80%, color-mix(in srgb, var(--color-noble-blue) 40%, transparent) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, color-mix(in srgb, var(--color-determination) 8%, transparent) 0%, transparent 40%);
   }
 
   .prose-custom h2 {
     font-family: 'Montserrat Variable', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: #F8F9FA;
+    color: var(--color-off-white);
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
@@ -26,7 +26,7 @@
     font-family: 'Montserrat Variable', sans-serif;
     font-weight: 600;
     font-size: 1.25rem;
-    color: #E85D04;
+    color: var(--color-determination);
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
   }
@@ -34,11 +34,11 @@
   .prose-custom p {
     margin-bottom: 1.25rem;
     line-height: 1.8;
-    color: #A0A0A5;
+    color: var(--color-gray-light);
   }
 
   .prose-custom strong {
-    color: #F8F9FA;
+    color: var(--color-off-white);
   }
 
   .prose-custom ul {
@@ -51,38 +51,38 @@
     position: relative;
     padding-left: 1.5rem;
     margin-bottom: 0.75rem;
-    color: #A0A0A5;
+    color: var(--color-gray-light);
   }
 
   .prose-custom ul li::before {
     content: '→';
     position: absolute;
     left: 0;
-    color: #E85D04;
+    color: var(--color-determination);
   }
 
   .prose-custom a {
-    color: #00D4FF;
+    color: var(--color-digital-cyan);
     text-decoration: underline;
   }
 
   .prose-custom a:hover {
-    color: #E85D04;
+    color: var(--color-determination);
   }
 
   .prose-custom blockquote {
-    border-left: 3px solid #4FFFB0;
+    border-left: 3px solid var(--color-code-green);
     padding-left: 1.5rem;
     margin: 1.5rem 0;
     font-style: italic;
-    color: #A0A0A5;
-    background: rgba(79, 255, 176, 0.05);
+    color: var(--color-gray-light);
+    background: color-mix(in srgb, var(--color-code-green) 5%, transparent);
     padding: 1.5rem;
     border-radius: 0 12px 12px 0;
   }
 
   .frog-card {
-    background: linear-gradient(135deg, rgba(79, 255, 176, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
-    border: 1px solid rgba(79, 255, 176, 0.2);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-code-green) 10%, transparent) 0%, color-mix(in srgb, var(--color-noble-blue) 30%, transparent) 100%);
+    border: 1px solid color-mix(in srgb, var(--color-code-green) 20%, transparent);
   }
 }

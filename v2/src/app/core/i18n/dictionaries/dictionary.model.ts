@@ -15,6 +15,7 @@ export interface Dictionary {
     openMenu: string;
     closeMenu: string;
     switchLanguage: string;
+    toggleTheme: string;
   };
   nav: Record<PageKey, string>;
   seo: Record<PageKey | 'notFound', PageMeta>;

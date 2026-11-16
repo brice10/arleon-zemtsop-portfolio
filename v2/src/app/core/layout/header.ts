@@ -5,6 +5,7 @@ import { filter, map } from 'rxjs';
 import { NAV_PAGES } from '@core/config/site.config';
 import { I18nService } from '@core/i18n/i18n.service';
 import { LANGS, Lang } from '@core/i18n/lang';
+import { ThemeService } from '@core/theme/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,7 @@ import { LANGS, Lang } from '@core/i18n/lang';
 })
 export class Header {
   protected readonly i18n = inject(I18nService);
+  protected readonly theme = inject(ThemeService);
   private readonly router = inject(Router);
 
   protected readonly pages = NAV_PAGES;
