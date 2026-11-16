@@ -1,0 +1,30 @@
+<app-post-shell slug="evenement-depeche">
+  <p class="text-xl text-white">🚨 <strong>When an online store is the victim of a cyberattack, how does it defend itself</strong>? 🤔</p>
+  <p>You don't need to be a retail giant to be targeted: all it takes is a malicious bot deciding to send thousands of requests per second to bring a store down. That is exactly the attack I simulate on TeaStore, a small online tea shop (I promise, nobody got hurt 😄). 🛒💥</p>
+  <p>To understand how it defends itself, keep in mind that it is not one big program but a team of small services, each with its own job: WebUI displays the pages, Auth checks the login details, Recommender suggests recommendations, Image serves the product photos, and Persistence keeps the data (it stays out of today's story). 🍵🧩</p>
+  <p>The first to see the wave coming is WebUI. As soon as it goes above 300 requests per second for a full minute, it understands that something is wrong. But it is the only one that sees the traffic! Auth, Recommender and Image see nothing coming, and yet they are all about to be hit. So a good defense starts with warning everyone, in a way that lets each of them understand right away what is going on. 🌊😬</p>
+  <p>That is the job of <strong>the building block I want to tell you about today</strong>: the event. In the MAPE-K loop (monitor, analyze, plan, execute), we have just analyzed, and the event makes that analysis readable by every service. It takes one or more conditions, such as "more than 300 requests per second for a minute", and gives them a simple name: MaliciousTrafficEvent, "malicious traffic". 📣</p>
+  <p>With AdaptiFlow, it is this event that travels between the services, with its name and, when needed, the data that comes with it. Each service subscribes to the events that concern it, and as soon as this one arrives, each of them organizes its own defense:</p>
+  <ul>
+    <li>🖥️ WebUI shows a maintenance message to visitors</li>
+    <li>🔐 Auth temporarily cuts its connections</li>
+    <li>🧠 Recommender switches to low power mode</li>
+    <li>🖼️ Image hands its photos over to an external provider</li>
+  </ul>
+  <p>And when the attack stops? A second event goes out, BenignTrafficEvent, to announce that the traffic is back to normal and that everyone can lower their guard. Without it, the store would stay in protection mode forever! 🔓😅</p>
+  <p>If I had to keep just one thing from this building block, it would be this: <strong>a good alert is worth as much as a good protection, because one service sounds the alarm and the whole store knows what to do</strong>. 💡</p>
+  <p>What about you? When bad news lands in your team, does everyone know right away what to do, or does it need to be explained first? 🤔 Tell me 👇 in the comments!</p>
+  <p>🔔 Follow me for more contents, the next adventures are already on their way! 😊</p>
+  <ul class="mt-8 flex list-none flex-wrap gap-2 space-y-0 pl-0">
+    <li class="tag">#CyberSecurity</li>
+    <li class="tag">#SelfProtection</li>
+    <li class="tag">#AutonomicComputing</li>
+    <li class="tag">#SelfAdaptiveSystems</li>
+    <li class="tag">#MAPEK</li>
+    <li class="tag">#AdaptiFlow</li>
+    <li class="tag">#Microservices</li>
+    <li class="tag">#CloudComputing</li>
+    <li class="tag">#Inria</li>
+    <li class="tag">#UnivLille</li>
+  </ul>
+</app-post-shell>

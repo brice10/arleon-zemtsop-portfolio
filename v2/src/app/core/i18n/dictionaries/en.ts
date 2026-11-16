@@ -70,6 +70,7 @@ export const EN: Dictionary = {
     filters: {
       all: 'All',
       research: 'Research',
+      popular: 'Popular science',
       phd: 'PhD Journey',
       tech: 'Tech & Dev',
       life: 'Life & Integration',

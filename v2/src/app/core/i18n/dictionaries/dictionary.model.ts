@@ -26,7 +26,14 @@ export interface Dictionary {
   blog: {
     title: string;
     lead: string;
-    filters: { all: string; research: string; phd: string; tech: string; life: string };
+    filters: {
+      all: string;
+      research: string;
+      popular: string;
+      phd: string;
+      tech: string;
+      life: string;
+    };
     latest: string;
     all: string;
   };

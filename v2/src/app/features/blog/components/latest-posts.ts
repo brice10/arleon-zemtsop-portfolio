@@ -42,5 +42,5 @@ export class LatestPosts {
 
   /** Nombre d'articles affichés. */
   readonly count = input(3);
-  protected readonly posts = computed(() => this.blog.posts.slice(0, this.count()));
+  protected readonly posts = computed(() => this.blog.in(this.i18n.lang()).slice(0, this.count()));
 }

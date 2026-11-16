@@ -160,3 +160,16 @@ Le site déployé est 100 % statique : aucune fonction serveur.
 
 - [ ] Dates précises des articles restants : champ `date` de `features/blog/data/posts.ts` (optionnel)
 - [ ] Étude de cas d'un projet d'entreprise (DIMSOFT) sur la page Projets
+
+### Articles courts (série LinkedIn) et aperçus
+
+Les articles issus des posts LinkedIn utilisent le gabarit commun `features/blog/components/post-shell.ts` :
+le composant de contenu (`content/<slug>/<slug>.<langue>.html`) ne contient que le texte, entouré de
+`<app-post-shell slug="…">`. Titre, date, catégorie et média viennent de l'entrée du registre `data/posts.ts`.
+
+- `preview` (par langue) : `image` + dimensions, et au choix `video` (jouée au survol de la carte, lisible
+  dans l'article) ou `slides` (carrousel dans l'article). L'image sert aussi d'aperçu de partage (`og:image`).
+  Sans `preview`, la carte affiche le pictogramme de la catégorie.
+- `content` peut n'exister que dans une langue : l'article n'est alors ni listé ni prérendu dans l'autre.
+- Les médias sont dans `public/assets/blog/<slug>/` (`cover.<langue>.jpg`, `video.<langue>.mp4`,
+  `slide-N.<langue>.webp`).

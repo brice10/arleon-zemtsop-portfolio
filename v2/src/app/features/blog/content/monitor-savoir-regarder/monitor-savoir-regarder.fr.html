@@ -1,0 +1,15 @@
+<app-post-shell slug="monitor-savoir-regarder">
+  <p class="text-xl text-white">Ce matin, j'ouvre Grafana et je tombe sur une forêt de courbes qui bougent toutes en même temps. On vante souvent ces outils, à raison, mais ils nous font oublier une difficulté qui colle à la peau du monitoring : qu'est-ce qu'on est censé observer ? Parce que ce qu'on observe dans un système oriente ce qu'on décide, et plus les observations sont pertinentes, meilleures seront les décisions.</p>
+  <p>En auto-adaptation, le monitoring, le M de la boucle MAPE-K, est la première étape, et je vous avoue que je la trouve la plus décisive : avant de décider quoi que ce soit, il faut savoir <strong>observer</strong>, et tout mesurer n'est pas la solution 😅</p>
+  <p>Dans AdaptiFlow, le framework que j'ai construit, on attaque ce problème sous deux angles. D'abord on distingue les métriques selon leur <strong>nature</strong>, infrastructurelles ou métier, ce qui répond au « quoi » et au « comment ». Ensuite seulement on regarde la nature de l'observation : périodique ou à la demande. Et c'est le premier angle qui compte vraiment, le second n'est qu'un détail qui peaufine le monitoring.</p>
+  <p>Un exemple : on surveille un service de base de données pour le redémarrer en cas d'interruption ou de défaut inattendu. Pour ça, on observe <strong>deux natures</strong> de données à la fois. Côté infrastructure, la connectivité réseau, la santé du conteneur et le délai de réponse du service. Côté applicatif, le taux d'erreur et le délai de réponse des requêtes. Parce qu'un service peut être en ligne d'après l'infrastructure, et pourtant inutilisable d'après le métier 🍵</p>
+  <p>Bien observer, ce n'est donc pas tout voir, c'est savoir quelle nature de données regarder selon la situation. Et chez vous, qu'est-ce que vous mesurez trop, ou pas assez ? La brique d'à côté, celle qui transforme une mesure en « tiens, là c'est anormal », arrive bientôt par ici.</p>
+  <ul class="mt-8 flex list-none flex-wrap gap-2 space-y-0 pl-0">
+    <li class="tag">#Inria</li>
+    <li class="tag">#UnivLille</li>
+    <li class="tag">#AutonomicComputing</li>
+    <li class="tag">#MAPEK</li>
+    <li class="tag">#CloudComputing</li>
+    <li class="tag">#Microservices</li>
+  </ul>
+</app-post-shell>

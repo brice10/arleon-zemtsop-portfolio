@@ -1,0 +1,30 @@
+<app-post-shell slug="evenement-depeche">
+  <p class="text-xl text-white">🚨 <strong>Quand une boutique en ligne est victime d'une cyberattaque, comment riposte-t-elle</strong> ? 🤔</p>
+  <p>Pas besoin d'être un géant du commerce pour être visé : il suffit qu'un robot malveillant décide d'envoyer des milliers de requêtes par seconde pour faire tomber une boutique. C'est exactement l'attaque que je simule sur TeaStore, une petite boutique de thé en ligne (promis, personne n'a souffert 😄). 🛒💥</p>
+  <p>Pour comprendre comment elle se défend, sachez qu'elle n'est pas un seul gros programme mais une équipe de petits services qui ont chacun leur rôle : WebUI affiche les pages, Auth vérifie les identifiants, Recommender propose des recommandations, Image sert les photos des produits, et Persistence garde les données (lui reste en dehors de l'histoire d'aujourd'hui). 🍵🧩</p>
+  <p>Le premier à voir arriver la vague, c'est WebUI. Dès qu'il dépasse 300 requêtes par seconde pendant une minute, il comprend que quelque chose cloche. Mais il est le seul à voir le trafic ! Auth, Recommender et Image ne voient rien venir, et pourtant ils vont tous être touchés. Une bonne défense commence donc par prévenir tout le monde, de façon à ce que chacun comprenne tout de suite ce qui se passe. 🌊😬</p>
+  <p>C'est le rôle de <strong>la brique dont je veux vous parler aujourd'hui</strong> : l'événement. Dans la boucle MAPE-K (observer, analyser, planifier, agir), on vient d'analyser, et l'événement rend cette analyse lisible par tous les services. Il prend une ou plusieurs conditions, comme « plus de 300 requêtes par seconde pendant une minute », et leur donne un nom tout simple : MaliciousTrafficEvent, « trafic malveillant ». 📣</p>
+  <p>Avec AdaptiFlow, c'est cet événement qui circule entre les services, avec son nom et, si besoin, les données qui l'accompagnent. Chaque service s'abonne aux événements qui le concernent, et dès que celui-là arrive, chacun organise sa propre défense :</p>
+  <ul>
+    <li>🖥️ WebUI affiche un message de maintenance aux visiteurs</li>
+    <li>🔐 Auth coupe temporairement ses connexions</li>
+    <li>🧠 Recommender passe en mode économie</li>
+    <li>🖼️ Image confie ses photos à un fournisseur externe</li>
+  </ul>
+  <p>Et quand l'attaque s'arrête ? Un second événement part, BenignTrafficEvent, pour annoncer que le trafic est redevenu normal et que chacun peut baisser la garde. Sans lui, la boutique resterait en mode protection pour toujours ! 🔓😅</p>
+  <p>Si je devais retenir une seule chose de cette brique, ce serait celle-ci : <strong>une bonne alerte vaut une bonne protection, parce qu'un service sonne l'alarme et toute la boutique sait quoi faire</strong>. 💡</p>
+  <p>Et vous, quand une mauvaise nouvelle tombe dans votre équipe, est-ce que tout le monde sait tout de suite quoi faire, ou faut-il d'abord l'expliquer ? 🤔 Racontez-moi 👇 en commentaire !</p>
+  <p>🔔 A très bientôt pour la suite de mes aventures scientifiques !</p>
+  <ul class="mt-8 flex list-none flex-wrap gap-2 space-y-0 pl-0">
+    <li class="tag">#CyberSecurity</li>
+    <li class="tag">#SelfProtection</li>
+    <li class="tag">#AutonomicComputing</li>
+    <li class="tag">#SelfAdaptiveSystems</li>
+    <li class="tag">#MAPEK</li>
+    <li class="tag">#AdaptiFlow</li>
+    <li class="tag">#Microservices</li>
+    <li class="tag">#CloudComputing</li>
+    <li class="tag">#Inria</li>
+    <li class="tag">#UnivLille</li>
+  </ul>
+</app-post-shell>

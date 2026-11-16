@@ -1,0 +1,28 @@
+<app-post-shell slug="on-est-bientot-arrives">
+  <p class="text-xl text-white">🚗 « On est bientôt arrivés ? » : <strong>la question qui peut faire tomber un serveur</strong> ! 😅</p>
+  <p>Tous les parents connaissent la scène : à peine sortis du parking, une petite voix demande depuis la banquette arrière « on est bientôt arrivés ? ». Deux minutes plus tard, rebelote. Trente secondes plus tard, encore. 🙃 La question est légitime (l'enfant veut VRAIMENT savoir), mais posée toutes les trente secondes, elle coûte plus cher au conducteur que le trajet lui-même ! 😅</p>
+  <p>Et figurez-vous que mes microservices posent EXACTEMENT la même question. 🤓☁️</p>
+  <p>Dans ma boutique de test (TeaStore, une boutique de thé en ligne composée de plusieurs petits services), le service Persistence est celui qui parle à la base de données. Toutes les 5 secondes, il lui demande : « tout va bien ? ». Si la réponse tarde plus de 5 secondes, ou si la connexion réseau est perdue, il comprend que la base est tombée et prévient les autres services, le temps qu'elle redémarre toute seule. 🩹</p>
+  <p>Dans la boucle MAPE-K (observer, analyser, planifier, agir), nous sommes au M, Monitor. La question numéro un, c'est QUOI regarder. Mais juste derrière se cache celle de la banquette arrière : à quel rythme ? ⏱️</p>
+  <p>Parce que chaque « tout va bien ? » a un prix. Toutes les 5 secondes, ça ne coûte presque rien. Toutes les 100 millisecondes, c'est 50 fois plus de requêtes (oui, j'ai fait le calcul 🤓), et la base passe son temps à répondre « oui, oui, ça va » au lieu de servir les clients ! 💸 Toutes les 5 minutes, c'est l'inverse : la panne peut durer de longues minutes sans que personne ne la voie, comme l'enfant endormi juste avant l'arrivée. 😴</p>
+  <p>Avec AdaptiFlow, le framework que j'ai construit, ce rythme s'écrit dans la règle d'adaptation, juste à côté de ce qu'on observe, et chaque service choisit sa façon de regarder : 👀</p>
+  <ul>
+    <li>🔁 Demander à intervalle régulier : le seul moyen pour la base de données, parce qu'une base qui tombe ne prévient personne, elle se tait.</li>
+    <li>📣 Se faire prévenir (« je te dirai quand on arrive ! ») : certaines mesures arrivent toutes seules dès qu'elles changent.</li>
+    <li>🕐 Regarder seulement quand on le demande (« jette un œil au GPS en sortant de l'autoroute ») : l'observation d'un événement peut se déclencher à la demande.</li>
+  </ul>
+  <p>Si je devais garder une seule phrase de tout ça : <strong>observer a un prix, et quand on demande « tout va bien ? » trop souvent, c'est la question qui finit par tout ralentir</strong>. 💡</p>
+  <p>Et vous, au travail ou à la maison, qu'est-ce que vous vérifiez beaucoup trop souvent… et qu'est-ce que vous ne regardez que quand ça sonne ? 😄 Racontez-moi 👇 en commentaire !</p>
+  <p>🔔 Abonnez-vous pour ne rien manquer de mes prochaines aventures scientifiques !</p>
+  <ul class="mt-8 flex list-none flex-wrap gap-2 space-y-0 pl-0">
+    <li class="tag">#CloudComputing</li>
+    <li class="tag">#Microservices</li>
+    <li class="tag">#Monitoring</li>
+    <li class="tag">#SelfAdaptiveSystems</li>
+    <li class="tag">#AutonomicComputing</li>
+    <li class="tag">#AdaptiFlow</li>
+    <li class="tag">#PhDLife</li>
+    <li class="tag">#Inria</li>
+    <li class="tag">#UnivLille</li>
+  </ul>
+</app-post-shell>

@@ -100,7 +100,13 @@ export function blogPostingNode(
   siteUrl: string,
   url: string,
   lang: Lang,
-  post: { title: string; description: string; datePublished: string; section: string },
+  post: {
+    title: string;
+    description: string;
+    datePublished: string;
+    section: string;
+    image?: string;
+  },
 ): JsonLd {
   return {
     '@type': 'BlogPosting',
@@ -111,7 +117,7 @@ export function blogPostingNode(
     datePublished: post.datePublished,
     articleSection: post.section,
     inLanguage: lang,
-    image: `${siteUrl}${SITE.ogImage}`,
+    image: `${siteUrl}${post.image ?? SITE.ogImage}`,
     author: { '@id': personId(siteUrl) },
     publisher: { '@id': personId(siteUrl) },
   };

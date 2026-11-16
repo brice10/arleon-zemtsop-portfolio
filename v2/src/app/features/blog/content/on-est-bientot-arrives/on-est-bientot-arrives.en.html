@@ -1,0 +1,28 @@
+<app-post-shell slug="on-est-bientot-arrives">
+  <p class="text-xl text-white">🚗 "Are we there yet?": <strong>the question that can bring a server down</strong>! 😅</p>
+  <p>Hello everyone! 👋 Every parent knows the scene: you have barely left the parking lot when a small voice from the back seat asks "are we there yet?". Two minutes later, again. Thirty seconds later, again. 🙃 The question is legitimate (the kid REALLY wants to know), but asked every thirty seconds, it costs the driver more than the trip itself! 😅</p>
+  <p>And guess what: my microservices ask EXACTLY the same question. 🤓☁️</p>
+  <p>In my test store (TeaStore, an online tea shop made of several small services), the Persistence service is the one that talks to the database. Every 5 seconds, it asks: "is everything okay?". If the answer takes more than 5 seconds to come back, or if the network connection is lost, it understands that the database is down and warns the other services while the database restarts on its own. 🩹</p>
+  <p>In the MAPE-K loop (monitor, analyze, plan, execute), we are at the M, Monitor. Question number one is WHAT to watch. But right behind it hides the one from the back seat: how often? ⏱️</p>
+  <p>Because every "is everything okay?" has a price. Every 5 seconds, it costs almost nothing. Every 100 milliseconds, that is 50 times more requests (yes, I did the math 🤓), and the database spends its time answering "yes, yes, I'm fine" instead of serving customers! 💸 Every 5 minutes, it is the opposite: the outage can last long minutes without anyone seeing it, like the kid who fell asleep right before arrival. 😴</p>
+  <p>With AdaptiFlow, the framework I built, this rhythm is written in the adaptation rule, right next to what is being observed, and each service picks its own way of watching: 👀</p>
+  <ul>
+    <li>🔁 Asking at a regular interval: the only option for the database, because a database that goes down doesn't warn anyone, it just goes silent.</li>
+    <li>📣 Being told ("I'll tell you when we get there!"): some measurements arrive on their own as soon as they change.</li>
+    <li>🕐 Looking only when asked ("check the GPS when we leave the highway"): watching for an event can be triggered on demand.</li>
+  </ul>
+  <p>There is no universal right rhythm, only the one that fits what you are watching, and it is written down in advance. 🎯 If I had to keep just one sentence: <strong>watching has a price, and when you ask "is everything okay?" too often, the question itself is what slows everything down</strong>. 💡</p>
+  <p>What about you? At work or at home, what do you check way too often… and what do you only look at when it rings? 😄 Tell me 👇 in the comments!</p>
+  <p>Follow me for more contents 😊</p>
+  <ul class="mt-8 flex list-none flex-wrap gap-2 space-y-0 pl-0">
+    <li class="tag">#CloudComputing</li>
+    <li class="tag">#Microservices</li>
+    <li class="tag">#Monitoring</li>
+    <li class="tag">#SelfAdaptiveSystems</li>
+    <li class="tag">#AutonomicComputing</li>
+    <li class="tag">#AdaptiFlow</li>
+    <li class="tag">#PhDLife</li>
+    <li class="tag">#Inria</li>
+    <li class="tag">#UnivLille</li>
+  </ul>
+</app-post-shell>

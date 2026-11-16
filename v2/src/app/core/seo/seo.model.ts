@@ -8,6 +8,8 @@ export interface SeoConfig {
   type?: 'website' | 'article' | 'profile';
   /** Image de partage, chemin absolu depuis la racine du site. */
   image?: string;
+  /** Largeur et hauteur de `image`, en pixels (sinon, celles de l'image par défaut). */
+  imageSize?: readonly [number, number];
   /** Exclut la page de l'indexation (404, pages techniques). */
   noindex?: boolean;
   /** false pour une page sans équivalent dans les autres langues (pas de hreflang). */

@@ -16,12 +16,14 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Prerender,
     getPrerenderParams: langs,
   })),
-  // Articles de blog : une page par article et par langue, d'après le registre POSTS.
+  // Articles de blog : une page par article, dans chaque langue où il existe (registre POSTS).
   {
     path: ':lang/blog/:slug',
     renderMode: RenderMode.Prerender,
     getPrerenderParams: async () =>
-      LANGS.flatMap((lang) => POSTS.map((post) => ({ lang, slug: post.slug }))),
+      LANGS.flatMap((lang) =>
+        POSTS.filter((post) => !!post.content[lang]).map((post) => ({ lang, slug: post.slug })),
+      ),
   },
   // URL inconnues sous /fr ou /en : rendues côté client (en prod, Vercel répond avec 404.html).
   { path: ':lang/**', renderMode: RenderMode.Client },

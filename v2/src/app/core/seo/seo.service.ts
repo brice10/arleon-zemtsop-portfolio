@@ -71,8 +71,14 @@ export class SeoService {
     this.property('og:description', config.description);
     this.property('og:url', url);
     this.property('og:image', image);
-    this.property('og:image:width', '1200');
-    this.property('og:image:height', '630');
+    const [imageWidth, imageHeight] = config.imageSize ?? (config.image ? [] : [1200, 630]);
+    if (imageWidth && imageHeight) {
+      this.property('og:image:width', String(imageWidth));
+      this.property('og:image:height', String(imageHeight));
+    } else {
+      this.meta.removeTag('property="og:image:width"');
+      this.meta.removeTag('property="og:image:height"');
+    }
     this.property('og:image:alt', SITE.name);
     this.property('og:locale', t.ogLocale);
     this.meta.removeTag('property="og:locale:alternate"');

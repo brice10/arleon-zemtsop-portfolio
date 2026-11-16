@@ -49,6 +49,8 @@ export class BlogListPage {
   protected readonly active = signal<'all' | BlogCategory>('all');
   protected readonly visible = computed(() => {
     const active = this.active();
-    return this.blog.posts.filter((post) => active === 'all' || post.categories.includes(active));
+    return this.blog
+      .in(this.i18n.lang())
+      .filter((post) => active === 'all' || post.categories.includes(active));
   });
 }

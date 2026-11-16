@@ -4,7 +4,7 @@ import { I18nService } from '@core/i18n/i18n.service';
 import { SeoService } from '@core/seo/seo.service';
 import { blogPostingNode, breadcrumbNode } from '@core/seo/structured-data';
 import { environment } from '@env';
-import { BlogPostView } from './blog.model';
+import { BlogPostView, postLangs } from './blog.model';
 import { BlogService } from './blog.service';
 
 /** Charge l'article demandé, applique son SEO (type `article`, BlogPosting, fil d'Ariane) ou renvoie la 404. */
@@ -22,15 +22,26 @@ export const blogPostResolver: ResolveFn<BlogPostView> = async (route) => {
   const lang = i18n.lang();
   const t = i18n.t();
   const path = `blog/${post.slug}`;
-  const content = await post.content[lang]();
+  const load = post.content[lang];
+  if (!load) {
+    // Article absent dans cette langue (ex. bascule de langue depuis sa page) : retour à la liste.
+    return new RedirectCommand(router.parseUrl(i18n.page('blog')));
+  }
+  const content = await load();
+  const preview = post.preview?.[lang];
 
   seo.apply({
     title: `${post.title[lang]} | Blog — Arléon Zemtsop`,
     description: post.description[lang],
     path,
     type: 'article',
+    translated: postLangs(post).length > 1,
+    ...(preview
+      ? { image: preview.image, imageSize: [preview.width, preview.height] as const }
+      : {}),
     jsonLd: [
       blogPostingNode(environment.siteUrl, seo.url(path), lang, {
+        image: preview?.image,
         title: post.title[lang],
         description: post.description[lang],
         datePublished: post.date ?? String(post.year),
