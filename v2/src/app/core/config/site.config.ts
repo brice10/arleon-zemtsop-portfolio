@@ -13,13 +13,15 @@ export const PAGE_PATHS: Record<PageKey, string> = {
   contact: 'contact',
 };
 
-/** Ordre des entrées du menu principal. */
-export const NAV_PAGES: PageKey[] = [
-  'home',
+/** Menu principal. L'accueil est porté par le logo ; Expérience se rejoint depuis À propos et le pied de page. */
+export const NAV_PAGES: PageKey[] = ['about', 'research', 'projects', 'blog', 'contact'];
+
+/** Liens du pied de page : toutes les pages. */
+export const FOOTER_PAGES: PageKey[] = [
   'about',
+  'experience',
   'research',
   'projects',
-  'experience',
   'blog',
   'contact',
 ];

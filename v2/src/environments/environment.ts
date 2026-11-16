@@ -12,7 +12,9 @@ export const environment: Environment = {
   indexable: true,
   analytics: {
     vercel: true,
-    googleAnalyticsId: 'G-NXFPVSPT1S',
+    // Google Analytics désactivé : il imposerait un bandeau de consentement. Vercel Analytics,
+    // sans cookie, suffit. Pour le réactiver : renseigner l'identifiant (ex. 'G-NXFPVSPT1S').
+    googleAnalyticsId: null,
   },
   contact: {
     formspreeEndpoint: 'https://formspree.io/f/mzdzpawn',

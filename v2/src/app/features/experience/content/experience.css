@@ -1598,3 +1598,46 @@
   top: 4rem;
   z-index: 30;
 }
+
+/* ---------------------------------------------------------------------------
+   Alignement sur le reste du site : mêmes largeurs et marges que les autres
+   pages, sommaire réduit aux ancres, bouton CV.
+--------------------------------------------------------------------------- */
+.header {
+  justify-content: center;
+  padding: 0.9rem 2rem;
+}
+.hero,
+.section {
+  max-width: 80rem;
+  padding-inline: 2rem;
+}
+.hero {
+  padding-top: 4.5rem;
+  padding-bottom: 3.5rem;
+}
+.section {
+  padding-block: 4rem;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(90deg, var(--color-determination), var(--color-warm-energy));
+  color: #fff;
+  font-family: 'Montserrat Variable', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+@media (max-width: 640px) {
+  .header {
+    padding-inline: 1rem;
+  }
+  .hero,
+  .section {
+    padding-inline: 1rem;
+  }
+}

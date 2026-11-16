@@ -28,7 +28,7 @@ export class SeoService {
   }
 
   /** SEO d'une page statique : textes pris dans `seo.<page>` du dictionnaire courant. */
-  applyPage(page: PageKey): void {
+  applyPage(page: PageKey, extraJsonLd: JsonLd[] = []): void {
     const t = this.i18n.t();
     const path = PAGE_PATHS[page];
     this.apply({
@@ -43,6 +43,7 @@ export class SeoService {
                 { name: t.common.breadcrumbHome, url: this.url() },
                 { name: t.nav[page], url: this.url(path) },
               ]),
+              ...extraJsonLd,
             ],
     });
   }
@@ -104,6 +105,12 @@ export class SeoService {
           href: this.url(config.path, DEFAULT_LANG),
         });
       }
+      this.link({
+        rel: 'alternate',
+        type: 'application/rss+xml',
+        title: `Blog — ${SITE.shortName}`,
+        href: `${environment.siteUrl}/${lang}/feed.xml`,
+      });
       this.jsonLd([
         personNode(environment.siteUrl, lang),
         websiteNode(environment.siteUrl, lang),

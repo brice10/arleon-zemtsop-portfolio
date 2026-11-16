@@ -27,6 +27,8 @@ export interface Dictionary {
     title: string;
     lead: string;
     filters: { all: string; research: string; phd: string; tech: string; life: string };
+    latest: string;
+    all: string;
   };
   notFound: { title: string; text: string };
   footer: { rights: string; madeIn: string };

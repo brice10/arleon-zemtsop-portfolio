@@ -25,7 +25,7 @@ describe('SeoService', () => {
     seo.applyPage('about');
 
     const canonical = doc.querySelector('link[rel="canonical"]')?.getAttribute('href');
-    const hreflangs = [...doc.querySelectorAll('link[rel="alternate"]')].map((l) =>
+    const hreflangs = [...doc.querySelectorAll('link[rel="alternate"][hreflang]')].map((l) =>
       l.getAttribute('hreflang'),
     );
 

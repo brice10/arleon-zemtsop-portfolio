@@ -36,7 +36,7 @@ bash run.sh dev        # http://localhost:4200  (premier lancement : installatio
 | Environnement | `src/environments/environment.development.ts` | `src/environments/environment.ts` |
 | URL du site (canonical, hreflang, Open Graph) | `http://localhost:4200` | `https://arleonzemtsop.fr` |
 | Indexation | `noindex, nofollow` | `index, follow` |
-| Mesure d'audience (Vercel, GA4) | désactivée | activée |
+| Mesure d'audience (Vercel Analytics) | désactivée | activée |
 | Build | non optimisé, source maps | optimisé, fichiers hachés, CSS critique en ligne |
 | Fichiers concernés | `compose.yaml`, `docker/Dockerfile.dev` | `vercel.json`, `tools/generate-seo-files.mjs` |
 
@@ -68,7 +68,9 @@ src/app/
 └── app.routes.server.ts  Liste des pages à prérendre
 ```
 
-Règles de dépendance : `features → shared → core`. Une feature n'importe jamais une autre feature.
+Règles de dépendance : `features → shared → core`. Une feature n'importe d'une autre feature que ce
+que celle-ci exporte dans son fichier `public.ts` (ex. `@features/blog/public` pour les derniers
+articles affichés sur l'accueil).
 Alias d'import : `@core/*`, `@shared/*`, `@features/*`, `@env`.
 
 **Contenu.** Chaque page et chaque article existe en deux composants, un par langue
@@ -91,6 +93,15 @@ donne simplement d'autres valeurs. En thème clair, `white` désigne donc la cou
 tokens (`text-white`, `bg-noble-blue/30`, `text-digital-cyan`…) ou `var(--color-…)` en CSS,
 jamais une couleur écrite en dur.
 
+**Publications.** `features/research/publications.ts` est la source unique : la liste de la page
+Recherche, les entrées BibTeX à copier et les données structurées `ScholarlyArticle` en découlent.
+Ajouter une publication = ajouter une entrée dans ce fichier. Les études de cas des projets de
+recherche suivent le même principe (`case-studies.ts`) et résument les articles publiés.
+
+**Blog.** Les cartes d'article (`PostCard`) servent à la liste du blog et aux derniers articles de
+l'accueil ; leur vignette dépend de la première catégorie de l'article. Un flux RSS par langue est
+généré au build (`/fr/feed.xml`, `/en/feed.xml`) et annoncé dans le `<head>` de chaque page.
+
 **Comportements.** Ils sont portés par des directives reconnues à la classe ou à l'attribut :
 `.reveal` (apparition au défilement), `.filter-btn` + `data-category` (filtres), `appFaqToggle`,
 `appContactForm`. Aucun script en ligne.
@@ -103,7 +114,8 @@ jamais une couleur écrite en dur.
 | Balises par page et par langue | `SeoService` : `<title>`, description, robots, Open Graph, Twitter Cards |
 | Contenu dupliqué | URL canonique sur chaque page |
 | Bilingue | `<html lang>`, `hreflang` fr / en / x-default dans le HTML **et** dans le sitemap |
-| Données structurées | JSON-LD en graphe : `Person`, `WebSite`, `WebPage`, `BreadcrumbList`, `BlogPosting` |
+| Données structurées | JSON-LD en graphe : `Person`, `WebSite`, `WebPage`, `BreadcrumbList`, `BlogPosting`, `ScholarlyArticle` |
+| Flux RSS | `/fr/feed.xml` et `/en/feed.xml`, générés au build |
 | Sitemap | Généré au build à partir des pages réellement produites |
 | Anciennes URL de la v1 | Redirections 301 dans `vercel.json` (`/fr/pages/about.html` → `/fr/about`, …) |
 | Erreurs | Vraie réponse HTTP 404 (`404.html`), page en `noindex` |
@@ -144,10 +156,7 @@ interprète : `{` → `&#123;`, `}` → `&#125;`, `@` → `&#64;`.
 
 Le site déployé est 100 % statique : aucune fonction serveur.
 
-## État de la migration depuis la v1
+## Reste à faire
 
-- [x] Socle, design system, i18n, SEO, profils dev / prod
-- [x] Contenu des 6 pages (accueil, à propos, recherche, projets, expérience, contact), FR + EN
-- [x] Contenu des 15 articles, FR + EN
-- [ ] Dates de publication complètes des articles (`year` → date ISO dans `posts.ts`)
-- [ ] Logo Inria de l'accueil encore chargé depuis Wikimedia : à héberger dans `public/assets/images/`
+- [ ] Dates précises des articles restants : champ `date` de `features/blog/data/posts.ts` (optionnel)
+- [ ] Étude de cas d'un projet d'entreprise (DIMSOFT) sur la page Projets

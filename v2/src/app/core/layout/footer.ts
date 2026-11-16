@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NAV_PAGES, SITE } from '@core/config/site.config';
+import { FOOTER_PAGES, SITE } from '@core/config/site.config';
 import { I18nService } from '@core/i18n/i18n.service';
 
 @Component({
@@ -57,6 +57,6 @@ import { I18nService } from '@core/i18n/i18n.service';
 export class Footer {
   protected readonly i18n = inject(I18nService);
   protected readonly site = SITE;
-  protected readonly pages = NAV_PAGES.filter((page) => page !== 'home');
+  protected readonly pages = FOOTER_PAGES;
   protected readonly year = new Date().getFullYear();
 }

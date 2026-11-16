@@ -92,6 +92,19 @@
                 </div>
             </div>
         </section>
+        <section id="publications" class="py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-0.5 bg-determination"></div>
+                        <span class="font-mono text-sm text-determination tracking-wider uppercase">Publications</span>
+                    </div>
+                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-4">Scientific publications</h2>
+                    <p class="font-body text-gray-light max-w-2xl">Peer-reviewed papers, with full reference and BibTeX entry.</p>
+                </div>
+                <app-publication-list />
+            </div>
+        </section>
         <section class="py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-16 reveal">
@@ -150,177 +163,7 @@
                     </div>
                     <h2 class="font-display text-3xl lg:text-4xl font-bold text-white">Research projects</h2>
                 </div>
-                <div class="space-y-8">
-                    <article class="research-card reveal bg-linear-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" style="--accent-color: var(--color-determination);">
-                        <div class="grid lg:grid-cols-3 gap-0">
-                            <div class="lg:col-span-2 p-8 lg:p-10">
-                                <div class="flex items-center gap-4 mb-4">
-                                    <span class="px-3 py-1 bg-determination/20 border border-determination/30 rounded-full font-mono text-xs text-determination">Framework</span>
-                                    <span class="px-3 py-1 bg-code-green/20 border border-code-green/30 rounded-full font-mono text-xs text-code-green">Open Source</span>
-                                </div>
-                                <h3 class="font-display text-2xl lg:text-3xl font-bold text-white mb-4">AdaptiFlow</h3>
-                                <p class="font-body text-gray-light leading-relaxed mb-6">
-                                    <strong class="text-white">AdaptiFlow</strong> is a lightweight Java framework designed to enable <span class="text-determination font-medium">microservice self-adaptation</span> in real time. It implements the MAPE-K pattern (Monitor, Analyze, Plan, Execute – Knowledge) to allow cloud applications to automatically adapt to changes in their environment.
-                                </p>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex items-start gap-3">
-                                        <svg class="w-5 h-5 text-determination shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                        <span class="font-body text-sm text-gray-light">Real-time monitoring of system and application metrics</span>
-                                    </div>
-                                    <div class="flex items-start gap-3">
-                                        <svg class="w-5 h-5 text-determination shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                        <span class="font-body text-sm text-gray-light">Rule-based automated decision making</span>
-                                    </div>
-                                    <div class="flex items-start gap-3">
-                                        <svg class="w-5 h-5 text-determination shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                        <span class="font-body text-sm text-gray-light">Extensible and configurable architecture</span>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap gap-3">
-                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Java 11+</span>
-                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Apache</span>
-                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Docker</span>
-                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Kubernetes</span>
-                                </div>
-                            </div>
-                            <div class="bg-deep-night/50 p-8 lg:p-10 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/5">
-                                <div class="text-center">
-                                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-linear-to-br from-determination to-warm-energy flex items-center justify-center">
-                                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                                    </div>
-                                    <h4 class="font-display font-bold text-white mb-2">Status</h4>
-                                    <p class="font-mono text-sm text-code-green mb-6">Actively developed</p>
-                                    <a href="https://gitlab.inria.fr/adaptable-teastore/experimentation-platform/-/blob/main/Sources/utilities/tools.spirals.cerberus237.adaptiflow/README.md" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg font-mono text-sm text-gray-light hover:text-determination hover:border-determination/30 transition-all">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                        View on GitLab
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="research-card reveal bg-linear-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" style="--accent-color: var(--color-digital-cyan);">
-                        <div class="grid lg:grid-cols-3 gap-0">
-                            <div class="lg:col-span-2 p-8 lg:p-10">
-                                <div class="flex items-center gap-4 mb-4">
-                                    <span class="px-3 py-1 bg-digital-cyan/20 border border-digital-cyan/30 rounded-full font-mono text-xs text-digital-cyan">Demo</span>
-                                    <span class="px-3 py-1 bg-noble-gold/20 border border-noble-gold/30 rounded-full font-mono text-xs text-noble-gold">Benchmark</span>
-                                </div>
-                                <h3 class="font-display text-2xl lg:text-3xl font-bold text-white mb-4">Adaptable TeaStore</h3>
-                                <p class="font-body text-gray-light leading-relaxed mb-6">
-                                    <strong class="text-white">Adaptable TeaStore</strong> is a demo application based on TeaStore (a reference microservices benchmark) enhanced with AdaptiFlow's self-adaptation capabilities. It concretely illustrates how an e-commerce system can <span class="text-digital-cyan font-medium">adapt automatically</span> to traffic spikes.
-                                </p>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex items-start gap-3">
-                                        <svg class="w-5 h-5 text-digital-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                        <span class="font-body text-sm text-gray-light">Full e-commerce application with multiple microservices</span>
-                                    </div>
-                                    <div class="flex items-start gap-3">
-                                        <svg class="w-5 h-5 text-digital-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                        <span class="font-body text-sm text-gray-light">Traffic scaling based on performance metrics</span>
-                                    </div>
-                                    <div class="flex items-start gap-3">
-                                        <svg class="w-5 h-5 text-digital-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                        <span class="font-body text-sm text-gray-light">Test scenarios to evaluate adaptability</span>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap gap-3">
-                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Docker Compose</span>
-                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Grafana</span>
-                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Locust</span>
-                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">PostgreSQL</span>
-                                </div>
-                            </div>
-                            <div class="bg-deep-night/50 p-8 lg:p-10 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/5">
-                                <div class="text-center">
-                                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-linear-to-br from-digital-cyan to-code-green flex items-center justify-center">
-                                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                                    </div>
-                                    <h4 class="font-display font-bold text-white mb-2">Status</h4>
-                                    <p class="font-mono text-sm text-noble-gold mb-6">Proof of Concept</p>
-                                    <a href="https://gitlab.inria.fr/adaptable-teastore/experimentation-platform" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg font-mono text-sm text-gray-light hover:text-digital-cyan hover:border-digital-cyan/30 transition-all">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                        View on GitLab
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-        <section id="publications" class="py-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-16 reveal">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-0.5 bg-determination"></div>
-                        <span class="font-mono text-sm text-determination tracking-wider uppercase">Publications</span>
-                    </div>
-                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-4">Scientific publications</h2>
-                    <p class="font-body text-gray-light max-w-2xl">My work has been presented at leading international workshops and conferences in the field of software engineering.</p>
-                </div>
-                <div class="space-y-4">
-                    <article class="publication-card reveal bg-linear-to-br from-noble-blue/20 to-night-sky/30 border border-white/5 rounded-xl p-6 lg:p-8">
-                        <div class="flex flex-col lg:flex-row lg:items-start gap-6">
-                            <div class="shrink-0">
-                                <div class="w-14 h-14 rounded-xl bg-determination/20 flex items-center justify-center">
-                                    <svg class="w-7 h-7 text-determination" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                                </div>
-                            </div>
-                            <div class="flex-1">
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="px-3 py-1 bg-determination/20 border border-determination/30 rounded-full font-mono text-xs text-determination">Workshop Paper</span>
-                                    <span class="font-mono text-xs text-gray-medium">2025</span>
-                                </div>
-                                <h3 class="font-display text-lg lg:text-xl font-bold text-white mb-2">AdaptiFlow: An Extensible Framework for Event-Driven Autonomy in Cloud Microservices</h3>
-                                <p class="font-body text-sm text-gray-light mb-4">
-                                    <span class="text-digital-cyan">ZEMTSOP NDADJI B.A.</span>, Simon Bliudze, Clément Quinton.
-                                </p>
-                                <p class="font-body text-sm text-gray-medium mb-4 leading-relaxed">
-                                    Presentation of AdaptiFlow, a lightweight framework enabling the integration of self-adaptation capabilities into existing microservices architectures, evaluated on the TeaStore benchmark.
-                                </p>
-                                <div class="flex flex-wrap gap-3">
-                                    <a href="https://hal.science/hal-05074243v1" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg font-mono text-xs text-gray-light hover:text-determination hover:border-determination/30 transition-all" rel="noopener">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                                        PDF
-                                    </a>
-                                    <a href="https://dx.doi.org/10.4204/EPTCS.438.7" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg font-mono text-xs text-gray-light hover:text-digital-cyan hover:border-digital-cyan/30 transition-all" rel="noopener">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                                        DOI
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="publication-card reveal bg-linear-to-br from-noble-blue/20 to-night-sky/30 border border-white/5 rounded-xl p-6 lg:p-8">
-                        <div class="flex flex-col lg:flex-row lg:items-start gap-6">
-                            <div class="shrink-0">
-                                <div class="w-14 h-14 rounded-xl bg-digital-cyan/20 flex items-center justify-center">
-                                    <svg class="w-7 h-7 text-digital-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                                </div>
-                            </div>
-                            <div class="flex-1">
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="px-3 py-1 bg-digital-cyan/20 border border-digital-cyan/30 rounded-full font-mono text-xs text-digital-cyan">Workshop Paper</span>
-                                    <span class="font-mono text-xs text-gray-medium">2025</span>
-                                </div>
-                                <h3 class="font-display text-lg lg:text-xl font-bold text-white mb-2">Adaptable TeaStore</h3>
-                                <p class="font-body text-sm text-gray-light mb-4">
-                                    Simon Bliudze, Giuseppe De Palma, Saverio Giallorenzo, Ivan Lanese, Gianluigi Zavattaro, <span class="text-digital-cyan">ZEMTSOP NDADJI B.A.</span>
-                                </p>
-                                <div class="flex flex-wrap gap-3">
-                                    <a href="https://inria.hal.science/hal-05446548" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg font-mono text-xs text-gray-light hover:text-determination hover:border-determination/30 transition-all" rel="noopener">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                                        PDF
-                                    </a>
-                                    <a href="https://dx.doi.org/10.4204/EPTCS.438.1" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg font-mono text-xs text-gray-light hover:text-digital-cyan hover:border-digital-cyan/30 transition-all" rel="noopener">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                                        DOI
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                <app-case-study-list />
             </div>
         </section>
         <section class="py-24 bg-noble-blue/10 border-y border-white/5">

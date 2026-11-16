@@ -4,6 +4,7 @@
  *
  *  - sitemap.xml : une entrée par page HTML générée, avec ses alternatives hreflang ;
  *  - robots.txt  : la ligne `Sitemap:` pointe vers l'origine de production ;
+ *  - feed.xml    : un flux RSS du blog par langue (/fr/feed.xml, /en/feed.xml) ;
  *  - 404.html    : copie de /404/index.html, le nom attendu par Vercel.
  *
  * Le sitemap est construit à partir du dossier de sortie : une page ajoutée dans
@@ -79,9 +80,51 @@ const robotsPath = join(dist, 'robots.txt');
 const robots = await readFile(robotsPath, 'utf8');
 await writeFile(robotsPath, robots.replace(/^Sitemap:.*$/m, `Sitemap: ${siteUrl}/sitemap.xml`));
 
+// ---------------------------------------------------------------- flux RSS (un par langue)
+const xml = (text) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const unescapeHtml = (text) =>
+  text.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+const meta = (html, pattern) => unescapeHtml(html.match(pattern)?.[1] ?? '');
+
+for (const lang of LANGS) {
+  const items = [];
+  for (const path of perLang[lang].filter((p) => p.startsWith('blog/'))) {
+    const html = await readFile(join(dist, lang, path, 'index.html'), 'utf8');
+    // Titre, résumé et date viennent de la page prérendue : rien à maintenir en double.
+    const title = meta(html, /"headline":"((?:[^"\\]|\\.)*)"/).replace(/\\"/g, '"');
+    const description = meta(html, /<meta name="description" content="([^"]*)"/);
+    const published = meta(html, /"datePublished":"([^"]*)"/);
+    const date = /^\d{4}-\d{2}/.test(published) ? new Date(published.length === 7 ? `${published}-01` : published) : null;
+    items.push({ title, description, link: url(lang, path), date, sort: published });
+  }
+  items.sort((a, b) => b.sort.localeCompare(a.sort));
+  const feed = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog — Brice Arléon ZEMTSOP NDADJI</title>
+    <link>${url(lang, 'blog')}</link>
+    <description>${lang === 'fr' ? 'Recherche, développement logiciel, systèmes auto-adaptatifs et parcours de doctorat.' : 'Research, software development, self-adaptive systems and the PhD journey.'}</description>
+    <language>${lang}</language>
+    <atom:link href="${siteUrl}/${lang}/feed.xml" rel="self" type="application/rss+xml"/>
+${items
+  .map(
+    (item) => `    <item>
+      <title>${xml(item.title)}</title>
+      <link>${item.link}</link>
+      <guid isPermaLink="true">${item.link}</guid>
+      <description>${xml(item.description)}</description>${item.date ? `\n      <pubDate>${item.date.toUTCString()}</pubDate>` : ''}
+    </item>`,
+  )
+  .join('\n')}
+  </channel>
+</rss>
+`;
+  await writeFile(join(dist, lang, 'feed.xml'), feed);
+}
+
 const notFound = join(dist, '404/index.html');
 if (existsSync(notFound)) {
   await copyFile(notFound, join(dist, '404.html'));
 }
 
-console.log(`✔ sitemap.xml : ${entries.length} URL (${siteUrl}) · robots.txt · 404.html`);
+console.log(`✔ sitemap.xml : ${entries.length} URL (${siteUrl}) · robots.txt · 404.html · flux RSS fr/en`);

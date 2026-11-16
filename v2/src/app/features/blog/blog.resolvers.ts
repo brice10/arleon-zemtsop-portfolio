@@ -33,7 +33,7 @@ export const blogPostResolver: ResolveFn<BlogPostView> = async (route) => {
       blogPostingNode(environment.siteUrl, seo.url(path), lang, {
         title: post.title[lang],
         description: post.description[lang],
-        datePublished: String(post.year),
+        datePublished: post.date ?? String(post.year),
         section: post.tag[lang],
       }),
       breadcrumbNode([

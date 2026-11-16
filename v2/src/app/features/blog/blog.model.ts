@@ -9,8 +9,10 @@ export interface BlogPost {
   /** Identifiant d'URL, identique dans les deux langues : /fr/blog/<slug>, /en/blog/<slug>. */
   slug: string;
   emoji: string;
-  /** Année de publication. TODO(contenu) : remplacer par une date ISO complète (`date: '2024-10-01'`). */
+  /** Année de publication (sert au tri et à l'affichage). */
   year: number;
+  /** Date ISO plus précise quand elle est connue : `2025-06` ou `2025-06-20`. Prime sur `year` pour le SEO et le flux RSS. */
+  date?: string;
   categories: BlogCategory[];
   readingMinutes?: number;
   tag: Localized;

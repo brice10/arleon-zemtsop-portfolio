@@ -1,17 +1,16 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { I18nService } from '@core/i18n/i18n.service';
 import { PageHero } from '@shared/ui/page-hero';
 import { BLOG_CATEGORIES, BlogCategory } from '../blog.model';
 import { BlogService } from '../blog.service';
+import { PostCard } from '../components/post-card';
 
 @Component({
   selector: 'app-blog-list-page',
-  imports: [RouterLink, PageHero],
+  imports: [PageHero, PostCard],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @let t = i18n.t();
-    @let lang = i18n.lang();
 
     <app-page-hero [title]="t.blog.title" [lead]="t.blog.lead" [crumbs]="[{ label: t.nav.blog }]" />
 
@@ -36,21 +35,7 @@ import { BlogService } from '../blog.service';
 
       <ul class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         @for (post of visible(); track post.slug) {
-          <li>
-            <article class="card flex h-full flex-col">
-              <p class="text-4xl" aria-hidden="true">{{ post.emoji }}</p>
-              <p class="mt-4 flex items-center gap-2 font-mono text-xs">
-                <span class="tag">{{ post.tag[lang] }}</span>
-                <time [attr.datetime]="post.year" class="text-gray-light">{{ post.year }}</time>
-              </p>
-              <h2 class="mt-3 text-lg font-bold">
-                <a [routerLink]="i18n.path('blog/' + post.slug)" class="hover:text-determination">{{
-                  post.title[lang]
-                }}</a>
-              </h2>
-              <p class="mt-2 text-sm text-gray-light">{{ post.description[lang] }}</p>
-            </article>
-          </li>
+          <li><app-post-card [post]="post" /></li>
         }
       </ul>
     </section>

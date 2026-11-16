@@ -16,7 +16,6 @@
             <a
               [routerLink]="i18n.page(page)"
               routerLinkActive
-              [routerLinkActiveOptions]="{ exact: page === 'home' }"
               ariaCurrentWhenActive="page"
               class="rounded-lg px-3 py-2 font-display text-sm font-medium text-gray-soft hover:text-white aria-[current=page]:text-determination"
               >{{ i18n.t().nav[page] }}</a
@@ -129,7 +128,6 @@
           <a
             [routerLink]="i18n.page(page)"
             routerLinkActive
-            [routerLinkActiveOptions]="{ exact: page === 'home' }"
             ariaCurrentWhenActive="page"
             class="block rounded-lg px-3 py-3 font-display font-medium text-gray-soft aria-[current=page]:text-determination"
             (click)="close()"

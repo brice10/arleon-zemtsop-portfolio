@@ -14,6 +14,7 @@ export const POSTS: BlogPost[] = [
     slug: 'ai-replace-developers',
     emoji: '🚨',
     year: 2025,
+    date: '2025-12',
     categories: ['tech'],
     readingMinutes: 5,
     tag: {
@@ -36,6 +37,149 @@ export const POSTS: BlogPost[] = [
       en: () =>
         import('../content/ai-replace-developers/ai-replace-developers.en').then(
           (m) => m.AiReplaceDevelopersEn,
+        ),
+    },
+  },
+  {
+    slug: '1-month-12-days-phd',
+    emoji: '🎢',
+    year: 2025,
+    date: '2025-11',
+    categories: ['phd'],
+    readingMinutes: 6,
+    tag: {
+      fr: 'PhD Journey',
+      en: 'PhD Journey',
+    },
+    title: {
+      fr: '1 mois et 12 jours en tant que doctorant',
+      en: '1 Month, 12 Days as a PhD Student',
+    },
+    description: {
+      fr: 'Un rapport de survie après 42 jours de doctorat. Attentes vs réalité, avalanche de papiers et trouver sa voie.',
+      en: 'A survival report from 42 days into the PhD journey. Expectations vs reality, paper avalanches, and finding your way.',
+    },
+    content: {
+      fr: () =>
+        import('../content/1-month-12-days-phd/1-month-12-days-phd.fr').then(
+          (m) => m.Post1Month12DaysPhdFr,
+        ),
+      en: () =>
+        import('../content/1-month-12-days-phd/1-month-12-days-phd.en').then(
+          (m) => m.Post1Month12DaysPhdEn,
+        ),
+    },
+  },
+  {
+    slug: 'day-1-phd-student',
+    emoji: '🎤',
+    year: 2025,
+    date: '2025-10',
+    categories: ['phd'],
+    readingMinutes: 4,
+    tag: {
+      fr: 'PhD Journey',
+      en: 'PhD Journey',
+    },
+    title: {
+      fr: 'Jour 1 en tant que doctorant',
+      en: 'Day 1 as a PhD Student',
+    },
+    description: {
+      fr: 'Mon premier jour en tant que doctorant à Inria – plongé directement dans le grand bain en présentant au RIC Day !',
+      en: 'My first day as a PhD student at Inria - thrown straight into the deep end presenting at RIC Day!',
+    },
+    content: {
+      fr: () =>
+        import('../content/day-1-phd-student/day-1-phd-student.fr').then((m) => m.Day1PhdStudentFr),
+      en: () =>
+        import('../content/day-1-phd-student/day-1-phd-student.en').then((m) => m.Day1PhdStudentEn),
+    },
+  },
+  {
+    slug: 'engineer-evolving-phd',
+    emoji: '🔥',
+    year: 2025,
+    date: '2025-10',
+    categories: ['phd'],
+    tag: {
+      fr: 'Annonce',
+      en: 'Announcement',
+    },
+    title: {
+      fr: "SURPRISE ! L'Ingénieur Évolue !",
+      en: 'SURPRISE! The Engineer is Evolving!',
+    },
+    description: {
+      fr: "Annonce coup de théâtre : D'Ingénieur de Recherche à Doctorant à Inria Lille et l'Université de Lille !",
+      en: 'Plot twist announcement: From Research Engineer to PhD Student at Inria Lille and University of Lille!',
+    },
+    content: {
+      fr: () =>
+        import('../content/engineer-evolving-phd/engineer-evolving-phd.fr').then(
+          (m) => m.EngineerEvolvingPhdFr,
+        ),
+      en: () =>
+        import('../content/engineer-evolving-phd/engineer-evolving-phd.en').then(
+          (m) => m.EngineerEvolvingPhdEn,
+        ),
+    },
+  },
+  {
+    slug: 'closing-chapter-engineer',
+    emoji: '🌟',
+    year: 2025,
+    date: '2025-09',
+    categories: ['life'],
+    tag: {
+      fr: 'Gratitude',
+      en: 'Gratitude',
+    },
+    title: {
+      fr: 'Fermer un chapitre : Ma gratitude',
+      en: 'Closing a Chapter: My Gratitude',
+    },
+    description: {
+      fr: "Réflexions sur mon parcours en tant qu'ingénieur de recherche à Inria Lille - gratitude, leçons apprises et le prochain chapitre.",
+      en: 'Reflections on my journey as a Research Engineer at Inria Lille - gratitude, lessons learned, and the next chapter.',
+    },
+    content: {
+      fr: () =>
+        import('../content/closing-chapter-engineer/closing-chapter-engineer.fr').then(
+          (m) => m.ClosingChapterEngineerFr,
+        ),
+      en: () =>
+        import('../content/closing-chapter-engineer/closing-chapter-engineer.en').then(
+          (m) => m.ClosingChapterEngineerEn,
+        ),
+    },
+  },
+  {
+    slug: 'discotec-2025-reflections',
+    emoji: '🎓',
+    year: 2025,
+    date: '2025-06',
+    categories: ['research'],
+    tag: {
+      fr: 'Conférence',
+      en: 'Conference',
+    },
+    title: {
+      fr: 'Réflexions sur DisCoTec 2025',
+      en: 'Reflections on DisCoTec 2025',
+    },
+    description: {
+      fr: "Mon expérience à DisCoTec 2025 à Lille – bénévolat, présentation d'AdaptiFlow et échanges avec des chercheurs du monde entier.",
+      en: 'My experience at DisCoTec 2025 in Lille - volunteering, presenting AdaptiFlow, and connecting with researchers from around the world.',
+    },
+    content: {
+      fr: () =>
+        import('../content/discotec-2025-reflections/discotec-2025-reflections.fr').then(
+          (m) => m.Discotec2025ReflectionsFr,
+        ),
+      en: () =>
+        import('../content/discotec-2025-reflections/discotec-2025-reflections.en').then(
+          (m) => m.Discotec2025ReflectionsEn,
         ),
     },
   },
@@ -94,34 +238,6 @@ export const POSTS: BlogPost[] = [
       en: () =>
         import('../content/expert-validates-baby/expert-validates-baby.en').then(
           (m) => m.ExpertValidatesBabyEn,
-        ),
-    },
-  },
-  {
-    slug: 'discotec-2025-reflections',
-    emoji: '🎓',
-    year: 2025,
-    categories: ['research'],
-    tag: {
-      fr: 'Conférence',
-      en: 'Conference',
-    },
-    title: {
-      fr: 'Réflexions sur DisCoTec 2025',
-      en: 'Reflections on DisCoTec 2025',
-    },
-    description: {
-      fr: "Mon expérience à DisCoTec 2025 à Lille – bénévolat, présentation d'AdaptiFlow et échanges avec des chercheurs du monde entier.",
-      en: 'My experience at DisCoTec 2025 in Lille - volunteering, presenting AdaptiFlow, and connecting with researchers from around the world.',
-    },
-    content: {
-      fr: () =>
-        import('../content/discotec-2025-reflections/discotec-2025-reflections.fr').then(
-          (m) => m.Discotec2025ReflectionsFr,
-        ),
-      en: () =>
-        import('../content/discotec-2025-reflections/discotec-2025-reflections.en').then(
-          (m) => m.Discotec2025ReflectionsEn,
         ),
     },
   },
@@ -209,116 +325,6 @@ export const POSTS: BlogPost[] = [
       en: () =>
         import('../content/holidays-cameroon/holidays-cameroon.en').then(
           (m) => m.HolidaysCameroonEn,
-        ),
-    },
-  },
-  {
-    slug: 'day-1-phd-student',
-    emoji: '🎤',
-    year: 2024,
-    categories: ['phd'],
-    readingMinutes: 4,
-    tag: {
-      fr: 'PhD Journey',
-      en: 'PhD Journey',
-    },
-    title: {
-      fr: 'Jour 1 en tant que doctorant',
-      en: 'Day 1 as a PhD Student',
-    },
-    description: {
-      fr: 'Mon premier jour en tant que doctorant à Inria – plongé directement dans le grand bain en présentant au RIC Day !',
-      en: 'My first day as a PhD student at Inria - thrown straight into the deep end presenting at RIC Day!',
-    },
-    content: {
-      fr: () =>
-        import('../content/day-1-phd-student/day-1-phd-student.fr').then((m) => m.Day1PhdStudentFr),
-      en: () =>
-        import('../content/day-1-phd-student/day-1-phd-student.en').then((m) => m.Day1PhdStudentEn),
-    },
-  },
-  {
-    slug: '1-month-12-days-phd',
-    emoji: '🎢',
-    year: 2024,
-    categories: ['phd'],
-    readingMinutes: 6,
-    tag: {
-      fr: 'PhD Journey',
-      en: 'PhD Journey',
-    },
-    title: {
-      fr: '1 mois et 12 jours en tant que doctorant',
-      en: '1 Month, 12 Days as a PhD Student',
-    },
-    description: {
-      fr: 'Un rapport de survie après 42 jours de doctorat. Attentes vs réalité, avalanche de papiers et trouver sa voie.',
-      en: 'A survival report from 42 days into the PhD journey. Expectations vs reality, paper avalanches, and finding your way.',
-    },
-    content: {
-      fr: () =>
-        import('../content/1-month-12-days-phd/1-month-12-days-phd.fr').then(
-          (m) => m.Post1Month12DaysPhdFr,
-        ),
-      en: () =>
-        import('../content/1-month-12-days-phd/1-month-12-days-phd.en').then(
-          (m) => m.Post1Month12DaysPhdEn,
-        ),
-    },
-  },
-  {
-    slug: 'engineer-evolving-phd',
-    emoji: '🔥',
-    year: 2024,
-    categories: ['phd'],
-    tag: {
-      fr: 'Annonce',
-      en: 'Announcement',
-    },
-    title: {
-      fr: "SURPRISE ! L'Ingénieur Évolue !",
-      en: 'SURPRISE! The Engineer is Evolving!',
-    },
-    description: {
-      fr: "Annonce coup de théâtre : D'Ingénieur de Recherche à Doctorant à Inria Lille et l'Université de Lille !",
-      en: 'Plot twist announcement: From Research Engineer to PhD Student at Inria Lille and University of Lille!',
-    },
-    content: {
-      fr: () =>
-        import('../content/engineer-evolving-phd/engineer-evolving-phd.fr').then(
-          (m) => m.EngineerEvolvingPhdFr,
-        ),
-      en: () =>
-        import('../content/engineer-evolving-phd/engineer-evolving-phd.en').then(
-          (m) => m.EngineerEvolvingPhdEn,
-        ),
-    },
-  },
-  {
-    slug: 'closing-chapter-engineer',
-    emoji: '🌟',
-    year: 2024,
-    categories: ['life'],
-    tag: {
-      fr: 'Gratitude',
-      en: 'Gratitude',
-    },
-    title: {
-      fr: 'Fermer un chapitre : Ma gratitude',
-      en: 'Closing a Chapter: My Gratitude',
-    },
-    description: {
-      fr: "Réflexions sur mon parcours en tant qu'ingénieur de recherche à Inria Lille - gratitude, leçons apprises et le prochain chapitre.",
-      en: 'Reflections on my journey as a Research Engineer at Inria Lille - gratitude, lessons learned, and the next chapter.',
-    },
-    content: {
-      fr: () =>
-        import('../content/closing-chapter-engineer/closing-chapter-engineer.fr').then(
-          (m) => m.ClosingChapterEngineerFr,
-        ),
-      en: () =>
-        import('../content/closing-chapter-engineer/closing-chapter-engineer.en').then(
-          (m) => m.ClosingChapterEngineerEn,
         ),
     },
   },

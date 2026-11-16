@@ -74,6 +74,8 @@ export const EN: Dictionary = {
       tech: 'Tech & Dev',
       life: 'Life & Integration',
     },
+    latest: 'Latest articles',
+    all: 'All articles',
   },
   notFound: {
     title: 'Page not found',
