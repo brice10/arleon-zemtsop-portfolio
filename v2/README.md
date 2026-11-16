@@ -53,10 +53,17 @@ src/app/
 │   ├── seo/              SeoService, resolvers de route, données structurées schema.org
 │   ├── analytics/        Chargement conditionnel des scripts de mesure
 │   └── layout/           En-tête (menu, sélecteur de langue) et pied de page
-├── shared/               Briques réutilisables sans logique métier (ui/, directives/)
+├── shared/
+│   ├── content/          Hôte de contenu, chargement par langue, directives (apparition, filtres)
+│   └── ui/               Composants d'interface réutilisables
 ├── features/             Un dossier = un module fonctionnel chargé à la demande
 │   ├── home/  about/  research/  projects/  experience/  contact/  not-found/
-│   └── blog/             Registre des articles, contenu Markdown, pages liste et article
+│   │   ├── <feature>.routes.ts      Route, SEO et choix du contenu selon la langue
+│   │   └── content/                 <feature>.fr.{ts,html} · <feature>.en.{ts,html} · styles
+│   └── blog/
+│       ├── data/posts.ts            Registre des articles (métadonnées + contenu)
+│       ├── content/<slug>/          Un dossier par article, une version par langue
+│       └── pages/                   Liste des articles et page article
 ├── app.routes.ts         Table des routes : /:lang/<feature>
 └── app.routes.server.ts  Liste des pages à prérendre
 ```
@@ -64,8 +71,16 @@ src/app/
 Règles de dépendance : `features → shared → core`. Une feature n'importe jamais une autre feature.
 Alias d'import : `@core/*`, `@shared/*`, `@features/*`, `@env`.
 
-Chaque feature expose un fichier `<feature>.routes.ts` chargé en différé (`loadChildren`) : son code
-n'est téléchargé que lorsque la page est visitée.
+**Contenu.** Chaque page et chaque article existe en deux composants, un par langue
+(`about.fr.ts` + `about.fr.html`, `about.en.ts` + `about.en.html`). Le texte se modifie directement
+dans le `.html`. Seule la version de la langue affichée est téléchargée ; le changement de langue
+se fait sans rechargement de page. Le style propre à une page vit dans le `.css` voisin : il est
+isolé du reste du site par Angular et placé dans la couche CSS `components`, donc les classes
+utilitaires Tailwind gardent la priorité.
+
+**Comportements.** Ils sont portés par des directives reconnues à la classe ou à l'attribut :
+`.reveal` (apparition au défilement), `.filter-btn` + `data-category` (filtres), `appFaqToggle`,
+`appContactForm`, `.photo-container`. Aucun script en ligne.
 
 ## SEO
 
@@ -86,21 +101,25 @@ Les textes SEO des pages statiques se trouvent dans les dictionnaires, clé `seo
 
 ## Recettes
 
+**Modifier un texte** : ouvrir le `.html` de la page ou de l'article, dans chaque langue.
+
 **Ajouter une page statique**
 
 1. Ajouter sa clé dans `PageKey`, `PAGE_PATHS` et `NAV_PAGES` (`core/config/site.config.ts`).
-2. Compléter `nav`, `seo` et `pages` dans `fr.ts` et `en.ts` — le compilateur signale tout oubli.
-3. Créer `features/<page>/` avec `<page>.page.ts` et `<page>.routes.ts` (copier `about/`).
+2. Compléter `nav` et `seo` dans `fr.ts` et `en.ts` — le compilateur signale tout oubli.
+3. Copier un dossier de feature simple (ex. `features/about/`), le renommer et adapter ses composants.
 4. Déclarer la route dans `app.routes.ts`. Le prérendu et le sitemap suivent automatiquement.
 
-**Ajouter ou migrer un article de blog**
+**Ajouter un article de blog**
 
-1. Écrire `features/blog/content/<slug>.fr.md` et `<slug>.en.md`.
-2. Ajouter (ou compléter) l'entrée dans `features/blog/data/posts.ts` avec le champ `content`
-   — voir l'article `day-1-phd-student`, déjà migré.
+1. Copier un dossier de `features/blog/content/` (ex. `day-1-phd-student/`), le renommer avec le
+   nouveau slug, puis renommer et adapter les deux composants (`<slug>.fr.*`, `<slug>.en.*`).
+2. Ajouter l'entrée correspondante dans `features/blog/data/posts.ts`.
 
-Tant qu'un article n'a pas de `content`, sa page affiche un bandeau « migration en cours », reste en
-`noindex` et n'apparaît pas dans le sitemap.
+La route, le prérendu, le sitemap, les balises SEO et la carte dans la liste du blog en découlent.
+
+Dans un `.html` de contenu, trois caractères s'écrivent sous forme d'entité, car Angular les
+interprète : `{` → `&#123;`, `}` → `&#125;`, `@` → `&#64;`.
 
 ## Déploiement sur Vercel
 
@@ -115,8 +134,7 @@ Le site déployé est 100 % statique : aucune fonction serveur.
 ## État de la migration depuis la v1
 
 - [x] Socle, design system, i18n, SEO, profils dev / prod
-- [x] Accueil, contact, liste du blog (métadonnées des 15 articles reprises)
-- [x] Article d'exemple migré : `day-1-phd-student` (FR + EN)
-- [ ] Contenu des pages À propos, Recherche, Projets, Expérience
-- [ ] Contenu des 14 autres articles
-- [ ] Dates de publication complètes des articles (`year` → date ISO)
+- [x] Contenu des 6 pages (accueil, à propos, recherche, projets, expérience, contact), FR + EN
+- [x] Contenu des 15 articles, FR + EN
+- [ ] Dates de publication complètes des articles (`year` → date ISO dans `posts.ts`)
+- [ ] Logo Inria de l'accueil encore chargé depuis Wikimedia : à héberger dans `public/assets/images/`

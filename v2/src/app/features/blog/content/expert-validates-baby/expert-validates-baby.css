@@ -1,0 +1,119 @@
+:host {
+  display: block;
+}
+
+@layer components {
+  :host {
+    font-family: 'Inter Variable', sans-serif;
+    background: #0A1628;
+    color: #F8F9FA;
+  }
+
+  .bg-pattern {
+    background-image: radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(232, 93, 4, 0.08) 0%, transparent 40%);
+  }
+
+  .prose-custom h2 {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #F8F9FA;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose-custom h3 {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #E85D04;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-custom p {
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+    color: #A0A0A5;
+  }
+
+  .prose-custom strong {
+    color: #F8F9FA;
+  }
+
+  .prose-custom em {
+    color: #D4A012;
+  }
+
+  .prose-custom ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-custom ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #A0A0A5;
+  }
+
+  .prose-custom ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #E85D04;
+  }
+
+  .prose-custom a {
+    color: #00D4FF;
+    text-decoration: underline;
+  }
+
+  .prose-custom a:hover {
+    color: #E85D04;
+  }
+
+  .quote-highlight {
+    background: linear-gradient(135deg, rgba(212, 160, 18, 0.15) 0%, rgba(232, 93, 4, 0.1) 100%);
+    border: 1px solid rgba(212, 160, 18, 0.3);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .quote-highlight::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-family: 'Playfair Display Variable', serif;
+    font-size: 4rem;
+    color: #D4A012;
+    opacity: 0.5;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid rgba(212, 160, 18, 0.3);
+    padding-bottom: 1.5rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #D4A012;
+  }
+
+  .conference-card {
+    background: linear-gradient(135deg, rgba(212, 160, 18, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
+    border: 1px solid rgba(212, 160, 18, 0.2);
+  }
+}

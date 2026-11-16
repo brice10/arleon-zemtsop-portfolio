@@ -60,65 +60,8 @@ export const EN: Dictionary = {
     },
   },
   common: {
-    available: 'Available',
-    wip: 'Content is being migrated from version 1 of the portfolio.',
     backHome: 'Back to home',
-    downloadCv: 'Download my CV',
     breadcrumbHome: 'Home',
-  },
-  home: {
-    eyebrow: 'PhD Student & Senior Software Engineer',
-    tagline:
-      'Excellence at the intersection of science and industry — researcher, engineer, visionary.',
-    intro:
-      'PhD student at Université de Lille affiliated with the Inria research lab, I study self-adaptive systems for the cloud. With 6+ years of experience as a Software Engineer & Team Lead, I excel in TDD, DevOps and microservices architectures.',
-    ctaPrimary: 'Explore my work',
-    ctaSecondary: 'Get in touch',
-    stats: [
-      { value: '6+', label: 'Years of exp.' },
-      { value: '20+', label: 'Projects delivered' },
-      { value: '2', label: 'Publications' },
-    ],
-    servicesTitle: 'How can I help you?',
-    services: [
-      {
-        title: 'Research & Innovation',
-        text: 'My research focuses on the self-adaptation of distributed systems in the cloud. I developed AdaptiFlow, a lightweight Java framework for microservice self-adaptation, demonstrated through Adaptable TeaStore.',
-        tags: ['Self-Adaptive Systems', 'Cloud Computing'],
-      },
-      {
-        title: 'Full-Stack Development',
-        text: 'With strong expertise in Angular and Spring Boot, I practice Test-Driven Development (TDD) to build stable, functional backends. 20+ projects delivered.',
-        tags: ['Angular', 'Spring Boot', 'TDD/BDD'],
-      },
-      {
-        title: 'DevOps & Cloud',
-        text: 'I am also experienced in deploying and monitoring production applications with Docker, Kubernetes and Jenkins, as well as observability via Prometheus and Grafana.',
-        tags: ['Docker', 'Kubernetes', 'CI/CD'],
-      },
-      {
-        title: 'Leadership & Mentoring',
-        text: 'As Team Lead at DIMSOFT, I guided teams through complex projects using agile methodologies. I also founded the Soft Development Community to promote TDD, BDD and software engineering best practices.',
-        tags: ['Agile/Scrum', 'Code Review', 'Mentoring'],
-      },
-    ],
-    ctaTitle: 'Got a project in mind?',
-    ctaText: "Let's build together!",
-  },
-  pages: {
-    about: { title: 'About', lead: 'Background, values, education and vision.' },
-    research: {
-      title: 'Research',
-      lead: 'Self-adaptive systems, AdaptiFlow, Adaptable TeaStore and scientific publications.',
-    },
-    projects: {
-      title: 'Projects',
-      lead: '20+ delivered projects: enterprise applications, research tools and open source contributions.',
-    },
-    experience: {
-      title: 'Professional experience',
-      lead: 'From Software Engineer & Team Lead to research engineer and PhD student at Inria.',
-    },
   },
   blog: {
     title: 'Thoughts & insights',
@@ -130,22 +73,6 @@ export const EN: Dictionary = {
       tech: 'Tech & Dev',
       life: 'Life & Integration',
     },
-    readArticle: 'Read article',
-    backToBlog: 'Back to blog',
-    minutes: 'min read',
-    migrating: 'The full content of this article is being migrated to the new version of the site.',
-  },
-  contact: {
-    title: 'Contact',
-    lead: 'A development, research or consulting project? Write to me or book a free discovery call.',
-    name: 'Name',
-    email: 'Email',
-    message: 'Message',
-    send: 'Send',
-    sending: 'Sending…',
-    success: 'Thank you! Your message has been sent.',
-    error: 'Sending failed. Please try again or email me directly.',
-    bookCall: 'Book a call (30 min)',
   },
   notFound: {
     title: 'Page not found',

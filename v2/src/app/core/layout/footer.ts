@@ -8,7 +8,7 @@ import { I18nService } from '@core/i18n/i18n.service';
   imports: [RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <footer class="border-t border-white/5 py-10">
+    <footer class="relative z-10 border-t border-white/5 bg-deep-night py-10">
       <div
         class="container-page flex flex-col gap-6 text-sm text-gray-light md:flex-row md:items-center md:justify-between"
       >

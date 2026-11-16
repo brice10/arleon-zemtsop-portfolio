@@ -22,15 +22,13 @@ export const blogPostResolver: ResolveFn<BlogPostView> = async (route) => {
   const lang = i18n.lang();
   const t = i18n.t();
   const path = `blog/${post.slug}`;
-  const html = await blog.render(post, lang);
+  const content = await post.content[lang]();
 
   seo.apply({
     title: `${post.title[lang]} | Blog — Arléon Zemtsop`,
     description: post.description[lang],
     path,
     type: 'article',
-    // Article sans contenu migré : hors index et hors sitemap tant que le Markdown n'existe pas.
-    noindex: html === null,
     jsonLd: [
       blogPostingNode(environment.siteUrl, seo.url(path), lang, {
         title: post.title[lang],
@@ -46,5 +44,5 @@ export const blogPostResolver: ResolveFn<BlogPostView> = async (route) => {
     ],
   });
 
-  return { post, html };
+  return { post, content };
 };

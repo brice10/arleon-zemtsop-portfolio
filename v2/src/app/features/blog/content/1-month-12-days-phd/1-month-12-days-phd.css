@@ -1,0 +1,130 @@
+:host {
+  display: block;
+}
+
+@layer components {
+  :host {
+    font-family: 'Inter Variable', sans-serif;
+    background: #0A1628;
+    color: #F8F9FA;
+  }
+
+  .bg-pattern {
+    background-image: radial-gradient(ellipse at 20% 80%, rgba(30,58,95,0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(232,93,4,0.08) 0%, transparent 40%);
+  }
+
+  .prose-custom h2 {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #F8F9FA;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose-custom h3 {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #00D4FF;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-custom p {
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+    color: #A0A0A5;
+  }
+
+  .prose-custom strong {
+    color: #F8F9FA;
+  }
+
+  .prose-custom em {
+    color: #F48C06;
+  }
+
+  .prose-custom ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-custom ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #A0A0A5;
+  }
+
+  .prose-custom ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #00D4FF;
+  }
+
+  .prose-custom a {
+    color: #00D4FF;
+    text-decoration: underline;
+  }
+
+  .prose-custom a:hover {
+    color: #E85D04;
+  }
+
+  .prose-custom blockquote {
+    border-left: 3px solid #00D4FF;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #A0A0A5;
+    background: rgba(0,212,255,0.05);
+    padding: 1.5rem;
+    border-radius: 0 12px 12px 0;
+  }
+
+  .day-counter {
+    background: linear-gradient(135deg, #00D4FF 0%, #1E3A5F 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .day-counter::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shine 3s ease-in-out infinite;
+  }
+
+  @keyframes shine {
+    0% { transform:translateX(-100%) rotate(45deg); }
+    100% { transform:translateX(100%) rotate(45deg); }
+  }
+
+  .expectation-card {
+    background: linear-gradient(135deg, rgba(232,93,4,0.1) 0%, rgba(30,58,95,0.2) 100%);
+    border: 1px solid rgba(232,93,4,0.2);
+  }
+
+  .reality-card {
+    background: linear-gradient(135deg, rgba(0,212,255,0.1) 0%, rgba(30,58,95,0.2) 100%);
+    border: 1px solid rgba(0,212,255,0.2);
+  }
+
+  .survival-tip {
+    background: linear-gradient(135deg, rgba(79,255,176,0.1) 0%, rgba(30,58,95,0.2) 100%);
+    border: 1px solid rgba(79,255,176,0.2);
+  }
+
+  .progress-bar {
+    background: linear-gradient(90deg, #00D4FF 0%, #E85D04 100%);
+    height: 4px;
+    border-radius: 2px;
+  }
+}

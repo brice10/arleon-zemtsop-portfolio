@@ -1,0 +1,124 @@
+:host {
+  display: block;
+}
+
+@layer components {
+  :host {
+    font-family: 'Inter Variable', sans-serif;
+    background: #0A1628;
+    color: #F8F9FA;
+    overflow-x: clip;
+  }
+
+  .bg-pattern {
+    background-image: radial-gradient(ellipse at 20% 80%, rgba(30,58,95,0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(232,93,4,0.08) 0%, transparent 40%), url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231E3A5F' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .gradient-text-white {
+    background: linear-gradient(135deg, #FFFFFF 0%, #A0A0A5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #E85D04;
+    box-shadow: 0 0 20px rgba(232,93,4,0.5);
+  }
+
+  .timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1.5rem;
+    width: 2px;
+    height: calc(100% - 1rem);
+    background: linear-gradient(180deg, #E85D04, transparent);
+  }
+
+  .timeline-item:last-child::after {
+    display: none;
+  }
+
+  .value-card {
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .value-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .photo-frame {
+    position: relative;
+  }
+
+  .photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(135deg, #E85D04, #00D4FF);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .photo-frame:hover::before {
+    opacity: 1;
+  }
+
+  .photo {
+    background-image: url(/assets/images/brice-arleon.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  @keyframes pulse-available {
+    0%,100% { opacity:1;transform:scale(1); }
+    50% { opacity:0.7;transform:scale(1.2); }
+  }
+
+  .certification-badge {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .certification-badge::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform:translateX(-100%) rotate(45deg); }
+    100% { transform:translateX(100%) rotate(45deg); }
+  }
+
+  .interest-tag {
+    transition: all 0.3s;
+  }
+
+  .interest-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px -10px rgba(232,93,4,0.4);
+  }
+}

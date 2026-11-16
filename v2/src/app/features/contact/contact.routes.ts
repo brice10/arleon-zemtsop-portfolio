@@ -1,12 +1,19 @@
 import { Routes } from '@angular/router';
 import { pageSeo } from '@core/seo/seo.resolvers';
-import { ContactPage } from './contact.page';
+import { ContentHost } from '@shared/content/content-host';
+import { localizedContent } from '@shared/content/localized-content';
 
 export default [
   {
     path: '',
-    component: ContactPage,
-    resolve: { seo: pageSeo('contact') },
+    component: ContentHost,
+    resolve: {
+      seo: pageSeo('contact'),
+      content: localizedContent({
+        fr: () => import('./content/contact.fr').then((m) => m.ContactFr),
+        en: () => import('./content/contact.en').then((m) => m.ContactEn),
+      }),
+    },
     runGuardsAndResolvers: 'always',
   },
 ] satisfies Routes;

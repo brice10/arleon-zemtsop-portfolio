@@ -1,56 +1,15 @@
-import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { I18nService } from '@core/i18n/i18n.service';
-import { PageHero } from '@shared/ui/page-hero';
+import { NgComponentOutlet } from '@angular/common';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { BlogPostView } from '../blog.model';
 
+/** Page d'un article : affiche le composant de contenu chargé par `blogPostResolver`. */
 @Component({
   selector: 'app-blog-post-page',
-  imports: [RouterLink, PageHero],
+  imports: [NgComponentOutlet],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    @let t = i18n.t();
-    @let lang = i18n.lang();
-    @let post = view().post;
-
-    <article>
-      <app-page-hero
-        [title]="post.emoji + ' ' + post.title[lang]"
-        [lead]="post.description[lang]"
-        [eyebrow]="eyebrow()"
-        [crumbs]="[{ label: t.nav.blog, link: i18n.page('blog') }, { label: post.title[lang] }]"
-      />
-
-      <div class="container-page pb-20">
-        <div class="max-w-3xl">
-          @if (view().html; as html) {
-            <!-- HTML issu de nos propres fichiers Markdown, assaini par Angular -->
-            <div class="prose-custom" [innerHTML]="html"></div>
-          } @else {
-            <p class="card border-noble-gold/30 font-mono text-sm text-noble-gold" role="note">
-              🚧 {{ t.blog.migrating }}
-            </p>
-          }
-          <a [routerLink]="i18n.page('blog')" class="btn btn-ghost mt-12"
-            >← {{ t.blog.backToBlog }}</a
-          >
-        </div>
-      </div>
-    </article>
-  `,
+  template: `<ng-container *ngComponentOutlet="view().content" />`,
 })
 export class BlogPostPage {
-  protected readonly i18n = inject(I18nService);
-
-  /** Renseigné par `blogPostResolver` (liaison des données de route aux inputs). */
+  /** Renseigné par le resolver de la route (clé `view`). */
   readonly view = input.required<BlogPostView>();
-
-  protected eyebrow(): string {
-    const { post } = this.view();
-    const parts = [post.tag[this.i18n.lang()], String(post.year)];
-    if (post.readingMinutes) {
-      parts.push(`${post.readingMinutes} ${this.i18n.t().blog.minutes}`);
-    }
-    return parts.join(' · ');
-  }
 }

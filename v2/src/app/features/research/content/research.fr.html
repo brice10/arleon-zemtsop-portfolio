@@ -1,0 +1,402 @@
+<div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+<div class="relative z-10 pt-10 lg:pt-14 pb-24">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="space-y-6 reveal">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-0.5 bg-determination"></div>
+                        <span class="font-mono text-sm text-determination tracking-wider uppercase">Recherche</span>
+                    </div>
+                    <h1 class="font-display text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight">
+                        <span class="gradient-text-white">Systèmes</span>
+                        <span class="gradient-text"> Auto-adaptatifs</span>
+                    </h1>
+                    <p class="font-accent text-xl lg:text-2xl text-gray-light italic">
+                        "Concevoir des systèmes qui évoluent et s'adaptent automatiquement aux changements de leur environnement."
+                    </p>
+                    <p class="font-body text-gray-light leading-relaxed">
+                        Ma recherche doctorale à l'<span class="text-digital-cyan font-medium">Université de Lille</span> et <span class="text-digital-cyan font-medium">Inria</span> se concentre sur l'<strong class="text-white">auto-adaptation des systèmes distribués</strong> dans le cloud. Je développe des approches innovantes pour permettre aux microservices de s'adapter dynamiquement aux variations de charge, aux pannes et aux évolutions des besoins métier.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a [routerLink]="[]" fragment="publications" class="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-determination to-warm-energy text-white font-display font-semibold rounded-lg hover:shadow-lg hover:shadow-determination/30 transition-all">
+                            Voir mes publications
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                        </a>
+                        <a [routerLink]="[]" fragment="projects" class="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white font-display font-medium rounded-lg hover:bg-white/5 transition-all">
+                            Projets de recherche
+                        </a>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="relative">
+                        <div class="aspect-square max-w-md mx-auto bg-linear-to-br from-noble-blue/30 to-night-sky/50 rounded-3xl border border-white/10 p-8 circuit-pattern flow-animation">
+                            <div class="relative w-full h-full">
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-2xl bg-linear-to-br from-determination to-warm-energy flex items-center justify-center shadow-lg shadow-determination/30">
+                                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+                                </div>
+                                <div class="node node-pulse bg-digital-cyan top-4 left-1/2 -translate-x-1/2"></div>
+                                <div class="node node-pulse bg-code-green bottom-4 left-1/2 -translate-x-1/2" style="animation-delay: 0.5s;"></div>
+                                <div class="node node-pulse bg-determination left-4 top-1/2 -translate-y-1/2" style="animation-delay: 1s;"></div>
+                                <div class="node node-pulse bg-noble-gold right-4 top-1/2 -translate-y-1/2" style="animation-delay: 1.5s;"></div>
+                                <div class="node node-pulse bg-digital-cyan top-8 left-8" style="animation-delay: 0.3s;"></div>
+                                <div class="node node-pulse bg-code-green top-8 right-8" style="animation-delay: 0.8s;"></div>
+                                <div class="node node-pulse bg-determination bottom-8 left-8" style="animation-delay: 1.3s;"></div>
+                                <div class="node node-pulse bg-noble-gold bottom-8 right-8" style="animation-delay: 1.8s;"></div>
+                                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                    <line x1="50" y1="10" x2="50" y2="40" stroke="rgba(0, 212, 255, 0.3)" stroke-width="0.5" stroke-dasharray="2,2"/>
+                                    <line x1="50" y1="60" x2="50" y2="90" stroke="rgba(79, 255, 176, 0.3)" stroke-width="0.5" stroke-dasharray="2,2"/>
+                                    <line x1="10" y1="50" x2="40" y2="50" stroke="rgba(232, 93, 4, 0.3)" stroke-width="0.5" stroke-dasharray="2,2"/>
+                                    <line x1="60" y1="50" x2="90" y2="50" stroke="rgba(212, 160, 18, 0.3)" stroke-width="0.5" stroke-dasharray="2,2"/>
+                                    <line x1="15" y1="15" x2="40" y2="40" stroke="rgba(0, 212, 255, 0.2)" stroke-width="0.5" stroke-dasharray="2,2"/>
+                                    <line x1="85" y1="15" x2="60" y2="40" stroke="rgba(79, 255, 176, 0.2)" stroke-width="0.5" stroke-dasharray="2,2"/>
+                                    <line x1="15" y1="85" x2="40" y2="60" stroke="rgba(232, 93, 4, 0.2)" stroke-width="0.5" stroke-dasharray="2,2"/>
+                                    <line x1="85" y1="85" x2="60" y2="60" stroke="rgba(212, 160, 18, 0.2)" stroke-width="0.5" stroke-dasharray="2,2"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="absolute -top-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-digital-cyan/20 border border-digital-cyan/30 rounded-full">
+                            <span class="font-mono text-xs text-digital-cyan">Monitor</span>
+                        </div>
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 bg-code-green/20 border border-code-green/30 rounded-full">
+                            <span class="font-mono text-xs text-code-green">Plan</span>
+                        </div>
+                        <div class="absolute top-1/2 -left-2 -translate-y-1/2 px-3 py-1 bg-determination/20 border border-determination/30 rounded-full">
+                            <span class="font-mono text-xs text-determination">Execute</span>
+                        </div>
+                        <div class="absolute top-1/2 -right-2 -translate-y-1/2 px-3 py-1 bg-noble-gold/20 border border-noble-gold/30 rounded-full">
+                            <span class="font-mono text-xs text-noble-gold">Analyse</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-12 border-y border-white/5 bg-noble-blue/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center reveal">
+                        <span class="block font-display text-4xl lg:text-5xl font-extrabold stats-number">2</span>
+                        <span class="block font-mono text-xs text-gray-medium uppercase tracking-wider mt-2">Publications</span>
+                    </div>
+                    <div class="text-center reveal">
+                        <span class="block font-display text-4xl lg:text-5xl font-extrabold stats-number">1</span>
+                        <span class="block font-mono text-xs text-gray-medium uppercase tracking-wider mt-2">Framework développé</span>
+                    </div>
+                    <div class="text-center reveal">
+                        <span class="block font-display text-4xl lg:text-5xl font-extrabold stats-number">2025</span>
+                        <span class="block font-mono text-xs text-gray-medium uppercase tracking-wider mt-2">Début du doctorat</span>
+                    </div>
+                    <div class="text-center reveal">
+                        <span class="block font-display text-4xl lg:text-5xl font-extrabold stats-number">3</span>
+                        <span class="block font-mono text-xs text-gray-medium uppercase tracking-wider mt-2">Domaines de recherche</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-16 reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-0.5 bg-determination"></div>
+                        <span class="font-mono text-sm text-determination tracking-wider uppercase">Domaines</span>
+                    </div>
+                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-white">Axes de recherche</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <article class="domain-card reveal bg-linear-to-br from-noble-blue/40 to-night-sky/60 border border-white/5 rounded-2xl p-8">
+                        <div class="domain-icon w-16 h-16 mb-6 rounded-2xl bg-determination/20 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-determination" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-4">Systèmes Auto-adaptatifs</h3>
+                        <p class="font-body text-gray-light leading-relaxed mb-6">
+                            Conception de systèmes capables de modifier leur comportement en réponse aux changements de leur environnement, sans intervention humaine.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-determination/10 border border-determination/20 rounded-full font-mono text-xs text-determination">MAPE-K</span>
+                            <span class="px-3 py-1 bg-determination/10 border border-determination/20 rounded-full font-mono text-xs text-determination">Feedback Loop</span>
+                            <span class="px-3 py-1 bg-determination/10 border border-determination/20 rounded-full font-mono text-xs text-determination">Runtime</span>
+                        </div>
+                    </article>
+                    <article class="domain-card reveal bg-linear-to-br from-noble-blue/40 to-night-sky/60 border border-white/5 rounded-2xl p-8">
+                        <div class="domain-icon w-16 h-16 mb-6 rounded-2xl bg-digital-cyan/20 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-digital-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-4">Cloud Computing</h3>
+                        <p class="font-body text-gray-light leading-relaxed mb-6">
+                            Optimisation des déploiements cloud et gestion dynamique des ressources pour garantir performance et résilience des applications.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-digital-cyan/10 border border-digital-cyan/20 rounded-full font-mono text-xs text-digital-cyan">Kubernetes</span>
+                            <span class="px-3 py-1 bg-digital-cyan/10 border border-digital-cyan/20 rounded-full font-mono text-xs text-digital-cyan">Auto-scaling</span>
+                            <span class="px-3 py-1 bg-digital-cyan/10 border border-digital-cyan/20 rounded-full font-mono text-xs text-digital-cyan">Elasticity</span>
+                        </div>
+                    </article>
+                    <article class="domain-card reveal bg-linear-to-br from-noble-blue/40 to-night-sky/60 border border-white/5 rounded-2xl p-8">
+                        <div class="domain-icon w-16 h-16 mb-6 rounded-2xl bg-code-green/20 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-code-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-4">Business Process Management</h3>
+                        <p class="font-body text-gray-light leading-relaxed mb-6">
+                            Modélisation et optimisation des processus d'adaptation avec BPMN, intégration de l'adaptabilité dans les workflows d'entreprise.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-code-green/10 border border-code-green/20 rounded-full font-mono text-xs text-code-green">BPMN 2.0</span>
+                            <span class="px-3 py-1 bg-code-green/10 border border-code-green/20 rounded-full font-mono text-xs text-code-green">Workflow</span>
+                            <span class="px-3 py-1 bg-code-green/10 border border-code-green/20 rounded-full font-mono text-xs text-code-green">Camunda</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="py-24 bg-noble-blue/10 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-16 reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-0.5 bg-determination"></div>
+                        <span class="font-mono text-sm text-determination tracking-wider uppercase">Projets</span>
+                    </div>
+                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-white">Projets de recherche</h2>
+                </div>
+                <div class="space-y-8">
+                    <article class="research-card reveal bg-linear-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" style="--accent-color: #E85D04;">
+                        <div class="grid lg:grid-cols-3 gap-0">
+                            <div class="lg:col-span-2 p-8 lg:p-10">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-determination/20 border border-determination/30 rounded-full font-mono text-xs text-determination">Framework</span>
+                                    <span class="px-3 py-1 bg-code-green/20 border border-code-green/30 rounded-full font-mono text-xs text-code-green">Open Source</span>
+                                </div>
+                                <h3 class="font-display text-2xl lg:text-3xl font-bold text-white mb-4">AdaptiFlow</h3>
+                                <p class="font-body text-gray-light leading-relaxed mb-6">
+                                    <strong class="text-white">AdaptiFlow</strong> est un framework Java léger conçu pour permettre l'<span class="text-determination font-medium">auto-adaptation des microservices</span> en temps réel. Il implémente le pattern MAPE-K (Monitor, Analyze, Plan, Execute - Knowledge) pour permettre aux applications cloud de s'adapter automatiquement aux changements de leur environnement.
+                                </p>
+                                <div class="space-y-3 mb-6">
+                                    <div class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-determination shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span class="font-body text-sm text-gray-light">Monitoring en temps réel des métriques système et applicatives</span>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-determination shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span class="font-body text-sm text-gray-light">Définition de règles pour la prise de décision automatique</span>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-determination shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span class="font-body text-sm text-gray-light">Architecture extensible et configurable</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Java 11+</span>
+                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Apache</span>
+                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Docker</span>
+                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Kubernetes</span>
+                                </div>
+                            </div>
+                            <div class="bg-deep-night/50 p-8 lg:p-10 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/5">
+                                <div class="text-center">
+                                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-linear-to-br from-determination to-warm-energy flex items-center justify-center">
+                                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                    </div>
+                                    <h4 class="font-display font-bold text-white mb-2">Statut</h4>
+                                    <p class="font-mono text-sm text-code-green mb-6">En développement actif</p>
+                                    <a href="https://gitlab.inria.fr/adaptable-teastore/experimentation-platform/-/blob/main/Sources/utilities/tools.spirals.cerberus237.adaptiflow/README.md" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg font-mono text-sm text-gray-light hover:text-determination hover:border-determination/30 transition-all">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                        Voir sur GitLab
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="research-card reveal bg-linear-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl overflow-hidden" style="--accent-color: #00D4FF;">
+                        <div class="grid lg:grid-cols-3 gap-0">
+                            <div class="lg:col-span-2 p-8 lg:p-10">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <span class="px-3 py-1 bg-digital-cyan/20 border border-digital-cyan/30 rounded-full font-mono text-xs text-digital-cyan">Démonstration</span>
+                                    <span class="px-3 py-1 bg-noble-gold/20 border border-noble-gold/30 rounded-full font-mono text-xs text-noble-gold">Benchmark</span>
+                                </div>
+                                <h3 class="font-display text-2xl lg:text-3xl font-bold text-white mb-4">Adaptable TeaStore</h3>
+                                <p class="font-body text-gray-light leading-relaxed mb-6">
+                                    <strong class="text-white">Adaptable TeaStore</strong> est une application de démonstration basée sur TeaStore (benchmark de référence pour les microservices) enrichie avec les capacités d'auto-adaptation d'AdaptiFlow. Elle illustre concrètement comment un système e-commerce peut <span class="text-digital-cyan font-medium">s'adapter automatiquement</span> aux pics de charge.
+                                </p>
+                                <div class="space-y-3 mb-6">
+                                    <div class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-digital-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span class="font-body text-sm text-gray-light">Application e-commerce complète avec plusieurs microservices</span>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-digital-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span class="font-body text-sm text-gray-light">Gestion des montées de traffic basé sur les métriques de performance</span>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <svg class="w-5 h-5 text-digital-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                        <span class="font-body text-sm text-gray-light">Scénarios de test pour évaluer l'adaptabilité</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Docker Compose</span>
+                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Grafana</span>
+                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">Locust</span>
+                                    <span class="px-3 py-1.5 bg-deep-night/50 border border-white/10 rounded-lg font-mono text-xs text-gray-light">PostgreSQL</span>
+                                </div>
+                            </div>
+                            <div class="bg-deep-night/50 p-8 lg:p-10 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/5">
+                                <div class="text-center">
+                                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-linear-to-br from-digital-cyan to-code-green flex items-center justify-center">
+                                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                                    </div>
+                                    <h4 class="font-display font-bold text-white mb-2">Statut</h4>
+                                    <p class="font-mono text-sm text-noble-gold mb-6">Proof of Concept</p>
+                                    <a href="https://gitlab.inria.fr/adaptable-teastore/experimentation-platform" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg font-mono text-sm text-gray-light hover:text-digital-cyan hover:border-digital-cyan/30 transition-all">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                        Voir sur GitLab
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="publications" class="py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-16 reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-0.5 bg-determination"></div>
+                        <span class="font-mono text-sm text-determination tracking-wider uppercase">Publications</span>
+                    </div>
+                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-4">Publications scientifiques</h2>
+                    <p class="font-body text-gray-light max-w-2xl">
+                        Mes travaux ont été présentés dans des workshops et conférences internationales de premier plan dans le domaine du génie logiciel.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <article class="publication-card reveal bg-linear-to-br from-noble-blue/20 to-night-sky/30 border border-white/5 rounded-xl p-6 lg:p-8">
+                        <div class="flex flex-col lg:flex-row lg:items-start gap-6">
+                            <div class="shrink-0">
+                                <div class="w-14 h-14 rounded-xl bg-determination/20 flex items-center justify-center">
+                                    <svg class="w-7 h-7 text-determination" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="px-3 py-1 bg-determination/20 border border-determination/30 rounded-full font-mono text-xs text-determination">Workshop Paper</span>
+                                    <span class="font-mono text-xs text-gray-medium">2025</span>
+                                </div>
+                                <h3 class="font-display text-lg lg:text-xl font-bold text-white mb-2">
+                                    AdaptiFlow: An Extensible Framework for Event-Driven Autonomy in Cloud Microservices
+                                </h3>
+                                <p class="font-body text-sm text-gray-light mb-4">
+                                    <span class="text-digital-cyan">ZEMTSOP NDADJI B.A.</span>, Simon Bliudze, Clément Quinton.
+                                </p>
+                                <p class="font-body text-sm text-gray-medium mb-4 leading-relaxed">
+                                    Présentation d'AdaptiFlow, un framework léger permettant l'intégration de capacités d'auto-adaptation dans les architectures microservices existantes, avec une évaluation sur le benchmark TeaStore.
+                                </p>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="https://hal.science/hal-05074243v1" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg font-mono text-xs text-gray-light hover:text-determination hover:border-determination/30 transition-all" rel="noopener">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                        PDF
+                                    </a>
+                                    <a href="https://dx.doi.org/10.4204/EPTCS.438.7" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg font-mono text-xs text-gray-light hover:text-digital-cyan hover:border-digital-cyan/30 transition-all" rel="noopener">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                        DOI
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="publication-card reveal bg-linear-to-br from-noble-blue/20 to-night-sky/30 border border-white/5 rounded-xl p-6 lg:p-8">
+                        <div class="flex flex-col lg:flex-row lg:items-start gap-6">
+                            <div class="shrink-0">
+                                <div class="w-14 h-14 rounded-xl bg-digital-cyan/20 flex items-center justify-center">
+                                    <svg class="w-7 h-7 text-digital-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="px-3 py-1 bg-digital-cyan/20 border border-digital-cyan/30 rounded-full font-mono text-xs text-digital-cyan">Workshop Paper</span>
+                                    <span class="font-mono text-xs text-gray-medium">2025</span>
+                                </div>
+                                <h3 class="font-display text-lg lg:text-xl font-bold text-white mb-2">
+                                    Adaptable TeaStore
+                                </h3>
+                                <p class="font-body text-sm text-gray-light mb-4">
+                                    Simon Bliudze, Giuseppe De Palma, Saverio Giallorenzo, Ivan Lanese, Gianluigi Zavattaro, <span class="text-digital-cyan">ZEMTSOP NDADJI B.A.</span>
+                                </p>
+                                <p class="font-body text-sm text-gray-medium mb-4 leading-relaxed">
+                                </p>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="https://inria.hal.science/hal-05446548" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg font-mono text-xs text-gray-light hover:text-determination hover:border-determination/30 transition-all" rel="noopener">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                        PDF
+                                    </a>
+                                    <a href="https://dx.doi.org/10.4204/EPTCS.438.1" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg font-mono text-xs text-gray-light hover:text-digital-cyan hover:border-digital-cyan/30 transition-all" rel="noopener">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                        DOI
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="py-24 bg-noble-blue/10 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-16 text-center reveal">
+                    <div class="flex items-center justify-center gap-4 mb-6">
+                        <div class="w-12 h-0.5 bg-determination"></div>
+                        <span class="font-mono text-sm text-determination tracking-wider uppercase">Affiliations</span>
+                        <div class="w-12 h-0.5 bg-determination"></div>
+                    </div>
+                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-white">Institutions</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <article class="reveal bg-linear-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl p-8 text-center">
+                        <div class="w-24 h-24 mx-auto mb-6 rounded-2xl bg-white/10 flex items-center justify-center p-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Inr_logo_rouge.svg/960px-Inr_logo_rouge.svg.png" alt="Logo Inria" class="w-full h-full object-contain" loading="lazy">
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-2">Inria</h3>
+                        <p class="font-mono text-sm text-digital-cyan mb-4">Institut national de recherche en sciences et technologies du numérique</p>
+                        <p class="font-body text-sm text-gray-light leading-relaxed">
+                            Centre de recherche de Lille, équipe spécialisée dans les systèmes distribués et l'architecture logicielle.
+                        </p>
+                    </article>
+                    <article class="reveal bg-linear-to-br from-noble-blue/30 to-night-sky/50 border border-white/5 rounded-2xl p-8 text-center">
+                        <div class="w-24 h-24 mx-auto mb-6 rounded-2xl bg-white/10 flex items-center justify-center p-4">
+                            <svg class="w-16 h-16 text-determination" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-2">Université de Lille</h3>
+                        <p class="font-mono text-sm text-digital-cyan mb-4">Faculté des Sciences et Technologies</p>
+                        <p class="font-body text-sm text-gray-light leading-relaxed">
+                            Doctorat en informatique au sein du laboratoire CRIStAL (Centre de Recherche en Informatique, Signal et Automatique de Lille).
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="reveal">
+                    <h2 class="font-display text-3xl lg:text-4xl font-bold text-white mb-6">Intéressé par mes recherches ?</h2>
+                    <p class="font-body text-lg text-gray-light mb-8 max-w-2xl mx-auto">
+                        Je suis ouvert aux collaborations académiques et industrielles. N'hésitez pas à me contacter pour discuter de projets communs ou de possibilités de partenariat.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a routerLink="/fr/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-determination to-warm-energy text-white font-display font-semibold rounded-xl hover:shadow-2xl hover:shadow-determination/30 transition-all">
+                            Me contacter
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                        <a href="https://scholar.google.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white font-display font-medium rounded-xl hover:bg-white/5 transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+                            Google Scholar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+</div>

@@ -49,6 +49,17 @@
     @apply font-display text-white;
   }
 
+  /* Compatibilité avec le contenu migré de la v1 (Tailwind 3) : bordures discrètes par défaut,
+     curseur main sur les boutons. */
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+  button:not(:disabled),
+  [role='button'] {
+    cursor: pointer;
+  }
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-digital-cyan;
   }
@@ -68,7 +79,7 @@
 
 @layer components {
   .container-page {
-    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
   .btn {

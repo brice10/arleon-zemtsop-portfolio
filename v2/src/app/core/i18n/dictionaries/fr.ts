@@ -60,65 +60,8 @@ export const FR: Dictionary = {
     },
   },
   common: {
-    available: 'Disponible',
-    wip: 'Contenu en cours de migration depuis la version 1 du portfolio.',
     backHome: "Retour à l'accueil",
-    downloadCv: 'Télécharger mon CV',
     breadcrumbHome: 'Accueil',
-  },
-  home: {
-    eyebrow: 'Doctorant & Ingénieur Logiciel',
-    tagline:
-      "L'excellence à l'intersection de la science et de l'industrie — chercheur, ingénieur, visionnaire.",
-    intro:
-      "Doctorant à l'Université de Lille et attaché au laboratoire Inria, j'étudie les systèmes auto-adaptatifs pour le cloud. Fort de 6+ années d'expérience en tant que Software Engineer & Team Lead, j'excelle en TDD, DevOps et architectures microservices.",
-    ctaPrimary: 'Découvrir mes travaux',
-    ctaSecondary: 'Me contacter',
-    stats: [
-      { value: '6+', label: "Années d'exp." },
-      { value: '20+', label: 'Projets réalisés' },
-      { value: '2', label: 'Publications' },
-    ],
-    servicesTitle: 'Comment puis-je vous aider ?',
-    services: [
-      {
-        title: 'Recherche & Innovation',
-        text: "Mes recherches portent sur l'auto-adaptation des systèmes distribués dans le cloud. J'ai développé AdaptiFlow, un framework Java léger pour l'auto-adaptation des microservices, démontré via Adaptable TeaStore.",
-        tags: ['Systèmes auto-adaptatifs', 'Cloud Computing'],
-      },
-      {
-        title: 'Développement Full-Stack',
-        text: 'Avec une forte expérience des technologies Angular et Spring Boot, je pratique le Test-Driven Development (TDD) pour bâtir des backends stables et fonctionnels. Plus de 20 projets réalisés.',
-        tags: ['Angular', 'Spring Boot', 'TDD/BDD'],
-      },
-      {
-        title: 'DevOps & Cloud',
-        text: "Je m'intéresse également au déploiement et au monitoring d'applications en production avec Docker, Kubernetes et Jenkins, ainsi qu'à la supervision via Prometheus et Grafana.",
-        tags: ['Docker', 'Kubernetes', 'CI/CD'],
-      },
-      {
-        title: 'Leadership & Mentorat',
-        text: "Team Lead chez DIMSOFT, j'ai guidé des équipes sur des projets complexes avec des méthodologies agiles. J'ai fondé la Soft Development Community pour promouvoir TDD, BDD et bonnes pratiques d'ingénierie logicielle.",
-        tags: ['Agile/Scrum', 'Code Review', 'Mentoring'],
-      },
-    ],
-    ctaTitle: 'Vous avez un projet en tête ?',
-    ctaText: 'Construisons ensemble !',
-  },
-  pages: {
-    about: { title: 'À propos', lead: 'Parcours, valeurs, formation et vision.' },
-    research: {
-      title: 'Recherche',
-      lead: 'Systèmes auto-adaptatifs, AdaptiFlow, Adaptable TeaStore et publications scientifiques.',
-    },
-    projects: {
-      title: 'Projets',
-      lead: 'Plus de 20 projets livrés : applications d’entreprise, outils de recherche et contributions open source.',
-    },
-    experience: {
-      title: 'Expérience professionnelle',
-      lead: 'De Software Engineer & Team Lead à ingénieur de recherche puis doctorant chez Inria.',
-    },
   },
   blog: {
     title: 'Réflexions & partages',
@@ -130,23 +73,6 @@ export const FR: Dictionary = {
       tech: 'Tech & Dev',
       life: 'Vie & Intégration',
     },
-    readArticle: "Lire l'article",
-    backToBlog: 'Retour au blog',
-    minutes: 'min de lecture',
-    migrating:
-      'Le contenu complet de cet article est en cours de migration vers la nouvelle version du site.',
-  },
-  contact: {
-    title: 'Contact',
-    lead: 'Un projet de développement, de recherche ou de conseil ? Écrivez-moi ou réservez un appel découverte gratuit.',
-    name: 'Nom',
-    email: 'E-mail',
-    message: 'Message',
-    send: 'Envoyer',
-    sending: 'Envoi…',
-    success: 'Merci ! Votre message a bien été envoyé.',
-    error: "L'envoi a échoué. Réessayez ou écrivez-moi directement par e-mail.",
-    bookCall: 'Réserver un appel (30 min)',
   },
   notFound: {
     title: 'Page introuvable',

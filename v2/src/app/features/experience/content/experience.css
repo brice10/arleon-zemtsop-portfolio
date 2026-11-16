@@ -1,0 +1,1600 @@
+:host {
+  display: block;
+}
+
+@layer components {
+  :host {
+    --blue-deep: #0A1628;
+    --blue-cobalt: #1E3A5F;
+    --blue-night: #0F2847;
+    --orange-vivid: #E85D04;
+    --orange-warm: #F48C06;
+    --mustard: #D4A012;
+    --cyan-electric: #00D4FF;
+    --mint-code: #4FFFB0;
+    --gray-charcoal: #1C1C1E;
+    --gray-dark: #2D2D30;
+    --gray-medium: #6B6B6F;
+    --gray-light: #A0A0A5;
+    --gray-soft: #E5E5EA;
+    --white-off: #F8F9FA;
+    --white-pure: #FFFFFF;
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :host {
+    font-family: 'Inter Variable', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--blue-deep);
+    color: var(--white-off);
+    line-height: 1.7;
+    overflow-x: clip;
+  }
+
+  :host::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(ellipse at 20% 80%, rgba(30, 58, 95, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(232, 93, 4, 0.08) 0%, transparent 40%), url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231E3A5F' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .header {
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 22, 40, 0.95);
+    backdrop-filter: blur(12px);
+  }
+
+  .header-brand {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    color: var(--gray-light);
+  }
+
+  .header-nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .header-nav a {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.72rem;
+    color: var(--gray-light);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+
+  .header-nav a:hover {
+    color: var(--cyan-electric);
+  }
+
+  .header-tag {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.75rem;
+    color: var(--cyan-electric);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--cyan-electric);
+    border-radius: 2px;
+  }
+
+  .hero {
+    padding: 8rem 4rem 6rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.8rem;
+    color: var(--orange-vivid);
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px;
+    height: 2px;
+    background: var(--orange-vivid);
+  }
+
+  .hero-title {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, var(--white-pure) 0%, var(--gray-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-title span {
+    display: block;
+    background: linear-gradient(135deg, var(--orange-vivid) 0%, var(--mustard) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-family: 'Playfair Display Variable', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--gray-light);
+    max-width: 700px;
+    line-height: 1.6;
+  }
+
+  .portfolio-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .summary-pill {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.75rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    color: var(--cyan-electric);
+    background: rgba(0, 212, 255, 0.06);
+    letter-spacing: 0.05em;
+  }
+
+  .summary-pill.active {
+    background: rgba(232, 93, 4, 0.15);
+    border-color: rgba(232, 93, 4, 0.5);
+    color: var(--orange-warm);
+  }
+
+  .section {
+    padding: 6rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .section-number {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--orange-vivid);
+    letter-spacing: 0.1em;
+  }
+
+  .section-title {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 80px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--cyan-electric) 0%, var(--orange-vivid) 100%);
+    opacity: 0.3;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 5rem;
+    padding: 2.5rem;
+    background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    transition: all 0.4s var(--transition-smooth);
+  }
+
+  .timeline-item:hover {
+    border-color: rgba(0, 212, 255, 0.3);
+    transform: translateX(5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -60px;
+    top: 50px;
+    width: 20px;
+    height: 20px;
+    background: var(--orange-vivid);
+    border: 4px solid var(--blue-deep);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(232, 93, 4, 0.2);
+    transition: all 0.3s var(--transition-smooth);
+  }
+
+  .timeline-item:hover::before {
+    background: var(--cyan-electric);
+    box-shadow: 0 0 0 8px rgba(0, 212, 255, 0.3);
+    transform: scale(1.2);
+  }
+
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .experience-title-group {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .experience-role {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white-pure);
+    margin-bottom: 0.5rem;
+  }
+
+  .experience-company {
+    font-size: 1.1rem;
+    color: var(--cyan-electric);
+    margin-bottom: 0.5rem;
+  }
+
+  .experience-period {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.85rem;
+    color: var(--gray-light);
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 4px;
+    border-left: 3px solid var(--cyan-electric);
+  }
+
+  .experience-location {
+    font-size: 0.9rem;
+    color: var(--gray-light);
+    margin-top: 0.5rem;
+  }
+
+  .experience-section {
+    margin-top: 2rem;
+  }
+
+  .experience-section-title {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--orange-warm);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .experience-section-title::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: var(--orange-warm);
+  }
+
+  .experience-content {
+    color: var(--gray-soft);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .experience-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .experience-list li {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    color: var(--gray-soft);
+    line-height: 1.7;
+  }
+
+  .experience-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--cyan-electric);
+    font-size: 1.2rem;
+  }
+
+  .skill-list-phrases {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .skill-list-phrases li {
+    font-size: 0.88rem;
+    color: var(--gray-soft);
+    line-height: 1.5;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .skill-list-phrases li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--cyan-electric);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .skill-list-phrases li strong {
+    color: var(--orange-warm);
+  }
+
+  .skills-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .skill-category-card {
+    background: linear-gradient(145deg, rgba(30, 58, 95, 0.35), rgba(15, 40, 71, 0.55));
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 1.8rem;
+    transition: all 0.35s var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-category-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--orange-vivid), var(--cyan-electric));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .skill-category-card:hover {
+    border-color: rgba(0, 212, 255, 0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+  }
+
+  .skill-category-card:hover::after {
+    opacity: 1;
+  }
+
+  .skill-category-header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .skill-category-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(232, 93, 4, 0.15);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .skill-category-name {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--orange-warm);
+    letter-spacing: 0.03em;
+  }
+
+  .competences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .competence-card {
+    background: linear-gradient(135deg, rgba(232, 93, 4, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.4s var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .competence-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--orange-vivid), var(--cyan-electric));
+    transition: width 0.3s var(--transition-smooth);
+  }
+
+  .competence-card:hover::before {
+    width: 100%;
+    opacity: 0.1;
+  }
+
+  .competence-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .competence-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .competence-title {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--white-pure);
+    margin-bottom: 0.8rem;
+  }
+
+  .competence-description {
+    color: var(--gray-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .alt-project-intro {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background: linear-gradient(145deg, rgba(79, 255, 176, 0.04), rgba(15, 40, 71, 0.5));
+    border: 1px solid rgba(79, 255, 176, 0.12);
+    border-radius: 14px;
+    padding: 2rem 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .alt-project-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .alt-project-text {
+    color: var(--gray-soft);
+    font-size: 0.97rem;
+    line-height: 1.8;
+  }
+
+  .alt-motiv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .alt-motiv-card {
+    background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.8rem;
+    transition: all 0.3s var(--transition-smooth);
+  }
+
+  .alt-motiv-card:hover {
+    border-color: rgba(79, 255, 176, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  }
+
+  .alt-motiv-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .alt-motiv-title {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--mint-code);
+    margin-bottom: 0.7rem;
+  }
+
+  .alt-motiv-desc {
+    color: var(--gray-light);
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+
+  .doctoral-formations-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .doctoral-formations-eyebrow {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.72rem;
+    color: var(--orange-vivid);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .doctoral-formations-title {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white-pure);
+    margin-bottom: 0.6rem;
+  }
+
+  .doctoral-formations-sub {
+    color: var(--gray-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .doctoral-formations-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .doctoral-card {
+    background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.35s var(--transition-smooth);
+  }
+
+  .doctoral-card:hover {
+    border-color: rgba(0, 212, 255, 0.25);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  }
+
+  .doctoral-card-header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.8rem 2rem 1.2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .doctoral-card-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(232, 93, 4, 0.12);
+    border: 1px solid rgba(232, 93, 4, 0.2);
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    flex-shrink: 0;
+    min-width: 52px;
+  }
+
+  .doctoral-date-day {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--orange-warm);
+    line-height: 1;
+  }
+
+  .doctoral-date-month {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.65rem;
+    color: var(--orange-vivid);
+    margin-top: 0.2rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .doctoral-card-meta {
+    flex: 1;
+  }
+
+  .doctoral-card-category {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.68rem;
+    color: var(--gray-medium);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+  }
+
+  .doctoral-card-title {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white-pure);
+    margin-bottom: 0.7rem;
+  }
+
+  .doctoral-card-format {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .doctoral-badge {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.68rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--gray-light);
+  }
+
+  .doctoral-badge--present {
+    background: rgba(0, 212, 255, 0.08);
+    border-color: rgba(0, 212, 255, 0.25);
+    color: var(--cyan-electric);
+  }
+
+  .doctoral-badge--complet {
+    background: rgba(160, 160, 165, 0.08);
+    border-color: rgba(160, 160, 165, 0.2);
+    color: var(--gray-light);
+  }
+
+  .doctoral-badge--open {
+    background: rgba(79, 255, 176, 0.08);
+    border-color: rgba(79, 255, 176, 0.25);
+    color: var(--mint-code);
+  }
+
+  .doctoral-card-body {
+    padding: 1.4rem 2rem 1.8rem;
+  }
+
+  .doctoral-card-desc {
+    color: var(--gray-soft);
+    font-size: 0.88rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .doctoral-card-themes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .doctoral-theme {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.68rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    background: rgba(212, 160, 18, 0.07);
+    border: 1px solid rgba(212, 160, 18, 0.2);
+    color: var(--mustard);
+  }
+
+  .doctoral-card-team {
+    font-size: 0.82rem;
+    color: var(--gray-medium);
+    line-height: 1.5;
+  }
+
+  .doctoral-team-label {
+    font-weight: 600;
+    color: var(--gray-light);
+  }
+
+  .doctoral-card-location {
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--gray-medium);
+  }
+
+  .doctoral-credits-bar {
+    background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 2rem 2.2rem;
+  }
+
+  .doctoral-credits-label {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white-pure);
+    margin-bottom: 1rem;
+  }
+
+  .doctoral-credits-track {
+    width: 100%;
+    height: 10px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+  }
+
+  .doctoral-credits-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--mint-code), var(--cyan-electric));
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0.5rem;
+    transition: width 1s ease;
+  }
+
+  .doctoral-credits-value {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.65rem;
+    color: var(--blue-deep);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .doctoral-credits-note {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.72rem;
+    color: var(--gray-medium);
+  }
+
+  .audience-competitors-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 1100px) {
+    .audience-competitors-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .audience-block,
+  .competitor-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .audience-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .audience-header-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+
+  .audience-eyebrow {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.7rem;
+    color: var(--orange-vivid);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+
+  .audience-title {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--white-pure);
+  }
+
+  .audience-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .audience-card {
+    background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 1.3rem 1.5rem;
+    transition: all 0.3s var(--transition-smooth);
+  }
+
+  .audience-card:hover {
+    border-color: rgba(0, 212, 255, 0.2);
+    transform: translateX(4px);
+  }
+
+  .audience-card-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .audience-card-name {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--cyan-electric);
+    margin-bottom: 0.4rem;
+  }
+
+  .audience-card-desc {
+    font-size: 0.84rem;
+    color: var(--gray-soft);
+    line-height: 1.6;
+    margin-bottom: 0.7rem;
+  }
+
+  .audience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .atag {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.67rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+    background: rgba(0, 212, 255, 0.07);
+    border: 1px solid rgba(0, 212, 255, 0.18);
+    color: var(--cyan-electric);
+  }
+
+  .competitor-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .competitor-card {
+    border-radius: 10px;
+    padding: 1.3rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.3s var(--transition-smooth);
+  }
+
+  .competitor-card:hover {
+    transform: translateX(4px);
+  }
+
+  .competitor-card--threat {
+    background: linear-gradient(145deg, rgba(232, 93, 4, 0.06), rgba(15, 40, 71, 0.5));
+    border-color: rgba(232, 93, 4, 0.15);
+  }
+
+  .competitor-card--moderate {
+    background: linear-gradient(145deg, rgba(212, 160, 18, 0.05), rgba(15, 40, 71, 0.5));
+    border-color: rgba(212, 160, 18, 0.12);
+  }
+
+  .competitor-card--low {
+    background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+    border-color: rgba(255,255,255,0.06);
+  }
+
+  .competitor-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .competitor-level {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .competitor-level--high {
+    background: rgba(232, 93, 4, 0.15);
+    border: 1px solid rgba(232, 93, 4, 0.35);
+    color: var(--orange-warm);
+  }
+
+  .competitor-level--medium {
+    background: rgba(212, 160, 18, 0.12);
+    border: 1px solid rgba(212, 160, 18, 0.3);
+    color: var(--mustard);
+  }
+
+  .competitor-level--low {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--gray-light);
+  }
+
+  .competitor-card-title {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--white-pure);
+    line-height: 1.3;
+  }
+
+  .competitor-card-desc {
+    font-size: 0.83rem;
+    color: var(--gray-light);
+    line-height: 1.6;
+    margin-bottom: 0.7rem;
+  }
+
+  .competitor-differentiator {
+    font-size: 0.82rem;
+    color: var(--gray-soft);
+    line-height: 1.5;
+    padding: 0.6rem 0.8rem;
+    background: rgba(79, 255, 176, 0.05);
+    border-left: 2px solid var(--mint-code);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .diff-label {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.7rem;
+    color: var(--mint-code);
+    font-weight: 700;
+  }
+
+  .academic-competitors-block {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .plan-phase-dot--network {
+    background: linear-gradient(135deg, var(--cyan-electric), var(--mint-code));
+    border-color: var(--cyan-electric);
+    box-shadow: 0 0 0 6px rgba(0, 212, 255, 0.15);
+  }
+
+  .plan-action-card--network {
+    border-color: rgba(0, 212, 255, 0.18);
+    background: linear-gradient(145deg, rgba(0, 212, 255, 0.04), rgba(15, 40, 71, 0.55));
+  }
+
+  .plan-action-label.network-label {
+    color: var(--cyan-electric);
+  }
+
+  .plan-tag--network {
+    background: rgba(0, 212, 255, 0.08);
+    border-color: rgba(0, 212, 255, 0.25);
+    color: var(--cyan-electric);
+  }
+
+  .mv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .mv-card {
+    border-radius: 14px;
+    padding: 2.2rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .mv-card--mission {
+    background: linear-gradient(145deg, rgba(232, 93, 4, 0.08), rgba(15, 40, 71, 0.6));
+    border-color: rgba(232, 93, 4, 0.2);
+  }
+
+  .mv-card--vision {
+    background: linear-gradient(145deg, rgba(0, 212, 255, 0.06), rgba(15, 40, 71, 0.6));
+    border-color: rgba(0, 212, 255, 0.15);
+  }
+
+  .mv-icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .mv-label {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--orange-warm);
+    margin-bottom: 1rem;
+  }
+
+  .mv-card--vision .mv-label {
+    color: var(--cyan-electric);
+  }
+
+  .mv-text {
+    color: var(--gray-soft);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .target-role-block {
+    background: linear-gradient(145deg, rgba(30, 58, 95, 0.35), rgba(15, 40, 71, 0.55));
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .target-role-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .target-role-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .target-role-eyebrow {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.72rem;
+    color: var(--orange-vivid);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .target-role-title {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white-pure);
+    margin-bottom: 0.3rem;
+  }
+
+  .target-role-desc {
+    color: var(--gray-soft);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+
+  .fit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .fit-block {
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .fit-block--strengths {
+    background: rgba(79, 255, 176, 0.04);
+    border-color: rgba(79, 255, 176, 0.12);
+  }
+
+  .fit-block--gaps {
+    background: rgba(232, 93, 4, 0.04);
+    border-color: rgba(232, 93, 4, 0.12);
+  }
+
+  .fit-block-title {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--white-pure);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .fit-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .fit-dot--green {
+    background: var(--mint-code);
+  }
+
+  .fit-dot--orange {
+    background: var(--orange-vivid);
+  }
+
+  .fit-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .fit-list li {
+    font-size: 0.87rem;
+    color: var(--gray-soft);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .fit-block--strengths .fit-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--mint-code);
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+
+  .fit-block--gaps .fit-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--orange-vivid);
+    font-size: 0.9rem;
+  }
+
+  .plan-intro {
+    font-size: 1rem;
+    color: var(--gray-soft);
+    line-height: 1.75;
+    max-width: 780px;
+    margin-bottom: 4rem;
+  }
+
+  .plan-intro strong {
+    color: var(--orange-warm);
+  }
+
+  .plan-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .plan-phase {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .plan-phase-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 24px;
+  }
+
+  .plan-phase-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--blue-cobalt);
+    border: 3px solid var(--orange-vivid);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .plan-phase-dot--now {
+    background: var(--orange-vivid);
+    box-shadow: 0 0 0 6px rgba(232, 93, 4, 0.2);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .plan-phase-dot--target {
+    background: var(--mint-code);
+    border-color: var(--mint-code);
+    box-shadow: 0 0 0 6px rgba(79, 255, 176, 0.15);
+  }
+
+  .plan-phase-line {
+    width: 2px;
+    flex: 1;
+    margin: 6px 0;
+    background: linear-gradient(180deg, rgba(232, 93, 4, 0.4), rgba(232, 93, 4, 0.1));
+    min-height: 30px;
+  }
+
+  .plan-phase-line--last {
+    background: transparent;
+  }
+
+  .plan-phase-content {
+    flex: 1;
+    padding-bottom: 3.5rem;
+  }
+
+  .plan-phase-header {
+    margin-bottom: 1.8rem;
+  }
+
+  .plan-phase-period {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.75rem;
+    color: var(--orange-vivid);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+  }
+
+  .plan-phase-title {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white-pure);
+  }
+
+  .plan-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .plan-action-card {
+    display: flex;
+    gap: 1rem;
+    background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 1.4rem;
+    transition: all 0.3s var(--transition-smooth);
+  }
+
+  .plan-action-card:hover {
+    border-color: rgba(0, 212, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  }
+
+  .plan-action-card--cert {
+    border-color: rgba(232, 93, 4, 0.15);
+    background: linear-gradient(145deg, rgba(232, 93, 4, 0.05), rgba(15, 40, 71, 0.55));
+  }
+
+  .plan-action-card--target {
+    border-color: rgba(79, 255, 176, 0.2);
+    background: linear-gradient(145deg, rgba(79, 255, 176, 0.05), rgba(15, 40, 71, 0.55));
+    grid-column: 1 / -1;
+  }
+
+  .plan-action-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .plan-action-label {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.68rem;
+    color: var(--gray-medium);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .plan-action-card--cert .plan-action-label {
+    color: var(--orange-vivid);
+  }
+
+  .plan-action-card--target .plan-action-label {
+    color: var(--mint-code);
+  }
+
+  .plan-action-title {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white-pure);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .plan-action-desc {
+    font-size: 0.85rem;
+    color: var(--gray-light);
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+  }
+
+  .plan-action-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .plan-tag {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.68rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--gray-light);
+  }
+
+  .plan-tag--cert {
+    background: rgba(232, 93, 4, 0.1);
+    border-color: rgba(232, 93, 4, 0.3);
+    color: var(--orange-warm);
+  }
+
+  .plan-tag--target {
+    background: rgba(79, 255, 176, 0.08);
+    border-color: rgba(79, 255, 176, 0.25);
+    color: var(--mint-code);
+  }
+
+  .academic-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 1rem;
+  }
+
+  .academic-card {
+    display: flex;
+    gap: 2rem;
+    padding: 0 0 2.5rem 0;
+  }
+
+  .academic-card-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 60px;
+  }
+
+  .academic-degree-badge {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--orange-vivid), var(--mustard));
+    color: var(--white-pure);
+    box-shadow: 0 4px 16px rgba(232, 93, 4, 0.35);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .academic-degree-badge--m2 {
+    background: linear-gradient(135deg, var(--blue-cobalt), var(--cyan-electric));
+    box-shadow: 0 4px 16px rgba(0, 212, 255, 0.25);
+  }
+
+  .academic-degree-badge--m1 {
+    background: linear-gradient(135deg, #1E3A5F, #2d5a8e);
+    box-shadow: 0 4px 16px rgba(30, 58, 95, 0.5);
+  }
+
+  .academic-degree-badge--licence {
+    background: linear-gradient(135deg, #2D2D30, #4a4a50);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .academic-timeline-line {
+    width: 2px;
+    flex: 1;
+    margin-top: 8px;
+    background: linear-gradient(180deg, rgba(232, 93, 4, 0.4), rgba(0, 212, 255, 0.15));
+    min-height: 40px;
+  }
+
+  .academic-timeline-line--last {
+    background: transparent;
+  }
+
+  .academic-card-content {
+    flex: 1;
+    background: linear-gradient(145deg, rgba(30, 58, 95, 0.3), rgba(15, 40, 71, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    transition: all 0.35s var(--transition-smooth);
+  }
+
+  .academic-card--featured .academic-card-content {
+    border-color: rgba(232, 93, 4, 0.25);
+    background: linear-gradient(145deg, rgba(232, 93, 4, 0.06), rgba(15, 40, 71, 0.6));
+  }
+
+  .academic-card-content:hover {
+    border-color: rgba(0, 212, 255, 0.3);
+    transform: translateX(5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .academic-period-tag {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.78rem;
+    color: var(--gray-light);
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .academic-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gray-medium);
+    flex-shrink: 0;
+  }
+
+  .academic-dot--active {
+    background: var(--mint-code);
+    box-shadow: 0 0 6px var(--mint-code);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .academic-degree {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white-pure);
+    margin-bottom: 0.4rem;
+  }
+
+  .academic-institution {
+    font-size: 0.95rem;
+    color: var(--cyan-electric);
+    margin-bottom: 0.8rem;
+  }
+
+  .academic-description {
+    font-size: 0.9rem;
+    color: var(--gray-soft);
+    line-height: 1.6;
+    margin-bottom: 1.1rem;
+    font-style: italic;
+  }
+
+  .academic-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .academic-tag {
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gray-light);
+  }
+
+  .academic-card--featured .academic-tag {
+    background: rgba(232, 93, 4, 0.08);
+    border-color: rgba(232, 93, 4, 0.25);
+    color: var(--orange-warm);
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      padding: 1.5rem 2rem;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .header-nav {
+      display: none;
+    }
+
+    .hero {
+      padding: 4rem 2rem 3rem;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+    }
+
+    .timeline {
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      left: 10px;
+    }
+
+    .timeline-item::before {
+      left: -35px;
+    }
+
+    .skills-categories-grid,
+    .competences-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* Adaptation v2 : le sommaire de la page se cale sous l'en-tête du site. */
+.header {
+  top: 4rem;
+  z-index: 30;
+}

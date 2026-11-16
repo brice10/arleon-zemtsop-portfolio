@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { ChangeDetectionStrategy, Component, afterNextRender, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AnalyticsService } from '@core/analytics/analytics.service';
@@ -35,6 +36,14 @@ export class App {
 
   constructor() {
     const analytics = inject(AnalyticsService);
+
+    // Ancres (#section) : la cible s'arrête sous l'en-tête collant du site et sous
+    // l'éventuel sommaire collant de la page (attribut `data-sticky`).
+    const scroller = inject(ViewportScroller);
+    scroller.setOffset(() => {
+      const bars = Array.from(document.querySelectorAll<HTMLElement>('[data-sticky]'));
+      return [0, 80 + bars.reduce((height, bar) => height + bar.offsetHeight, 0)];
+    });
     afterNextRender(() => analytics.start());
   }
 }

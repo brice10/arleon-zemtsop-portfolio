@@ -1,0 +1,150 @@
+:host {
+  display: block;
+}
+
+@layer components {
+  :host {
+    font-family: 'Inter Variable', sans-serif;
+    background: #0A1628;
+    color: #F8F9FA;
+  }
+
+  .bg-pattern {
+    background-image: radial-gradient(ellipse at 20% 80%, rgba(0, 122, 94, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(252, 209, 22, 0.08) 0%, transparent 40%);
+  }
+
+  .prose-custom h2 {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #F8F9FA;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose-custom h3 {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #007A5E;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-custom p {
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+    color: #A0A0A5;
+  }
+
+  .prose-custom strong {
+    color: #F8F9FA;
+  }
+
+  .prose-custom em {
+    color: #FCD116;
+  }
+
+  .prose-custom ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose-custom ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #A0A0A5;
+  }
+
+  .prose-custom ul li::before {
+    content: '🌴';
+    position: absolute;
+    left: 0;
+  }
+
+  .prose-custom blockquote {
+    border-left: 3px solid #007A5E;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-family: 'Playfair Display Variable', serif;
+    font-style: italic;
+    color: #F8F9FA;
+    background: rgba(0, 122, 94, 0.05);
+    padding: 1.5rem;
+    border-radius: 0 12px 12px 0;
+    font-size: 1.1rem;
+  }
+
+  .cameroon-card {
+    background: linear-gradient(135deg, rgba(0, 122, 94, 0.2) 0%, rgba(252, 209, 22, 0.1) 50%, rgba(206, 17, 38, 0.1) 100%);
+    border: 2px solid rgba(0, 122, 94, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cameroon-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #007A5E, #FCD116, #CE1126);
+  }
+
+  .flag-stripe {
+    height: 8px;
+    border-radius: 4px;
+  }
+
+  .flag-green {
+    background: #007A5E;
+  }
+
+  .flag-red {
+    background: #CE1126;
+  }
+
+  .flag-yellow {
+    background: #FCD116;
+  }
+
+  .food-card {
+    background: linear-gradient(135deg, rgba(252, 209, 22, 0.1) 0%, rgba(30, 58, 95, 0.3) 100%);
+    border: 1px solid rgba(252, 209, 22, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .food-card:hover {
+    border-color: rgba(252, 209, 22, 0.6);
+    transform: translateY(-4px);
+  }
+
+  .city-card {
+    background: linear-gradient(135deg, rgba(30, 58, 95, 0.4) 0%, rgba(15, 40, 71, 0.6) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .city-card:hover {
+    border-color: rgba(0, 122, 94, 0.4);
+    transform: translateY(-4px);
+  }
+
+  .before-after {
+    background: linear-gradient(135deg, rgba(206, 17, 38, 0.1) 0%, rgba(0, 122, 94, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .reset-button {
+    background: linear-gradient(135deg, #007A5E, #FCD116);
+    animation: pulse-reset 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-reset {
+    0%, 100% { box-shadow: 0 0 20px rgba(0, 122, 94, 0.4); }
+    50% { box-shadow: 0 0 40px rgba(0, 122, 94, 0.6); }
+  }
+}
