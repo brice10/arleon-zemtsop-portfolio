@@ -1,0 +1,29 @@
+<app-post-shell slug="black-friday-six-etapes">
+  <p class="text-xl text-white">🛍️ Black Friday dans 10 jours : voici comment j'apprends à un microservice à <strong>encaisser le choc tout seul</strong>, en 6 étapes ! 🚀</p>
+  <p>Le Black Friday, pour une boutique en ligne, ce sont des milliers de visiteurs en quelques minutes, et pour chacun, des photos de produits à afficher. 📸 Dans TeaStore, ma petite boutique de thé de test, ce travail revient au service Image : il sert les photos, et c'est donc lui qui chauffe en premier quand la foule débarque ! 🥵</p>
+  <p>Mon problème : ce service existe déjà et il tourne. Comment lui apprendre à réagir au pic sans moi derrière, et sans le réécrire ? 🤔 C'est tout l'objet d'AdaptiFlow : rendre auto-adaptatif un service existant, avec quelques ajouts dans son code, sans forcément le réécrire. Et toujours dans le même ordre, en six étapes. 🛠️</p>
+  <p>⏱️ Le process, sur le service Image :</p>
+  <ul>
+    <li>Étape 1 : choisir ce qu'on observe. Pour Image : processeur et mémoire, en pourcentage, via un collecteur de métriques. 👀</li>
+    <li>Étape 2 : lui apprendre ses gestes. Image sait confier ses photos à un fournisseur externe, puis les reprendre : ce sont ses actions d'adaptation. 🔧</li>
+    <li>Étape 3 : écrire ce qu'on appelle « anormal ». Un évaluateur de conditions dit « processeur au-dessus de 85 % », un second dit « tout est repassé sous 60 % ». 🚦</li>
+    <li>Étape 4 : nommer ce qui se passe. Ces conditions deviennent des événements : TrafficIncreaseEvent (« le trafic monte ») et TrafficDecreaseEvent (« il redescend »). 📣</li>
+    <li>Étape 5 : dire qui réagit. Image s'abonne à ses propres événements : le premier déclenche le fournisseur externe, le second le coupe. 🤝</li>
+    <li>Étape 6 : régler le rythme. Toutes les 5 secondes, Image se regarde et vérifie si un événement est déclenché. ⏱️</li>
+  </ul>
+  <p>Vous avez remarqué ? Aucune règle dans les deux premières étapes ! C'est ce que mon papier appelle la phase de préparation : le service reçoit d'abord des interfaces standard pour être observé et commandé, et les règles qui suivent peuvent changer sans nécessairement le toucher. ✨</p>
+  <p>Ces six étapes couvrent toute la boucle MAPE-K (observer, analyser, planifier, agir), mais pas dans l'ordre où elle tourne, et c'est voulu : on donne au service des yeux et des mains avant de lui écrire la moindre consigne. 🔁</p>
+  <p>Le jour du pic : le processeur du microservice qui fournit les images dépasse 85 %, l'événement est déclenché, les photos filent chez le fournisseur externe, les visiteurs ne remarquent rien, et quand la foule repart, tout rentre dans l'ordre. Personne n'a touché au code ! 😎</p>
+  <p>Ma leçon : avant d'apprendre à un service quand réagir, il faut lui apprendre <strong>quoi regarder et quoi faire</strong>. 💡</p>
+  <p>Et vous, quel pic d'activité redoutez-vous le plus dans votre métier, et comment vous y préparez-vous ? 😄 Racontez-moi 👇 en commentaire !</p>
+  <p>🔔 A très bientôt pour la suite de mes aventures scientifiques ! 🛍️</p>
+  <ul class="mt-8 flex list-none flex-wrap gap-2 space-y-0 pl-0">
+    <li class="tag">#BlackFriday</li>
+    <li class="tag">#AutonomicComputing</li>
+    <li class="tag">#SelfAdaptiveSystems</li>
+    <li class="tag">#MAPEK</li>
+    <li class="tag">#AdaptiFlow</li>
+    <li class="tag">#Inria</li>
+    <li class="tag">#UnivLille</li>
+  </ul>
+</app-post-shell>

@@ -10,7 +10,66 @@ import { BlogPost } from '../blog.model';
  *  3. c'est tout : la route, le prérendu, le sitemap et le SEO en découlent.
  */
 export const POSTS: BlogPost[] = [
-  // ---- Série LinkedIn (30 oct. → 16 nov. 2026) : articles courts, gabarit `PostShell`.
+  // ---- Série LinkedIn (depuis le 30 oct. 2026) : articles courts, gabarit `PostShell`.
+  {
+    slug: 'black-friday-six-etapes',
+    emoji: '🛍️',
+    year: 2026,
+    date: '2026-11-17',
+    categories: ['research'],
+    readingMinutes: 3,
+    tag: { fr: 'Science', en: 'Research' },
+    title: {
+      fr: 'Black Friday : apprendre à un microservice à encaisser le choc, en 6 étapes',
+      en: 'Black Friday: teaching a microservice to take the hit, in 6 steps',
+    },
+    description: {
+      fr: "Processeur à 85 %, photos confiées à un fournisseur externe, retour au calme sous 60 % : les six étapes d'AdaptiFlow pour rendre auto-adaptatif le service Image de TeaStore, sans le réécrire.",
+      en: "CPU at 85%, photos handed over to an external provider, back to normal below 60%: the six AdaptiFlow steps that make TeaStore's Image service self-adaptive, without rewriting it.",
+    },
+    preview: {
+      fr: {
+        image: '/assets/blog/black-friday-six-etapes/cover.fr.jpg',
+        width: 1080,
+        height: 1351,
+        slides: [
+          '/assets/blog/black-friday-six-etapes/cover.fr.jpg',
+          '/assets/blog/black-friday-six-etapes/slide-2.fr.webp',
+          '/assets/blog/black-friday-six-etapes/slide-3.fr.webp',
+          '/assets/blog/black-friday-six-etapes/slide-4.fr.webp',
+          '/assets/blog/black-friday-six-etapes/slide-5.fr.webp',
+          '/assets/blog/black-friday-six-etapes/slide-6.fr.webp',
+          '/assets/blog/black-friday-six-etapes/slide-7.fr.webp',
+          '/assets/blog/black-friday-six-etapes/slide-8.fr.webp',
+        ],
+      },
+      en: {
+        image: '/assets/blog/black-friday-six-etapes/cover.en.jpg',
+        width: 1080,
+        height: 1351,
+        slides: [
+          '/assets/blog/black-friday-six-etapes/cover.en.jpg',
+          '/assets/blog/black-friday-six-etapes/slide-2.en.webp',
+          '/assets/blog/black-friday-six-etapes/slide-3.en.webp',
+          '/assets/blog/black-friday-six-etapes/slide-4.en.webp',
+          '/assets/blog/black-friday-six-etapes/slide-5.en.webp',
+          '/assets/blog/black-friday-six-etapes/slide-6.en.webp',
+          '/assets/blog/black-friday-six-etapes/slide-7.en.webp',
+          '/assets/blog/black-friday-six-etapes/slide-8.en.webp',
+        ],
+      },
+    },
+    content: {
+      fr: () =>
+        import('../content/black-friday-six-etapes/black-friday-six-etapes.fr').then(
+          (m) => m.BlackFridaySixEtapesFr,
+        ),
+      en: () =>
+        import('../content/black-friday-six-etapes/black-friday-six-etapes.en').then(
+          (m) => m.BlackFridaySixEtapesEn,
+        ),
+    },
+  },
   {
     slug: 'compliment-sur-mon-code',
     emoji: '💻',

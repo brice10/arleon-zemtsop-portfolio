@@ -1,0 +1,29 @@
+<app-post-shell slug="black-friday-six-etapes">
+  <p class="text-xl text-white">🛍️ Black Friday is 10 days away: here is how I teach a microservice to <strong>take the hit on its own</strong>, in 6 steps! 🚀</p>
+  <p>Hi all! 👋 For an online store, Black Friday means thousands of visitors within a few minutes, and for every one of them, product photos to display. 📸 In TeaStore, my small test tea shop, that job belongs to the Image service: it serves the photos, so it is the first one to overheat when the crowd rushes in! 🥵</p>
+  <p>My problem: this service already exists and it is running. How do I teach it to react to the peak without me behind it, and without rewriting it? 🤔 That is the whole point of AdaptiFlow: making an existing service self-adaptive with a few additions to its code, not necessarily a rewrite. And always in the same order, in six steps. 🛠️</p>
+  <p>⏱️ The process, on the Image service:</p>
+  <ul>
+    <li>Step 1: choose what to watch. For Image, its CPU and its memory, in percent, through a metrics collector. 👀</li>
+    <li>Step 2: teach it its moves. Image knows how to hand its photos over to an external provider, then take them back: those are its adaptation actions. 🔧</li>
+    <li>Step 3: write down what counts as "abnormal". One conditional evaluator says "CPU above 85%", a second one says "everything is back below 60%". 🚦</li>
+    <li>Step 4: name what is happening. Those conditions become events: TrafficIncreaseEvent ("traffic is rising") and TrafficDecreaseEvent ("it is going down"). 📣</li>
+    <li>Step 5: say who reacts. Image subscribes to its own events: the first one triggers the external provider, the second one switches it off. 🤝</li>
+    <li>Step 6: set the pace. Every 5 seconds, Image looks at itself and checks whether an event is triggered. ⏱️</li>
+  </ul>
+  <p>Did you notice? No rule at all in the first two steps! That is what my paper calls the preparation phase: the service first receives standard interfaces to be observed and controlled, and the rules that follow can change without necessarily touching it. ✨</p>
+  <p>These six steps cover the whole MAPE-K loop (monitor, analyze, plan, execute), but not in the order the loop runs, and that is on purpose: you give the service eyes and hands before writing it a single instruction. 🔁</p>
+  <p>On the day of the peak: the CPU of the microservice that serves the images climbs above 85%, the event is triggered, the photos move to the external provider, visitors notice nothing, and when the crowd leaves, everything goes back to normal. Nobody touched the code! 😎</p>
+  <p>My lesson: before teaching a service when to react, you have to teach it <strong>what to watch and what to do</strong>. 💡</p>
+  <p>What about you? Which peak of activity do you dread the most in your job, and how do you get ready for it? 😄 Tell me 👇 in the comments!</p>
+  <p>🔔 Stay tuned for the next episodes of my scientific adventures! ⚡</p>
+  <ul class="mt-8 flex list-none flex-wrap gap-2 space-y-0 pl-0">
+    <li class="tag">#BlackFriday</li>
+    <li class="tag">#AutonomicComputing</li>
+    <li class="tag">#SelfAdaptiveSystems</li>
+    <li class="tag">#MAPEK</li>
+    <li class="tag">#AdaptiFlow</li>
+    <li class="tag">#Inria</li>
+    <li class="tag">#UnivLille</li>
+  </ul>
+</app-post-shell>
