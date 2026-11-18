@@ -1,0 +1,29 @@
+<app-post-shell slug="alerte-neige-abonnes">
+  <p class="text-xl text-white">❄️ Winter is already here… and the next snow alert will show you <strong>how my microservices survive</strong> a cyberattack! 🛡️</p>
+  <p>Picture this: tomorrow morning, the weather service puts the whole region under an orange snow alert. 🟠 The alert, by itself, is just a message. It doesn't salt a single road and doesn't close a single school. And yet, in less than an hour, an entire region reorganizes itself! 😮</p>
+  <p>The city sends out its salt trucks, the bus company shortens its routes, the town hall closes the schools… and the school closing triggers, in turn, <strong>the parents' plan</strong> (one of whom is about to discover working from home with two kids underfoot 😅). Nobody called everyone one by one: each of them had subscribed to the alert, and each had decided IN ADVANCE what they would do with it. 📋</p>
+  <p>And this behavior is exactly what I reproduce in the Cloud with microservices! Let me show you how. 🤓☁️</p>
+  <p>My test store (TeaStore, an online tea shop) has a WebUI service that displays the products to the users: it is the service they interact with from their smartphone, tablet or computer. 📱💻 This service continuously watches the incoming traffic, and when it receives more than 300 requests per second for a whole minute, this is interpreted as a cyberattack meant to choke the service so it can no longer answer in time. 🚨</p>
+  <p>An event is then triggered, MaliciousTrafficEvent ("malicious traffic"), and WebUI acts as a scout, passing the message on to the other services of the system. In the MAPE-K loop (monitor, analyze, plan, execute), we enter the P, Plan: someone has to decide <strong>who does what</strong>. And this is where the subscribers come in! 🙋</p>
+  <p>AdaptiFlow does exactly that: subscribing to an event means writing down in advance what you will do the day it is triggered. A subscriber has three ways to react, and it can combine them: 🛠️</p>
+  <ul>
+    <li>🏠 React at home: Auth (the service that handles logins) temporarily cuts its connections, Recommender switches to low power mode, Image hands the photos over to an external provider. Everyone shovels their own doorstep!</li>
+    <li>📞 Call another service and ask it to act, like the town hall calling the bus company.</li>
+    <li>🔗 Trigger another scenario: its reaction is itself an event, with its own subscribers, like the closed school that kicks off the parents' plan.</li>
+  </ul>
+  <p>One alert is then enough to get the whole store moving, each service with its reaction already prepared! 🤝</p>
+  <p>What I take away from this snow story: <strong>the intelligence is not in the alert</strong>, it lies with those who listen to it. 💡</p>
+  <p>What about you? Which alert sets off a ready-made reaction on your side, with nobody having to tell you what to do? 😄 Tell me 👇 in the comments!</p>
+  <p>🔔 Subscribe (yes, you too, it's today's topic 😏) and follow me for more contents 😊</p>
+  <ul class="mt-8 flex list-none flex-wrap gap-2 space-y-0 pl-0">
+    <li class="tag">#CloudComputing</li>
+    <li class="tag">#Microservices</li>
+    <li class="tag">#SelfAdaptiveSystems</li>
+    <li class="tag">#AutonomicComputing</li>
+    <li class="tag">#AdaptiFlow</li>
+    <li class="tag">#SciComm</li>
+    <li class="tag">#PhDLife</li>
+    <li class="tag">#Inria</li>
+    <li class="tag">#UnivLille</li>
+  </ul>
+</app-post-shell>

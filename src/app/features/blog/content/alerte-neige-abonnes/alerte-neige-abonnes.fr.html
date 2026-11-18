@@ -1,0 +1,28 @@
+<app-post-shell slug="alerte-neige-abonnes">
+  <p class="text-xl text-white">❄️ C'est déjà l'hiver… et la prochaine alerte neige va vous expliquer <strong>comment mes microservices survivent</strong> à une cyberattaque ! 🛡️</p>
+  <p>Imaginez : demain matin, Météo-France place le Nord en vigilance orange neige. 🟠 L'alerte, en elle-même, n'est qu'un message. Elle ne sale aucune route et ne ferme aucune école. Et pourtant, en moins d'une heure, tout le département se réorganise ! 😮</p>
+  <p>La ville sort ses camions de sel, la compagnie de bus raccourcit ses lignes, la mairie ferme les écoles… et la fermeture de l'école déclenche à son tour <strong>le plan des parents</strong> (dont l'un découvre le télétravail avec deux enfants dans les pattes 😅). Personne n'a appelé tout le monde un par un : chacun s'était abonné à l'alerte et avait décidé À L'AVANCE ce qu'il en ferait. 📋</p>
+  <p>Et ce comportement, je le reproduis dans le Cloud avec des microservices ! Je vous montre comment. 🤓☁️</p>
+  <p>Ma boutique de test (TeaStore, une boutique de thé en ligne) a un service WebUI qui affiche les produits aux usagers : c'est avec lui qu'ils interagissent depuis leur smartphone, tablette ou ordinateur. 📱💻 Ce service surveille continuellement le trafic entrant, et lorsqu'il reçoit plus de 300 requêtes par seconde pendant une minute, cela est interprété comme une cyberattaque destinée à l'étouffer pour l'empêcher de répondre dans les temps. 🚨</p>
+  <p>Un événement est alors déclenché, MaliciousTrafficEvent (« trafic malveillant »), et WebUI agit comme un éclaireur qui transmet le message aux autres services du système. Dans la boucle MAPE-K (observer, analyser, planifier, agir), on entre dans le P, Plan : il faut décider <strong>qui fait quoi</strong>. Et c'est là qu'arrivent les abonnés ! 🙋</p>
+  <p>AdaptiFlow fait exactement ça : s'abonner à un événement, c'est écrire à l'avance ce qu'on fera le jour où il est déclenché. Un abonné a trois façons de réagir, et il peut les combiner : 🛠️</p>
+  <ul>
+    <li>🏠 Réagir chez lui : Auth (le service des identifiants) coupe temporairement ses connexions, Recommender passe en mode économie, Image confie les photos à un fournisseur externe. Chacun déneige devant sa porte !</li>
+    <li>📞 Appeler un autre service pour lui demander d'agir, comme la mairie qui appelle la compagnie de bus.</li>
+    <li>🔗 Déclencher un autre scénario : sa réaction est elle-même un événement, avec ses propres abonnés, comme l'école fermée qui lance le plan des parents.</li>
+  </ul>
+  <p>Une seule alerte suffit à faire bouger toute la boutique, chacun avec sa réaction déjà prête ! 🤝</p>
+  <p>Ce que je retiens de cette histoire de neige : <strong>l'intelligence n'est pas dans l'alerte</strong>, elle est chez ceux qui l'écoutent. 💡</p>
+  <p>Et vous, quelle alerte déclenche chez vous une réaction déjà toute prête, sans qu'on ait à vous dire quoi faire ? 😄 👇 en commentaire !</p>
+  <p>🔔 Abonnez-vous (oui, vous aussi, c'est le thème du jour 😏) pour la suite de mes aventures scientifiques !</p>
+  <ul class="mt-8 flex list-none flex-wrap gap-2 space-y-0 pl-0">
+    <li class="tag">#CloudComputing</li>
+    <li class="tag">#Microservices</li>
+    <li class="tag">#SelfAdaptiveSystems</li>
+    <li class="tag">#AutonomicComputing</li>
+    <li class="tag">#AdaptiFlow</li>
+    <li class="tag">#PhDLife</li>
+    <li class="tag">#Inria</li>
+    <li class="tag">#UnivLille</li>
+  </ul>
+</app-post-shell>

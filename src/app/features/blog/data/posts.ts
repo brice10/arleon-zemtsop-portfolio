@@ -12,6 +12,47 @@ import { BlogPost } from '../blog.model';
 export const POSTS: BlogPost[] = [
   // ---- Série LinkedIn (depuis le 30 oct. 2026) : articles courts, gabarit `PostShell`.
   {
+    slug: 'alerte-neige-abonnes',
+    emoji: '❄️',
+    year: 2026,
+    date: '2026-11-18',
+    categories: ['popular'],
+    readingMinutes: 3,
+    tag: { fr: 'Vulgarisation', en: 'Popular science' },
+    title: {
+      fr: "L'alerte neige et mes microservices : l'intelligence est chez les abonnés",
+      en: 'The snow alert and my microservices: the intelligence lies with the subscribers',
+    },
+    description: {
+      fr: "Une vigilance orange neige n'est qu'un message, et pourtant tout un département se réorganise. C'est ainsi que les services de TeaStore réagissent à une cyberattaque dans AdaptiFlow : chacun s'est abonné à l'événement et a décidé à l'avance quoi faire.",
+      en: "An orange snow alert is just a message, yet a whole region reorganizes itself. That is how TeaStore's services react to a cyberattack in AdaptiFlow: each one subscribed to the event and decided in advance what to do.",
+    },
+    preview: {
+      fr: {
+        image: '/assets/blog/alerte-neige-abonnes/cover.fr.jpg',
+        width: 1080,
+        height: 1080,
+        video: '/assets/blog/alerte-neige-abonnes/video.fr.mp4',
+      },
+      en: {
+        image: '/assets/blog/alerte-neige-abonnes/cover.en.jpg',
+        width: 1080,
+        height: 1080,
+        video: '/assets/blog/alerte-neige-abonnes/video.en.mp4',
+      },
+    },
+    content: {
+      fr: () =>
+        import('../content/alerte-neige-abonnes/alerte-neige-abonnes.fr').then(
+          (m) => m.AlerteNeigeAbonnesFr,
+        ),
+      en: () =>
+        import('../content/alerte-neige-abonnes/alerte-neige-abonnes.en').then(
+          (m) => m.AlerteNeigeAbonnesEn,
+        ),
+    },
+  },
+  {
     slug: 'black-friday-six-etapes',
     emoji: '🛍️',
     year: 2026,
